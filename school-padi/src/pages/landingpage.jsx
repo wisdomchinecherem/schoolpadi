@@ -1,5 +1,4 @@
-import Navbar from "../components/Landingpage/Navbar";
-import Footer from "../components/Landingpage/Footer";
+
 
 function App() {
      return (
