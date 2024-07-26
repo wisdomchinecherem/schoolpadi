@@ -17,6 +17,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'; // Import from recharts
 
 import SchoolLogo from '../assets/schoolpadi-img/school-logo.png';
 
@@ -57,6 +58,22 @@ const Admin = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+   // Sample data for the line chart
+   const data = [
+     { name: '0', Nursery: 400, Primary: 240, Secondary: 240 },
+     { name: '1', Nursery: 300, Primary: 139, Secondary: 221 },
+     { name: '2', Nursery: 200, Primary: 980, Secondary: 229 },
+     { name: '3', Nursery: 278, Primary: 390, Secondary: 200 },
+     { name: '4', Nursery: 189, Primary: 480, Secondary: 218 },
+     { name: '5', Nursery: 239, Primary: 380, Secondary: 250 },
+     { name: '6', Nursery: 349, Primary: 430, Secondary: 210 },
+     { name: '7', Nursery: 200, Primary: 250, Secondary: 300 },
+     { name: '8', Nursery: 278, Primary: 300, Secondary: 270 },
+     { name: '9', Nursery: 350, Primary: 370, Secondary: 320 },
+     { name: '10', Nursery: 310, Primary: 310, Secondary: 330 },
+     { name: '12', Nursery: 410, Primary: 450, Secondary: 420 }
+   ];
 
   return (
     <>
@@ -378,6 +395,32 @@ const Admin = () => {
         </div>
       </div>
     </div>
+
+
+    <div className="container mx-auto mt-8">
+        {/* Line chart component */}
+        <div className="bg-white shadow-md p-4 rounded-lg">
+          <h2 className="text-center text-lg font-bold mb-4">Student No Levels</h2>
+          <LineChart
+            width={600}
+            height={400}
+            data={data}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="Nursery" stroke="#8884d8" />
+            <Line type="monotone" dataKey="Primary" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="Secondary" stroke="#ffc658" />
+          </LineChart>
+        </div>
+      </div>
+
+
+
   </div>
 </div>
 
