@@ -397,27 +397,29 @@ const Admin = () => {
     </div>
 
 
-    <div className="container mx-auto mt-8">
-        {/* Line chart component */}
-        <div className="bg-white shadow-md p-4 rounded-lg">
-          <h2 className="text-center text-lg font-bold mb-4">Student No Levels</h2>
-          <LineChart
-            width={600}
-            height={400}
-            data={data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="Nursery" stroke="#8884d8" />
-            <Line type="monotone" dataKey="Primary" stroke="#82ca9d" />
-            <Line type="monotone" dataKey="Secondary" stroke="#ffc658" />
-          </LineChart>
-        </div>
-      </div>
+    <div className="mx-auto mt-8">
+  {/* Line chart component */}
+  <div className="bg-white border shadow-md p-6 rounded-lg w-full">
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
+    <LineChart
+      width={865}  
+      height={312} 
+      data={data}
+      margin={{ top: 20, right: 40, left: 20, bottom: 20 }}
+    >
+      <CartesianGrid strokeDasharray="1 1" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+      <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+      <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+    </LineChart>
+  </div>
+</div>
+
+
 
 
 
