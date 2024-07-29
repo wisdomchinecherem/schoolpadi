@@ -17,7 +17,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'; // Import from recharts
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts'; // Import from recharts
 
 import SchoolLogo from '../assets/schoolpadi-img/school-logo.png';
 
@@ -74,6 +74,17 @@ const Admin = () => {
      { name: '10', Nursery: 310, Primary: 310, Secondary: 330 },
      { name: '12', Nursery: 410, Primary: 450, Secondary: 420 }
    ];
+
+   
+  // Sample data for the pie chart
+  const pieData = [
+    { name: 'Active', value: 100 },
+    { name: 'Alumni', value: 135 },
+    { name: 'License', value: 110 },
+    { name: 'Parents', value: 70 }
+  ];
+
+  const COLORS = ['#1671D9', '#3599FF', '#F3A218', '#6E7479'];
 
   return (
     <>
@@ -421,10 +432,29 @@ const Admin = () => {
 
 
 
-
-
-  </div>
-</div>
+ {/* Pie chart component */}
+ <div className="bg-white border shadow-md p-6 rounded-lg w-full">
+                <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
+                <PieChart width={400} height={312}>
+                  <Pie
+                    data={pieData}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={100}
+                    fill="#8884d8"
+                    label
+                  >
+                    
+                    {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </div>
+            </div>
+ </div>
 
 
 
