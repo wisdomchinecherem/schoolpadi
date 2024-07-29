@@ -88,7 +88,7 @@ const Admin = () => {
 
   return (
     <>
-      <nav className="bg-black p-4">
+      <nav className="bg-[#001D3B] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
           <div className="flex flex-col items-start">
@@ -446,7 +446,7 @@ const Admin = () => {
                     fill="#8884d8"
                     label
                   >
-                    
+
                     {pieData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index]} />
                     ))}
