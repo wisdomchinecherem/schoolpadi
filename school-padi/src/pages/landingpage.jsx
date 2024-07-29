@@ -408,15 +408,15 @@ const Admin = () => {
     </div>
 
 
-    <div className="flex flex-col md:flex-row md:justify-between mx-auto mt-8">
+    <div className="flex flex-col md:flex-row md:space-x-4 mx-auto mt-8 px-4">
   {/* Line chart component */}
-  <div className="bg-white border shadow-md p-6 rounded-lg w-full md:w-2/3 mb-4 md:mb-0">
+  <div className="bg-white border shadow-md p-6 rounded-lg flex-1 mb-4 md:mb-0">
     <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
     <LineChart
-      width={600}  // Reduced width
+      width={800} // Reduce to fit well
       height={312}
       data={data}
-      margin={{ top: 20, right: 40, left: 20, bottom: 20 }}
+      margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
     >
       <CartesianGrid strokeDasharray="1 1" />
       <XAxis dataKey="name" />
@@ -430,9 +430,9 @@ const Admin = () => {
   </div>
 
   {/* Pie chart component */}
-  <div className="bg-white border shadow-md p-6 rounded-lg w-full md:w-1/3">
+  <div className="bg-white border shadow-md p-6 rounded-lg flex-1">
     <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
-    <PieChart width={400} height={312}>
+    <PieChart width={360} height={312}>
       <Pie
         data={pieData}
         dataKey="value"
@@ -450,6 +450,7 @@ const Admin = () => {
     </PieChart>
   </div>
 </div>
+
 </div>
  </div>
 
