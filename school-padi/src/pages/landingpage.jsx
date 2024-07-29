@@ -408,13 +408,13 @@ const Admin = () => {
     </div>
 
 
-    <div className="mx-auto mt-8">
+    <div className="flex flex-col md:flex-row md:justify-between mx-auto mt-8">
   {/* Line chart component */}
-  <div className="bg-white border shadow-md p-6 rounded-lg w-full">
+  <div className="bg-white border shadow-md p-6 rounded-lg w-full md:w-2/3 mb-4 md:mb-0">
     <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
     <LineChart
-      width={865}  
-      height={312} 
+      width={600}  // Reduced width
+      height={312}
       data={data}
       margin={{ top: 20, right: 40, left: 20, bottom: 20 }}
     >
@@ -428,32 +428,29 @@ const Admin = () => {
       <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
     </LineChart>
   </div>
+
+  {/* Pie chart component */}
+  <div className="bg-white border shadow-md p-6 rounded-lg w-full md:w-1/3">
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
+    <PieChart width={400} height={312}>
+      <Pie
+        data={pieData}
+        dataKey="value"
+        nameKey="name"
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        fill="#8884d8"
+        label
+      >
+        {pieData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index]} />
+        ))}
+      </Pie>
+    </PieChart>
+  </div>
 </div>
-
-
-
- {/* Pie chart component */}
- <div className="bg-white border shadow-md p-6 rounded-lg w-full">
-                <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
-                <PieChart width={400} height={312}>
-                  <Pie
-                    data={pieData}
-                    dataKey="value"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={100}
-                    fill="#8884d8"
-                    label
-                  >
-
-                    {pieData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </div>
-            </div>
+</div>
  </div>
 
 
