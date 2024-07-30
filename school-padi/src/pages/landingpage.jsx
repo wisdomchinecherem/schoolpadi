@@ -413,42 +413,86 @@ const Admin = () => {
     <div className="flex flex-col md:flex-row md:space-x-4 mx-auto mt-8 px-4 max-w-screen-xl">
   {/* Line chart component */}
   <div className="bg-white border shadow-md p-6 rounded-lg flex-1 mb-4 md:mb-0">
-    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
-    <LineChart
-      width={800} // Consider using relative units for responsiveness
-      height={312}
-      data={data}
-      margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
-    >
-      <CartesianGrid strokeDasharray="1 1" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
-      <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
-      <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
-    </LineChart>
+    <h2 className="text-lg text-gray-800 font-bold mb-4">Student No Levels</h2>
+    <div className="relative w-full">
+      {/* Responsive Line Chart */}
+      <div className="hidden md:block">
+        <LineChart
+          width={800}
+          height={300}
+          data={data}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+        </LineChart>
+      </div>
+      <div className="block md:hidden">
+        <LineChart
+          width={320}
+          height={240}
+          data={data}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+        </LineChart>
+      </div>
+    </div>
   </div>
 
   {/* Pie chart component */}
   <div className="bg-white border shadow-md p-6 rounded-lg flex-1 relative">
-    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
-    <PieChart width={360} height={312}>
-      <Pie
-        data={pieData}
-        dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="50%"
-        outerRadius={100}
-        fill="#8884d8"
-      >
-        {pieData.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index]} />
-        ))}
-      </Pie>
-    </PieChart>
+    <h2 className="text-lg text-gray-800 font-bold mb-4">Category Distribution</h2>
+    <div className="relative w-full">
+      {/* Responsive Pie Chart */}
+      <div className="hidden md:block">
+        <PieChart width={320} height={320}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+      <div className="block md:hidden">
+        <PieChart width={240} height={240}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+    </div>
 
     {/* Legend */}
     <div className="absolute top-4 right-4 flex flex-col space-y-2">
@@ -457,28 +501,28 @@ const Admin = () => {
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[0] }}
         ></span>
-        <span className="text-sm text-[#C8D2DC]">Accepted</span>
+        <span className="text-sm text-gray-800">Accepted</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[1] }}
         ></span>
-        <span className="text-sm text-[#C8D2DC]">In Progress</span>
+        <span className="text-sm text-gray-800">In Progress</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[2] }}
         ></span>
-        <span className="text-sm text-[#C8D2DC]">Pending</span>
+        <span className="text-sm text-gray-800">Pending</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[3] }}
         ></span>
-        <span className="text-sm text-[#C8D2DC]">Rejected</span>
+        <span className="text-sm text-gray-800">Rejected</span>
       </div>
     </div>
   </div>
