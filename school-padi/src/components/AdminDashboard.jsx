@@ -1,23 +1,7 @@
-// import Navbar from "../components/Landingpage/Navbar";
-
-//function App() {
-  //   return (
-   //    <div className="max-w-[100vw]  overflow-hidden">
-    //   </div>
-//  );
-//}
-
-//export default App;   
-
-
-
-
-
-
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
-
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts'; // Import from recharts
 import SchoolLogo from '../assets/schoolpadi-img/school-logo.png';
 
 // Function to format date with ordinal suffix and time
@@ -58,9 +42,39 @@ const Admin = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+
+   // Sample data for the line chart
+   const data = [
+     { name: '0', Nursery: 400, Primary: 240, Secondary: 240 },
+     { name: '1', Nursery: 300, Primary: 139, Secondary: 221 },
+     { name: '2', Nursery: 200, Primary: 980, Secondary: 229 },
+     { name: '3', Nursery: 278, Primary: 390, Secondary: 200 },
+     { name: '4', Nursery: 189, Primary: 480, Secondary: 218 },
+     { name: '5', Nursery: 239, Primary: 380, Secondary: 250 },
+     { name: '6', Nursery: 349, Primary: 430, Secondary: 210 },
+     { name: '7', Nursery: 200, Primary: 250, Secondary: 300 },
+     { name: '8', Nursery: 278, Primary: 300, Secondary: 270 },
+     { name: '9', Nursery: 350, Primary: 370, Secondary: 320 },
+     { name: '10', Nursery: 310, Primary: 310, Secondary: 330 },
+     { name: '12', Nursery: 410, Primary: 450, Secondary: 420 }
+   ];
+
+   
+  // Sample data for the pie chart
+  const pieData = [
+    { name: 'Active', value: 100 },
+    { name: 'Alumni', value: 135 },
+    { name: 'License', value: 110 },
+    { name: 'Parents', value: 70 }
+  ];
+
+  const COLORS = ['#CCE5FF', '#3599FF', '#0274E8', '#027FFF'];
+
   return (
+    
     <>
-      <nav className="bg-black p-4">
+      <nav className="bg-[#001D3B] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
           <div className="flex flex-col items-start">
@@ -229,7 +243,7 @@ const Admin = () => {
       {/* Content for Box 1 */}
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col items-start mb-4">
-        <span className="text-sm font-grandis  text-[#C8D2DC]">Students</span>
+        <span className="text-sm font-grandis  text-[#C8D2DC]">No of Students</span>
           <span className="text-xl font-bold  font-grandis text-[#6E7479]">12,000</span>
         </div>
         <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
@@ -258,11 +272,11 @@ const Admin = () => {
   {/* Content for Box 2 */}
   <div className="flex flex-col justify-between h-full">
     <div className="flex flex-col items-start mb-4">
-      <span className="text-sm font-grandis text-[#C8D2DC]">Students</span>
+      <span className="text-sm font-grandis text-[#C8D2DC]">No of Staff</span>
       <span className="text-xl font-bold font-grandis text-[#6E7479]">400</span>
     </div>
     <div className="px-4"> {/* Add horizontal padding */}
-      <div className="grid grid-cols-4 gap-28 w-full text-sm text-[#6E7479]">
+      <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
         <div className="flex flex-col font-grandis items-center">
           <span>Admins</span>
           <span className="text-xl font-bold">100</span>
@@ -281,21 +295,63 @@ const Admin = () => {
 </div>
 
 
-    {/* New double height box replacing Box 3, also overlapping */}
-    <div className="bg-white p-6 rounded-lg shadow-md relative flex items-center justify-center z-10 md:-mt-12 md:row-span-2 min-h-[300px]">
-      {/* Content for Double Height Box */}
-      <span>Double Height Box</span>
+<div
+  className="bg-white p-4 shadow-md row-span-2 relative rounded-lg"
+  style={{ marginTop: '-50px', height: 'calc(100% + 50px)', zIndex: 10 }}
+>
+  <div className="flex justify-between items-center">
+    <span className=" text-[#C8D2DC] font-medium">Events</span>
+    <span className="text-gray-400">Daily</span>
+  </div>
+  <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
+
+  {/* Three larger boxes inside double-height box */}
+  <div className="mt-4 grid grid-cols-1 gap-4">
+    {/* Larger Box 1 */}
+    <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-white">Revenue</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+          11:00am
+        </span>
+      </div>
     </div>
+
+    {/* Larger Box 2 */}
+    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-gray-600">Expenses</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+        11:00am
+        </span>
+      </div>
+    </div>
+
+    {/* Larger Box 3 */}
+    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-gray-600">Net Profit</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+        11:00am
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
     {/* Box 4: Regular box alignment, equal height for small screens */}
     <div className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between items-start min-h-[150px]">
       {/* Content for Box 4 */}
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col items-start mb-4">
-        <span className="text-sm font-grandis  text-[#C8D2DC]">Students</span>
+        <span className="text-sm font-grandis  text-[#C8D2DC]">New Submission</span>
           <span className="text-xl font-bold  font-grandis text-[#6E7479]">800</span>
         </div>
-        <div className="grid grid-cols-4 gap-16 w-full text-sm text-[#6E7479]">
+        <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
           <div className="flex flex-col font-grandis  items-center">
             <span>Admission</span>
             <span className="text-xl font-bold">100</span>
@@ -317,7 +373,7 @@ const Admin = () => {
       {/* Content for Box 5 */}
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col items-start mb-4">
-          <span className="text-sm font-grandis  text-[#C8D2DC]">Students</span>
+          <span className="text-sm font-grandis  text-[#C8D2DC]">Messages</span>
           <span className="text-xl font-bold  font-grandis text-[#6E7479]">400</span>
         </div>
         <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
@@ -336,8 +392,161 @@ const Admin = () => {
         </div>
       </div>
     </div>
+
+
+    <div className="flex flex-col lg:flex-row lg:space-x-4 mx-auto mt-8 px-4 max-w-screen-xl">
+  {/* Line chart component */}
+  <div className="bg-white border shadow-md p-6 rounded-lg flex-1 mb-4 lg:mb-0">
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
+    <div className="relative w-full">
+      {/* Responsive Line Chart */}
+      <div className="hidden lg:block">
+        <LineChart
+          width={800} // Large screens
+          height={300}
+          data={data}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+        </LineChart>
+      </div>
+      <div className="hidden md:block lg:hidden">
+        <LineChart
+          width={600} // Tablet screens
+          height={250}
+          data={data}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+        </LineChart>
+      </div>
+      <div className="block md:hidden">
+        <LineChart
+          width={320} // Mobile screens
+          height={240}
+          data={data}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+        </LineChart>
+      </div>
+    </div>
+  </div>
+
+  {/* Pie chart component */}
+  <div className="bg-white border shadow-md p-6 rounded-lg flex-1 relative">
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
+    <div className="relative w-full">
+      {/* Responsive Pie Chart */}
+      <div className="hidden lg:block">
+        <PieChart width={320} height={320}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+      <div className="hidden md:block lg:hidden">
+        <PieChart width={300} height={300}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={90}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+      <div className="block md:hidden">
+        <PieChart width={240} height={240}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+    </div>
+
+    {/* Legend */}
+    <div className="absolute top-4 right-4 flex flex-col space-y-2">
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[0] }}
+        ></span>
+        <span className="text-sm text-gray-800">Accepted</span>
+      </div>
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[1] }}
+        ></span>
+        <span className="text-sm text-gray-800">In Progress</span>
+      </div>
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[2] }}
+        ></span>
+        <span className="text-sm text-gray-800">Pending</span>
+      </div>
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[3] }}
+        ></span>
+        <span className="text-sm text-gray-800">Rejected</span>
+      </div>
+    </div>
   </div>
 </div>
+</div>
+ </div>
 
 
 
