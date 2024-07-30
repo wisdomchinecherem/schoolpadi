@@ -535,28 +535,28 @@ const Admin = () => {
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[0] }}
         ></span>
-        <span className="text-sm text-gray-800">Accepted</span>
+        <span className="text-sm text-[#667185]">Accepted</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[1] }}
         ></span>
-        <span className="text-sm text-gray-800">In Progress</span>
+        <span className="text-sm text-[#667185]">In Progress</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[2] }}
         ></span>
-        <span className="text-sm text-gray-800">Pending</span>
+        <span className="text-sm text-[#667185]">Pending</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[3] }}
         ></span>
-        <span className="text-sm text-gray-800">Rejected</span>
+        <span className="text-sm text-[#667185]">Rejected</span>
       </div>
     </div>
   </div>
