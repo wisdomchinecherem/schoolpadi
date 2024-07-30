@@ -408,12 +408,12 @@ const Admin = () => {
     </div>
 
 
-    <div className="flex flex-col md:flex-row md:space-x-4 mx-auto mt-8 px-4">
+    <div className="flex flex-col md:flex-row md:space-x-4 mx-auto mt-8 px-4 max-w-screen-xl">
   {/* Line chart component */}
   <div className="bg-white border shadow-md p-6 rounded-lg flex-1 mb-4 md:mb-0">
     <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
     <LineChart
-      width={800} // Reduce to fit well
+      width={800} // Consider using relative units for responsiveness
       height={312}
       data={data}
       margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
@@ -429,46 +429,58 @@ const Admin = () => {
     </LineChart>
   </div>
 
+  {/* Pie chart component */}
   <div className="bg-white border shadow-md p-6 rounded-lg flex-1 relative">
-  <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
-  <PieChart width={360} height={312}>
-    <Pie
-      data={pieData}
-      dataKey="value"
-      nameKey="name"
-      cx="50%"
-      cy="50%"
-      outerRadius={100}
-      fill="#8884d8"
-    >
-      {pieData.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={COLORS[index]} />
-      ))}
-    </Pie>
-  </PieChart>
-  {/* Legend */}
-  <div className="absolute top-4 right-4 flex flex-col space-y-2">
-    <div className="flex items-center">
-      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[0] }}></span>
-      <span className="text-sm text-[#C8D2DC]">Accepted</span>
-    </div>
-    <div className="flex items-center">
-      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[1] }}></span>
-      <span className="text-sm text-[#C8D2DC]">In Progress</span>
-    </div>
-    <div className="flex items-center">
-      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[2] }}></span>
-      <span className="text-sm text-[#C8D2DC]">Pending</span>
-    </div>
-    <div className="flex items-center">
-      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[3] }}></span>
-      <span className="text-sm text-[#C8D2DC]">Rejected</span>
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
+    <PieChart width={360} height={312}>
+      <Pie
+        data={pieData}
+        dataKey="value"
+        nameKey="name"
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        fill="#8884d8"
+      >
+        {pieData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index]} />
+        ))}
+      </Pie>
+    </PieChart>
+
+    {/* Legend */}
+    <div className="absolute top-4 right-4 flex flex-col space-y-2">
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[0] }}
+        ></span>
+        <span className="text-sm text-[#C8D2DC]">Accepted</span>
+      </div>
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[1] }}
+        ></span>
+        <span className="text-sm text-[#C8D2DC]">In Progress</span>
+      </div>
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[2] }}
+        ></span>
+        <span className="text-sm text-[#C8D2DC]">Pending</span>
+      </div>
+      <div className="flex items-center">
+        <span
+          className="inline-block w-3 h-3 mr-2 rounded-full"
+          style={{ backgroundColor: COLORS[3] }}
+        ></span>
+        <span className="text-sm text-[#C8D2DC]">Rejected</span>
+      </div>
     </div>
   </div>
 </div>
-
-</div>
-
 </div>
  </div>
 
