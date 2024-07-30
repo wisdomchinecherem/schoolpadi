@@ -84,7 +84,7 @@ const Admin = () => {
     { name: 'Parents', value: 70 }
   ];
 
-  const COLORS = ['#1671D9', '#3599FF', '#F3A218', '#6E7479'];
+  const COLORS = ['#CCE5FF', '#3599FF', '#0274E8', '#027FFF'];
 
   return (
     <>
@@ -429,26 +429,44 @@ const Admin = () => {
     </LineChart>
   </div>
 
-  {/* Pie chart component */}
-  <div className="bg-white border shadow-md p-6 rounded-lg flex-1">
-    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
-    <PieChart width={360} height={312}>
-      <Pie
-        data={pieData}
-        dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="50%"
-        outerRadius={100}
-        fill="#8884d8"
-        label
-      >
-        {pieData.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index]} />
-        ))}
-      </Pie>
-    </PieChart>
+  <div className="bg-white border shadow-md p-6 rounded-lg flex-1 relative">
+  <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
+  <PieChart width={360} height={312}>
+    <Pie
+      data={pieData}
+      dataKey="value"
+      nameKey="name"
+      cx="50%"
+      cy="50%"
+      outerRadius={100}
+      fill="#8884d8"
+    >
+      {pieData.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={COLORS[index]} />
+      ))}
+    </Pie>
+  </PieChart>
+  {/* Legend */}
+  <div className="absolute top-4 right-4 flex flex-col space-y-2">
+    <div className="flex items-center">
+      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[0] }}></span>
+      <span className="text-sm text-[#C8D2DC]">Accepted</span>
+    </div>
+    <div className="flex items-center">
+      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[1] }}></span>
+      <span className="text-sm text-[#C8D2DC]">In Progress</span>
+    </div>
+    <div className="flex items-center">
+      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[2] }}></span>
+      <span className="text-sm text-[#C8D2DC]">Pending</span>
+    </div>
+    <div className="flex items-center">
+      <span className="inline-block w-3 h-3 mr-2 rounded-full" style={{ backgroundColor: COLORS[3] }}></span>
+      <span className="text-sm text-[#C8D2DC]">Rejected</span>
+    </div>
   </div>
+</div>
+
 </div>
 
 </div>
