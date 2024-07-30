@@ -18,7 +18,6 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts'; // Import from recharts
-
 import SchoolLogo from '../assets/schoolpadi-img/school-logo.png';
 
 // Function to format date with ordinal suffix and time
@@ -89,6 +88,7 @@ const Admin = () => {
   const COLORS = ['#CCE5FF', '#3599FF', '#0274E8', '#027FFF'];
 
   return (
+    
     <>
       <nav className="bg-[#001D3B] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
@@ -410,16 +410,33 @@ const Admin = () => {
     </div>
 
 
-    <div className="flex flex-col md:flex-row md:space-x-4 mx-auto mt-8 px-4 max-w-screen-xl">
+    <div className="flex flex-col lg:flex-row lg:space-x-4 mx-auto mt-8 px-4 max-w-screen-xl">
   {/* Line chart component */}
-  <div className="bg-white border shadow-md p-6 rounded-lg flex-1 mb-4 md:mb-0">
-    <h2 className="text-lg text-gray-800 font-bold mb-4">Student No Levels</h2>
+  <div className="bg-white border shadow-md p-6 rounded-lg flex-1 mb-4 lg:mb-0">
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
     <div className="relative w-full">
       {/* Responsive Line Chart */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <LineChart
-          width={800}
+          width={800} // Large screens
           height={300}
+          data={data}
+          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+        </LineChart>
+      </div>
+      <div className="hidden md:block lg:hidden">
+        <LineChart
+          width={600} // Tablet screens
+          height={250}
           data={data}
           margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
         >
@@ -435,7 +452,7 @@ const Admin = () => {
       </div>
       <div className="block md:hidden">
         <LineChart
-          width={320}
+          width={320} // Mobile screens
           height={240}
           data={data}
           margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
@@ -455,10 +472,10 @@ const Admin = () => {
 
   {/* Pie chart component */}
   <div className="bg-white border shadow-md p-6 rounded-lg flex-1 relative">
-    <h2 className="text-lg text-gray-800 font-bold mb-4">Category Distribution</h2>
+    <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
     <div className="relative w-full">
       {/* Responsive Pie Chart */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <PieChart width={320} height={320}>
           <Pie
             data={pieData}
@@ -467,6 +484,23 @@ const Admin = () => {
             cx="50%"
             cy="50%"
             outerRadius={100}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+      <div className="hidden md:block lg:hidden">
+        <PieChart width={300} height={300}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={90}
             fill="#8884d8"
           >
             {pieData.map((entry, index) => (
