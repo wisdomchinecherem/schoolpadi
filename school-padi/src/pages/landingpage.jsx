@@ -59,6 +59,8 @@ const Admin = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+
    // Sample data for the line chart
    const data = [
      { name: '0', Nursery: 400, Primary: 240, Secondary: 240 },
