@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts'; // Import from recharts
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell, BarChart, Bar, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts'; // Import from recharts
 import SchoolLogo from '../assets/schoolpadi-img/school-logo.png';
 
 // Function to format date with ordinal suffix and time
@@ -69,7 +69,24 @@ const Admin = () => {
     { name: 'Parents', value: 70 }
   ];
 
+    // Sample data for the bar chart
+    const barData = [
+      { category: 'Active', value1: 100, value2: 120, value3: 140 },
+      { category: 'Alumni', value1: 135, value2: 145, value3: 155 },
+      { category: 'License', value1: 110, value2: 115, value3: 120 },
+      { category: 'Parents', value1: 70, value2: 80, value3: 90 }
+    ];
+  
+    // Sample data for the radar chart
+    const radarData = [
+      { subject: 'Active', A: 100, B: 120, C: 140 },
+      { subject: 'Alumni', A: 135, B: 145, C: 155 },
+      { subject: 'License', A: 110, B: 115, C: 120 },
+      { subject: 'Parents', A: 70, B: 80, C: 90 }
+    ];
+
   const COLORS = ['#CCE5FF', '#3599FF', '#0274E8', '#027FFF'];
+
 
   return (
     
@@ -419,7 +436,7 @@ const Admin = () => {
       </div>
       <div className="hidden md:block lg:hidden">
         <LineChart
-          width={600} // Tablet screens
+          width={650} // Tablet screens
           height={250}
           data={data}
           margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
@@ -434,22 +451,24 @@ const Admin = () => {
           <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
         </LineChart>
       </div>
-      <div className="block md:hidden">
-        <LineChart
-          width={320} // Mobile screens
-          height={240}
-          data={data}
-          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
-          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
-          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
-        </LineChart>
+      <div className="flex justify-center items-center md:hidden">
+        <div>
+          <LineChart
+            width={300} // Mobile screens
+            height={240}
+            data={data}
+            margin={{ top: 20, right: 0, left: 0, bottom: 20 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
+          </LineChart>
+        </div>
       </div>
     </div>
   </div>
@@ -493,7 +512,7 @@ const Admin = () => {
           </Pie>
         </PieChart>
       </div>
-      <div className="block md:hidden">
+      <div className="flex justify-center items-center md:hidden">
         <PieChart width={240} height={240}>
           <Pie
             data={pieData}
@@ -519,34 +538,80 @@ const Admin = () => {
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[0] }}
         ></span>
-        <span className="text-sm text-gray-800">Accepted</span>
+        <span className="text-sm text-[#667185]">Accepted</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[1] }}
         ></span>
-        <span className="text-sm text-gray-800">In Progress</span>
+        <span className="text-sm text-[#667185]">In Progress</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[2] }}
         ></span>
-        <span className="text-sm text-gray-800">Pending</span>
+        <span className="text-sm text-[#667185]">Pending</span>
       </div>
       <div className="flex items-center">
         <span
           className="inline-block w-3 h-3 mr-2 rounded-full"
           style={{ backgroundColor: COLORS[3] }}
         ></span>
-        <span className="text-sm text-gray-800">Rejected</span>
+        <span className="text-sm text-[#667185]">Rejected</span>
       </div>
     </div>
   </div>
 </div>
 </div>
- </div>
+
+        
+{/* Charts Container */}
+<div className="flex flex-col md:flex-row gap-12 mb-8 justify-center mt-8">
+  {/* Bar Chart Card */}
+  <div className="bg-white shadow-lg p-4 sm:p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0 w-full sm:w-[540px] md:w-[600px] h-[320px] sm:h-[400px] md:h-[440px]">
+    <h2 className="text-lg sm:text-xl font-bold mb-4 text-[#C8D2DC] ">Finance</h2>
+    <BarChart
+      width={290} // width for mobile
+      height={240} // height for mobile
+      data={barData}
+      className="sm:w-[340px] sm:h-[300px] md:w-[540px] md:h-[360px]" // sizes for sm and md
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="category" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="value1" fill="#87CEEB" />
+      <Bar dataKey="value2" fill="#87CEEB" />
+      <Bar dataKey="value3" fill="#87CEEB" />
+    </BarChart>
+  </div>
+
+  {/* Radar Chart Card */}
+  <div className="bg-white shadow-lg p-4 sm:p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0 w-full sm:w-[400px] md:w-[600px] h-[320px] sm:h-[400px] md:h-[440px]">
+    <h2 className="text-lg sm:text-xl font-bold mb-4 text-[#C8D2DC] text-center">Enrollment process</h2>
+    <RadarChart
+      outerRadius={100} // outer radius for mobile
+      width={280} // width for mobile
+      height={240} // height for mobile
+      data={radarData}
+      className="sm:w-[340px] sm:h-[300px] md:w-[540px] md:h-[360px]" // sizes for sm and md
+    >
+      <PolarGrid />
+      <PolarAngleAxis dataKey="subject" />
+      <PolarRadiusAxis angle={30} domain={[0, 150]} />
+      <Radar name="A" dataKey="A" stroke="#87CEEB" fill="#87CEEB" fillOpacity={0.6} />
+      <Radar name="B" dataKey="B" stroke="#87CEEB" fill="#87CEEB" fillOpacity={0.6} />
+      <Radar name="C" dataKey="C" stroke="#87CEEB" fill="#87CEEB" fillOpacity={0.6} />
+    </RadarChart>
+  </div>
+</div>
+
+
+</div>
+
 
 
 
