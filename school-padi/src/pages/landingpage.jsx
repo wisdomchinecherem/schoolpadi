@@ -584,11 +584,11 @@ const Admin = () => {
 
         
 {/* Charts Container */}
-<div className="flex flex-col md:flex-row gap-8 mb-8">
+<div className="flex flex-col md:flex-row gap-12 mb-8 justify-center mt-8">
   {/* Bar Chart Card */}
-  <div className="flex-1 mb-4 md:mb-0 bg-white shadow-lg p-4 rounded-lg flex flex-col items-center">
+  <div className="w-[600px] h-[440px] bg-white shadow-lg p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0">
     <h2 className="text-xl font-bold mb-4 text-center">Student Categories Comparison</h2>
-    <BarChart width={350} height={250} data={barData}>
+    <BarChart width={540} height={360} data={barData}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="category" />
       <YAxis />
@@ -601,9 +601,9 @@ const Admin = () => {
   </div>
 
   {/* Radar Chart Card */}
-  <div className="flex-1 mb-4 md:mb-0 bg-white shadow-lg p-4 rounded-lg flex flex-col items-center">
+  <div className="w-[600px] h-[440px] bg-white shadow-lg p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0">
     <h2 className="text-xl font-bold mb-4 text-center">Student Engagement Radar</h2>
-    <RadarChart outerRadius={100} width={350} height={250} data={radarData}>
+    <RadarChart outerRadius={160} width={540} height={360} data={radarData}>
       <PolarGrid />
       <PolarAngleAxis dataKey="subject" />
       <PolarRadiusAxis angle={30} domain={[0, 150]} />
