@@ -470,7 +470,7 @@ const Admin = () => {
       <div className="flex justify-center items-center md:hidden">
         <div>
           <LineChart
-            width={280} // Mobile screens
+            width={300} // Mobile screens
             height={240}
             data={data}
             margin={{ top: 20, right: 0, left: 0, bottom: 20 }}
@@ -586,9 +586,14 @@ const Admin = () => {
 {/* Charts Container */}
 <div className="flex flex-col md:flex-row gap-12 mb-8 justify-center mt-8">
   {/* Bar Chart Card */}
-  <div className="w-[600px] h-[440px] bg-white shadow-lg p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0">
-    <h2 className="text-xl font-bold mb-4 text-center">Student Categories Comparison</h2>
-    <BarChart width={540} height={360} data={barData}>
+  <div className="bg-white shadow-lg p-4 sm:p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0 w-full sm:w-[540px] md:w-[600px] h-[320px] sm:h-[400px] md:h-[440px]">
+    <h2 className="text-lg sm:text-xl font-bold mb-4 text-[#C8D2DC] ">Finance</h2>
+    <BarChart
+      width={290} // width for mobile
+      height={240} // height for mobile
+      data={barData}
+      className="sm:w-[340px] sm:h-[300px] md:w-[540px] md:h-[360px]" // sizes for sm and md
+    >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="category" />
       <YAxis />
@@ -601,9 +606,15 @@ const Admin = () => {
   </div>
 
   {/* Radar Chart Card */}
-  <div className="w-[600px] h-[440px] bg-white shadow-lg p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0">
-    <h2 className="text-xl font-bold mb-4 text-center">Student Engagement Radar</h2>
-    <RadarChart outerRadius={160} width={540} height={360} data={radarData}>
+  <div className="bg-white shadow-lg p-4 sm:p-6 rounded-lg flex flex-col items-center justify-center mb-8 md:mb-0 w-full sm:w-[400px] md:w-[600px] h-[320px] sm:h-[400px] md:h-[440px]">
+    <h2 className="text-lg sm:text-xl font-bold mb-4 text-[#C8D2DC] text-center">Enrollment process</h2>
+    <RadarChart
+      outerRadius={100} // outer radius for mobile
+      width={280} // width for mobile
+      height={240} // height for mobile
+      data={radarData}
+      className="sm:w-[340px] sm:h-[300px] md:w-[540px] md:h-[360px]" // sizes for sm and md
+    >
       <PolarGrid />
       <PolarAngleAxis dataKey="subject" />
       <PolarRadiusAxis angle={30} domain={[0, 150]} />
@@ -613,6 +624,7 @@ const Admin = () => {
     </RadarChart>
   </div>
 </div>
+
 
 </div>
 
