@@ -527,18 +527,19 @@ const Admin = () => {
 <div className="bg-white p-4 border rounded-lg shadow-md">
   <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Finance</h2>
   <ResponsiveContainer width="100%" height={300}>
-    <BarChart data={barData}>
+    <BarChart data={barData} barGap={10}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="category" />
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="value1" fill={COLORS[0]} barSize={20} radius={[10, 10, 0, 0]} />
-      <Bar dataKey="value2" fill={COLORS[1]} barSize={20} radius={[10, 10, 0, 0]} />
-      <Bar dataKey="value3" fill={COLORS[2]} barSize={20} radius={[10, 10, 0, 0]} />
+      <Bar dataKey="value1" fill={COLORS[0]} barSize={10} radius={[10, 10, 0, 0]} />
+      <Bar dataKey="value2" fill={COLORS[1]} barSize={10} radius={[10, 10, 0, 0]} />
+      <Bar dataKey="value3" fill={COLORS[2]} barSize={10} radius={[10, 10, 0, 0]} />
     </BarChart>
   </ResponsiveContainer>
 </div>
+
 
 
           {/* Radar Chart */}
