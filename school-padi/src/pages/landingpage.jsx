@@ -105,9 +105,18 @@ const Admin = () => {
 
   // Sample data for the bar chart
   const barData = [
-    { category: 'Category 1', value1: 100, value2: 120, value3: 140 },
-    { category: 'Category 2', value1: 135, value2: 145, value3: 155 },
-    { category: 'Category 3', value1: 110, value2: 115, value3: 120 },
+    { category: 'Jan', value1: 100, value2: 120, value3: 140 },
+    { category: 'Feb', value1: 135, value2: 145, value3: 155 },
+    { category: 'March', value1: 110, value2: 115, value3: 120 },
+    { category: 'April', value1: 100, value2: 120, value3: 140 },
+    { category: 'May', value1: 135, value2: 145, value3: 155 },
+    { category: 'June', value1: 110, value2: 115, value3: 120 },
+    { category: 'July', value1: 100, value2: 120, value3: 140 },
+    { category: 'Aug', value1: 135, value2: 145, value3: 155 },
+    { category: 'Sept', value1: 110, value2: 115, value3: 120 },
+    { category: 'Oct', value1: 100, value2: 120, value3: 140 },
+    { category: 'Nov', value1: 135, value2: 145, value3: 155 },
+    { category: 'Dec', value1: 110, value2: 115, value3: 120 },
   ];
 
   // Sample data for the radar chart
@@ -446,12 +455,14 @@ const Admin = () => {
     </div>
 
 
-    <div className="relative mt-4 px-4">
+
+      </div>
+      <div className="relative  mt-4 px-4 w-full">
         {/* Data Visualization Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6 mx-4">
           {/* Line Chart */}
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-lg font-bold mb-4">Student Enrollment Trends</h2>
+          <div className="bg-white p-4  rounded-lg shadow-md">
+            <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">SStudent No Levels</h2>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -459,32 +470,40 @@ const Admin = () => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="Nursery" stroke={COLORS[0]} />
-                <Line type="monotone" dataKey="Primary" stroke={COLORS[1]} />
-                <Line type="monotone" dataKey="Secondary" stroke={COLORS[2]} />
+                <Line type="monotone" dataKey="Nursery" stroke="#1671D9" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Primary" stroke="#3599FF" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="Secondary" stroke="#F3A218" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
 
           {/* Pie Chart */}
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-lg font-bold mb-4">Distribution by Group</h2>
+            <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
             <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie data={pieData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label>
-                  {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
+            <PieChart width={320} height={320}>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            fill="#8884d8"
+          >
+            {pieData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
             </ResponsiveContainer>
           </div>
 
+
+
           {/* Bar Chart */}
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-lg font-bold mb-4">Revenue by Category</h2>
+            <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Finance</h2>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -501,7 +520,7 @@ const Admin = () => {
 
           {/* Radar Chart */}
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-lg font-bold mb-4">Subject Performance Comparison</h2>
+            <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Enrollment process</h2>
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
                 <PolarGrid />
@@ -515,7 +534,6 @@ const Admin = () => {
             </ResponsiveContainer>
           </div>
         </div>
-      </div>
       </div>
       </div>
 
