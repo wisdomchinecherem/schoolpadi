@@ -461,8 +461,8 @@ const Admin = () => {
         {/* Data Visualization Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6 mx-4">
           {/* Line Chart */}
-          <div className="bg-white p-4  rounded-lg shadow-md">
-            <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">SStudent No Levels</h2>
+          <div className="bg-white p-4 border rounded-lg shadow-md">
+            <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -478,7 +478,7 @@ const Admin = () => {
           </div>
 
           {/* Pie Chart */}
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-white p-4 border rounded-lg shadow-md">
             <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
             <ResponsiveContainer width="100%" height={300}>
             <PieChart width={320} height={320}>
@@ -502,7 +502,7 @@ const Admin = () => {
 
 
           {/* Bar Chart */}
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-white p-4 border rounded-lg shadow-md">
             <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Finance</h2>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={barData}>
@@ -519,7 +519,7 @@ const Admin = () => {
           </div>
 
           {/* Radar Chart */}
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-white p-4 border rounded-lg shadow-md">
             <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Enrollment process</h2>
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
@@ -536,10 +536,6 @@ const Admin = () => {
         </div>
       </div>
       </div>
-
-
-
-
 
     </>
   );
