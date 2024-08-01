@@ -105,18 +105,19 @@ const Admin = () => {
 
   // Sample data for the bar chart
   const barData = [
-    { category: 'Jan', value1: 100, value2: 120, value3: 140 },
-    { category: 'Feb', value1: 135, value2: 145, value3: 155 },
-    { category: 'March', value1: 110, value2: 115, value3: 120 },
-    { category: 'April', value1: 100, value2: 120, value3: 140 },
-    { category: 'May', value1: 135, value2: 145, value3: 155 },
-    { category: 'June', value1: 110, value2: 115, value3: 120 },
-    { category: 'July', value1: 100, value2: 120, value3: 140 },
-    { category: 'Aug', value1: 135, value2: 145, value3: 155 },
-    { category: 'Sept', value1: 110, value2: 115, value3: 120 },
-    { category: 'Oct', value1: 100, value2: 120, value3: 140 },
-    { category: 'Nov', value1: 135, value2: 145, value3: 155 },
-    { category: 'Dec', value1: 110, value2: 115, value3: 120 },
+    { category: 'Jan', Income: 100, Expenses: 120, Balance: 140 },
+    { category: 'Jan', Income: 100, Expenses: 120, Balance: 140 },
+    { category: 'Feb', Income: 135, Expenses: 145, Balance: 155 },
+    { category: 'March', Income: 110, Expenses: 115, Balance: 120 },
+    { category: 'April', Income: 100, Expenses: 120, Balance: 140 },
+    { category: 'May', Income: 135, Expenses: 145, Balance: 155 },
+    { category: 'June', Income: 110, Expenses: 115, Balance: 120 },
+    { category: 'July', Income: 100, Expenses: 120, Balance: 140 },
+    { category: 'Aug', Income: 135, Expenses: 145, Balance: 155 },
+    { category: 'Sept', Income: 110, Expenses: 115, Balance: 120 },
+    { category: 'Oct', Income: 100, Expenses: 120, Balance: 140 },
+    { category: 'Nov', Income: 135, Expenses: 145, Balance: 155 },
+    { category: 'Dec', Income: 110, Expenses: 115, Balance: 120 },
   ];
 
   // Sample data for the radar chart
@@ -336,22 +337,21 @@ const Admin = () => {
       <span className="text-sm font-grandis text-[#C8D2DC]">No of Staff</span>
       <span className="text-xl font-bold font-grandis text-[#6E7479]">400</span>
     </div>
-    <div className="px-4"> {/* Add horizontal padding */}
-      <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
-        <div className="flex flex-col font-grandis items-center">
-          <span>Admins</span>
-          <span className="text-xl font-bold">100</span>
+    <div className="grid grid-cols-3 gap-12 w-full text-sm text-[#6E7479]">
+          <div className="flex flex-col font-grandis  items-center">
+            <span>Admins</span>
+            <span className="text-xl font-bold">100</span>
+          </div>
+          <div className="flex flex-col font-grandis items-center">
+            <span>Teachers</span>
+            <span className="text-xl font-bold">135</span>
+          </div>
+          <div className="flex flex-col font-grandis items-center">
+            <span>Non-teaching</span>
+            <span className="text-xl font-bold">110</span>
+          </div>
+        
         </div>
-        <div className="flex flex-col font-grandis items-center">
-          <span>Teachers</span>
-          <span className="text-xl font-bold">135</span>
-        </div>
-        <div className="flex flex-col font-grandis items-center">
-          <span className="whitespace-nowrap">Non-teaching</span>
-          <span className="text-xl font-bold">110</span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -412,9 +412,9 @@ const Admin = () => {
         <span className="text-sm font-grandis  text-[#C8D2DC]">New Submission</span>
           <span className="text-xl font-bold  font-grandis text-[#6E7479]">800</span>
         </div>
-        <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
+        <div className="grid grid-cols-3 gap-12 w-full text-sm text-[#6E7479]">
           <div className="flex flex-col font-grandis  items-center">
-            <span>Admission</span>
+            <span>Admissions</span>
             <span className="text-xl font-bold">100</span>
           </div>
           <div className="flex flex-col font-grandis items-center">
@@ -422,9 +422,10 @@ const Admin = () => {
             <span className="text-xl font-bold">135</span>
           </div>
           <div className="flex flex-col font-grandis items-center">
-            <span>Form</span>
+            <span>Forms</span>
             <span className="text-xl font-bold">110</span>
           </div>
+      
         </div>
       </div>
     </div>
@@ -437,7 +438,7 @@ const Admin = () => {
           <span className="text-sm font-grandis  text-[#C8D2DC]">Messages</span>
           <span className="text-xl font-bold  font-grandis text-[#6E7479]">400</span>
         </div>
-        <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
+        <div className="grid grid-cols-3 gap-12 w-full text-sm text-[#6E7479]">
           <div className="flex flex-col font-grandis  items-center">
             <span>Admins</span>
             <span className="text-xl font-bold">100</span>
@@ -447,7 +448,7 @@ const Admin = () => {
             <span className="text-xl font-bold">135</span>
           </div>
           <div className="flex flex-col font-grandis items-center">
-          <span className="whitespace-nowrap">Non-teaching</span>
+            <span>Non-Teaching</span>
             <span className="text-xl font-bold">110</span>
           </div>
         </div>
@@ -531,11 +532,10 @@ const Admin = () => {
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="category" />
       <YAxis />
-      <Tooltip />
       <Legend />
-      <Bar dataKey="value1" fill={COLORS[0]} barSize={10} radius={[10, 10, 0, 0]} />
-      <Bar dataKey="value2" fill={COLORS[1]} barSize={10} radius={[10, 10, 0, 0]} />
-      <Bar dataKey="value3" fill={COLORS[2]} barSize={10} radius={[10, 10, 0, 0]} />
+      <Bar dataKey="Income" fill={COLORS[0]} barSize={10} radius={[10, 10, 0, 0]} />
+      <Bar dataKey="Expenses" fill={COLORS[1]} barSize={10} radius={[10, 10, 0, 0]} />
+      <Bar dataKey="Balance" fill={COLORS[2]} barSize={10} radius={[10, 10, 0, 0]} />
     </BarChart>
   </ResponsiveContainer>
 </div>
