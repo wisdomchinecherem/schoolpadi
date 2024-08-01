@@ -477,27 +477,49 @@ const Admin = () => {
             </ResponsiveContainer>
           </div>
 
-          {/* Pie Chart */}
-          <div className="bg-white p-4 border rounded-lg shadow-md">
-            <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
-            <ResponsiveContainer width="100%" height={300}>
-            <PieChart width={320} height={320}>
-          <Pie
-            data={pieData}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            fill="#8884d8"
-          >
-            {pieData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-        </PieChart>
-            </ResponsiveContainer>
-          </div>
+          
+{/* Pie Chart */}
+<div className="bg-white p-4 border rounded-lg shadow-md relative">
+  {/* Status Labels */}
+  <div className="absolute top-4 right-4 flex flex-col space-y-1 text-sm">
+    <div className="flex items-center">
+      <span className="h-3 w-3 rounded-full bg-[#0274E8] inline-block mr-2"></span>
+      <span>Accepted</span>
+    </div>
+    <div className="flex items-center">
+      <span className="h-3 w-3 rounded-full bg-[#CCE5FF] inline-block mr-2"></span>
+      <span>In Progress</span>
+    </div>
+    <div className="flex items-center">
+      <span className="h-3 w-3 rounded-full bg-[#027FFF] inline-block mr-2"></span>
+      <span>Pending</span>
+    </div>
+    <div className="flex items-center">
+      <span className="h-3 w-3 rounded-full bg-[#3599FF] inline-block mr-2"></span>
+      <span>Rejected</span>
+    </div>
+  </div>
+
+  <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Category Distribution</h2>
+  <ResponsiveContainer width="100%" height={300}>
+    <PieChart width={320} height={320}>
+      <Pie
+        data={pieData}
+        dataKey="value"
+        nameKey="name"
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        fill="#8884d8"
+      >
+        {pieData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+    </PieChart>
+  </ResponsiveContainer>
+</div>
+
 
 
 
