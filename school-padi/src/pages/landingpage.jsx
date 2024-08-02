@@ -561,7 +561,7 @@ const Admin = () => {
       </div>
       
       </div>
-      <div className="flex flex-col space-y-4 mt-8">
+      <div className="flex flex-col space-y-4 mt-8 px-6 md:px-16">
   {/* Calendar and Chat Container */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
@@ -579,18 +579,18 @@ const Admin = () => {
         {Array.from({ length: 31 }, (_, i) => (
           <div
             key={i}
-            className="border border-gray-300 rounded-md py-2 flex items-center justify-center"
+            className="border border-gray-300 rounded-md py-4 flex items-center justify-center"
           >
-            <span className="text-lg">{i + 1}</span>
+            <span className="text-xs">{i + 1}</span>
           </div>
         ))}
       </div>
     </div>
 
     {/* Chat Box Card */}
-    <div className="bg-white rounded-lg shadow-md p-4 md:w-1/3 w-full overflow-y-auto h-96">
+    <div className="bg-white rounded-lg shadow-md p-4 md:w-1/3 w-full h-auto">
       <h2 className="text-blue-500 font-bold mb-4 underline">All Chats</h2>
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-3">
         {[
           { name: "Alice", message: "Hey, how's the project going?", time: "10:15 AM", unread: 2 },
           { name: "Bob", message: "We're on track for the deadline!", time: "9:00 AM", unread: 0 },
@@ -600,7 +600,7 @@ const Admin = () => {
           { name: "Frank", message: "Great work, team!", time: "2 days ago", unread: 3 },
           { name: "Grace", message: "Looking forward to our next sprint.", time: "2 days ago", unread: 0 },
         ].map((chat, index) => (
-          <div key={index} className="flex justify-between items-center border-b border-gray-300 pb-2">
+          <div key={index} className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
                 {chat.name[0]}
