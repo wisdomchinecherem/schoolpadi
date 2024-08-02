@@ -569,9 +569,9 @@ const Admin = () => {
     <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full relative">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-xs font-bold text-gray-600">Calendar</h2>
+          <h2 className="text-xs font-bold text-gray-300">Calendar</h2>
           <div className="flex items-center space-x-2 mt-1">
-            <span className="text-sm text-gray-800">July 2024</span>
+            <span className="text-xl font-semibold text-gray-800">July 2024</span>
             <div className="flex items-center border border-blue-500 rounded px-2 py-1 text-blue-500 text-xs cursor-pointer">
               <span>Month</span>
               <svg
@@ -601,14 +601,14 @@ const Admin = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-7 text-center">
+      <div className="grid grid-cols-7 text-gray-300 text-center">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
-          <div key={index} className="border border-gray-300 font-bold text-gray-700 py-1">
+          <div key={index} className="border border-gray-300  font-bold text-gray-700 py-1">
             {day}
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-7 text-center border-l border-b border-gray-300">
+      <div className="grid grid-cols-7 text-center border-l text-gray-400 border-b border-gray-300">
         {Array.from({ length: 31 }, (_, i) => (
           <div
             key={i}
@@ -625,16 +625,16 @@ const Admin = () => {
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center space-x-2">
           <h2 className="text-blue-500 font-bold underline">All Chats</h2>
-          <span className="text-xs text-gray-600">(12 unread)</span>
+          <span className="text-xs text-white bg-blue-500 rounded-xl px-1 py-1 text-gray-600">12</span>
         </div>
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-1">
             <i className="fas fa-user text-gray-500"></i>
-            <span className="text-xs text-gray-600">(3)</span>
+            <span className="text-xs bg-gray-300  rounded-xl px-2 py-1 text-gray-600">3</span>
           </div>
           <div className="flex items-center space-x-1">
             <i className="fas fa-users text-gray-500"></i>
-            <span className="text-xs text-gray-600">(7)</span>
+            <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">7</span>
           </div>
         </div>
       </div>
