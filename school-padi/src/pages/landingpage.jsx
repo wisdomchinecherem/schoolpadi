@@ -16,7 +16,7 @@
 
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars,  } from '@fortawesome/free-solid-svg-icons';
 import {
   LineChart,
   Line,
@@ -566,8 +566,41 @@ const Admin = () => {
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
     {/* Calendar Card */}
-    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full">
-      <h2 className="text-black font-bold mb-4">Calendar</h2>
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full relative">
+      <div className="flex justify-between items-center mb-4">
+        <div>
+          <h2 className="text-xs font-bold text-gray-600">Calendar</h2>
+          <div className="flex items-center space-x-2 mt-1">
+            <span className="text-sm text-gray-800">July 2024</span>
+            <div className="flex items-center border border-blue-500 rounded px-2 py-1 text-blue-500 text-xs cursor-pointer">
+              <span>Month</span>
+              <svg
+                className="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <i className="fas fa-search text-gray-500 cursor-pointer"></i>
+          <div className="flex items-center space-x-2">
+            <i className="fas fa-calendar-day text-blue-500"></i>
+            <button className="flex items-center bg-blue-500 text-white px-3 py-1 rounded">
+              <i className="fas fa-plus mr-1"></i> Add Event
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="grid grid-cols-7 text-center">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
           <div key={index} className="border border-gray-300 font-bold text-gray-700 py-1">
@@ -588,8 +621,23 @@ const Admin = () => {
     </div>
 
     {/* Chat Box Card */}
-    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-1/3 w-full h-auto">
-      <h2 className="text-blue-500 font-bold mb-4 underline">All Chats</h2>
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-1/3 w-full h-auto relative">
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center space-x-2">
+          <h2 className="text-blue-500 font-bold underline">All Chats</h2>
+          <span className="text-xs text-gray-600">(12 unread)</span>
+        </div>
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-1">
+            <i className="fas fa-user text-gray-500"></i>
+            <span className="text-xs text-gray-600">(3)</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <i className="fas fa-users text-gray-500"></i>
+            <span className="text-xs text-gray-600">(7)</span>
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col space-y-2">
         {[
           { name: "Alice", message: "Hey, how's the project going?", time: "10:15 AM", unread: 2 },
