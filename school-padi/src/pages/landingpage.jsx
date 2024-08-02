@@ -561,36 +561,36 @@ const Admin = () => {
       </div>
       
       </div>
-      <div className="flex flex-col space-y-4 mt-8 px-6 md:px-16">
+      <div className="flex flex-col space-y-4 mt-8 px-8 md:px-20">
   {/* Calendar and Chat Container */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
     {/* Calendar Card */}
-    <div className="bg-white rounded-lg shadow-md p-4 md:w-2/3 w-full">
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full">
       <h2 className="text-black font-bold mb-4">Calendar</h2>
-      <div className="grid grid-cols-7 gap-2 text-center mb-2">
+      <div className="grid grid-cols-7 text-center">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
-          <div key={index} className="border border-gray-300 rounded-md py-1 font-bold text-gray-700">
+          <div key={index} className="border border-gray-300 font-bold text-gray-700 py-1">
             {day}
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-7 gap-2 text-center">
+      <div className="grid grid-cols-7 text-center border-l border-b border-gray-300">
         {Array.from({ length: 31 }, (_, i) => (
           <div
             key={i}
-            className="border border-gray-300 rounded-md py-4 flex items-center justify-center"
+            className="h-16 flex items-start justify-start border-r border-t border-gray-300"
           >
-            <span className="text-xs">{i + 1}</span>
+            <span className="text-xs p-1">{i + 1}</span>
           </div>
         ))}
       </div>
     </div>
 
     {/* Chat Box Card */}
-    <div className="bg-white rounded-lg shadow-md p-4 md:w-1/3 w-full h-auto">
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-1/3 w-full h-auto">
       <h2 className="text-blue-500 font-bold mb-4 underline">All Chats</h2>
-      <div className="flex flex-col space-y-3">
+      <div className="flex flex-col space-y-2">
         {[
           { name: "Alice", message: "Hey, how's the project going?", time: "10:15 AM", unread: 2 },
           { name: "Bob", message: "We're on track for the deadline!", time: "9:00 AM", unread: 0 },
