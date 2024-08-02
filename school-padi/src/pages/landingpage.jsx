@@ -105,19 +105,19 @@ const Admin = () => {
 
   // Sample data for the bar chart
   const barData = [
-    { category: 'Jan', Income: 100, Expenses: 120, Balance: 140 },
-    { category: 'Jan', Income: 100, Expenses: 120, Balance: 140 },
-    { category: 'Feb', Income: 135, Expenses: 145, Balance: 155 },
+    { category: 'Jan', Income: 100, Expenses: 90, Balance: 100 },
+    { category: 'Jan', Income: 100, Expenses: 120, Balance: 80 },
+    { category: 'Feb', Income: 135, Expenses: 145, Balance: 105 },
     { category: 'March', Income: 110, Expenses: 115, Balance: 120 },
     { category: 'April', Income: 100, Expenses: 120, Balance: 140 },
-    { category: 'May', Income: 135, Expenses: 145, Balance: 155 },
-    { category: 'June', Income: 110, Expenses: 115, Balance: 120 },
+    { category: 'May', Income: 135, Expenses: 145, Balance: 120 },
+    { category: 'June', Income: 110, Expenses: 70, Balance: 80 },
     { category: 'July', Income: 100, Expenses: 120, Balance: 140 },
-    { category: 'Aug', Income: 135, Expenses: 145, Balance: 155 },
+    { category: 'Aug', Income: 60, Expenses: 145, Balance: 155 },
     { category: 'Sept', Income: 110, Expenses: 115, Balance: 120 },
-    { category: 'Oct', Income: 100, Expenses: 120, Balance: 140 },
+    { category: 'Oct', Income: 100, Expenses: 90, Balance: 140 },
     { category: 'Nov', Income: 135, Expenses: 145, Balance: 155 },
-    { category: 'Dec', Income: 110, Expenses: 115, Balance: 120 },
+    { category: 'Dec', Income: 110, Expenses: 90, Balance: 100 },
   ];
 
   // Sample data for the radar chart
@@ -559,7 +559,73 @@ const Admin = () => {
           </div>
         </div>
       </div>
+      
       </div>
+      <div className="flex flex-col space-y-4 mt-8">
+  {/* Calendar and Chat Container */}
+  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+
+    {/* Calendar Card */}
+    <div className="bg-white rounded-lg shadow-md p-4 md:w-2/3 w-full">
+      <h2 className="text-black font-bold mb-4">Calendar</h2>
+      <div className="grid grid-cols-7 gap-2 text-center mb-2">
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
+          <div key={index} className="border border-gray-300 rounded-md py-1 font-bold text-gray-700">
+            {day}
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-7 gap-2 text-center">
+        {Array.from({ length: 31 }, (_, i) => (
+          <div
+            key={i}
+            className="border border-gray-300 rounded-md py-2 flex items-center justify-center"
+          >
+            <span className="text-lg">{i + 1}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Chat Box Card */}
+    <div className="bg-white rounded-lg shadow-md p-4 md:w-1/3 w-full overflow-y-auto h-96">
+      <h2 className="text-blue-500 font-bold mb-4 underline">All Chats</h2>
+      <div className="flex flex-col space-y-2">
+        {[
+          { name: "Alice", message: "Hey, how's the project going?", time: "10:15 AM", unread: 2 },
+          { name: "Bob", message: "We're on track for the deadline!", time: "9:00 AM", unread: 0 },
+          { name: "Charlie", message: "Don't forget the meeting tomorrow.", time: "8:45 AM", unread: 1 },
+          { name: "Diana", message: "Can someone review my latest PR?", time: "Yesterday", unread: 0 },
+          { name: "Eve", message: "Sure, I'll take a look later today.", time: "Yesterday", unread: 0 },
+          { name: "Frank", message: "Great work, team!", time: "2 days ago", unread: 3 },
+          { name: "Grace", message: "Looking forward to our next sprint.", time: "2 days ago", unread: 0 },
+        ].map((chat, index) => (
+          <div key={index} className="flex justify-between items-center border-b border-gray-300 pb-2">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
+                {chat.name[0]}
+              </div>
+              <div className="flex flex-col">
+                <p className="text-sm font-semibold">{chat.name}</p>
+                <p className="text-sm text-gray-600 truncate">{chat.message}</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-end space-y-1">
+              <span className="text-xs text-gray-500">{chat.time}</span>
+              {chat.unread > 0 && (
+                <span className="bg-blue-500 text-white text-xs rounded-full px-2 py-0.5">
+                  {chat.unread}
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
     </>
   );
