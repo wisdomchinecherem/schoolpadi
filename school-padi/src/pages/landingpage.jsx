@@ -621,55 +621,56 @@ const Admin = () => {
     </div>
 
     {/* Chat Box Card */}
-    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-1/3 w-full h-auto relative">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center space-x-2">
-          <h2 className="text-blue-500 font-bold underline">All Chats</h2>
-          <span className="text-xs text-white bg-blue-500 rounded-xl px-1 py-1 text-gray-600">12</span>
-        </div>
-        <div className="flex items-center space-x-6">
-          <div className="flex items-center space-x-1">
-            <i className="fas fa-user text-gray-500"></i>
-            <span className="text-xs bg-gray-300  rounded-xl px-2 py-1 text-gray-600">3</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <i className="fas fa-users text-gray-500"></i>
-            <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">7</span>
-          </div>
-        </div>
+<div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-1/3 w-full h-auto relative">
+  <div className="flex justify-between items-center mb-4">
+    <div className="flex items-center space-x-2">
+      <h2 className="text-blue-500 font-bold underline">All Chats</h2>
+      <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
+    </div>
+    <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-1">
+        <i className="fas fa-user text-gray-500"></i>
+        <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">3</span>
       </div>
-      <div className="flex flex-col space-y-2">
-        {[
-          { name: "Alice", message: "Hey, how's the project going?", time: "10:15 AM", unread: 2 },
-          { name: "Bob", message: "We're on track for the deadline!", time: "9:00 AM", unread: 0 },
-          { name: "Charlie", message: "Don't forget the meeting tomorrow.", time: "8:45 AM", unread: 1 },
-          { name: "Diana", message: "Can someone review my latest PR?", time: "Yesterday", unread: 0 },
-          { name: "Eve", message: "Sure, I'll take a look later today.", time: "Yesterday", unread: 0 },
-          { name: "Frank", message: "Great work, team!", time: "2 days ago", unread: 3 },
-          { name: "Grace", message: "Looking forward to our next sprint.", time: "2 days ago", unread: 0 },
-        ].map((chat, index) => (
-          <div key={index} className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
-                {chat.name[0]}
-              </div>
-              <div className="flex flex-col">
-                <p className="text-sm font-semibold">{chat.name}</p>
-                <p className="text-sm text-gray-600 truncate">{chat.message}</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-end space-y-1">
-              <span className="text-xs text-gray-500">{chat.time}</span>
-              {chat.unread > 0 && (
-                <span className="bg-blue-500 text-white text-xs rounded-full px-2 py-0.5">
-                  {chat.unread}
-                </span>
-              )}
-            </div>
-          </div>
-        ))}
+      <div className="flex items-center space-x-1">
+        <i className="fas fa-users text-gray-500"></i>
+        <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">7</span>
       </div>
     </div>
+  </div>
+  <div className="flex flex-col space-y-2 divide-y divide-gray-200">
+    {[
+      { name: "Alice", message: "Hey, how's the project going?", time: "10:15 AM", unread: 2 },
+      { name: "Bob", message: "We're on track for the deadline!", time: "9:00 AM", unread: 0 },
+      { name: "Charlie", message: "Don't forget the meeting tomorrow.", time: "8:45 AM", unread: 1 },
+      { name: "Diana", message: "Can someone review my latest PR?", time: "Yesterday", unread: 0 },
+      { name: "Eve", message: "Sure, I'll take a look later today.", time: "Yesterday", unread: 0 },
+      { name: "Frank", message: "Great work, team!", time: "2 days ago", unread: 3 },
+      { name: "Grace", message: "Looking forward to our next sprint.", time: "2 days ago", unread: 0 },
+    ].map((chat, index) => (
+      <div key={index} className="flex justify-between items-center py-2">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
+            {chat.name[0]}
+          </div>
+          <div className="flex flex-col">
+            <p className="text-sm font-semibold">{chat.name}</p>
+            <p className="text-sm text-gray-600 truncate">{chat.message}</p>
+          </div>
+        </div>
+        <div className="flex flex-col items-end space-y-1">
+          <span className="text-xs text-gray-500">{chat.time}</span>
+          {chat.unread > 0 && (
+            <span className="bg-blue-500 text-white text-xs rounded-full px-2 py-0.5">
+              {chat.unread}
+            </span>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
   </div>
 </div>
