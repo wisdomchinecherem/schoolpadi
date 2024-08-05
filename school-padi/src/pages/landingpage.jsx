@@ -1,13 +1,13 @@
- import Footer from "../components/Landingpage/Footer";
 
-function App() {
+
+function Landingpage() {
   return (
     <div className="max-w-[100vw]  overflow-hidden">
    </div>
 );
 }
 
-export default App;   
+export default Landingpage;   
 
 
 
