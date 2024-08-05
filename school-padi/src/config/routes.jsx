@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Landingpage from '../pages/landingpage';
 // import Navbar from '../components/Landingpage/Navbar';
 import Footer from '../components/Landingpage/Footer';
-import AdminDashboard from '../components/AdminDashboard';
+import AdminDashboard from '../components/adminDashboard/AdminDashboard';
 
 function PageRoutes() {
      return (
