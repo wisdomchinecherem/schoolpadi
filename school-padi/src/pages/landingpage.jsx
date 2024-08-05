@@ -679,16 +679,66 @@ const Admin = () => {
 
   </div>
 </div>
-<div className="flex flex-col space-y-4 mt-8 px-8 md:px-20">
+<div className="flex flex-col space-y-4 mt-8 mb-4 px-8 md:px-20">
   {/* Notice Board/ Birthdays */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
-    {/* Notice Board Card */}
-    <div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
-      <div className="flex justify-between items-center mb-4">
-        
-      </div>
+{/* Notice Board Card */}
+<div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
+  {/* Header with Notice Board Title */}
+  <div className="flex justify-between items-center mb-4">
+    <h2 className="text-xs text-[#C8D2DC] font-bold">Notice Board</h2>
+    <span className="text-gray-500">19 Jun</span>
+  </div>
+  
+  {/* School Information Aligned Horizontally */}
+  <div className="flex justify-around text-xs text-[#C8D2DC] mb-6">
+    <div className="text-center ">
+      <h3 className=" font-semibold text-sm">School</h3>
+      <p className="text-gray-700">3</p>
     </div>
+    <div className="text-center">
+      <h3 className="font-semibold text-sm">Admin</h3>
+      <p className="text-gray-700">6</p>
+    </div>
+    <div className="text-center">
+      <h3 className=" font-semibold text-sm">Teachers</h3>
+      <p className="text-gray-700">6</p>
+    </div>
+    <div className="text-center">
+      <h3 className="font-semibold text-sm">Students</h3>
+      <p className="text-gray-700">6</p>
+    </div>
+    <div className="text-center">
+      <h3 className=" font-semibold text-sm">Parents</h3>
+      <p className="text-gray-700">6</p>
+    </div>
+  </div>
+
+  {/* Notice Content */}
+  <div className="mb-4">
+    <h4 className="text-lg text-blue-500 font-semibold">Cancellation of Sports Activities</h4>
+    <p className="text-[#8E959C]"> 
+      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
+    </p>
+    
+  </div>
+
+ <div className="mb-4">
+   <h4 className="text-lg text-blue-500 font-semibold">Cancellation of Sports Activities</h4>
+    <p className="text-[#8E959C]">
+      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
+    </p>
+</div>
+
+<div className="mb-4">
+   <h4 className="text-lg text-blue-500 font-semibold">Cancellation of Sports Activities</h4>
+    <p className="text-[#8E959C]">
+      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
+    </p>
+</div>
+</div>
+
 
     {/* Birthdays Card */}
 <div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
