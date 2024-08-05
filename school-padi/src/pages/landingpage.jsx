@@ -41,13 +41,13 @@ const LandingPage = () => {
             </Link>
             <Link
               to="/register"
-              className="bg-green-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-transform transform hover:-translate-y-1"
+              className="bg-[#001D3B] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-green-600 transition-transform transform hover:-translate-y-1"
             >
               Admin Dashboard
             </Link>
             <Link
               to="/login"
-              className="bg-gray-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition-transform transform hover:-translate-y-1"
+              className="bg-[#001D3B] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-gray-600 transition-transform transform hover:-translate-y-1"
             >
              Student Dashboard
             </Link>
