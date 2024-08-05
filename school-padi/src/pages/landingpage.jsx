@@ -693,25 +693,28 @@ const Admin = () => {
   
 {/* School Information Aligned Horizontally */}
 <div className="flex justify-around text-xs text-[#C8D2DC] mb-6">
-  <div className="text-center flex items-center">
+<div className="text-center flex items-center mt-4">
+  <div className="flex items-center border-b-2 border-blue-600 pb-1"> {/* Added border-b and padding */}
     <h3 className="font-semibold text-sm mr-2">School</h3>
     <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
   </div>
+</div>
+
   <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm mr-2">Admin</h3>
-    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">2</span>
+    <h3 className="font-semibold text-sm text-gray-400 mr-2">Admin</h3>
+    <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">2</span>
   </div>
   <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm mr-2">Teachers</h3>
-    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">6</span>
+    <h3 className="font-semibold text-sm text-gray-400 mr-2">Teachers</h3>
+    <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">6</span>
   </div>
   <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm mr-2">Students</h3>
-    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">9</span>
+    <h3 className="font-semibold text-sm text-gray-400 mr-2">Students</h3>
+    <span className="text-xs  bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">9</span>
   </div>
   <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm mr-2">Parents</h3>
-    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">10</span>
+    <h3 className="font-semibold text-sm text-gray-400 mr-2">Parents</h3>
+    <span className="text-xs  bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">10</span>
   </div>
 </div>
 
