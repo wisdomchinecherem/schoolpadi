@@ -16,7 +16,7 @@
 
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars,  } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars, faUsers } from '@fortawesome/free-solid-svg-icons';
 import {
   LineChart,
   Line,
@@ -122,12 +122,12 @@ const Admin = () => {
 
   // Sample data for the radar chart
   const radarData = [
-    { subject: 'Subject 1', A: 120, B: 110, C: 130 },
-    { subject: 'Subject 2', A: 98, B: 130, C: 120 },
-    { subject: 'Subject 3', A: 86, B: 130, C: 115 },
-    { subject: 'Subject 4', A: 99, B: 100, C: 110 },
-    { subject: 'Subject 5', A: 85, B: 90, C: 100 },
-    { subject: 'Subject 6', A: 65, B: 85, C: 95 },
+    { subject: 'Category', A: 120, B: 110, C: 130 },
+    { subject: 'Category', A: 98, B: 130, C: 120 },
+    { subject: 'Category', A: 86, B: 130, C: 115 },
+    { subject: 'Category', A: 99, B: 100, C: 110 },
+    { subject: 'Category', A: 85, B: 90, C: 100 },
+    { subject: 'Category', A: 65, B: 85, C: 95 },
   ];
 
   const COLORS = ['#CCE5FF', '#3599FF', '#0274E8', '#027FFF'];
@@ -160,7 +160,7 @@ const Admin = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full md:w-[400px] px-2 py-1 bg-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full md:w-[400px] px-2 py-1 bg-[#01356B] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -169,27 +169,27 @@ const Admin = () => {
           <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
             <div className="flex space-x-6">
               {/* Plus Icon */}
-              <div className="bg-gray-600 rounded-full py-1.5 px-2.5">
+              <div className="bg-[#01356B] rounded-full py-1.5 px-2.5">
                 <FontAwesomeIcon icon={faPlus} className="text-white text-sm" title="Add" />
               </div>
 
               {/* Notification Icon */}
-              <div className="bg-gray-600 rounded-full p-1.5 px-2.5">
+              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5">
                 <FontAwesomeIcon icon={faBell} className="text-white text-sm" title="Notifications" />
               </div>
 
               {/* Sound Icon */}
-              <div className="bg-gray-600 rounded-full p-1.5 px-2.5">
+              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5">
                 <FontAwesomeIcon icon={faVolumeUp} className="text-white text-sm" title="Sound" />
               </div>
 
               {/* User Icon */}
-              <div className="bg-gray-600 rounded-full p-1.5 px-2.5 flex items-center">
+              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
               </div>
 
               {/* User Icon */}
-              <div className="bg-gray-600 rounded-lg p-1.5 px-2.5 flex items-center">
+              <div className="bg-[#01356B] rounded-lg p-1.5 px-2.5 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
                 <span className="ml-1 text-[#bbb] font-bold hidden md:block text-sm">Admin</span>
               </div>
@@ -197,7 +197,7 @@ const Admin = () => {
 
             {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
             <div className="flex items-center space-x-2 text-white pt-4">
-              <FontAwesomeIcon icon={faCalendar} className='bg-gray-600 rounded-full p-1.5 text-sm' title="Calendar"/>
+              <FontAwesomeIcon icon={faCalendar} className='bg-[#01356B] rounded-full p-1.5 text-sm' title="Calendar"/>
               <span className="hidden md:block text-sm">{currentDateTime}</span>
             </div>
           </div>
@@ -462,7 +462,7 @@ const Admin = () => {
         {/* Data Visualization Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6 mx-4">
           {/* Line Chart */}
-          <div className="bg-white p-4 border rounded-lg shadow-md">
+          <div className="bg-white p-4 border rounded-lg">
             <h2 className="text-lg text-[#C8D2DC] font-bold mb-4">Student No Levels</h2>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={data}>
@@ -480,7 +480,7 @@ const Admin = () => {
 
           
 {/* Pie Chart */}
-<div className="bg-white p-4 border rounded-lg shadow-md relative">
+<div className="bg-white p-4 border rounded-lg relative">
   {/* Status Labels */}
   <div className="absolute top-4 right-4 flex flex-col space-y-1 text-sm">
     <div className="flex items-center">
@@ -525,10 +525,10 @@ const Admin = () => {
 
 
 {/* Bar Chart */}
-<div className="bg-white p-4 border rounded-lg shadow-md">
+<div className="bg-white font-grandis p-4 border rounded-lg ">
   <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Finance</h2>
   <ResponsiveContainer width="100%" height={300}>
-    <BarChart data={barData} barGap={10}>
+    <BarChart data={barData} barGap={18}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="category" />
       <YAxis />
@@ -543,11 +543,12 @@ const Admin = () => {
 
 
           {/* Radar Chart */}
-          <div className="bg-white p-4 border rounded-lg shadow-md">
+          <div className="bg-white p-4 border font-grandis rounded-lg ">
             <h2 className="text-lg font-bold text-[#C8D2DC] mb-4">Enrollment process</h2>
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
-                <PolarGrid />
+                <PolarGrid />  
+                
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis />
                 <Radar name="A" dataKey="A" stroke={COLORS[0]} fillOpacity={0} />
@@ -566,7 +567,7 @@ const Admin = () => {
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
     {/* Calendar Card */}
-    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full relative">
+    <div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
       <div className="flex justify-between items-center mb-4">
         <div>
           <h2 className="text-xs font-bold text-gray-300">Calendar</h2>
@@ -594,21 +595,22 @@ const Admin = () => {
         <div className="flex items-center space-x-4">
           <i className="fas fa-search text-gray-500 cursor-pointer"></i>
           <div className="flex items-center space-x-2">
-            <i className="fas fa-calendar-day text-blue-500"></i>
+          <FontAwesomeIcon icon={faCalendar} className='bg-[#E6EAEF] text-blue-500 rounded-md p-1.5 text-sm'/>
             <button className="flex items-center bg-blue-500 text-white px-3 py-1 rounded">
               <i className="fas fa-plus mr-1"></i> Add Event
+              <FontAwesomeIcon icon={faPlus} className="text-white px-2 text-sm" title="Add" />
             </button>
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-7 text-gray-300 text-center">
+      <div className="grid grid-cols-7 text-gray-100 text-center">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
           <div key={index} className="border border-gray-300  font-bold text-gray-700 py-1">
             {day}
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-7 text-center border-l text-gray-400 border-b border-gray-300">
+      <div className="grid grid-cols-7 text-center border-1 text-gray-400 border-b border-gray-300">
         {Array.from({ length: 31 }, (_, i) => (
           <div
             key={i}
@@ -621,19 +623,21 @@ const Admin = () => {
     </div>
 
     {/* Chat Box Card */}
-<div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-1/3 w-full h-auto relative">
+<div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
   <div className="flex justify-between items-center mb-4">
     <div className="flex items-center space-x-2">
-      <h2 className="text-blue-500 font-bold underline">All Chats</h2>
+      <h2 className="text-blue-500 font-semibold underline">All Chats</h2>
       <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
     </div>
-    <div className="flex items-center space-x-6">
+    <div className="flex items-center space-x-14">
       <div className="flex items-center space-x-1">
         <i className="fas fa-user text-gray-500"></i>
+        <FontAwesomeIcon icon={faUser} className="text-gray-300 text-md" title="Sound" />
         <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">3</span>
       </div>
       <div className="flex items-center space-x-1">
         <i className="fas fa-users text-gray-500"></i>
+        <FontAwesomeIcon icon={faUsers} className="text-gray-300 text-md" title="Sound" />
         <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">7</span>
       </div>
     </div>
@@ -672,9 +676,69 @@ const Admin = () => {
 </div>
 
 
+
+  </div>
+</div>
+<div className="flex flex-col space-y-4 mt-8 px-8 md:px-20">
+  {/* Notice Board/ Birthdays */}
+  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+
+    {/* Notice Board Card */}
+    <div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
+      <div className="flex justify-between items-center mb-4">
+        
+      </div>
+    </div>
+
+    {/* Birthdays Card */}
+<div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
+<div
+  className="bg-white p-4 shadow-md row-span-2 relative rounded-lg"
+  style={{  height: 'calc(100% + 50px)', zIndex: 10 }}
+>
+  <div className="flex justify-between items-center">
+    <span className=" text-[#C8D2DC] font-medium">Events</span>
+    <span className="text-gray-400">Daily</span>
+  </div>
+  <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
+
+  {/* Three larger boxes inside double-height box */}
+  <div className="mt-4 grid grid-cols-1 gap-4">
+    {/* Larger Box 1 */}
+    <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-white">Revenue</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+          11:00am
+        </span>
+      </div>
+    </div>
+
+    {/* Larger Box 2 */}
+    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-gray-600">Expenses</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+        11:00am
+        </span>
+      </div>
+    </div>
+
+    {/* Larger Box 3 */}
+    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-gray-600">Net Profit</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+        11:00am
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </div>
 
+</div>
 
     </>
   );
