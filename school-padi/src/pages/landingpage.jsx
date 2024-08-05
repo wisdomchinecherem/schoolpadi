@@ -34,7 +34,7 @@ const LandingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link
-              to="/dashboard"
+              to="/AdminDashboard"
               className="bg-[#001D3B] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-800 transition-transform transform hover:-translate-y-1"
             >
               Super Admin Dashboard

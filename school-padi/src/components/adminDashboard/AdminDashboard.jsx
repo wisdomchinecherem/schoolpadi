@@ -22,7 +22,7 @@ import {
   Cell,
   ResponsiveContainer,
 } from 'recharts'; 
-import SchoolLogo from '../assets/schoolpadi-img/school-logo.png';
+import SchoolLogo from '../../assets/schoolpadi-img/school-logo.png';
 
 // Function to format date with ordinal suffix and time
 const formatDateTime = (date) => {
@@ -50,7 +50,7 @@ const formatDateTime = (date) => {
   return `${dayWithSuffix} ${month}, ${year} ${hours}:${minutes}${ampm}`;
 };
 
-const Admin = () => {
+const AdminDashboard = () => {
   // current date and time formatted
   const currentDateTime = formatDateTime(new Date());
 
@@ -793,4 +793,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AdminDashboard;

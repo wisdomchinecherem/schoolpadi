@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import LandingPage from './pages/landingpage';
 import Navbar from './components/Landingpage/Navbar';
 import Footer from './components/Landingpage/Footer';
+import AdminDashboard from './components/adminDashboard/AdminDashboard';
+
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -25,6 +27,7 @@ const App = () => {
     <Router>
       <Routes>
       <Route path="/" element={<Layout><LandingPage /></Layout>} />
+      <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
       </Routes>
     </Router>
   );
