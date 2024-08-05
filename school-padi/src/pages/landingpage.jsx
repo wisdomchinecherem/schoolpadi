@@ -693,11 +693,11 @@ const Admin = () => {
     {/* Birthdays Card */}
 <div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
 <div
-  className="bg-white p-4 shadow-md row-span-2 relative rounded-lg"
-  style={{  height: 'calc(100% + 50px)', zIndex: 10 }}
+  className="bg-white p-4  row-span-2 relative rounded-lg"
+
 >
   <div className="flex justify-between items-center">
-    <span className=" text-[#C8D2DC] font-medium">Events</span>
+    <span className=" text-[#C8D2DC] font-medium">Birthdays</span>
     <span className="text-gray-400">Daily</span>
   </div>
   <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
@@ -728,6 +728,16 @@ const Admin = () => {
     <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
       <div className="flex justify-between items-center">
         <span className="text-gray-600">Net Profit</span>
+        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+        11:00am
+        </span>
+      </div>
+    </div>
+
+        {/* Larger Box 4 */}
+        <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+      <div className="flex justify-between items-center">
+        <span className="text-gray-600">Expenses</span>
         <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
         11:00am
         </span>
