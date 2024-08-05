@@ -596,7 +596,7 @@ const Admin = () => {
           <i className="fas fa-search text-gray-500 cursor-pointer"></i>
           <div className="flex items-center space-x-2">
           <FontAwesomeIcon icon={faCalendar} className='bg-[#E6EAEF] text-blue-500 rounded-md p-1.5 text-sm'/>
-            <button className="flex items-center bg-blue-500 text-white px-3 py-1 rounded">
+            <button className="flex items-center bg-[#027FFF] text-white px-3 py-1 rounded">
               <i className="fas fa-plus mr-1"></i> Add Event
               <FontAwesomeIcon icon={faPlus} className="text-white px-2 text-sm" title="Add" />
             </button>
@@ -627,7 +627,7 @@ const Admin = () => {
   <div className="flex justify-between items-center mb-4">
     <div className="flex items-center space-x-2">
       <h2 className="text-blue-500 font-semibold underline">All Chats</h2>
-      <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
+      <span className="text-xs text-white bg-[#027FFF] rounded-xl px-1.5 py-1 text-gray-600">12</span>
     </div>
     <div className="flex items-center space-x-14">
       <div className="flex items-center space-x-1">
@@ -691,49 +691,50 @@ const Admin = () => {
     <span className="text-gray-500">19 Jun</span>
   </div>
   
-  {/* School Information Aligned Horizontally */}
-  <div className="flex justify-around text-xs text-[#C8D2DC] mb-6">
-    <div className="text-center ">
-      <h3 className=" font-semibold text-sm">School</h3>
-      <p className="text-gray-700">3</p>
-    </div>
-    <div className="text-center">
-      <h3 className="font-semibold text-sm">Admin</h3>
-      <p className="text-gray-700">6</p>
-    </div>
-    <div className="text-center">
-      <h3 className=" font-semibold text-sm">Teachers</h3>
-      <p className="text-gray-700">6</p>
-    </div>
-    <div className="text-center">
-      <h3 className="font-semibold text-sm">Students</h3>
-      <p className="text-gray-700">6</p>
-    </div>
-    <div className="text-center">
-      <h3 className=" font-semibold text-sm">Parents</h3>
-      <p className="text-gray-700">6</p>
-    </div>
+{/* School Information Aligned Horizontally */}
+<div className="flex justify-around text-xs text-[#C8D2DC] mb-6">
+  <div className="text-center flex items-center">
+    <h3 className="font-semibold text-sm mr-2">School</h3>
+    <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
   </div>
+  <div className="text-center flex items-center">
+    <h3 className="font-semibold text-sm mr-2">Admin</h3>
+    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">2</span>
+  </div>
+  <div className="text-center flex items-center">
+    <h3 className="font-semibold text-sm mr-2">Teachers</h3>
+    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">6</span>
+  </div>
+  <div className="text-center flex items-center">
+    <h3 className="font-semibold text-sm mr-2">Students</h3>
+    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">9</span>
+  </div>
+  <div className="text-center flex items-center">
+    <h3 className="font-semibold text-sm mr-2">Parents</h3>
+    <span className="text-xs text-white bg-gray-300 rounded-xl px-1.5 py-1 text-gray-600">10</span>
+  </div>
+</div>
+
 
   {/* Notice Content */}
   <div className="mb-4">
-    <h4 className="text-lg text-blue-500 font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-[#8E959C]"> 
+    <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
+    <p className="text-sm mt-2 text-[#8E959C]"> 
       Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
     </p>
     
   </div>
 
  <div className="mb-4">
-   <h4 className="text-lg text-blue-500 font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-[#8E959C]">
+   <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
+    <p className="text-sm mt-2 text-[#8E959C]">
       Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
     </p>
 </div>
 
 <div className="mb-4">
-   <h4 className="text-lg text-blue-500 font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-[#8E959C]">
+   <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
+    <p className="text-sm mt-2 text-[#8E959C]">
       Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
     </p>
 </div>
