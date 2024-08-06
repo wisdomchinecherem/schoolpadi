@@ -14,7 +14,7 @@ const Table = ({ columns, data, onRowClick, isCoin, isLoading }) => {
     <tr
       onClick={() => onRowClick && onRowClick(rowData)}
       key={`row-${i}`}
-      className={`text-left text-md border-b dark:border-black cursor-pointer  ${isCoin && i % 2 === 0 ? 'bg-gray-200  dark:bg-[#333333]/30' : ''}`}
+      className={`text-left  text-md border-b dark:border-black cursor-pointer  ${isCoin && i % 2 === 0 ? 'bg-gray-200  dark:bg-[#333333]/30' : ''}`}
     >
       {columns.map(({ render, key }, id) => (
         <td key={`data-${i}-${id}`} className="py-4 px-2 border-gray-200">

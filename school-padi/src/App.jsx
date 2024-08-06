@@ -3,7 +3,11 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 // import LandingPage from './pages/landingpage';
 import SuperAdminLayout from './layouts/superadmin/SuperAdminLayout';
-import Home from './pages/superadmin/Home';
+import Home from './pages/superadmin/UserManagement';
+import SchoolDetail from './pages/superadmin/UserManagementDetail';
+import UserManagement from './pages/superadmin/UserManagement';
+import UserManagementDetail from './pages/superadmin/UserManagementDetail';
+import Dashboard from './pages/superadmin/Dashboard';
 // import Footer from './components/molecule/Footer';
 // import AdminDashboard from './components/adminDashboard/AdminDashboard';
 
@@ -32,11 +36,16 @@ const App = () => {
       <Route element={<SuperAdminLayout />}>
         <Route
           path="superadmin"
-          element={<Home />}
+          element={<Dashboard />}
           // loader={redirectIfUser}
         />
-        {/* <Route path="logout" action={logoutUser} /> */}
-      </Route>
+        <Route
+          path="user-management"
+          element={<UserManagement />}
+          // loader={redirectIfUser}
+        />
+          <Route path="user-management/:id" element={<UserManagementDetail />} />
+          </Route>
       </Routes>
     </Router>
   );
