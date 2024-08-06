@@ -691,7 +691,7 @@ const AdminDashboard = () => {
           {['School', 'Admin', 'Teachers', 'Students', 'Parents'].map((item, index) => (
             <div key={index} className="text-center flex items-center min-w-[120px] mb-0">
               <h3 className="font-semibold text-sm mr-2 text-gray-400">{item}</h3>
-              <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">{[12, 2, 6, 9, 10][index]}</span>
+              <span className="text-xs bg-gray-300 rounded-xl px-1 py-.5 text-gray-400">{[12, 2, 6, 9, 10][index]}</span>
             </div>
           ))}
         </div>
@@ -699,9 +699,8 @@ const AdminDashboard = () => {
         <div className="border-b border-[#EEF1F4] w-full mb-4"></div>
       </div>
 
-
-   {/* Notice Content */}
-   <div className="space-y-4">
+      {/* Notice Content */}
+      <div className="space-y-4">
         {['Cancellation of Sports Activities', 'Cancellation of Sports Activities', 'Cancellation of Sports Activities'].map((title, index) => (
           <div key={index} className="relative">
             {/* Date Badge */}
@@ -715,66 +714,67 @@ const AdminDashboard = () => {
             </p>
           </div>
         ))}
-      </div></div>
-
+      </div>
+    </div>
 
     {/* Birthdays Card */}
-<div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
-<div
-  className="bg-white p-4  row-span-2 relative rounded-lg"
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
+      <div className="bg-white p-4 rounded-lg">
+        <div className="flex justify-between items-center">
+          <span className="text-[#C8D2DC] font-medium">Birthdays</span>
+          <span className="text-gray-400">Daily</span>
+        </div>
+        <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
 
->
-  <div className="flex justify-between items-center">
-    <span className=" text-[#C8D2DC] font-medium">Birthdays</span>
-    <span className="text-gray-400">Daily</span>
+        {/* Three larger boxes inside double-height box */}
+        <div className="mt-4 grid grid-cols-1 gap-4">
+          {/* Larger Box 1 */}
+          <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-white">Revenue</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+
+          {/* Larger Box 2 */}
+          <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Expenses</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+
+          {/* Larger Box 3 */}
+          <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Net Profit</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+
+          {/* Larger Box 4 */}
+          <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Expenses</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
 
-  {/* Three larger boxes inside double-height box */}
-  <div className="mt-4 grid grid-cols-1 gap-4">
-    {/* Larger Box 1 */}
-    <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-white">Revenue</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-          11:00am
-        </span>
-      </div>
-    </div>
 
-    {/* Larger Box 2 */}
-    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-600">Expenses</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-        11:00am
-        </span>
-      </div>
-    </div>
 
-    {/* Larger Box 3 */}
-    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-600">Net Profit</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-        11:00am
-        </span>
-      </div>
-    </div>
 
-        {/* Larger Box 4 */}
-        <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-600">Expenses</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-        11:00am
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
 
 </div>
 
