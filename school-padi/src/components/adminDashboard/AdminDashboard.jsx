@@ -153,28 +153,28 @@ const AdminDashboard = () => {
           <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
             <div className="flex space-x-6">
               {/* Plus Icon */}
-              <div className="bg-[#01356B] rounded-full py-1.5 px-2.5">
-                <FontAwesomeIcon icon={faPlus} className="text-white text-sm" title="Add" />
+              <div className="bg-[#FFFFFF] rounded-full py-1.5 px-2.5">
+                <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
               </div>
 
               {/* Notification Icon */}
-              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5">
-                <FontAwesomeIcon icon={faBell} className="text-white text-sm" title="Notifications" />
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+                <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
               </div>
 
               {/* Sound Icon */}
-              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5">
-                <FontAwesomeIcon icon={faVolumeUp} className="text-white text-sm" title="Sound" />
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+                <FontAwesomeIcon icon={faVolumeUp} className="text-[#014F9E] text-sm" title="Sound" />
               </div>
 
               {/* User Icon */}
-              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5 flex items-center">
-                <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
+                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
               </div>
 
               {/* User Icon */}
-              <div className="bg-[#01356B] rounded-lg p-1.5 px-2.5 flex items-center">
-                <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
+              <div className="bg-[#FFFFFF] rounded-lg p-1.5 px-2.5 flex items-center">
+                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
               </div>
             </div>
 
