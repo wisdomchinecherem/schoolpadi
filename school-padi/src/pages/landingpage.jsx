@@ -1,5 +1,5 @@
 // landingpage.jsx
-
+import Button from "../components/reusables/Button"; 
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
