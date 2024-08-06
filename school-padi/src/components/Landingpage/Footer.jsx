@@ -1,6 +1,5 @@
 // Footer.jsx
 import SchoolLogo from "../../assets/schoolpadi-img/school-logo.png";
-import Button from "../reusables/Button";
 
 const Footer = () => {
   return (
