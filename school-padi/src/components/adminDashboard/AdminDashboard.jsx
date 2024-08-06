@@ -120,14 +120,14 @@ const AdminDashboard = () => {
   return (
     
     <>
-      <nav className="bg-[#001D3B] p-4">
+      <nav className="bg-[#014F9E] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
           <div className="flex flex-col items-start">
             <img src={SchoolLogo} alt="School Logo" className="h-6 mb-2" />
             <div className="flex">
-              <span className="text-blue-500 mt-4 font-bold text-2xl">Welcome, </span>
-              <span className="text-white mt-4 font-bold text-2xl ml-1">Admin</span>
+              <span className="text-[#FFFFFF] mt-4 font-bold text-2xl">Welcome, </span>
+              <span className="text-[#FFFFFF] mt-4 font-bold text-2xl ml-1">Admin</span>
             </div>
           </div>
 
@@ -144,7 +144,7 @@ const AdminDashboard = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full md:w-[400px] px-2 py-1 bg-[#01356B] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full md:w-[400px]  px-2 py-1 bg-[#FFFFFF] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -239,41 +239,41 @@ const AdminDashboard = () => {
 
         {/* New section: Text links */}
         <div className="mt-6 hidden md:block">
-          <ul className="flex flex-col md:flex-row justify-between items-center text-gray-400 md:space-x-4 space-y-2 md:space-y-0">
+          <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Dashboard
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Information System
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Schedules/Comms
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Graduation/Alumni
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Finance/Accounting
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               People/Productivity
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Marketing/Admissions
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
             <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
               Administration
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
+              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
             </li>
           </ul>
-          <div className="w-full h-0.5 bg-gray-500 mt-4 mb-12"></div>
+          <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
         </div>
       </nav>
 
@@ -351,7 +351,7 @@ const AdminDashboard = () => {
   {/* Three larger boxes inside double-height box */}
   <div className="mt-4 grid grid-cols-1 gap-4">
     {/* Larger Box 1 */}
-    <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
+    <div className="bg-[#014F9E] p-4 shadow-inner rounded-2xl flex-grow">
       <div className="flex justify-between items-center">
         <span className="text-white">Revenue</span>
         <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
@@ -726,7 +726,7 @@ const AdminDashboard = () => {
         {/* Three larger boxes inside double-height box */}
         <div className="mt-4 grid grid-cols-1 gap-4">
           {/* Larger Box 1 */}
-          <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
+          <div className="bg-[#014F9E] p-4 shadow-inner rounded-2xl flex-grow">
             <div className="flex justify-between items-center">
               <span className="text-white">Revenue</span>
               <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
