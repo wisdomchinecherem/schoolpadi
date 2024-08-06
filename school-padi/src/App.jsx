@@ -2,9 +2,13 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LandingPage from './pages/landingpage';
-import Navbar from './components/landingpage/Navbar';
-import Footer from './components/landingpage/Footer';
-import AdminDashboard from './components/adminDashboard/AdminDashboard';
+// import Navbar from './components/landingpage/Navbar';
+// import Footer from './components/landingpage/Footer';
+// import AdminDashboard from './components/adminDashboard/AdminDashboard';
+import SuperAdminLayout from './layouts/superadmin/SuperAdminLayout';
+import Home from './pages/superadmin/Home';
+// import Footer from './components/Landingpage/Footer';
+// import Navbar from './components/landingpage/Navbar';
 
 
 const Layout = ({ children }) => {
@@ -13,11 +17,11 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      {!hideHeaderFooter && <Navbar />}
+      {/* {!hideHeaderFooter && <Navbar />} */}
       <div style={{ minHeight: 'calc(100vh - 100px)' }}>
         {children}
       </div>
-      {!hideHeaderFooter && <Footer />}
+      {/* {!hideHeaderFooter && <Footer />} */}
     </div>
   );
 };
@@ -27,7 +31,15 @@ const App = () => {
     <Router>
       <Routes>
       <Route path="/" element={<Layout><LandingPage /></Layout>} />
-      <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
+      {/* <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} /> */}
+      <Route element={<SuperAdminLayout />}>
+        <Route
+          path="superadmin"
+          element={<Home />}
+          // loader={redirectIfUser}
+        />
+        {/* <Route path="logout" action={logoutUser} /> */}
+      </Route>
       </Routes>
     </Router>
   );
