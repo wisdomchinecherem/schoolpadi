@@ -190,7 +190,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Dropdown menu for small screens */}
-        <div className={`fixed inset-0 bg-black text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden z-50`}>
+        <div className={`fixed inset-0 bg-[#027FFF] text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden z-50`}>
           <div className="flex justify-between items-center  mb-4">
             <span className="text-xl font-bold">Menu</span>
             <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -228,15 +228,15 @@ const AdminDashboard = () => {
           </div>
 
           {/* Links in dropdown, centralized */}
-          <ul className="space-y-4 text-center">
-            <li className="hover:text-blue-500 cursor-pointer">Dashboard</li>
-            <li className="hover:text-blue-500 cursor-pointer">Information System</li>
-            <li className="hover:text-blue-500 cursor-pointer">Schedules/Comms</li>
-            <li className="hover:text-blue-500 cursor-pointer">Graduation/Alumni</li>
-            <li className="hover:text-blue-500 cursor-pointer">Finance/Accounting</li>
-            <li className="hover:text-blue-500 cursor-pointer">People/Productivity</li>
-            <li className="hover:text-blue-500 cursor-pointer">Marketing/Admissions</li>
-            <li className="hover:text-blue-500 cursor-pointer">Administration</li>
+          <ul className="space-y-4 text-left justify-center bg-[#027FFF]">
+            <li className="hover:text-black font-semibold cursor-pointer">Dashboard</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Information System</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Schedules/Comms</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Graduation/Alumni</li>
+            <li className="hover:text-bblack font-semibold cursor-pointer">Finance/Accounting</li>
+            <li className="hover:text-bblack font-semibold cursor-pointer">People/Productivity</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Marketing/Admissions</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Administration</li>
           </ul>
         </div>
 
@@ -691,7 +691,7 @@ const AdminDashboard = () => {
           {['School', 'Admin', 'Teachers', 'Students', 'Parents'].map((item, index) => (
             <div key={index} className="text-center flex items-center min-w-[120px] mb-0">
               <h3 className="font-semibold text-sm mr-2 text-gray-400">{item}</h3>
-              <span className="text-xs bg-gray-300 rounded-xl px-1 py-.5 text-gray-400">{[12, 2, 6, 9, 10][index]}</span>
+              <span className="text-xs bg-gray-100 rounded-xl px-1 py-.5 text-gray-400">{[12, 2, 6, 9, 10][index]}</span>
             </div>
           ))}
         </div>
