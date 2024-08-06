@@ -600,7 +600,7 @@ const AdminDashboard = () => {
         <span className="text-xs p-2">{i + 1}</span>
       </div>
     ))}
-    {/* Add empty placeholders for the remaining days */}
+
     {Array.from({ length: 4 }, (_, i) => (
       <div
         key={`empty-${i}`}
