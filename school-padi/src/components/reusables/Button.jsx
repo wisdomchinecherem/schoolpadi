@@ -1,4 +1,3 @@
-
 const Button = ({
   bgColor = "#FFFFFF",  // Default background color: White
   color = "#8E959C",    // Default text color: Grey
