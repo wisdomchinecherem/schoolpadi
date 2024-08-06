@@ -1,14 +1,11 @@
 // App.jsx
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import LandingPage from './pages/landingpage';
-// import Navbar from './components/landingpage/Navbar';
-// import Footer from './components/landingpage/Footer';
-// import AdminDashboard from './components/adminDashboard/AdminDashboard';
+// import LandingPage from './pages/landingpage';
 import SuperAdminLayout from './layouts/superadmin/SuperAdminLayout';
 import Home from './pages/superadmin/Home';
-// import Footer from './components/Landingpage/Footer';
-// import Navbar from './components/landingpage/Navbar';
+// import Footer from './components/molecule/Footer';
+// import AdminDashboard from './components/adminDashboard/AdminDashboard';
 
 
 const Layout = ({ children }) => {
@@ -30,7 +27,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Layout><LandingPage /></Layout>} />
+      {/* <Route path="/" element={<Layout><LandingPage /></Layout>} /> */}
       {/* <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} /> */}
       <Route element={<SuperAdminLayout />}>
         <Route

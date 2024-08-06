@@ -1,6 +1,5 @@
 // landingpage.jsx
-import React from "react";
-import Button from "../components/reusables/Button";
+import Button from "../components/atoms/Button";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {

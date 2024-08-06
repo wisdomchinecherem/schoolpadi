@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars, faUsers } from '@fortawesome/free-solid-svg-icons';
@@ -121,14 +120,14 @@ const AdminDashboard = () => {
   return (
     
     <>
-      <nav className="bg-[#001D3B] p-4">
+      <nav className="bg-[#014F9E] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
           <div className="flex flex-col items-start">
             <img src={SchoolLogo} alt="School Logo" className="h-6 mb-2" />
             <div className="flex">
-              <span className="text-blue-500 mt-4 font-bold text-2xl">Welcome, </span>
-              <span className="text-white mt-4 font-bold text-2xl ml-1">Admin</span>
+              <span className="text-[#FFFFFF] mt-4 font-bold text-2xl">Welcome, </span>
+              <span className="text-[#FFFFFF] mt-4 font-bold text-2xl ml-1">Admin</span>
             </div>
           </div>
 
@@ -145,7 +144,7 @@ const AdminDashboard = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full md:w-[400px] px-2 py-1 bg-[#01356B] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full md:w-[400px]  px-2 py-1 bg-[#FFFFFF] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -154,29 +153,28 @@ const AdminDashboard = () => {
           <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
             <div className="flex space-x-6">
               {/* Plus Icon */}
-              <div className="bg-[#01356B] rounded-full py-1.5 px-2.5">
-                <FontAwesomeIcon icon={faPlus} className="text-white text-sm" title="Add" />
+              <div className="bg-[#FFFFFF] rounded-full py-1.5 px-2.5">
+                <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
               </div>
 
               {/* Notification Icon */}
-              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5">
-                <FontAwesomeIcon icon={faBell} className="text-white text-sm" title="Notifications" />
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+                <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
               </div>
 
               {/* Sound Icon */}
-              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5">
-                <FontAwesomeIcon icon={faVolumeUp} className="text-white text-sm" title="Sound" />
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+                <FontAwesomeIcon icon={faVolumeUp} className="text-[#014F9E] text-sm" title="Sound" />
               </div>
 
               {/* User Icon */}
-              <div className="bg-[#01356B] rounded-full p-1.5 px-2.5 flex items-center">
-                <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
+                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
               </div>
 
               {/* User Icon */}
-              <div className="bg-[#01356B] rounded-lg p-1.5 px-2.5 flex items-center">
-                <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
-                <span className="ml-1 text-[#bbb] font-bold hidden md:block text-sm">Admin</span>
+              <div className="bg-[#FFFFFF] rounded-lg p-1.5 px-2.5 flex items-center">
+                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
               </div>
             </div>
 
@@ -190,7 +188,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Dropdown menu for small screens */}
-        <div className={`fixed inset-0 bg-black text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden z-50`}>
+        <div className={`fixed inset-0 bg-[#014F9E] text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden z-50`}>
           <div className="flex justify-between items-center  mb-4">
             <span className="text-xl font-bold">Menu</span>
             <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -203,81 +201,83 @@ const AdminDashboard = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full px-2 py-1 bg-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-2 py-1 bg-[#FFFFFF] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           {/* Icons in dropdown */}
-          <div className="flex space-x-2  mb-4 justify-center">
-            <div className="bg-gray-600 p-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faPlus} className="text-white text-sm" title="Add" />
+          <div className="flex space-x-6  mb-4 justify-center">
+            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
+              <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
             </div>
 
-            <div className="bg-gray-600 py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faBell} className="text-white text-sm" title="Notifications" />
+            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
+              <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
             </div>
 
-            <div className="bg-gray-600 py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faVolumeUp} className="text-white text-sm" title="Sound" />
+            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
+              <FontAwesomeIcon icon={faVolumeUp} className="text-[#014F9E] text-sm" title="Sound" />
             </div>
 
-            <div className="bg-gray-600 py-1.7 px-2.5 rounded-full p-2 flex items-center">
-              <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
-              <span className="ml-2 text-[#bbb] font-bold">Admin</span>
+            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2 flex items-center">
+              <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
             </div>
           </div>
 
           {/* Links in dropdown, centralized */}
-          <ul className="space-y-4 text-center">
-            <li className="hover:text-blue-500 cursor-pointer">Dashboard</li>
-            <li className="hover:text-blue-500 cursor-pointer">Information System</li>
-            <li className="hover:text-blue-500 cursor-pointer">Schedules/Comms</li>
-            <li className="hover:text-blue-500 cursor-pointer">Graduation/Alumni</li>
-            <li className="hover:text-blue-500 cursor-pointer">Finance/Accounting</li>
-            <li className="hover:text-blue-500 cursor-pointer">People/Productivity</li>
-            <li className="hover:text-blue-500 cursor-pointer">Marketing/Admissions</li>
-            <li className="hover:text-blue-500 cursor-pointer">Administration</li>
+          <ul className="space-y-4 text-left justify-center ">
+            <li className="hover:text-black font-semibold cursor-pointer">Dashboard</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Information System</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Schedules/Comms</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Graduation/Alumni</li>
+            <li className="hover:text-bblack font-semibold cursor-pointer">Finance/Accounting</li>
+            <li className="hover:text-bblack font-semibold cursor-pointer">People/Productivity</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Marketing/Admissions</li>
+            <li className="hover:text-black font-semibold cursor-pointer">Administration</li>
           </ul>
         </div>
 
         {/* New section: Text links */}
-        <div className="mt-6 hidden md:block">
-          <ul className="flex flex-col md:flex-row justify-between items-center text-gray-400 md:space-x-4 space-y-2 md:space-y-0">
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Dashboard
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Information System
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Schedules/Comms
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Graduation/Alumni
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Finance/Accounting
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              People/Productivity
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Marketing/Admissions
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Administration
-              <span className="block w-2 h-2 mt-2 bg-gray-400 rounded-full hover:bg-white"></span>
-            </li>
-          </ul>
-          <div className="w-full h-0.5 bg-gray-500 mt-4 mb-12"></div>
-        </div>
+<div className="mt-6 hidden md:block">
+  <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
+    <li className="flex flex-col items-center px-4 cursor-pointer">
+      <a href="/AdminDashboard" className="flex items-center font-semibold text-blue-500 bg-white rounded-lg px-3 py-1 ">
+        Dashboard
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/information-system" className="flex items-center font-semibold">Information System</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/schedules-comm" className="flex items-center font-semibold">Schedules/Comms</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/graduation-alumni" className="flex items-center font-semibold">Graduation/Alumni</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/finance-accounting" className="flex items-center font-semibold">Finance/Accounting</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/people-productivity" className="flex items-center font-semibold">People/Productivity</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/marketing-admissions" className="flex items-center font-semibold">Marketing/Admissions</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/administration" className="flex items-center ">Administration</a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+  </ul>
+  <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
+</div>
+
       </nav>
 
 
@@ -354,7 +354,7 @@ const AdminDashboard = () => {
   {/* Three larger boxes inside double-height box */}
   <div className="mt-4 grid grid-cols-1 gap-4">
     {/* Larger Box 1 */}
-    <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
+    <div className="bg-[#014F9E] p-4 shadow-inner rounded-2xl flex-grow">
       <div className="flex justify-between items-center">
         <span className="text-white">Revenue</span>
         <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
@@ -439,10 +439,9 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div>
-
-
-
       </div>
+
+      
       <div className="relative  mt-4 px-4 w-full">
         {/* Data Visualization Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6 mx-4">
@@ -547,9 +546,9 @@ const AdminDashboard = () => {
       </div>
       
       </div>
-      <div className="flex flex-col space-y-4 mt-8 px-8 md:px-20">
+      <div className="flex flex-col space-y-4 mt-8 px-8 md:px-14 ">
   {/* Calendar and Chat Container */}
-  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 ">
 
 {/* Calendar Card */}
 <div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
@@ -604,7 +603,7 @@ const AdminDashboard = () => {
         <span className="text-xs p-2">{i + 1}</span>
       </div>
     ))}
-    {/* Add empty placeholders for the remaining days */}
+
     {Array.from({ length: 4 }, (_, i) => (
       <div
         key={`empty-${i}`}
@@ -668,133 +667,114 @@ const AdminDashboard = () => {
     ))}
   </div>
 </div>
-
-
-
   </div>
 </div>
-<div className="flex flex-col space-y-4 mt-8 mb-4 px-8 md:px-20">
+
+
+<div className="flex flex-col space-y-4 mt-8 mb-24 px-8 md:px-14">
   {/* Notice Board/ Birthdays */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
-{/* Notice Board Card */}
-<div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
-  {/* Header with Notice Board Title */}
-  <div className="flex justify-between items-center mb-4">
-    <h2 className="text-xs text-[#C8D2DC] font-bold">Notice Board</h2>
-    <span className="text-gray-500">19 Jun</span>
-  </div>
-  
-{/* School Information Aligned Horizontally */}
-<div className="flex justify-around text-xs text-[#C8D2DC] mb-6">
-<div className="text-center flex items-center mt-4">
-  <div className="flex items-center border-b-2 border-blue-600 pb-1"> {/* Added border-b and padding */}
-    <h3 className="font-semibold text-sm mr-2">School</h3>
-    <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
-  </div>
-</div>
+    {/* Notice Board Card */}
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full">
+      {/* Header with Notice Board Title */}
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xs text-[#C8D2DC] font-bold">Notice Board</h2>
+          <span className="text-gray-500">19 Jun</span>
+        </div>
+      </div>
+      
+      {/* School Information Aligned Horizontally */}
+      <div className="overflow-x-auto scrollbar-thin" style={{ scrollbarWidth: 'thin', scrollbarColor: '#C8D2DC #EEF1F9' }}>
+        <div className="flex flex-nowrap justify-between text-xs text-[#C8D2DC] mb-6 space-x-4">
+          {['School', 'Admin', 'Teachers', 'Students', 'Parents'].map((item, index) => (
+            <div key={index} className="text-center flex items-center min-w-[120px] mb-0">
+              <h3 className="font-semibold text-sm mr-2 text-gray-400">{item}</h3>
+              <span className="text-xs bg-gray-100 rounded-xl px-1 py-.5 text-gray-400">{[12, 2, 6, 9, 10][index]}</span>
+            </div>
+          ))}
+        </div>
+        {/* Grey line under the school information */}
+        <div className="border-b border-[#EEF1F4] w-full mb-4"></div>
+      </div>
 
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Admin</h3>
-    <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">2</span>
-  </div>
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Teachers</h3>
-    <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">6</span>
-  </div>
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Students</h3>
-    <span className="text-xs  bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">9</span>
-  </div>
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Parents</h3>
-    <span className="text-xs  bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">10</span>
-  </div>
-</div>
-
-
-  {/* Notice Content */}
-  <div className="mb-4">
-    <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-sm mt-2 text-[#8E959C]"> 
-      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
-    </p>
-    
-  </div>
-
- <div className="mb-4">
-   <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-sm mt-2 text-[#8E959C]">
-      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
-    </p>
-</div>
-
-<div className="mb-4">
-   <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-sm mt-2 text-[#8E959C]">
-      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
-    </p>
-</div>
-</div>
-
+      {/* Notice Content */}
+      <div className="space-y-4">
+        {['Cancellation of Sports Activities', 'Cancellation of Sports Activities', 'Cancellation of Sports Activities'].map((title, index) => (
+          <div key={index} className="relative">
+            {/* Date Badge */}
+            <div className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#015AB5] rounded-full text-[#015AB5] text-xs px-1 py-.5">
+              19 Jun
+            </div>
+            {/* Notice Content */}
+            <h4 className="text-xl text-[#027FFF] font-semibold">{title}</h4>
+            <p className="text-sm mt-2 text-[#8E959C]">
+              Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
 
     {/* Birthdays Card */}
-<div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
-<div
-  className="bg-white p-4  row-span-2 relative rounded-lg"
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
+      <div className="bg-white p-4 rounded-lg">
+        <div className="flex justify-between items-center">
+          <span className="text-[#C8D2DC] font-medium">Birthdays</span>
+          <span className="text-gray-400">Daily</span>
+        </div>
+        <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
 
->
-  <div className="flex justify-between items-center">
-    <span className=" text-[#C8D2DC] font-medium">Birthdays</span>
-    <span className="text-gray-400">Daily</span>
+        {/* Three larger boxes inside double-height box */}
+        <div className="mt-4 grid grid-cols-1 gap-4">
+          {/* Larger Box 1 */}
+          <div className="bg-[#014F9E] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-white">Revenue</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+
+          {/* Larger Box 2 */}
+          <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Expenses</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+
+          {/* Larger Box 3 */}
+          <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Net Profit</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+
+          {/* Larger Box 4 */}
+          <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Expenses</span>
+              <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
+                11:00am
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
 
-  {/* Three larger boxes inside double-height box */}
-  <div className="mt-4 grid grid-cols-1 gap-4">
-    {/* Larger Box 1 */}
-    <div className="bg-[#01356B] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-white">Revenue</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-          11:00am
-        </span>
-      </div>
-    </div>
 
-    {/* Larger Box 2 */}
-    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-600">Expenses</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-        11:00am
-        </span>
-      </div>
-    </div>
 
-    {/* Larger Box 3 */}
-    <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-600">Net Profit</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-        11:00am
-        </span>
-      </div>
-    </div>
 
-        {/* Larger Box 4 */}
-        <div className="bg-[#F2F5F7] p-4 shadow-inner rounded-2xl flex-grow">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-600">Expenses</span>
-        <span className="bg-white text-sm text-gray-600 px-2 py-1 rounded-2xl shadow">
-        11:00am
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
 
 </div>
 

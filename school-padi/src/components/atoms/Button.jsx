@@ -1,7 +1,10 @@
+
+import PropTypes from 'prop-types';
+
 const Button = ({
   bgColor = "#FFFFFF",  // Default background color: White
   color = "#8E959C",    // Default text color: Grey
-  borderColor = "#01356B", // Default border color: Medium Dark Blue
+  borderColor = "#014F9E", // Default border color: Medium Dark Blue
   width,
   height = "40px",
   fontSize = "15px",
@@ -26,6 +29,18 @@ const Button = ({
       {children}
     </button>
   );
+};
+
+// Define prop types
+Button.propTypes = {
+  bgColor: PropTypes.string,
+  color: PropTypes.string,
+  borderColor: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  fontSize: PropTypes.string,
+  fontWeight: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Button;
