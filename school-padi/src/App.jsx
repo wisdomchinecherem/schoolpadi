@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LandingPage from './pages/landingpage';
 import Navbar from './components/landingpage/Navbar';
-import Footer from './components/landingpage/Footer';
+import Footer from './components/molecule/Footer';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';
 
 

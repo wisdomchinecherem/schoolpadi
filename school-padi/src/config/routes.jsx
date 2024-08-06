@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Landingpage from '../pages/landingpage';
 // import Navbar from '../components/Landingpage/Navbar';
-import Footer from '../components/landingpage/Footer';
+import Footer from '../components/molecule/Footer';
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
 
 function PageRoutes() {
