@@ -439,10 +439,9 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div>
-
-
-
       </div>
+
+      
       <div className="relative  mt-4 px-4 w-full">
         {/* Data Visualization Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6 mx-4">
@@ -673,7 +672,7 @@ const AdminDashboard = () => {
 
   </div>
 </div>
-<div className="flex flex-col space-y-4 mt-8 mb-4 px-8 md:px-20">
+<div className="flex flex-col space-y-4 mt-8 mb-24 px-8 md:px-20">
   {/* Notice Board/ Birthdays */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
