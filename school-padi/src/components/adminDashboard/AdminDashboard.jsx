@@ -176,7 +176,6 @@ const AdminDashboard = () => {
               {/* User Icon */}
               <div className="bg-[#01356B] rounded-lg p-1.5 px-2.5 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
-                <span className="ml-1 text-[#bbb] font-bold hidden md:block text-sm">Admin</span>
               </div>
             </div>
 
@@ -203,27 +202,26 @@ const AdminDashboard = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full px-2 py-1 bg-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-2 py-1 bg-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           {/* Icons in dropdown */}
-          <div className="flex space-x-2  mb-4 justify-center">
-            <div className="bg-gray-600 p-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faPlus} className="text-white text-sm" title="Add" />
+          <div className="flex space-x-6  mb-4 justify-center">
+            <div className="bg-gray-300 py-1.7 px-2.5 rounded-full p-2">
+              <FontAwesomeIcon icon={faPlus} className="text-gray-400 text-sm" title="Add" />
             </div>
 
-            <div className="bg-gray-600 py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faBell} className="text-white text-sm" title="Notifications" />
+            <div className="bg-gray-300 py-1.7 px-2.5 rounded-full p-2">
+              <FontAwesomeIcon icon={faBell} className="text-gray-400 text-sm" title="Notifications" />
             </div>
 
-            <div className="bg-gray-600 py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faVolumeUp} className="text-white text-sm" title="Sound" />
+            <div className="bg-gray-300 py-1.7 px-2.5 rounded-full p-2">
+              <FontAwesomeIcon icon={faVolumeUp} className="text-gray-400 text-sm" title="Sound" />
             </div>
 
-            <div className="bg-gray-600 py-1.7 px-2.5 rounded-full p-2 flex items-center">
-              <FontAwesomeIcon icon={faUser} className="text-white text-sm" title="Account" />
-              <span className="ml-2 text-[#bbb] font-bold">Admin</span>
+            <div className="bg-gray-300 py-1.7 px-2.5 rounded-full p-2 flex items-center">
+              <FontAwesomeIcon icon={faUser} className="text-gray-400 text-sm" title="Account" />
             </div>
           </div>
 
