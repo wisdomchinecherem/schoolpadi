@@ -238,43 +238,63 @@ const AdminDashboard = () => {
         </div>
 
         {/* New section: Text links */}
-        <div className="mt-6 hidden md:block">
-          <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Dashboard
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Information System
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Schedules/Comms
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Graduation/Alumni
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Finance/Accounting
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              People/Productivity
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Marketing/Admissions
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              Administration
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-          </ul>
-          <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
-        </div>
+<div className="mt-6 hidden md:block">
+  <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a
+        href="/dashboard"
+        className="text-blue-500 bg-white px-2 py-1 rounded-md" // Apply active styles to Dashboard
+      >
+        Dashboard
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/information-system" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        Information System
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/schedules-comms" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        Schedules/Comms
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/graduation-alumni" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        Graduation/Alumni
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/finance-accounting" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        Finance/Accounting
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/people-productivity" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        People/Productivity
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/marketing-admissions" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        Marketing/Admissions
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+    <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+      <a href="/administration" className="active:text-blue-500 active:bg-white rounded-md px-2 py-1">
+        Administration
+      </a>
+      <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+    </li>
+  </ul>
+  <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
+</div>
+
       </nav>
 
 
