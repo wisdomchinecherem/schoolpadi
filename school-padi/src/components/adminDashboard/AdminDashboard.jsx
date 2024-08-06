@@ -271,7 +271,7 @@ const AdminDashboard = () => {
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
     </li>
     <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-      <a href="/administration" className="flex items-center font-semibold">Administration</a>
+      <a href="/administration" className="flex items-center ">Administration</a>
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
     </li>
   </ul>
