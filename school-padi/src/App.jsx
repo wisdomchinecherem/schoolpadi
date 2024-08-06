@@ -2,8 +2,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LandingPage from './pages/landingpage';
-import Navbar from './components/Landingpage/Navbar';
-import Footer from './components/Landingpage/Footer';
+import Navbar from './components/landingpage/Navbar';
+import Footer from './components/landingpage/Footer';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';
 
 
