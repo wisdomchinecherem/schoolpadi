@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars, faUsers } from '@fortawesome/free-solid-svg-icons';
@@ -544,9 +543,9 @@ const AdminDashboard = () => {
       </div>
       
       </div>
-      <div className="flex flex-col space-y-4 mt-8 px-8 md:px-20">
+      <div className="flex flex-col space-y-4 mt-8 px-8 md:px-14 ">
   {/* Calendar and Chat Container */}
-  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 ">
 
 {/* Calendar Card */}
 <div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
@@ -669,7 +668,7 @@ const AdminDashboard = () => {
 </div>
 
 
-<div className="flex flex-col space-y-4 mt-8 mb-24 px-8 md:px-20">
+<div className="flex flex-col space-y-4 mt-8 mb-24 px-8 md:px-14">
   {/* Notice Board/ Birthdays */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
