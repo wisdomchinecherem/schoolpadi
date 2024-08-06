@@ -667,74 +667,55 @@ const AdminDashboard = () => {
     ))}
   </div>
 </div>
-
-
-
   </div>
 </div>
+
+
 <div className="flex flex-col space-y-4 mt-8 mb-24 px-8 md:px-20">
   {/* Notice Board/ Birthdays */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
 
-{/* Notice Board Card */}
-<div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
-  {/* Header with Notice Board Title */}
-  <div className="flex justify-between items-center mb-4">
-    <h2 className="text-xs text-[#C8D2DC] font-bold">Notice Board</h2>
-    <span className="text-gray-500">19 Jun</span>
-  </div>
-  
-{/* School Information Aligned Horizontally */}
-<div className="flex justify-around text-xs text-[#C8D2DC] mb-6">
-<div className="text-center flex items-center mt-4">
-  <div className="flex items-center border-b-2 border-blue-600 pb-1"> {/* Added border-b and padding */}
-    <h3 className="font-semibold text-sm mr-2">School</h3>
-    <span className="text-xs text-white bg-blue-500 rounded-xl px-1.5 py-1 text-gray-600">12</span>
-  </div>
-</div>
-
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Admin</h3>
-    <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">2</span>
-  </div>
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Teachers</h3>
-    <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">6</span>
-  </div>
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Students</h3>
-    <span className="text-xs  bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">9</span>
-  </div>
-  <div className="text-center flex items-center">
-    <h3 className="font-semibold text-sm text-gray-400 mr-2">Parents</h3>
-    <span className="text-xs  bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">10</span>
-  </div>
-</div>
+    {/* Notice Board Card */}
+    <div className="bg-white rounded-lg shadow-md border border-gray-300 p-4 md:w-2/3 w-full">
+      {/* Header with Notice Board Title */}
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xs text-[#C8D2DC] font-bold">Notice Board</h2>
+          <span className="text-gray-500">19 Jun</span>
+        </div>
+      </div>
+      
+      {/* School Information Aligned Horizontally */}
+      <div className="overflow-x-auto scrollbar-thin" style={{ scrollbarWidth: 'thin', scrollbarColor: '#C8D2DC #EEF1F9' }}>
+        <div className="flex flex-nowrap justify-between text-xs text-[#C8D2DC] mb-6 space-x-4">
+          {['School', 'Admin', 'Teachers', 'Students', 'Parents'].map((item, index) => (
+            <div key={index} className="text-center flex items-center min-w-[120px] mb-0">
+              <h3 className="font-semibold text-sm mr-2 text-gray-400">{item}</h3>
+              <span className="text-xs bg-gray-300 rounded-xl px-1.5 py-1 text-gray-400">{[12, 2, 6, 9, 10][index]}</span>
+            </div>
+          ))}
+        </div>
+        {/* Grey line under the school information */}
+        <div className="border-b border-[#EEF1F4] w-full mb-4"></div>
+      </div>
 
 
-  {/* Notice Content */}
-  <div className="mb-4">
-    <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-sm mt-2 text-[#8E959C]"> 
-      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
-    </p>
-    
-  </div>
-
- <div className="mb-4">
-   <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-sm mt-2 text-[#8E959C]">
-      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
-    </p>
-</div>
-
-<div className="mb-4">
-   <h4 className="text-lg text-[#027FFF] font-semibold">Cancellation of Sports Activities</h4>
-    <p className="text-sm mt-2 text-[#8E959C]">
-      Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
-    </p>
-</div>
-</div>
+   {/* Notice Content */}
+   <div className="space-y-4">
+        {['Cancellation of Sports Activities', 'Cancellation of Sports Activities', 'Cancellation of Sports Activities'].map((title, index) => (
+          <div key={index} className="relative">
+            {/* Date Badge */}
+            <div className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#015AB5] rounded-full text-[#015AB5] text-xs px-1 py-.5">
+              19 Jun
+            </div>
+            {/* Notice Content */}
+            <h4 className="text-xl text-[#027FFF] font-semibold">{title}</h4>
+            <p className="text-sm mt-2 text-[#8E959C]">
+              Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
+            </p>
+          </div>
+        ))}
+      </div></div>
 
 
     {/* Birthdays Card */}
