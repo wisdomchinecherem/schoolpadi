@@ -7,6 +7,7 @@ import { GrAnnounce } from "react-icons/gr";
 import { FaPlusCircle } from "react-icons/fa";
 
 const formatDateTime = (date) => {
+  
   const day = date.getDate();
   const month = date.toLocaleString('default', { month: 'long' });
   const year = date.getFullYear();
@@ -36,6 +37,8 @@ const InfomationSystem = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  
 
   return (
     <>
