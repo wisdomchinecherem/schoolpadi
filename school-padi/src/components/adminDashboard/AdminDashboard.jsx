@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { IoChatbubbles } from "react-icons/io5";
 import { GrAnnounce } from "react-icons/gr";
-import { MdPerson } from "react-icons/md";
 import {  FaPlusCircle } from "react-icons/fa";
 import {
   LineChart,
@@ -155,9 +154,9 @@ const AdminDashboard = () => {
 
           {/* Right section: Icons (hidden on small screens) */}
           <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
-            <div className="flex space-x-6">
+            <div className="flex space-x-6 ">
               {/* Plus Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+              <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
             <FaPlusCircle />
           </div>
 
