@@ -92,7 +92,7 @@ const LandingPage = () => {
                 Student Dashboard
               </Button>
             </Link>
-            <Link to="/superadmin">
+            <Link to="/teachers">
               <Button
                 bgColor="#001D3B"
                 color="#FFFFFF"
