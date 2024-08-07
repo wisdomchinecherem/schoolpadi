@@ -201,11 +201,31 @@ const InfomationSystem = () => {
         </div>
       </nav>
 
-      {/* Overlapping White Box */}
-      <div className="relative -top-6 px-6">
-        <div className="bg-white rounded-lg shadow-lg mx-4 py-8 px-6">
-        </div>
-      </div>
+{/* Overlapping White Box */}
+<div className="relative -top-6 px-6">
+  <div className="bg-white rounded-lg shadow-lg mx-4 py-8 px-6">
+    <div className="grid grid-cols-4 gap-4">
+      <a href="/students" className="flex items-center justify-center">
+        <span className="font-bold text-[#8E959C]">Students</span>
+        <div className="bg-gray-300 text-white rounded-full h-6 w-6 flex items-center justify-center text-xs ml-2">12</div>
+      </a>
+      <a href="/teachers" className="flex items-center justify-center">
+        <span className="font-bold text-[#8E959C]">Teachers</span>
+        <div className="bg-gray-300 text-white rounded-full h-6 w-6 flex items-center justify-center text-xs ml-2">8</div>
+      </a>
+      <a href="/admin" className="flex items-center justify-center">
+        <span className="font-bold text-[#8E959C]">Admin</span>
+        <div className="bg-gray-300 text-white rounded-full h-6 w-6 flex items-center justify-center text-xs ml-2">3</div>
+      </a>
+      <a href="/parents" className="flex items-center justify-center">
+        <span className="font-bold text-[#8E959C]">Parents</span>
+        <div className="bg-gray-300 text-white rounded-full h-6 w-6 flex items-center justify-center text-xs ml-2">25</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
     </>
   );
 };
