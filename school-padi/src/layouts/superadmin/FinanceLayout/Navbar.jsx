@@ -2,10 +2,14 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const navItems = [
-    { name: 'Dashboard', path: '/superadmin' },
-    { name: 'User Management', path: '/superadmin/user-management' },
-    { name: 'Finance', path: '/superadmin/finance/dashboard' },
-    { name: 'Reports', path: '/superadmin/reports' },
+    { name: 'Dashboard', path: '/superadmin/finance/dashboard' },
+    { name: 'Information System', path: '/superadmin/finance/information-system' },
+    { name: 'Schedules/Comms', path: '/superadmin/finance/schedules-comms' },
+    { name: 'Graduation/Alumni', path: '/superadmin/finance/graduation-alumni' },
+    { name: 'Finance/Accounting', path: '/finance-accounting' },
+    { name: 'People/Productivity', path: '/people-productivity' },
+    { name: 'Marketing And Admissions', path: '/marketing-admissions' },
+    { name: 'Administrations', path: '/reports' },
   ];
 
   return (
