@@ -6,13 +6,11 @@ import { IoChatbubbles } from "react-icons/io5";
 import { GrAnnounce } from "react-icons/gr";
 import { FaPlusCircle } from "react-icons/fa";
 
-// Function to format date with ordinal suffix and time
 const formatDateTime = (date) => {
   const day = date.getDate();
   const month = date.toLocaleString('default', { month: 'long' });
   const year = date.getFullYear();
 
-  // Add ordinal suffix to day
   const dayWithSuffix =
     day +
     (day % 10 === 1 && day !== 11
@@ -23,23 +21,18 @@ const formatDateTime = (date) => {
       ? 'rd'
       : 'th');
 
-  // Format hours and minutes
   let hours = date.getHours();
   const minutes = date.getMinutes().toString().padStart(2, '0');
   const ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12 || 12; // Convert to 12-hour format
+  hours = hours % 12 || 12;
 
   return `${dayWithSuffix} ${month}, ${year} ${hours}:${minutes}${ampm}`;
 };
 
 const InfomationSystem = () => {
-  // current date and time formatted
   const currentDateTime = formatDateTime(new Date());
-
-  // State for controlling hamburger menu toggle
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -70,7 +63,7 @@ const InfomationSystem = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full md:w-[400px]  px-2 py-1 bg-[#FFFFFF] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full md:w-[400px] px-2 py-1 bg-[#FFFFFF] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -78,12 +71,10 @@ const InfomationSystem = () => {
           {/* Right section: Icons (hidden on small screens) */}
           <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
             <div className="flex space-x-6 ">
-              {/* Plus Icon */}
-              <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
                 <FaPlusCircle />
               </div>
 
-              {/* Notification Icon */}
               <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
                 <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
               </div>
@@ -92,12 +83,10 @@ const InfomationSystem = () => {
                 <IoChatbubbles />
               </div>
 
-              {/* Sound Icon */}
               <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
                 <GrAnnounce />
               </div>
 
-              {/* User Icon */}
               <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
               </div>
@@ -113,7 +102,7 @@ const InfomationSystem = () => {
 
         {/* Dropdown menu for small screens */}
         <div className={`fixed inset-0 bg-[#014F9E] text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden z-50`}>
-          <div className="flex justify-between items-center  mb-4">
+          <div className="flex justify-between items-center mb-4">
             <span className="text-xl font-bold">Menu</span>
             <button onClick={toggleMenu} className="text-white focus:outline-none">
               <FontAwesomeIcon icon={faBars} size="lg" />
@@ -130,7 +119,7 @@ const InfomationSystem = () => {
           </div>
 
           {/* Icons in dropdown */}
-          <div className="flex space-x-6  mb-4 justify-center">
+          <div className="flex space-x-6 mb-4 justify-center">
             <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
               <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
             </div>
@@ -161,55 +150,61 @@ const InfomationSystem = () => {
           </ul>
         </div>
 
-        {/* New section: Text links */}
-        <div className="mt-6 hidden md:block">
-          <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
-            <li className="flex flex-col items-center px-4 cursor-pointer">
-              <a href="/AdminDashboard" className="flex items-center font-semibold ">
-                Dashboard
-              </a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/InfomationSystem" className="flex items-center font-semibold text-blue-500 bg-white rounded-lg px-3 py-1">Information System</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/Schedules" className="flex items-center font-semibold">Schedules/Comms</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/Draduation" className="flex items-center font-semibold">Graduation/Alumni</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/finance-accounting" className="flex items-center font-semibold">Finance/Accounting</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/people-productivity" className="flex items-center font-semibold">People/Productivity</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/marketing-admissions" className="flex items-center font-semibold">Marketing/Admissions</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-            <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-              <a href="/administration" className="flex items-center ">Administration</a>
-              <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
-            </li>
-          </ul>
-          <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
+
+
+      {/* Existing Content Below */}
+      <div className="mt-6 hidden md:block">
+        <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
+          <li className="flex flex-col items-center px-4 cursor-pointer">
+            <a href="/AdminDashboard" className="flex items-center font-semibold ">
+              Dashboard
+            </a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/InfomationSystem" className="flex items-center font-semibold text-blue-500 bg-white rounded-lg px-3 py-1">Information System</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/Schedules" className="flex items-center font-semibold">Schedules/Comms</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/Draduation" className="flex items-center font-semibold">Graduation/Alumni</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/finance-accounting" className="flex items-center font-semibold">Finance/Accounting</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/people-productivity" className="flex items-center font-semibold">People/Productivity</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/marketing-admissions" className="flex items-center font-semibold">Marketing/Admissions</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+          <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
+            <a href="/administration" className="flex items-center ">Administration</a>
+            <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
+          </li>
+        </ul>
+        <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
+      </div>        {/* New Section: Student List Header */}
+        <div className="bg-[#014F9E] p-4 flex justify-between items-center px-6">
+          <span className="text-white text-xl font-semibold">Student List</span>
+          <button className="bg-white text-[#014F9E] font-bold py-2 px-4 rounded flex items-center">
+            <FontAwesomeIcon icon={faPlus} className="mr-2" />
+            Add Student
+          </button>
         </div>
       </nav>
 
-      {/* New Section: Student List Header */}
-      <div className="bg-[#014F9E] p-4 flex justify-between items-center px-6">
-        <span className="text-white text-xl font-semibold">Student List</span>
-        <button className="bg-white text-[#014F9E] font-bold py-2 px-4 rounded flex items-center">
-          <FontAwesomeIcon icon={faPlus} className="mr-2" />
-          Add Student
-        </button>
+      {/* Overlapping White Box */}
+      <div className="relative -top-6 px-6">
+        <div className="bg-white rounded-lg shadow-lg mx-4 py-8 px-6">
+        </div>
       </div>
     </>
   );
