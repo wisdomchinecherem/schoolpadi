@@ -580,7 +580,7 @@ const AdminDashboard = () => {
       <i className="fas fa-search text-gray-500 cursor-pointer"></i>
       <div className="flex items-center space-x-2">
         <FontAwesomeIcon icon={faCalendar} className='bg-[#E6EAEF] text-blue-500 rounded-md p-1.5 text-sm'/>
-        <button className="flex items-center bg-[#027FFF] text-white px-3 py-1 rounded">
+        <button className="flex items-center bg-[#027FFF]  text-white px-3 py-1 rounded">
           <i className="fas fa-plus mr-1"></i> Add Event
           <FontAwesomeIcon icon={faPlus} className="text-white px-2 text-sm" title="Add" />
         </button>
@@ -616,7 +616,7 @@ const AdminDashboard = () => {
 
 
     {/* Chat Box Card */}
-<div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full h-auto relative">
+<div className="bg-white rounded-lg shadow-md border border-gray-300 font-grandis p-4 md:w-1/3 w-full  relative">
   <div className="flex justify-between items-center mb-4">
     <div className="flex items-center space-x-2">
       <h2 className="text-blue-500 font-semibold underline">All Chats</h2>
@@ -646,13 +646,13 @@ const AdminDashboard = () => {
       { name: "Grace", message: "Looking forward to our next sprint.", time: "2 days ago", unread: 0 },
     ].map((chat, index) => (
       <div key={index} className="flex justify-between items-center py-2">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center  space-x-2">
           <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
-            {chat.name[0]}
+            {chat.name[0]} 
           </div>
           <div className="flex flex-col">
             <p className="text-sm font-semibold">{chat.name}</p>
-            <p className="text-sm text-gray-600 truncate">{chat.message}</p>
+            <p className="text-sm text-gray-600 w-[70%] truncate">{chat.message}</p>
           </div>
         </div>
         <div className="flex flex-col items-end space-y-1">
