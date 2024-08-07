@@ -704,14 +704,14 @@ const AdminDashboard = () => {
         {['Cancellation of Sports Activities', 'Cancellation of Sports Activities', 'Cancellation of Sports Activities'].map((title, index) => (
           <div key={index} className="relative">
             {/* Date Badge */}
-            <div className="relative p-4 bg-white border border-[#015AB5] rounded-lg shadow-lg">
+            <div className="relative p-4 bg-white rounded-lg shadow-sm sm:shadow-none">
   {/* Date Badge */}
-  <div className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#015AB5] rounded-full text-[#015AB5] text-xs md:text-sm px-2 py-0.5">
+  <div className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#015AB5] rounded-full text-[#015AB5] text-xs sm:text-sm px-2 py-0.5 hidden sm:block">
     19 Jun
   </div>
   {/* Notice Content */}
-  <h4 className="text-lg md:text-xl text-[#027FFF] font-semibold">{title}</h4>
-  <p className="text-xs md:text-sm mt-2 text-[#8E959C] leading-relaxed">
+  <h4 className="text-lg sm:text-xl text-[#027FFF] font-semibold">{title}</h4>
+  <p className="text-xs sm:text-sm mt-2 text-[#8E959C] leading-relaxed">
     Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
   </p>
 </div>
