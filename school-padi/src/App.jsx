@@ -1,4 +1,3 @@
-// App.jsx
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LandingPage from './pages/landingpage';
@@ -12,8 +11,6 @@ import Report from './pages/superadmin/Report';
 import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';
-import Navbar from './components/Landingpage/Navbar';
-
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -21,7 +18,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      {!hideHeaderFooter && <Navbar />}
+      {/* Navbar removed */}
       <div style={{ minHeight: 'calc(100vh - 100px)' }}>
         {children}
       </div>
@@ -34,20 +31,18 @@ const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Layout><LandingPage /></Layout>} />
-      <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
-      <Route element={<SuperAdminLayout />}>
+        <Route path="/" element={<Layout><LandingPage /></Layout>} />
+        <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
+        <Route element={<SuperAdminLayout />}>
           <Route path="superadmin" element={<Dashboard />} />
           <Route path="superadmin/user-management" element={<UserManagement />} />
           <Route path="superadmin/user-management/:id" element={<UserManagementDetail />} />
-            <Route path="superadmin/report" element={<Report />} />
+          <Route path="superadmin/report" element={<Report />} />
         </Route>
-          <Route element={<FinanceLayout />}>
-            <Route path="superadmin/finance/dashboard" element={<FinanceDashboard />} />
-            <Route path="superadmin/finance/information-system" element={<InformationSystem />} />
-          </Route>
-
-           {/* Finance Routes */}
+        <Route element={<FinanceLayout />}>
+          <Route path="superadmin/finance/dashboard" element={<FinanceDashboard />} />
+          <Route path="superadmin/finance/information-system" element={<InformationSystem />} />
+        </Route>
       </Routes>
     </Router>
   );
