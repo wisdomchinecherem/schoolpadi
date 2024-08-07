@@ -7,7 +7,7 @@ import { GrAnnounce } from "react-icons/gr";
 import { FaPlusCircle } from "react-icons/fa";
 
 const formatDateTime = (date) => {
-  
+
   const day = date.getDate();
   const month = date.toLocaleString('default', { month: 'long' });
   const year = date.getFullYear();
@@ -229,6 +229,14 @@ const InfomationSystem = () => {
 </div>
 
 
+{/* Four Small Rectangles */}
+<div className="flex flex-wrap justify-center gap-10 mt-6 w-full md:px-20">
+          {[...Array(4)].map((_, index) => (
+            <div key={index} className="bg-white border w-full md:w-[300px] h-20 rounded-md flex items-center justify-center">
+              <span className="text-[#014F9E] font-bold">Box {index + 1}</span>
+            </div>
+          ))}
+        </div>
 
 
 
