@@ -261,6 +261,7 @@ const InfomationSystem = () => {
 </div>
 
 
+
 {/* Four Small Rectangles */}
 <div className="flex flex-wrap justify-center gap-8 mt-6 w-full md:px-20">
       {dropdownData.map((data, index) => (
