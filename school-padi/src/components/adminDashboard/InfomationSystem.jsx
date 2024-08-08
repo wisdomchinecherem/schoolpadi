@@ -40,10 +40,10 @@ const InfomationSystem = () => {
   };
 
   const dropdownData = [
-    { label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
-    { label: 'Select Session', options: ['Session 1', 'Session 2', 'Session 3'] },
-    { label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
-    { label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
+    { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
+    { heading: 'Section', label: 'Select Session', options: ['Session 1', 'Session 2', 'Session 3'] },
+    { heading: 'Class', label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
+    { heading: 'Subjects', label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -262,24 +262,26 @@ const InfomationSystem = () => {
 
 
 {/* Four Small Rectangles */}
-<div className="flex flex-wrap justify-center gap-10 mt-6 w-full md:px-20">
+<div className="flex flex-wrap justify-center gap-8 mt-6 w-full md:px-20">
       {dropdownData.map((data, index) => (
-        <div
-          key={index}
-          className="relative bg-white border w-full md:w-[300px] h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
-          onClick={() => toggleDropdown(index)}
-        >
-          <span className="text-[#D3DBE3] font-bold">{data.label}</span>
-          <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
-          {openIndex === index && (
-            <ul className="absolute top-full left-0 right-0 bg-white border rounded-md  shadow-lg z-10">
-              {data.options.map((option, i) => (
-                <li key={i} className="px-4 py-2 hover:bg-gray-100">
-                  {option}
-                </li>
-              ))}
-            </ul>
-          )}
+        <div key={index} className="w-full md:w-[300px]">
+          <h2 className="text-[#014F9E] font-bold mb-2">{data.heading}</h2>
+          <div
+            className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
+            onClick={() => toggleDropdown(index)}
+          >
+            <span className="text-[#D3DBE3] font-bold">{data.label}</span>
+            <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
+            {openIndex === index && (
+              <ul className="absolute top-full left-0 right-0 bg-white border rounded-md shadow-lg z-10">
+                {data.options.map((option, i) => (
+                  <li key={i} className="px-4 py-2 hover:bg-gray-100">
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       ))}
     </div>
