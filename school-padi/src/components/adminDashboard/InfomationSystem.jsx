@@ -203,39 +203,52 @@ const InfomationSystem = () => {
           </li>
         </ul>
         <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
-      </div>        {/* New Section: Student List Header */}
-        <div className="bg-[#014F9E] p-4 flex justify-between items-center px-6">
-          <span className="text-white text-xl font-semibold">Student List</span>
-          <button className="bg-white text-[#014F9E] font-bold py-2 px-4 rounded flex items-center">
-            <FontAwesomeIcon icon={faPlus} className="mr-2" />
-            Add Student
-          </button>
-        </div>
+      </div>        
+      {/* New Section: Student List Header */}
+<div className="bg-[#014F9E] p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
+  <span className="text-white text-lg font-semibold leading-none sm:text-xl">Student List</span>
+  <button className="bg-white text-[#014F9E] font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base">
+    <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
+    Add Student
+  </button>
+</div>
+
       </nav>
 
 {/* Overlapping White Box */}
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-8 px-6">
-    <div className="grid grid-cols-4 gap-4">
-      <a href="/students" className="flex items-center justify-center">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <a href="/students" className="flex flex-col items-center justify-center">
         <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Students</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">12</div>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+          12
+        </div>
       </a>
-      <a href="/teachers" className="flex items-center justify-center">
+      <a href="/teachers" className="flex flex-col items-center justify-center">
         <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Teachers</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">8</div>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+          8
+        </div>
       </a>
-      <a href="/admin" className="flex items-center justify-center">
+      <a href="/admin" className="flex flex-col items-center justify-center">
         <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Admin</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">3</div>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+          3
+        </div>
       </a>
-      <a href="/parents" className="flex items-center justify-center">
+      <a href="/parents" className="flex flex-col items-center justify-center">
         <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Parents</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">25</div>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+          25
+        </div>
       </a>
     </div>
   </div>
 </div>
+
+
+
 
 
 {/* Four Small Rectangles */}
