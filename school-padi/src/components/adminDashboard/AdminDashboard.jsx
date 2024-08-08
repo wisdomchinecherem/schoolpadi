@@ -123,6 +123,7 @@ const AdminDashboard = () => {
   return (
     
     <>
+     <div className='overflow-x-hidden'>
       <nav className="bg-[#014F9E] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
@@ -797,7 +798,7 @@ const AdminDashboard = () => {
 
 
 
-
+  </div>
 </div>
 
     </>
