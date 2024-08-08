@@ -204,48 +204,50 @@ const InfomationSystem = () => {
         </ul>
         <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
       </div>        
-      {/* New Section: Student List Header */}
+{/* New Section: Student List Header */}
 <div className="bg-[#014F9E] p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
-  <span className="text-white text-lg font-semibold leading-none sm:text-xl">Student List</span>
-  <button className="bg-white text-[#014F9E] font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base">
+  <span className="text-white text-lg font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> {/* Adjusted margin-top */}
+  <button className="bg-white text-[#014F9E] font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
     <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
     Add Student
   </button>
 </div>
 
+
       </nav>
 
 {/* Overlapping White Box */}
 <div className="relative -top-6 px-6">
-  <div className="bg-white rounded-lg shadow-lg mx-4 py-8 px-6">
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <a href="/students" className="flex flex-col items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Students</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+  <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
+    <div className="grid grid-cols-4 gap-2"> {/* Reduced grid gap */}
+      <a href="/students" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
           12
         </div>
       </a>
-      <a href="/teachers" className="flex flex-col items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Teachers</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+      <a href="/teachers" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
           8
         </div>
       </a>
-      <a href="/admin" className="flex flex-col items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Admin</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+      <a href="/admin" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
           3
         </div>
       </a>
-      <a href="/parents" className="flex flex-col items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Parents</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-5 w-5 flex items-center justify-center text-xs mt-1">
+      <a href="/parents" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1  mr-2 sm:mb-0">Parents</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
           25
         </div>
       </a>
     </div>
   </div>
 </div>
+
 
 
 
