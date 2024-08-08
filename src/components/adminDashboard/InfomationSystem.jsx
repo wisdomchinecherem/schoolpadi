@@ -41,7 +41,7 @@ const InfomationSystem = () => {
 
   const dropdownData = [
     { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
-    { heading: 'Section', label: 'Select Session', options: ['Session 1', 'Session 2', 'Session 3'] },
+    { heading: 'Section', label: 'Select Section', options: ['Session 1', 'Session 2', 'Session 3'] },
     { heading: 'Class', label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
     { heading: 'Subjects', label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
   ];
@@ -276,9 +276,9 @@ const InfomationSystem = () => {
             <span className="text-[#D3DBE3] font-bold">{data.label}</span>
             <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
             {openIndex === index && (
-              <ul className="absolute top-full left-0 right-0 bg-white border rounded-md shadow-lg z-10">
+              <ul className="absolute top-full left-0 right-0 bg-gray-100 border  shadow-lg z-10">
                 {data.options.map((option, i) => (
-                  <li key={i} className="px-4 py-2 hover:bg-gray-100">
+                  <li key={i} className="px-4 py-2 hover:bg-[#8E959C]">
                     {option}
                   </li>
                 ))}
