@@ -32,14 +32,22 @@ const data = [
       type: "on trial"
   }
 ]
+
 export default function UserManagement() {
 
   const [activeTab, setActiveTab] = useState("Active");
 
   const filteredData = useMemo(() => {
-    if (activeTab === "Active") return data;
     return data.filter((item) => item.type.toLowerCase() === activeTab.toLowerCase());
   }, [activeTab]);
+
+  const counts = useMemo(() => {
+    const countObj = { active: 0, expired: 0, "on trial": 0 };
+    data.forEach((item) => {
+      countObj[item.type.toLowerCase()] += 1;
+    });
+    return countObj;
+  }, []);
   return (
     <section className="">
       <div className="flex  my-10 items-center text-white p-4 justify-between ">
@@ -50,15 +58,15 @@ export default function UserManagement() {
       </div>
 
       <div className=" p-3 ">
-        <div className="bg-white rounded-2xl py-3 shadow-lg -mt-14">
+        <div className="bg-white rounded-2xl  shadow-lg -mt-14">
 
         <TabButton 
         isBorder
           tabs={tabs}
+          counts = {counts}
           activeTab={activeTab}
           onTabClick={setActiveTab} />
         </div>
-        {/* SchoolListTable component goes here */}
         <SchoolListTable data={filteredData} />
       </div>
     </section>

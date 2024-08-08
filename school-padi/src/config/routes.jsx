@@ -6,8 +6,8 @@ import Landingpage from '../pages/landingpage';
 import Footer from '../components/molecule/Footer';
 >>>>>>> c6f727481760a274529bb6b92c9ba6c63209423e
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
-// import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
-// import Home from '../pages/superadmin/Home';
+ import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
+ import Home from '../pages/superadmin/Home';
 import Footer from '../components/Landingpage/Footer';
 
 function PageRoutes() {

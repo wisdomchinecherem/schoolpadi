@@ -92,6 +92,20 @@ const LandingPage = () => {
                 Student Dashboard
               </Button>
             </Link>
+            <Link to="/teachers">
+              <Button
+                bgColor="#001D3B"
+                color="#FFFFFF"
+                borderColor="#001D3B"
+                width="180px"
+                height="50px"
+                fontSize="16px"
+                fontWeight="600"
+                className="rounded-lg shadow-lg hover:bg-blue-800 transition-transform transform hover:-translate-y-1"
+              >
+                Teachers Dashboard
+              </Button>
+            </Link>
           </div>
         </div>
       </main>
