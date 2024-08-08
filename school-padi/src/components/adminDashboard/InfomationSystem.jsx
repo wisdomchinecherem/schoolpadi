@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SchoolLogo from '../../assets/schoolpadi-img/school-logo.png';
-import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { IoChatbubbles } from "react-icons/io5";
 import { GrAnnounce } from "react-icons/gr";
@@ -121,24 +121,33 @@ const InfomationSystem = () => {
             />
           </div>
 
-          {/* Icons in dropdown */}
-          <div className="flex space-x-6 mb-4 justify-center">
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
-            </div>
+           {/* Icons in dropdown */}
+           <div className="flex space-x-6  mb-4 justify-center">
 
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
-            </div>
+             {/* Plus Icon */}
+             <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <FaPlusCircle />
+          </div> 
+ 
+            {/* Notification Icon */}
+            <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+                <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
+              </div>
 
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faVolumeUp} className="text-[#014F9E] text-sm" title="Sound" />
-            </div>
-
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2 flex items-center">
-              <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
-            </div>
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <IoChatbubbles />
           </div>
+
+              {/* Sound Icon */}
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <GrAnnounce />
+          </div>
+
+              {/* User Icon */}
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
+                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
+              </div>
+           </div>
 
           {/* Links in dropdown, centralized */}
           <ul className="space-y-4 text-left justify-center ">
