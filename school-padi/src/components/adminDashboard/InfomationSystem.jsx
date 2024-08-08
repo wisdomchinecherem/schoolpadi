@@ -55,7 +55,7 @@ const InfomationSystem = () => {
   return (
 
     <>
-        <div className='overflow-x-hidden'>
+
       <nav className="bg-[#014F9E] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
@@ -289,7 +289,13 @@ const InfomationSystem = () => {
       ))}
     </div>
 
-    </div>
+    <div className="p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
+  <span className="text-[#8E959C] border text-lg  font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> 
+  <button className="text-[#8E959C] border font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
+    <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
+    Add Student
+  </button>
+</div>
 
     </>
     
