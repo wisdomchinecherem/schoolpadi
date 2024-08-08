@@ -53,7 +53,9 @@ const InfomationSystem = () => {
   };
 
   return (
+
     <>
+        <div className='overflow-x-hidden'>
       <nav className="bg-[#014F9E] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
@@ -266,7 +268,7 @@ const InfomationSystem = () => {
 <div className="flex flex-wrap justify-center gap-8 mt-6 w-full md:px-20">
       {dropdownData.map((data, index) => (
         <div key={index} className="w-full md:w-[300px]">
-          <h2 className="text-[#014F9E] font-bold mb-2">{data.heading}</h2>
+          <h2 className="text-[#101828] font-bold mb-2">{data.heading}</h2>
           <div
             className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
             onClick={() => toggleDropdown(index)}
@@ -287,9 +289,10 @@ const InfomationSystem = () => {
       ))}
     </div>
 
-
+    </div>
 
     </>
+    
   );
 };
 
