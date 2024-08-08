@@ -10,7 +10,9 @@ import FinanceDashboard from './pages/superadmin/finance/Dashboard';
 import Report from './pages/superadmin/Report';
 import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
-import AdminDashboard from './components/adminDashboard/AdminDashboard';
+import AdminDashboard from './components/adminDashboard/AdminDashboard';  
+import InfomationSystem from './components/adminDashboard/InfomationSystem';
+import Schedules from './components/adminDashboard/Schedules';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -31,8 +33,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout><LandingPage /></Layout>} />
+        <Route path="/" element={<Layout><LandingPage /></Layout>} />  
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
+        <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} />
+        <Route path="/Schedules" element={<Layout><Schedules/></Layout>} />
         <Route element={<SuperAdminLayout />}>
           <Route path="superadmin" element={<Dashboard />} />
           <Route path="superadmin/user-management" element={<UserManagement />} />

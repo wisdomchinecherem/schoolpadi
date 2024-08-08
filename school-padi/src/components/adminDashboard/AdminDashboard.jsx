@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { IoChatbubbles } from "react-icons/io5";
+import { GrAnnounce } from "react-icons/gr";
+import {  FaPlusCircle } from "react-icons/fa";
 import {
   LineChart,
   Line,
@@ -151,36 +154,36 @@ const AdminDashboard = () => {
 
           {/* Right section: Icons (hidden on small screens) */}
           <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
-            <div className="flex space-x-6">
+            <div className="flex space-x-6 ">
               {/* Plus Icon */}
-              <div className="bg-[#FFFFFF] rounded-full py-1.5 px-2.5">
-                <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
-              </div>
+              <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <FaPlusCircle />
+          </div>
 
               {/* Notification Icon */}
               <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
                 <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
               </div>
 
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <IoChatbubbles />
+          </div>
+
               {/* Sound Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
-                <FontAwesomeIcon icon={faVolumeUp} className="text-[#014F9E] text-sm" title="Sound" />
-              </div>
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <GrAnnounce />
+          </div>
 
               {/* User Icon */}
               <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
               </div>
-
-              {/* User Icon */}
-              <div className="bg-[#FFFFFF] rounded-lg p-1.5 px-2.5 flex items-center">
-                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
-              </div>
+ 
             </div>
 
             {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
             <div className="flex items-center space-x-2 text-white pt-4">
-              <FontAwesomeIcon icon={faCalendar} className='bg-[#01356B] rounded-full p-1.5 text-sm' title="Calendar"/>
+              <FontAwesomeIcon icon={faCalendar} className='bg-[#FFFFFF] text-[#014F9E] rounded-full p-1.5 text-sm' title="Calendar"/>
               <span className="hidden md:block text-sm">{currentDateTime}</span>
             </div>
           </div>
@@ -247,19 +250,19 @@ const AdminDashboard = () => {
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full"></span>
     </li>
     <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-      <a href="/information-system" className="flex items-center font-semibold">Information System</a>
+      <a href="/InfomationSystem" className="flex items-center font-semibold">Information System</a>
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
     </li>
     <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-      <a href="/schedules-comm" className="flex items-center font-semibold">Schedules/Comms</a>
+      <a href="/Schedules" className="flex items-center font-semibold">Schedules/Comms</a>
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
     </li>
     <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-      <a href="/graduation-alumni" className="flex items-center font-semibold">Graduation/Alumni</a>
+      <a href="/Graduation" className="flex items-center font-semibold">Graduation/Alumni</a>
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
     </li>
     <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-      <a href="/finance-accounting" className="flex items-center font-semibold">Finance/Accounting</a>
+      <a href="/Finance" className="flex items-center font-semibold">Finance/Accounting</a>
       <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
     </li>
     <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
@@ -577,14 +580,22 @@ const AdminDashboard = () => {
       </div>
     </div>
     <div className="flex items-center space-x-4">
-      <i className="fas fa-search text-gray-500 cursor-pointer"></i>
-      <div className="flex items-center space-x-2">
-        <FontAwesomeIcon icon={faCalendar} className='bg-[#E6EAEF] text-blue-500 rounded-md p-1.5 text-sm'/>
-        <button className="flex items-center bg-[#027FFF]  text-white px-3 py-1 rounded">
-          <i className="fas fa-plus mr-1"></i> Add Event
-          <FontAwesomeIcon icon={faPlus} className="text-white px-2 text-sm" title="Add" />
-        </button>
-      </div>
+      
+    <div className="relative flex flex-col items-end space-y-2 p-2">
+  <FontAwesomeIcon
+    icon={faCalendar}
+    className="bg-[#E6EAEF] text-blue-500 rounded-md p-1 text-xs sm:text-sm"
+  />
+  <div className="flex items-center space-x-2">
+    <i className="fas fa-search bg-[#E6EAEF] text-blue-500 rounded-md p-1 text-xs sm:text-sm cursor-pointer"></i>
+    <button className="flex items-center bg-[#027FFF] text-white px-2 py-1 text-xs sm:text-sm rounded">
+      <i className="mr-1"></i> Add Event
+      <FontAwesomeIcon icon={faPlus} className="text-white px-1 text-xs sm:text-sm" title="Add" />
+    </button>
+  </div>
+</div>
+
+
     </div>
   </div>
   <div className="grid grid-cols-7 text-gray-100 text-center">
@@ -624,12 +635,12 @@ const AdminDashboard = () => {
     </div>
     <div className="flex items-center space-x-14">
       <div className="flex items-center space-x-1">
-        <i className="fas fa-user text-gray-500"></i>
+        <i className=" text-gray-500"></i>
         <FontAwesomeIcon icon={faUser} className="text-gray-300 text-md" title="Sound" />
         <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">3</span>
       </div>
       <div className="flex items-center space-x-1">
-        <i className="fas fa-users text-gray-500"></i>
+        <i className=" text-gray-500"></i>
         <FontAwesomeIcon icon={faUsers} className="text-gray-300 text-md" title="Sound" />
         <span className="text-xs bg-gray-300 rounded-xl px-2 py-1 text-gray-600">7</span>
       </div>
@@ -714,8 +725,8 @@ const AdminDashboard = () => {
   <p className="text-xs sm:text-sm mt-2 text-[#8E959C] leading-relaxed">
     Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
   </p>
-</div>
-</div>
+</div></div>
+
         ))}
       </div>
     </div>

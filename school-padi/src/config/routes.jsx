@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Landingpage from '../pages/landingpage';
-<<<<<<< HEAD
-=======
 // import Navbar from '../components/Landingpage/Navbar';
 import Footer from '../components/molecule/Footer';
->>>>>>> c6f727481760a274529bb6b92c9ba6c63209423e
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
+import InfomationSystem from '../components/adminDashboard/InfomationSystem';  
+import Schedules from '../components/adminDashboard/Schedules'; 
  import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
  import Home from '../pages/superadmin/Home';
 import Footer from '../components/Landingpage/Footer';
@@ -18,8 +17,9 @@ function PageRoutes() {
            <Route path="/" element={<Landingpage />} />
            {/*<Route path="/navbar" element={<Navbar />} />*/}
         <Route path="/footer" element={<Footer />} />
-        <Route path="/admindashboard'" element={<AdminDashboard />} />
-       
+        <Route path="/admindashboard" element={<AdminDashboard />} /> 
+        <Route path="/infomationsystem" element={<InfomationSystem />} />
+        <Route path="/Schedules" element={<Schedules/>} />
            </Routes>
       <Footer /> {/* Ensure Footer is always visible */}
     </div>
