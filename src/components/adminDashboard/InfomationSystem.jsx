@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SchoolLogo from '../../assets/schoolpadi-img/school-logo.png';
-import { faBell, faVolumeUp, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faUser, faPlus, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { IoChatbubbles } from "react-icons/io5";
 import { GrAnnounce } from "react-icons/gr";
 import { FaPlusCircle } from "react-icons/fa";
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const formatDateTime = (date) => {
 
@@ -38,10 +39,23 @@ const InfomationSystem = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  
+  const dropdownData = [
+    { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
+    { heading: 'Section', label: 'Select Session', options: ['Session 1', 'Session 2', 'Session 3'] },
+    { heading: 'Class', label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
+    { heading: 'Subjects', label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
+  ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
+
     <>
+
       <nav className="bg-[#014F9E] p-4">
         <div className="container mx-auto flex justify-between items-center flex-wrap">
           {/* Left section: Logo and welcome message */}
@@ -121,24 +135,33 @@ const InfomationSystem = () => {
             />
           </div>
 
-          {/* Icons in dropdown */}
-          <div className="flex space-x-6 mb-4 justify-center">
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faPlus} className="text-[#014F9E] text-sm" title="Add" />
-            </div>
+           {/* Icons in dropdown */}
+           <div className="flex space-x-6  mb-4 justify-center">
 
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
-            </div>
+             {/* Plus Icon */}
+             <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <FaPlusCircle />
+          </div> 
+ 
+            {/* Notification Icon */}
+            <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+                <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
+              </div>
 
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2">
-              <FontAwesomeIcon icon={faVolumeUp} className="text-[#014F9E] text-sm" title="Sound" />
-            </div>
-
-            <div className="bg-[#FFFFFF] py-1.7 px-2.5 rounded-full p-2 flex items-center">
-              <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
-            </div>
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <IoChatbubbles />
           </div>
+
+              {/* Sound Icon */}
+              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <GrAnnounce />
+          </div>
+
+              {/* User Icon */}
+              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
+                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
+              </div>
+           </div>
 
           {/* Links in dropdown, centralized */}
           <ul className="space-y-4 text-left justify-center ">
@@ -194,53 +217,88 @@ const InfomationSystem = () => {
           </li>
         </ul>
         <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
-      </div>        {/* New Section: Student List Header */}
-        <div className="bg-[#014F9E] p-4 flex justify-between items-center px-6">
-          <span className="text-white text-xl font-semibold">Student List</span>
-          <button className="bg-white text-[#014F9E] font-bold py-2 px-4 rounded flex items-center">
-            <FontAwesomeIcon icon={faPlus} className="mr-2" />
-            Add Student
-          </button>
-        </div>
+      </div>        
+{/* New Section: Student List Header */}
+<div className="bg-[#014F9E] p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
+  <span className="text-white text-lg font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> {/* Adjusted margin-top */}
+  <button className="bg-white text-[#014F9E] font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
+    <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
+    Add Student
+  </button>
+</div>
+
+
       </nav>
 
 {/* Overlapping White Box */}
 <div className="relative -top-6 px-6">
-  <div className="bg-white rounded-lg shadow-lg mx-4 py-8 px-6">
-    <div className="grid grid-cols-4 gap-4">
-      <a href="/students" className="flex items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Students</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">12</div>
+  <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
+    <div className="grid grid-cols-4 gap-2"> {/* Reduced grid gap */}
+      <a href="/students" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
+          12
+        </div>
       </a>
-      <a href="/teachers" className="flex items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Teachers</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">8</div>
+      <a href="/teachers" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
+          8
+        </div>
       </a>
-      <a href="/admin" className="flex items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Admin</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">3</div>
+      <a href="/admin" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
+          3
+        </div>
       </a>
-      <a href="/parents" className="flex items-center justify-center">
-        <span className="font-bold text-[#8E959C] text-xs sm:text-sm">Parents</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-6 w-6 flex items-center justify-center text-xs ml-1">25</div>
+      <a href="/parents" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="font-bold text-[#8E959C] text-xs sm:text-sm mb-1  mr-2 sm:mb-0">Parents</span>
+        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-sm">
+          25
+        </div>
       </a>
     </div>
   </div>
 </div>
 
 
+
 {/* Four Small Rectangles */}
-<div className="flex flex-wrap justify-center gap-10 mt-6 w-full md:px-20">
-          {[...Array(4)].map((_, index) => (
-            <div key={index} className="bg-white border w-full md:w-[300px] h-20 rounded-md flex items-center justify-center">
-              <span className="text-[#014F9E] font-bold">Box {index + 1}</span>
-            </div>
-          ))}
+<div className="flex flex-wrap justify-center gap-8 mt-6 w-full md:px-20">
+      {dropdownData.map((data, index) => (
+        <div key={index} className="w-full md:w-[300px]">
+          <h2 className="text-[#101828] font-bold mb-2">{data.heading}</h2>
+          <div
+            className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
+            onClick={() => toggleDropdown(index)}
+          >
+            <span className="text-[#D3DBE3] font-bold">{data.label}</span>
+            <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
+            {openIndex === index && (
+              <ul className="absolute top-full left-0 right-0 bg-white border rounded-md shadow-lg z-10">
+                {data.options.map((option, i) => (
+                  <li key={i} className="px-4 py-2 hover:bg-gray-100">
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
+      ))}
+    </div>
 
-
+    <div className="p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
+  <span className="text-[#8E959C] border text-lg  font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> 
+  <button className="text-[#8E959C] border font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
+    <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
+    Add Student
+  </button>
+</div>
 
     </>
+    
   );
 };
 
