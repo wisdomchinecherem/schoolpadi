@@ -2,9 +2,9 @@ name: Node.js and React.js CI/CD for School padi with npm
 
 on:
   push:
-    branches: [superadmin]
+    branches: [admin]
   pull_request:
-    branches: [superadmin]
+    branches: [admin]
 
 jobs:
   build-and-test:
