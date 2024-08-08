@@ -104,13 +104,13 @@ export default function Dashboard() {
                 </p>
               </div>
             </div>
-            <div className="bg-[#E6F2FF] rounded-xl p-1 flex items-center justify-center">
+            <div className="bg-[#E6F2FF]  rounded-xl p-1 flex items-center justify-center">
               <img src="/3d.svg" className="w-10 h-10 object-cover" alt="" />
             </div>
           </div>
 
           <div className="flex gap-x-10">
-            <div className="rounded-2xl flex bg-white w-full justify-between items-start p-3 shadow-md">
+            <div className="rounded-2xl flex bg-white border w-full justify-between items-start p-3 shadow-md">
               <div className="space-y-5 w-full">
                 <h3 className="font-semibold text-[#6E7479]">Paid Invoice</h3>
                 <h2 className="text-4xl text-[#6E7479] font-semibold ">
@@ -129,7 +129,7 @@ export default function Dashboard() {
                 <img src="/3d.svg" className="w-10 h-10 object-cover" alt="" />
               </div>
             </div>
-            <div className="rounded-2xl flex bg-white w-full justify-between items-start p-3 shadow-md">
+            <div className="rounded-2xl flex bg-white border w-full justify-between items-start p-3 shadow-md">
               <div className="space-y-5 w-full">
                 <h3 className="text-[#6E7479] font-semibold">Subscriptions</h3>
                 <h2 className="text-4xl text-[#6E7479] font-semibold ">1380</h2>
@@ -148,7 +148,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="graph bg-white rounded-2xl shadow-md p-2">
+          <div className="graph bg-white border rounded-2xl shadow-md p-2">
             <h3 className="text-[#8E959C] font-semibold">Cloud Traffic</h3>
             <SuperAdminLineChart />
           </div>
@@ -167,7 +167,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="chart col-span-1 flex flex-col">
-          <div className="bg-white mt-10 shadow-md rounded-2xl flex-grow">
+          <div className="bg-white border p-4 mt-10 shadow-md rounded-2xl flex-grow">
             <h3 className="text-[#8E959C] font-semibold">User Percentage</h3>
 
             <SuperadminPieChart />

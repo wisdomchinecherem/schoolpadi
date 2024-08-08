@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { TabButton } from "../../components/reusables/filters";
 import SchoolListTable from "../../components/tables/superadmin/SchoolListTable";
+import { FiPlus } from "react-icons/fi";
+import CustomSearch from "../../components/reusables/filters/CustomSearch";
 
 const tabs = ["Active", "Expired", "On trial"]
 const data = [
@@ -48,12 +50,13 @@ export default function UserManagement() {
     });
     return countObj;
   }, []);
+  
   return (
     <section className="">
       <div className="flex  my-10 items-center text-white p-4 justify-between ">
-        <h2>School list</h2>
-        <button className="bg-[#027FFF] px-6 py-2 rounded-2xl">
-          Add School
+        <h2 className="text-2xl">School list</h2>
+        <button className="bg-[#027FFF] px-6 py-2 flex items-center gap-x-2 rounded-2xl">
+        <FiPlus /> <span>Add School </span>  
         </button>
       </div>
 
@@ -67,6 +70,7 @@ export default function UserManagement() {
           activeTab={activeTab}
           onTabClick={setActiveTab} />
         </div>
+        <CustomSearch />
         <SchoolListTable data={filteredData} />
       </div>
     </section>

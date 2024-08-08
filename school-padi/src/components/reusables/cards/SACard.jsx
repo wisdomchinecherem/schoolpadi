@@ -1,15 +1,15 @@
 import PropTypes from "prop-types"
 const SACard = ({ title, mainValue, subValues }) => {
   return (
-    <div className="p-4 bg-white shadow-md flex justify-between items-start rounded-md">
+    <div className="p-4 bg-white border shadow-md flex justify-between items-start rounded-md">
         <div className=" space-y-4">
       <h3 className="text-gray-500">{title}</h3>
       <p className="text-4xl font-bold text-[#6E7479]">{mainValue}</p>
-      <div className="flex gap-x-4">
+      <div className="flex gap-x-4 items-center flex-wrap gap-y-3">
 
       {Array.isArray(subValues) ? (
         subValues.map((subValue, index) => (
-          <p key={index} className= "bg-[#F2F5F7] p-1 rounded-full px-2 text-gray-500">{`${subValue.label}: ${subValue.value}`}</p>
+          <p key={index} className= "bg-[#F2F5F7] p-1 rounded-full px-2 text-sm text-gray-500">{`${subValue.label}: ${subValue.value}`}</p>
         ))
       ) : (
         <p className="text-gray-500">{subValues}</p>
