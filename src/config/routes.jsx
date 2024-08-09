@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Landingpage from '../pages/landingpage';
-// import Navbar from '../components/Landingpage/Navbar';
+ import Navbar from '../components/Landingpage/Navbar';
 import Footer from '../components/molecule/Footer';
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
 import InfomationSystem from '../components/adminDashboard/InfomationSystem';  
@@ -12,7 +12,7 @@ import Footer from '../components/Landingpage/Footer';
 function PageRoutes() {
      return (
        <div>
-         {/*<Navbar />  Ensure Navbar is always visible */}
+        <Navbar />  Ensure Navbar is always visible 
          <Routes>
            <Route path="/" element={<Landingpage />} />
            {/*<Route path="/navbar" element={<Navbar />} />*/}

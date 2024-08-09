@@ -10,6 +10,7 @@ import FinanceDashboard from './pages/superadmin/finance/Dashboard';
 import Report from './pages/superadmin/Report';
 import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
+import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';  
 import InfomationSystem from './components/adminDashboard/InfomationSystem';
 import Schedules from './components/adminDashboard/Schedules';
@@ -20,7 +21,8 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      {/* Navbar removed */}
+      {/* Render Navbar on all pages */}
+      {!hideHeaderFooter && <Navbar />}
       <div style={{ minHeight: 'calc(100vh - 100px)' }}>
         {children}
       </div>
