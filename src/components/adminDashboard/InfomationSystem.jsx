@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus} from '@fortawesome/free-solid-svg-icons';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faChevronDown, faBars  } from '@fortawesome/free-solid-svg-icons';
 
 
 const InfomationSystem = () => {
@@ -26,7 +25,7 @@ const InfomationSystem = () => {
 
 {/* New Section: Student List Header */}
 <div className="bg-[#014F9E] p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
-  <span className="text-white text-lg font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> {/* Adjusted margin-top */}
+  <span className="text-white text-lg font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> 
   <button className="bg-white text-[#014F9E] font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
     <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
     Add Student
@@ -94,13 +93,26 @@ const InfomationSystem = () => {
       ))}
     </div>
 
-    <div className="p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
-  <span className="text-[#8E959C] border text-lg  font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> 
-  <button className="text-[#8E959C] border font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
-    <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-    Add Student
-  </button>
-</div>
+    <div className="p-2 flex justify-between items-center px-6 py-4 sm:p-4 sm:px-8">
+      {/* Left-side Container for Placeholder and Filter */}
+      <div className="flex space-x-4">
+        {/* Placeholder Card - Increased Width */}
+        <span className="text-[#D3DBE3] border py-1 px-6 rounded flex items-center text-sm leading-none sm:py-2 sm:px-8 sm:text-base mt-[-4px]">
+          PlaceHolder
+        </span>
+        {/* Filter Card with Updated Icon */}
+        <button className="text-[#8E959C] border font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]">
+          <FontAwesomeIcon icon={faBars} className="mr-1 sm:mr-2" />
+          Filter
+        </button>
+      </div>
+      {/* Selected Button on the Right */}
+      <button className="text-[#8E959C] border font-bold py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]">
+        <FontAwesomeIcon icon={faPlus} className="mr-1 border rounded-full p-1 sm:mr-2" />
+        Selected
+        <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3] ml-2" />
+      </button>
+    </div>
 
     </>
     

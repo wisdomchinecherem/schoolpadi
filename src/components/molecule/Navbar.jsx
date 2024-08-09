@@ -130,6 +130,7 @@ const formatDateTime = (date) => {
                type="text"
                placeholder="Search..."
                className="w-full px-2 py-1 bg-[#FFFFFF] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+               
              />
            </div>
  
@@ -175,40 +176,40 @@ const formatDateTime = (date) => {
          </div>
  
          {/* New section: Text links */}
- <div className="mt-6 hidden md:block">
+ <div className="mt-6 hidden md:block overflow-x-hidden">
    <ul className="flex flex-col md:flex-row justify-between items-center text-[#FFFFFF] md:space-x-4 space-y-2 md:space-y-0">
      <li className="flex flex-col items-center px-4 cursor-pointer">
-       <a href="/AdminDashboard" className=" flex items-center font-semibold">
+       <a href="/AdminDashboard" className=" flex items-center font-semibold px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded "> 
          Dashboard
        </a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/InfomationSystem" className="flex items-center font-semibold">Information System</a>
+       <a href="/InfomationSystem" className="flex items-center hover:bg-[#FFFFFF] px-1 hover:text-[#014F9E] hover:rounded font-semibold">Information System</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/Schedules" className="flex items-center font-semibold text-[#FFFFFF] ">Schedules/Comms</a>
+       <a href="/Schedules" className="flex items-center font-semibold text-[#FFFFFF] px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded ">Schedules/Comms</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/Graduation" className="flex items-center font-semibold">Graduation/Alumni</a>
+       <a href="/Graduation" className="flex items-center font-semibold px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded ">Graduation/Alumni</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/Finance" className="flex items-center font-semibold">Finance/Accounting</a>
+       <a href="/Finance" className="flex items-center font-semibold px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded ">Finance/Accounting</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/people-productivity" className="flex items-center font-semibold">People/Productivity</a>
+       <a href="/people-productivity" className="flex items-center font-semibold px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded ">People/Productivity</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/marketing-admissions" className="flex items-center font-semibold">Marketing/Admissions</a>
+       <a href="/marketing-admissions" className="flex items-center font-semibold px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded ">Marketing/Admissions</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/administration" className="flex items-center ">Administration</a>
+       <a href="/administration" className="flex items-center font-semibold  px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded ">Administration</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
    </ul>
