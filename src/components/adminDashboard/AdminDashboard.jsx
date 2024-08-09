@@ -100,25 +100,25 @@ const AdminDashboard = () => {
       {/* Content for Box 1 */}
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col items-start mb-4">
-        <span className="text-sm font-grandis  text-[#C8D2DC]">No of Students</span>
-          <span className="text-xl font-bold  font-grandis text-[#6E7479]">12,000</span>
+        <span className="text-sm   text-[#C8D2DC]">No of Students</span>
+          <span className="text-xl text-[#6E7479]">12,000</span>
         </div>
         <div className="grid grid-cols-4 gap-12 w-full text-sm text-[#6E7479]">
-          <div className="flex flex-col font-grandis  items-center">
+          <div className="flex flex-col   items-center">
             <span>Active</span>
-            <span className="text-xl font-bold">100</span>
+            <span className="text-xl ">100</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col  items-center">
             <span>Alumni</span>
-            <span className="text-xl font-bold">135</span>
+            <span className="text-xl">135</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>License</span>
-            <span className="text-xl font-bold">110</span>
+            <span className="text-xl">110</span>
           </div>
-          <div className="flex flex-col font-grandis  items-center">
+          <div className="flex flex-col items-center">
             <span>Parents</span>
-            <span className="text-xl font-bold">70</span>
+            <span className="text-xl">70</span>
           </div>
         </div>
       </div>
@@ -129,21 +129,21 @@ const AdminDashboard = () => {
   {/* Content for Box 2 */}
   <div className="flex flex-col justify-between h-full">
     <div className="flex flex-col items-start mb-4">
-      <span className="text-sm font-grandis text-[#C8D2DC]">No of Staff</span>
-      <span className="text-xl font-bold font-grandis text-[#6E7479]">400</span>
+      <span className="text-sm text-[#C8D2DC]">No of Staff</span>
+      <span className="text-xl text-[#6E7479]">400</span>
     </div>
     <div className="grid grid-cols-3 gap-12 w-full text-sm text-[#6E7479]">
-          <div className="flex flex-col font-grandis  items-center">
+          <div className="flex flex-col items-center">
             <span>Admins</span>
-            <span className="text-xl font-bold">100</span>
+            <span className="text-xl">100</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>Teachers</span>
-            <span className="text-xl font-bold">135</span>
+            <span className="text-xl">135</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>Non-teaching</span>
-            <span className="text-xl font-bold">110</span>
+            <span className="text-xl">110</span>
           </div>
         
         </div>
@@ -159,7 +159,7 @@ const AdminDashboard = () => {
     <span className=" text-[#C8D2DC] font-medium">Events</span>
     <span className="text-gray-400">Daily</span>
   </div>
-  <h1 className="text-xl font-bold font-grandis text-[#6E7479]">Today</h1>
+  <h1 className="text-xl text-[#6E7479]">Today</h1>
 
   {/* Three larger boxes inside double-height box */}
   <div className="mt-4 grid grid-cols-1 gap-4">
@@ -205,20 +205,20 @@ const AdminDashboard = () => {
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col items-start mb-4">
         <span className="text-sm font-grandis  text-[#C8D2DC]">New Submission</span>
-          <span className="text-xl font-bold  font-grandis text-[#6E7479]">800</span>
+          <span className="text-xl text-[#6E7479]">800</span>
         </div>
         <div className="grid grid-cols-3 gap-12 w-full text-sm text-[#6E7479]">
-          <div className="flex flex-col font-grandis  items-center">
+          <div className="flex flex-col items-center">
             <span>Admissions</span>
-            <span className="text-xl font-bold">100</span>
+            <span className="text-xl">100</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>Registration</span>
-            <span className="text-xl font-bold">135</span>
+            <span className="text-xl">135</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>Forms</span>
-            <span className="text-xl font-bold">110</span>
+            <span className="text-xl">110</span>
           </div>
       
         </div>
@@ -230,21 +230,21 @@ const AdminDashboard = () => {
       {/* Content for Box 5 */}
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col items-start mb-4">
-          <span className="text-sm font-grandis  text-[#C8D2DC]">Messages</span>
-          <span className="text-xl font-bold  font-grandis text-[#6E7479]">400</span>
+          <span className="text-sm text-[#C8D2DC]">Messages</span>
+          <span className="text-xl text-[#6E7479]">400</span>
         </div>
         <div className="grid grid-cols-3 gap-12 w-full text-sm text-[#6E7479]">
-          <div className="flex flex-col font-grandis  items-center">
+          <div className="flex flex-col  items-center">
             <span>Admins</span>
-            <span className="text-xl font-bold">100</span>
+            <span className="text-xl">100</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>Teachers</span>
-            <span className="text-xl font-bold">135</span>
+            <span className="text-xl ">135</span>
           </div>
-          <div className="flex flex-col font-grandis items-center">
+          <div className="flex flex-col items-center">
             <span>Non-Teaching</span>
-            <span className="text-xl font-bold">110</span>
+            <span className="text-xl ">110</span>
           </div>
         </div>
       </div>
