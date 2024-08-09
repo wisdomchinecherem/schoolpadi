@@ -3,6 +3,8 @@ import DashboardTimeline from "../DashboardTimeline";
 import Table from "../../reusables/table/Table";
 import SACard from "../../reusables/cards/SACard";
 import { DateSelector } from "../../reusables/filters";
+import { GoDotFill } from "react-icons/go";
+import { HiOutlineDocumentDownload } from "react-icons/hi";
 
 const data = [
   {
@@ -77,9 +79,15 @@ const broadcast_column = [
     key: "payment",
     render: (data) => <span>{data.payment ?? "Not Available"}</span>,
   },
+  {
+    title: "",
+    key: "icon",
+    render: (data) => <span> <HiOutlineDocumentDownload />  </span>,
+  },
 ];
 
 export default function Overview() {
+
   const handleDateChange = (date) => {
     console.log("Selected date:", date);
   };
@@ -88,14 +96,14 @@ export default function Overview() {
     <div>
       <div className="flex items-center mb-4">
         <img
-          src="https://via.placeholder.com/50" // Placeholder image, replace with actual image source
+          src="/Image.svg" // Placeholder image, replace with actual image source
           alt="User"
           className="rounded-full w-12 h-12 mr-4"
         />
         <h2 className="text-2xl text-[#6E7479] font-semibold">
           The High School
         </h2>
-        <span className="ml-2 bg-green-100 text-green-500 py-1 px-2 rounded-full">
+        <span className="ml-2 text-sm bg-green-100 text-green-500 py-1 px-2 rounded-full">
           Active
         </span>
       </div>
@@ -205,7 +213,21 @@ export default function Overview() {
         <div className="flex flex-col">
           <div className="p-4 bg-white  flex-grow  shadow-md rounded-md">
             <h3 className="text-gray-500 mb-2">Portal Traffic</h3>
-            <div className=" bg-gray-100">
+            <div className=" ">
+            <div className="flex my-4 gap-3 items-center justify-end">
+                <div className="flex  items-center">
+                  <GoDotFill className="text-[#3599FF] text-xl" />{" "}
+                  <span>Nursery</span>
+                </div>
+                <div className="flex  items-center">
+                  <GoDotFill className="text-[#1671D9] text-xl" />{" "}
+                  <span>Primary</span>
+                </div>
+                <div className="flex  items-center">
+                  <GoDotFill className="text-[#F3A218] text-xl" />{" "}
+                  <span>Secondary</span>
+                </div>
+              </div>
               <PortalTraffic />
             </div>
           </div>

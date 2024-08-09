@@ -31,7 +31,7 @@ export default function DashboardTimeline() {
               </time>
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: activeItem === index ? '#027FFF' : 'gray' }}></div>
             </div>
-            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-500 dark:text-white">
               Subscription Renewal
             </h3>
             <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">

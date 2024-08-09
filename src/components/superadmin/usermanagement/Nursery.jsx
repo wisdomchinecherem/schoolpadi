@@ -1,21 +1,22 @@
 import PortalTraffic from "../../charts/PortalTraffic";
 import SACard from "../../reusables/cards/SACard";
 // import DashboardTimeline from "../DashboardTimeline";
-import { FaListCheck } from "react-icons/fa6";
+import PermissionsTable from "./PermissionTable";
+import { GoDotFill } from "react-icons/go";
 
 export default function Nursery() {
   return (
     <div>
       <div className="flex items-center mb-4">
         <img
-          src="https://via.placeholder.com/50" // Placeholder image, replace with actual image source
+          src="/Image.svg" // Placeholder image, replace with actual image source
           alt="User"
           className="rounded-full w-12 h-12 mr-4"
         />
         <h2 className="text-2xl text-[#6E7479] font-semibold">
           The High School
         </h2>
-        <span className="ml-2 bg-green-100 text-green-500 py-1 px-2 rounded-full">
+        <span className="ml-2 bg-green-100 text-sm text-green-500 py-1 px-2 rounded-full">
           Active
         </span>
       </div>
@@ -56,28 +57,30 @@ export default function Nursery() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="p-4 bg-white flex flex-col shadow-md rounded-md">
+        <div className="p-4 bg-white border flex flex-col shadow-md rounded-md">
           <h2 className="text-gray-500 mb-2">Features</h2>
-          <div className="grid bg-[#FAFBFC] text-[#8E959C] grid-cols-3">
-            <div className="col-span-2 ">
-              <h3>Permission List</h3>
-              <div className="flex bg-white items-center gap-3">
-                <div className="bg-[#CCE5FF] p-2 rounded-full text-[#027FFF]">
-                  <FaListCheck />
-                </div>
-                <h3>Key Features</h3>
-              </div>
-            </div>
-            <div className="col-span-1">
-            <h3 >Permission List</h3>
-
-            </div>
+          <div className=" bg-[#FAFBFC] text-[#8E959C] ">
+            <PermissionsTable />
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="p-4 bg-white  flex-grow  shadow-md rounded-md">
+          <div className="p-4 bg-white border flex-grow  shadow-md rounded-md">
             <h3 className="text-gray-500 mb-2">Portal Traffic</h3>
-            <div className=" bg-gray-100">
+            <div className=" ">
+              <div className="flex my-4 gap-3 items-center justify-end">
+                <div className="flex  items-center">
+                  <GoDotFill className="text-[#3599FF] text-xl" />{" "}
+                  <span>Admin</span>
+                </div>
+                <div className="flex  items-center">
+                  <GoDotFill className="text-[#1671D9] text-xl" />{" "}
+                  <span>Teachers</span>
+                </div>
+                <div className="flex  items-center">
+                  <GoDotFill className="text-[#F3A218] text-xl" />{" "}
+                  <span>Students</span>
+                </div>
+              </div>
               <PortalTraffic />
             </div>
           </div>

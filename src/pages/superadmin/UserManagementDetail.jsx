@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TabButton } from "../../components/reusables/filters";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Overview from "../../components/superadmin/usermanagement/Overview";
 import Nursery from "../../components/superadmin/usermanagement/Nursery";
 import Secondary from "../../components/superadmin/usermanagement/Secondary";
@@ -10,9 +10,20 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 const tabs = ["Overview", "Nursery", "Primary", "Secondary"]
 
 export default function UserManagementDetail() {
-    const [activeTab, setActiveTab] = useState("Overview");
-    const { id } = useParams();
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const activeTabFromQuery = query.get('tab') || tabs[0];
+  const [activeTab, setActiveTab] = useState(activeTabFromQuery);
+    
+    // Get the active tab from the query string or default to the first tab
+    
+  
+    useEffect(() => {
+      // Update the URL with the current active tab
+      navigate(`?tab=${activeTab}`, { replace: true });
+    }, [activeTab, navigate]); 
 
     const renderTabContent = () => {
       switch (activeTab) {

@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,  ResponsiveContainer } from 'recharts';
 
 // Sample data
 const data = [
@@ -24,7 +24,7 @@ const PortalTraffic = () => {
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
-      <Legend layout="horizontal" verticalAlign="top" align="center" />
+      {/* <Legend layout="horizontal" verticalAlign="top" align="center" /> */}
       <Line type="monotone" dataKey="Legend1" stroke="#8884d8" dot={{ r: 3 }} />
       <Line type="monotone" dataKey="Legend2" stroke="#82ca9d" dot={{ r: 3 }} />
       <Line type="monotone" dataKey="Legend3" stroke="#ffc658" dot={{ r: 3 }} />
