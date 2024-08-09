@@ -22,6 +22,7 @@ export default function FinanceTable({ data }) {
     const end = start + itemsPerPage;
     setFilteredData(data.slice(start, end));
   }, [currentPage, data]);
+  
   const broadcast_column = [
     {
       title: "",

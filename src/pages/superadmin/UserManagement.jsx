@@ -3,6 +3,7 @@ import { TabButton } from "../../components/reusables/filters";
 import SchoolListTable from "../../components/tables/superadmin/SchoolListTable";
 import { FiPlus } from "react-icons/fi";
 import CustomSearch from "../../components/reusables/filters/CustomSearch";
+import { MdFilterList } from "react-icons/md";
 
 const tabs = ["Active", "Expired", "On trial"]
 const data = [
@@ -32,16 +33,61 @@ const data = [
       expiration_date: "2022-07-02",
       categories: "Nursery, Primary, Secondary",
       type: "on trial"
+  },
+  {
+      id:4,
+      school:"school 3",
+      school_number: "345678",
+      signup_date: "2022-06-21",
+      expiration_date: "2022-07-02",
+      categories: "Nursery, Primary, Secondary",
+      type: "on trial"
+  },
+  {
+      id:5,
+      school:"school 3",
+      school_number: "345678",
+      signup_date: "2022-06-21",
+      expiration_date: "2022-07-02",
+      categories: "Nursery, Primary, Secondary",
+      type: "on trial"
+  },
+  {
+      id:6,
+      school:"school 3",
+      school_number: "345678",
+      signup_date: "2022-06-21",
+      expiration_date: "2022-07-02",
+      categories: "Nursery, Primary, Secondary",
+      type: "on trial"
+  },
+  {
+      id:7,
+      school:"school 3",
+      school_number: "345678",
+      signup_date: "2022-06-21",
+      expiration_date: "2022-07-02",
+      categories: "Nursery, Primary, Secondary",
+      type: "on trial"
   }
 ]
 
 export default function UserManagement() {
 
   const [activeTab, setActiveTab] = useState("Active");
+  // const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+
 
   const filteredData = useMemo(() => {
-    return data.filter((item) => item.type.toLowerCase() === activeTab.toLowerCase());
-  }, [activeTab]);
+    return data.filter(
+      (item) =>
+        item.type.toLowerCase() === activeTab.toLowerCase() &&
+        Object.values(item).some((value) =>
+          String(value).toLowerCase().includes(searchQuery.toLowerCase())
+        )
+    );
+  }, [activeTab, searchQuery]);
 
   const counts = useMemo(() => {
     const countObj = { active: 0, expired: 0, "on trial": 0 };
@@ -70,7 +116,16 @@ export default function UserManagement() {
           activeTab={activeTab}
           onTabClick={setActiveTab} />
         </div>
-        <CustomSearch />
+        <div className="flex items-center py-4 gap-6">
+            <CustomSearch
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
+              <span className=" text-[#8E959C]">Filter</span>
+              <MdFilterList />
+            </div>
+          </div>
         <SchoolListTable data={filteredData} />
       </div>
     </section>
