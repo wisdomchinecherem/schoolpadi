@@ -78,33 +78,38 @@ const formatDateTime = (date) => {
              </div>
            </div>
  
-           {/* Right section: Icons (hidden on small screens) */}
-          <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-2`}>
-            <div className="flex space-x-6 ">
-              {/* Plus Icon */}
-              <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
-            <FaPlusCircle />
-          </div>
+{/* Right section: Icons (hidden on small screens) */}
+<div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-4`}>
+  <div className="flex space-x-6">
+    {/* Plus Icon */}
+    <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+      <FaPlusCircle />
+    </div>
 
-              {/* Notification Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
-                <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
-              </div>
+    {/* Notification Icon */}
+    <div className="bg-[#FFFFFF] rounded-full p-2 px-3">
+      <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-xl" title="Notifications" />
+    </div>
 
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
-            <IoChatbubbles />
-          </div>
+    {/* Chat Icon */}
+    <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+      <IoChatbubbles />
+    </div>
 
-              {/* Sound Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
-            <GrAnnounce />
-          </div>
+    {/* Sound Icon */}
+    <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+      <GrAnnounce />
+    </div>
 
-              {/* User Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-1.5 px-2.5 flex items-center">
-                <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-sm" title="Account" />
-              </div>
-            </div>
+    {/* User Icon */}
+    <div className="bg-[#FFFFFF] rounded-full p-2 px-3 flex items-center">
+      <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-xl" title="Account" />
+    </div>
+  </div>
+
+
+
+
  
              {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
              <div className="flex items-center space-x-2 text-white pt-4">
