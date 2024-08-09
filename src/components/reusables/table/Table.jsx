@@ -42,8 +42,8 @@ const Table = ({ columns, data, onRowClick, isCoin, isLoading }) => {
   );
 
   return (
-    <div className="overflow-x-auto p-2">
-      <table className="min-w-full w-full border-collapse">
+    <div className="overflow-x-auto rounder-xl border">
+      <table className="min-w-full w-full rounder-xl border-collapse">
         <thead>
           <tr className="border-gray-700">{colHeaders}</tr>
         </thead>

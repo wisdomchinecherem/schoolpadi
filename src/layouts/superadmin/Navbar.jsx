@@ -4,7 +4,7 @@ function Navbar() {
   const navItems = [
     { name: 'Dashboard', path: '/superadmin' },
     { name: 'User Management', path: '/superadmin/user-management' },
-    { name: 'Finance', path: '/superadmin/finance/dashboard' },
+    { name: 'Finance', path: '/superadmin/finance' },
     { name: 'Reports', path: '/superadmin/reports' },
   ];
 

@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { TabButton } from "../../components/reusables/filters";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Overview from "../../components/superadmin/usermanagement/Overview";
 import Nursery from "../../components/superadmin/usermanagement/Nursery";
 import Secondary from "../../components/superadmin/usermanagement/Secondary";
 import Primary from "../../components/superadmin/usermanagement/Primary";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const tabs = ["Overview", "Nursery", "Primary", "Secondary"]
 
 export default function UserManagementDetail() {
     const [activeTab, setActiveTab] = useState("Overview");
     const { id } = useParams();
-  
+    const navigate = useNavigate();
+
     const renderTabContent = () => {
       switch (activeTab) {
           case "Overview":
@@ -28,10 +30,16 @@ export default function UserManagementDetail() {
   };
   return (
     <section className="">
-      <div className="flex  my-10 items-center text-white p-4 justify-between ">
-        <h2>School list</h2>
-        <button className="bg-[#027FFF] px-6 py-2 rounded-2xl">
-          Add School
+       <div className="flex  my-10 items-center text-white p-4 justify-between ">
+        <button
+          onClick={() => navigate(-1)}
+          className=" cursor-pointer flex gap-x-2"
+        >
+          <IoIosArrowRoundBack className="text-2xl" /> <span>Back</span>
+        </button>
+        <button className="bg-[#027FFF] px-6 py-2 flex items-center gap-x-2 rounded-2xl">
+           {/* <span> </span> */}
+           View Features
         </button>
       </div>
 
