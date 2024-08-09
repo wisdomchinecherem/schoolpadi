@@ -1,9 +1,6 @@
 import { useState } from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faPlus} from '@fortawesome/free-solid-svg-icons';
-
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -27,8 +24,6 @@ const InfomationSystem = () => {
 
     <>
 
-
-      
 {/* New Section: Student List Header */}
 <div className="bg-[#014F9E] p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
   <span className="text-white text-lg font-semibold leading-none sm:text-xl mt-[-4px]">Student List</span> {/* Adjusted margin-top */}
