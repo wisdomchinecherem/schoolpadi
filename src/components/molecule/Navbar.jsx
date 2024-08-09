@@ -107,9 +107,6 @@ const formatDateTime = (date) => {
     </div>
   </div>
 
-
-
-
  
              {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
              <div className="flex items-center space-x-2 text-white pt-4">
@@ -182,7 +179,7 @@ const formatDateTime = (date) => {
  
 {/* New section: Text links */}
 <div className="mt-6 hidden md:block overflow-x-hidden">
-  <ul className="flex flex-wrap justify-between items-center text-[#FFFFFF] md:space-x-0 space-y-2 md:space-y-0">
+  <ul className="flex flex-wrap justify-between items-center text-[#FFFFFF] md:text-sm lg:text-base md:space-x-0 space-y-2 md:space-y-0">
     <li className="flex flex-col items-center w-1/2 md:w-auto px-2 cursor-pointer">
       <a href="/AdminDashboard" className="flex items-center px-1 hover:bg-[#FFFFFF] hover:text-[#014F9E] hover:rounded">
         Dashboard
@@ -234,7 +231,6 @@ const formatDateTime = (date) => {
   </ul>
   <div className="w-full h-0.5 bg-[#FFFFFF] mt-4 mb-12"></div>
 </div>
-
 
 
  </nav>

@@ -528,7 +528,7 @@ const AdminDashboard = () => {
     19 Jun
   </div>
   {/* Notice Content */}
-  <h4 className="text-lg sm:text-xl text-[#027FFF] font-semibold">{title}</h4>
+  <h4 className="text-lg sm:text-xl text-[#027FFF] ">{title}</h4>
   <p className="text-xs sm:text-sm mt-2 text-[#8E959C] leading-relaxed">
     Dear Students, Faculty, and Parents, Due to unforeseen circumstances, all sports activities scheduled for this week, including practices and matches, are hereby canceled. This decision has been made to ensure the safety and well-being of all participants.
   </p>
