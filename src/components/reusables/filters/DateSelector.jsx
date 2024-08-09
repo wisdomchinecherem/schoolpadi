@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa'; // Arrow icon from react-icons
+import PropTypes  from "prop-types"
 
 const DateSelector = ({ onDateChange }) => {
   const [date, setDate] = useState('');
@@ -26,5 +27,8 @@ const DateSelector = ({ onDateChange }) => {
     </div>
   );
 };
+DateSelector.propTypes ={
+  onDateChange: PropTypes.func,
+}
 
 export default DateSelector;

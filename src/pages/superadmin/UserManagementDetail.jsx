@@ -11,6 +11,8 @@ const tabs = ["Overview", "Nursery", "Primary", "Secondary"]
 
 export default function UserManagementDetail() {
   const { id } = useParams();
+  console.log(id);
+  
   const navigate = useNavigate();
   const location = useLocation();
   const query = new URLSearchParams(location.search);

@@ -4,7 +4,7 @@ const SACard = ({ title, mainValue, subValues }) => {
     <div className="p-4 bg-white border shadow-md flex justify-between items-start rounded-md">
         <div className=" space-y-4">
       <h3 className="text-gray-500">{title}</h3>
-      <p className="text-4xl font-bold text-[#6E7479]">{mainValue}</p>
+      <p className="text-4xl font-[500] text-[#6E7479]">{mainValue}</p>
       <div className="flex gap-x-4 items-center flex-wrap gap-y-3">
 
       {Array.isArray(subValues) ? (

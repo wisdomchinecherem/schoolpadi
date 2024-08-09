@@ -82,7 +82,7 @@ const broadcast_column = [
   {
     title: "",
     key: "icon",
-    render: (data) => <span> <HiOutlineDocumentDownload />  </span>,
+    render: () => <span> <HiOutlineDocumentDownload />  </span>,
   },
 ];
 
