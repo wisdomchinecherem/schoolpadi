@@ -13,9 +13,11 @@ import Dashboard from './pages/superadmin/Dashboard';
 import Report from './pages/superadmin/Report';
 // import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
+import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';  
 import InfomationSystem from './components/adminDashboard/InfomationSystem';
-import Schedules from './components/adminDashboard/Schedules';
+import Schedules from './components/adminDashboard/Schedules';    
+import Graduation from './components/adminDashboard/Graduation';
 import Finance from './pages/superadmin/Finance';
 
 const Layout = ({ children }) => {
@@ -24,7 +26,8 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      {/* Navbar removed */}
+      {/* Render Navbar on all pages */}
+      {!hideHeaderFooter && <Navbar />}
       <div style={{ minHeight: 'calc(100vh - 100px)' }}>
         {children}
       </div>
@@ -43,8 +46,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout><LandingPage /></Layout>} />  
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
-        <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} />
+        <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
         <Route path="/Schedules" element={<Layout><Schedules/></Layout>} />
+        <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route element={<SuperAdminLayout />}>
           <Route path="superadmin" element={<Dashboard />} />
           <Route path="superadmin/user-management" element={<UserManagement />} />
