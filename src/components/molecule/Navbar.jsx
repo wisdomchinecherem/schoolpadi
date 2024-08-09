@@ -188,7 +188,7 @@ const formatDateTime = (date) => {
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">
-       <a href="/Schedules" className="flex items-center font-semibold text-blue-500 bg-white rounded-lg px-3 py-1  ">Schedules/Comms</a>
+       <a href="/Schedules" className="flex items-center font-semibold text-[#FFFFFF] ">Schedules/Comms</a>
        <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full hover:bg-white"></span>
      </li>
      <li className="flex flex-col items-center px-4 hover:text-white cursor-pointer">

@@ -13,7 +13,8 @@ import Footer from './components/molecule/Footer';
 import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';  
 import InfomationSystem from './components/adminDashboard/InfomationSystem';
-import Schedules from './components/adminDashboard/Schedules';
+import Schedules from './components/adminDashboard/Schedules';    
+import Graduation from './components/adminDashboard/Graduation';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -37,8 +38,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout><LandingPage /></Layout>} />  
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
-        <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} />
+        <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
         <Route path="/Schedules" element={<Layout><Schedules/></Layout>} />
+        <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route element={<SuperAdminLayout />}>
           <Route path="superadmin" element={<Dashboard />} />
           <Route path="superadmin/user-management" element={<UserManagement />} />
