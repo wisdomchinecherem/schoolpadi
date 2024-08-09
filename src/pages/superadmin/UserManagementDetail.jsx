@@ -47,8 +47,6 @@ export default function UserManagementDetail() {
 
         {renderTabContent()}
 
-        {/* SchoolListTable component goes here */}
-        {/* <SchoolListTable data={filteredData} /> */}
       </div>
     </section>
   )
