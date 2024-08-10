@@ -13,6 +13,8 @@ const InfomationSystem = () => {
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
   const [openIndex, setOpenIndex] = useState(null);
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const data = [
     { name: 'John Doe', section: 'A', class: '10', id: '12345', email: 'john@example.com', contacts: '123-456-7890' },
     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
@@ -149,11 +151,60 @@ const InfomationSystem = () => {
     </button>
   </div>
   {/* Selected Button on the Right */}
-  <button className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm">
-  <FontAwesomeIcon icon={faPlus} className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base" />
-  <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">Selected</span>
-  <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base" />
-</button>
+  <div className="relative inline-block text-left">
+  <button
+    onClick={() => setIsOpen(!isOpen)}
+    className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
+  >
+    <FontAwesomeIcon
+      icon={faPlus}
+      className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base"
+    />
+    <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
+      Selected
+    </span>
+    <FontAwesomeIcon
+      icon={faChevronDown}
+      className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
+    />
+  </button>
+
+  {isOpen && (
+    <div className="absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <div className="py-1">
+        <div className="px-4 py-2 text-gray-700 font-bold">Subjects</div>
+        <div className="px-4 py-2 text-gray-700">Students Enrollments</div>
+        <div className="px-4 py-2 text-gray-700">Elective or Core Subjects Enrollments</div>
+        <div className="px-4 py-2 text-gray-700">Update Students Enrollment Status</div>
+        <div className="px-4 py-2 text-gray-700">Update Subjects Enrollment Status</div>
+        <div className="px-4 py-2 text-gray-700">Assign Degree to Students</div>
+
+        <div className="px-4 py-2 text-gray-700 font-bold">Communication</div>
+        <div className="px-4 py-2 text-gray-700">This is a subheading for the title</div>
+        <div className="px-4 py-2 text-gray-700">Send Email</div>
+        <div className="px-4 py-2 text-gray-700">Send SMS</div>
+        <div className="px-4 py-2 text-gray-700">Invite to Login (Email)</div>
+        <div className="px-4 py-2 text-gray-700">Invite to Login (SMS)</div>
+        <div className="px-4 py-2 text-gray-700">Invite to Login (WhatsApp)</div>
+
+        <div className="px-4 py-2 text-gray-700 font-bold">Academics</div>
+        <div className="px-4 py-2 text-gray-700">This is a subheading for the title</div>
+        <div className="px-4 py-2 text-gray-700">Print ID Card</div>
+        <div className="px-4 py-2 text-gray-700">Print Report Cards</div>
+        <div className="px-4 py-2 text-gray-700">Enable Report Cards</div>
+        <div className="px-4 py-2 text-gray-700">Disable Report Cards</div>
+
+        <div className="px-4 py-2 text-gray-700 font-bold">Other Actions</div>
+        <div className="px-4 py-2 text-gray-700">This is a subheading for the title</div>
+        <div className="px-4 py-2 text-gray-700">Block</div>
+        <div className="px-4 py-2 text-gray-700">Unblock</div>
+        <div className="px-4 py-2 text-gray-700">Move to Alumni</div>
+        <div className="px-4 py-2 text-gray-700">Delete</div>
+      </div>
+    </div>
+  )}
+</div>
+
 
 </div>
 
