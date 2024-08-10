@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faChevronDown, faBars  } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
+import { MdFilterList } from "react-icons/md";
 
 const InfomationSystem = () => {
   const navigate = useNavigate();
@@ -128,10 +129,11 @@ const InfomationSystem = () => {
         <span className="text-[#D3DBE3] border py-1 px-6 rounded flex items-center text-sm leading-none sm:py-2 sm:px-8 sm:text-base mt-[-4px]">
           PlaceHolder
         </span>
-        <button className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]">
-          <FontAwesomeIcon icon={faBars} className="mr-1 sm:mr-2" />
-          Filter
-        </button>
+
+        <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
+            <span className=" text-[#D3DBE3]">Filter</span>
+            <MdFilterList />
+          </div>
       </div>
       {/* Selected Button on the Right */}
       <button className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]">
