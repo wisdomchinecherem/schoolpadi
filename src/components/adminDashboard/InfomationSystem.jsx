@@ -129,9 +129,10 @@ const InfomationSystem = () => {
     <div className="p-2 flex justify-between items-center px-6 py-4 sm:p-4 sm:px-8">
       {/* Left-side Container for Placeholder and Filter */}
       <div className="flex space-x-4">
-        <span className="text-[#D3DBE3] border py-1 px-6 rounded flex items-center text-sm leading-none sm:py-2 sm:px-8 sm:text-base mt-[-4px]">
-          PlaceHolder
-        </span>
+      <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">
+       PlaceHolder
+       </span>
+
 
         <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
             <span className=" text-[#D3DBE3]">Filter</span>
