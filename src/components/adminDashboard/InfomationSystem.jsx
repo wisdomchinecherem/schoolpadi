@@ -170,7 +170,7 @@ const InfomationSystem = () => {
   </button>
 
   {isOpen && (
-    <div className="absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+    <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
       <div className="py-1">
         <div className="px-4 py-2 text-gray-700 font-bold">Subjects</div>
         <div className="px-4 py-2 text-gray-700">Students Enrollments</div>
