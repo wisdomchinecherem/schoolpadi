@@ -109,11 +109,9 @@ const InfomationSystem = () => {
     <div className="p-2 flex justify-between items-center px-6 py-4 sm:p-4 sm:px-8">
       {/* Left-side Container for Placeholder and Filter */}
       <div className="flex space-x-4">
-        {/* Placeholder Card - Increased Width */}
         <span className="text-[#D3DBE3] border py-1 px-6 rounded flex items-center text-sm leading-none sm:py-2 sm:px-8 sm:text-base mt-[-4px]">
           PlaceHolder
         </span>
-        {/* Filter Card with Updated Icon */}
         <button className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]">
           <FontAwesomeIcon icon={faBars} className="mr-1 sm:mr-2" />
           Filter
@@ -130,27 +128,27 @@ const InfomationSystem = () => {
     {/* Section Form */}
     <div className="w-full px-4 py-8">
       <div className="w-full max-w-screen-xl bg-white shadow-lg rounded-lg border border-gray-300 overflow-hidden mx-auto">
-        <div className="bg-[#FAFBFC] p-4">
-          <div className="flex justify-between text-[#8E959C]">
-            <span>Name</span>
-            <span>Section</span>
-            <span>Class</span>
-            <span>ID</span>
-            <span>Email</span>
-            <span>Contacts</span>
-            <span>Icons</span>
+        <div className="bg-gray-300 p-4">
+          <div className="flex justify-between text-[#8E959C] text-sm md:text-base">
+            <span className="px-2">Name</span>
+            <span className="px-2">Section</span>
+            <span className="px-2">Class</span>
+            <span className="px-2">ID</span>
+            <span className="px-2">Email</span>
+            <span className="px-2">Contacts</span>
+            <span className="px-2">Icons</span>
           </div>
         </div>
-        <div className="p-4 space-y-2">
+        <div className="p-4 space-y-2 overflow-x-auto">
           {data.map((item, index) => (
-            <div key={index} className="flex items-center justify-between bg-white p-2 rounded border border-gray-200 text-[#8E959C]">
+            <div key={index} className="flex items-center justify-between bg-white p-2   text-[#8E959C] text-sm md:text-base md:border">
               <input type="checkbox" className="mr-4" />
-              <span>{item.name}</span>
-              <span>{item.section}</span>
-              <span>{item.class}</span>
-              <span>{item.id}</span>
-              <span>{item.email}</span>
-              <span>{item.contacts}</span>
+              <span className="px-2 whitespace-nowrap ">{item.name}</span>
+              <span className="px-2">{item.section}</span>
+              <span className="px-2">{item.class}</span>
+              <span className="px-2">{item.id}</span>
+              <span className="px-2">{item.email}</span>
+              <span className="px-2">{item.contacts}</span>
               <div className="flex space-x-2">
                 <FaExclamation className="text-[#8E959C] cursor-pointer" />
                 <FaTrashAlt className="text-[#8E959C] cursor-pointer" />
