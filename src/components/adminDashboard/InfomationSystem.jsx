@@ -55,7 +55,7 @@ const InfomationSystem = () => {
 
 {/* New Section: Student List Header */}
 <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-  <span className="text-white text-lg leading-none sm:text-xl mt-0 mb-8">Student List</span> 
+  <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Student List</span> 
   <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
     <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
     Add Student
@@ -101,29 +101,30 @@ const InfomationSystem = () => {
 
 
 {/* Four Small Rectangles */}
-<div className="flex flex-wrap justify-center gap-8 mt-6 w-full md:px-20">
-      {dropdownData.map((data, index) => (
-        <div key={index} className="w-full md:w-[300px]">
-          <h2 className="text-[#101828] mb-2">{data.heading}</h2>
-          <div
-            className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
-            onClick={() => toggleDropdown(index)}
-          >
-            <span className="text-[#D3DBE3] ">{data.label}</span>
-            <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
-            {openIndex === index && (
-              <ul className="absolute top-full left-0 right-0 bg-gray-100 border  shadow-lg z-10">
-                {data.options.map((option, i) => (
-                  <li key={i} className="px-4 py-2 hover:bg-[#8E959C]">
-                    {option}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      ))}
+<div className="flex flex-wrap justify-center gap-8 mt-6 w-full px-4 md:px-20">
+  {dropdownData.map((data, index) => (
+    <div key={index} className="w-full md:w-[300px] px-2">
+      <h2 className="text-[#101828] mb-2">{data.heading}</h2>
+      <div
+        className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
+        onClick={() => toggleDropdown(index)}
+      >
+        <span className="text-[#D3DBE3]">{data.label}</span>
+        <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
+        {openIndex === index && (
+          <ul className="absolute top-full left-0 right-0 bg-gray-100 border shadow-lg z-10">
+            {data.options.map((option, i) => (
+              <li key={i} className="px-4 py-2 hover:bg-[#8E959C]">
+                {option}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
+  ))}
+</div>
+
 
     <div className="p-2 flex justify-between items-center px-6 py-4 sm:p-4 sm:px-8">
       {/* Left-side Container for Placeholder and Filter */}
