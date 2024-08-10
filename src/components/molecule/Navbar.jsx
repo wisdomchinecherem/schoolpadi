@@ -164,17 +164,34 @@ const formatDateTime = (date) => {
               </div>
            </div>
  
+
            {/* Links in dropdown, centralized */}
-           <ul className="space-y-4 text-left justify-center ">
-             <li className="hover:text-black font-semibold cursor-pointer">Dashboard</li>
-             <li className="hover:text-black font-semibold cursor-pointer">Information System</li>
-             <li className="hover:text-black font-semibold cursor-pointer">Schedules/Comms</li>
-             <li className="hover:text-black font-semibold cursor-pointer">Graduation/Alumni</li>
-             <li className="hover:text-bblack font-semibold cursor-pointer">Finance/Accounting</li>
-             <li className="hover:text-bblack font-semibold cursor-pointer">People/Productivity</li>
-             <li className="hover:text-black font-semibold cursor-pointer">Marketing/Admissions</li>
-             <li className="hover:text-black font-semibold cursor-pointer">Administration</li>
-           </ul>
+  <ul className="space-y-4 text-left justify-center">
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/AdminDashboard">Dashboard</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/InfomationSystem">Information System</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/Schedules">Schedules/Comms</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/Graduation">Graduation/Alumni</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/Finance">Finance/Accounting</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/People">People/Productivity</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/Marketing">Marketing/Admissions</a>
+  </li>
+  <li className="hover:text-black font-semibold cursor-pointer">
+    <a href="/Administration">Administration</a>
+  </li>
+</ul>
          </div>
  
 {/* New section: Text links */}
