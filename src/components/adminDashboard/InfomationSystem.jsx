@@ -54,13 +54,15 @@ const InfomationSystem = () => {
     <>
 
 {/* New Section: Student List Header */}
-<div className="bg-[#014F9E] p-2 flex justify-between items-center px-4 sm:p-4 sm:px-6">
-  <span className="text-white text-lg leading-none sm:text-xl mt-[-4px]">Student List</span> 
-  <button className="bg-white text-[#014F9E] py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]"> {/* Adjusted margin-top */}
+<div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
+  <span className="text-white text-lg leading-none sm:text-xl mt-0 mb-8">Student List</span> 
+  <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
     <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
     Add Student
   </button>
 </div>
+
+
 
 
 
