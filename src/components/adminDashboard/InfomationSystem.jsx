@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown, faBars  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
+import Pagination from "../reusables/filters/Pagination";
+import { useNavigate } from "react-router-dom";
 
 const InfomationSystem = () => {
-
+  const navigate = useNavigate();
+  const itemsPerPage = 4; // Number of items per page
+  const [currentPage, setCurrentPage] = useState(1); // Current page
+  const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
+  const [openIndex, setOpenIndex] = useState(null);
 
   const data = [
     { name: 'John Doe', section: 'A', class: '10', id: '12345', email: 'john@example.com', contacts: '123-456-7890' },
@@ -19,14 +25,24 @@ const InfomationSystem = () => {
     //random data here...
   ];
 
+  // Function to update the displayed data based on the current page
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  // Update the filtered data whenever the current page or data changes
+  useEffect(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    setFilteredData(data.slice(start, end));
+  }, [currentPage, data]);
+
   const dropdownData = [
     { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
     { heading: 'Section', label: 'Select Section', options: ['Session 1', 'Session 2', 'Session 3'] },
     { heading: 'Class', label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
     { heading: 'Subjects', label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
   ];
-
-  const [openIndex, setOpenIndex] = useState(null);
 
   const toggleDropdown = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -141,7 +157,7 @@ const InfomationSystem = () => {
         </div>
         <div className="p-4 space-y-2 overflow-x-auto">
           {data.map((item, index) => (
-            <div key={index} className="flex items-center justify-between bg-white p-2   text-[#8E959C] text-sm md:text-base md:border">
+            <div key={index} className="flex items-center justify-between bg-white p-2   text-[#8E959C] text-xs md:text-base md:border">
               <input type="checkbox" className="mr-4" />
               <span className="px-2 whitespace-nowrap ">{item.name}</span>
               <span className="px-2">{item.section}</span>
@@ -160,6 +176,16 @@ const InfomationSystem = () => {
         </div>
       </div>
     </div>
+
+    <div className="rounded border text-[#8E959C]">
+      <Pagination
+        currentPage={currentPage}
+        totalItems={data.length}
+        itemsPerPage={itemsPerPage}
+        onPageChange={handlePageChange}
+      />    
+    </div>
+
     </>
     
   );
