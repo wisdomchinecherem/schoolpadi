@@ -127,8 +127,8 @@ const InfomationSystem = () => {
 
 
 <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
-  {/* Left-side Container for Placeholder and Filter */}
-  <div className="flex space-x-4">
+  {/* Cards Container */}
+  <div className="hidden sm:flex space-x-4">
     <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">
       PlaceHolder
     </span>
@@ -138,13 +138,25 @@ const InfomationSystem = () => {
       <MdFilterList />
     </div>
   </div>
+
+  {/* Buttons for Small Screens */}
+  <div className="flex sm:hidden space-x-2">
+    <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">
+      placeholder
+    </button>
+    <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">
+      Filter
+    </button>
+  </div>
+
   {/* Selected Button on the Right */}
-  <button className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-[-4px]">
-    <FontAwesomeIcon icon={faPlus} className="mr-1 border rounded-full p-1 sm:mr-2" />
-    Selected
-    <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3] ml-2" />
+  <button className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm">
+    <FontAwesomeIcon icon={faPlus} className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base" />
+    <span className="text-xs sm:text-xs md:text-sm">Selected</span>
+    <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base" />
   </button>
 </div>
+
 
 
 
