@@ -6,7 +6,7 @@ import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
-const InfomationSystem = () => {
+const Teachers = () => {
   const navigate = useNavigate();
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
@@ -233,7 +233,7 @@ const InfomationSystem = () => {
               <span className="px-2">{item.class}</span>
               <span className="px-2">{item.id}</span>
               <span className="px-2">{item.email}</span>
-              <span className="px-2 whitespace-nowrap">{item.contacts}</span>
+              <span className="px-2">{item.contacts}</span>
               <div className="flex space-x-2">
                 <FaExclamation className="text-[#8E959C] cursor-pointer" />
                 <FaTrashAlt className="text-[#8E959C] cursor-pointer" />
@@ -260,4 +260,4 @@ const InfomationSystem = () => {
   );
 };
 
-export default InfomationSystem;
+export default Teachers;
