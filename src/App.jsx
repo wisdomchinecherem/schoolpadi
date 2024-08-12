@@ -15,7 +15,8 @@ import Report from './pages/superadmin/Report';
 import Footer from './components/molecule/Footer';
 import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';  
-import InfomationSystem from './components/adminDashboard/InfomationSystem';
+import InfomationSystem from './components/informationpage/InfomationSystem'; 
+import Teachers from './components/informationpage/Teachers'; 
 import Schedules from './components/adminDashboard/Schedules';    
 import Graduation from './components/adminDashboard/Graduation';
 import Finance from './pages/superadmin/Finance';
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/" element={<Layout><LandingPage /></Layout>} />  
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
+        <Route path="/teachers" element={<Layout><Teachers/></Layout>} /> 
         <Route path="/Schedules" element={<Layout><Schedules/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route element={<SuperAdminLayout />}>
