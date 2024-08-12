@@ -80,8 +80,8 @@ const broadcast_column = [
 export default function Dashboard() {
   return (
     <section className="my-20 ">
-      <div className=" grid grid-cols-3  gap-x-8 gap-y-8 ">
-        <div className="col-span-2 flex flex-col space-y-10 rounded-2xl">
+      <div className=" grid xl:grid-cols-3  grid-cols-1 gap-x-8 gap-y-8 ">
+        <div className="xl:col-span-2 col-span-1 flex flex-col space-y-10 rounded-2xl">
           <div className="rounded-2xl flex-grow flex bg-white w-full justify-between items-start p-3 shadow-md">
             <div className="space-y-5 w-full">
               <h3 className="">No of Schools</h3>
@@ -109,8 +109,8 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="flex gap-x-10">
-            <div className="rounded-2xl flex bg-white border w-full justify-between items-start p-3 shadow-md">
+          <div className="flex xl:flex-row flex-col gap-10">
+            <div className="rounded-2xl flex bg-white border w-full  justify-between items-start p-3 shadow-md">
               <div className="space-y-5 w-full">
                 <h3 className="font-semibold text-[#6E7479]">Paid Invoice</h3>
                 <h2 className="text-4xl text-[#6E7479] font-semibold ">
@@ -160,7 +160,7 @@ export default function Dashboard() {
             <DashboardTimeline />
           </div>
         </div>
-        <div className="col-span-2 flex flex-col">
+        <div className="xl:col-span-2 col-span-1 flex flex-col">
           <div className="rounded-2xl space-y-4 border  flex-grow p-4 shadow-md text-[#8E959C]">
             <h2 className="text-[#8E959C] font-semibold"> Recent Clients</h2>
             <Table columns={broadcast_column ?? []} data={data ?? []} />
