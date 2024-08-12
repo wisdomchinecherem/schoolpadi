@@ -15,18 +15,20 @@ const Teachers = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+
+
   const data = [
-    { name: 'John Doe', section: 'A', class: '10', id: '12345', email: 'john@example.com', contacts: '123-456-7890' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    //random data here...
-  ];
+     { name: 'John Doe', section: 'A', class: '10', id: '12345', email: 'john@example.com', employee:  'Teaching', contacts: '123-456-7890' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Non-Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Non-Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
+     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Non-Teaching',contacts: '987-654-3210' },
+     //random data here...
+   ];
 
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
@@ -233,6 +235,7 @@ const Teachers = () => {
               <span className="px-2">{item.class}</span>
               <span className="px-2">{item.id}</span>
               <span className="px-2">{item.email}</span>
+              <span className="px-2">{item.employee}</span>
               <span className="px-2">{item.contacts}</span>
               <div className="flex space-x-2">
                 <FaExclamation className="text-[#8E959C] cursor-pointer" />
