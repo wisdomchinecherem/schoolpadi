@@ -15,7 +15,7 @@ import Report from './pages/superadmin/Report';
 import Footer from './components/molecule/Footer';
 import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';  
-import InfomationSystem from './components/adminDashboard/InfomationSystem';
+import InfomationSystem from './components/informationpage/InfomationSystem';
 import Schedules from './components/adminDashboard/Schedules';    
 import Graduation from './components/adminDashboard/Graduation';
 import Finance from './pages/superadmin/Finance';

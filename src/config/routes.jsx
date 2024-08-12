@@ -3,7 +3,7 @@ import Landingpage from '../pages/landingpage';
  import Navbar from '../components/Landingpage/Navbar';
 import Footer from '../components/molecule/Footer';
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
-import InfomationSystem from '../components/adminDashboard/InfomationSystem';  
+import InfomationSystem from '../components/informationpage/InfomationSystem';  
 import Schedules from '../components/adminDashboard/Schedules'; 
 import Graduation from '../components/adminDashboard/Graduation';
  import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
