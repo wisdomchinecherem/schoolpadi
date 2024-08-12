@@ -2,18 +2,18 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 // Sample data
 const data = [
-  { name: '1', Legend1: 400, Legend2: 300, Legend3: 200 },
-  { name: '2', Legend1: 200, Legend2: 500, Legend3: 800 },
-  { name: '3', Legend1: 300, Legend2: 400, Legend3: 600 },
-  { name: '4', Legend1: 500, Legend2: 200, Legend3: 400 },
-  { name: '5', Legend1: 600, Legend2: 300, Legend3: 300 },
-  { name: '6', Legend1: 400, Legend2: 400, Legend3: 200 },
-  { name: '7', Legend1: 300, Legend2: 300, Legend3: 500 },
-  { name: '8', Legend1: 200, Legend2: 600, Legend3: 700 },
-  { name: '9', Legend1: 500, Legend2: 300, Legend3: 400 },
-  { name: '10', Legend1: 600, Legend2: 500, Legend3: 200 },
-  { name: '11', Legend1: 400, Legend2: 400, Legend3: 300 },
-  { name: '12', Legend1: 500, Legend2: 300, Legend3: 800 },
+  { name: '1', Nursery: 300, Primary: 400, Secondary: 200 },
+  { name: '2', Nursery: 400, Primary: 200, Secondary: 800 },
+  { name: '3', Nursery: 300, Primary: 300, Secondary: 600 },
+  { name: '4', Nursery: 600,  Primary: 500, Secondary: 400 },
+  { name: '5', Nursery: 700,  Primary: 600, Secondary: 300 },
+  { name: '6', Nursery: 100, Primary: 400, Secondary: 200 },
+  { name: '7', Nursery: 300, Primary: 300, Secondary: 500 },
+  { name: '8', Nursery: 200, Primary: 200, Secondary: 700 },
+  { name: '9', Nursery: 800,  Primary: 500, Secondary: 400 },
+  { name: '10', Nursery: 900, Primary: 600, Secondary: 200 },
+  { name: '11', Nursery: 400, Primary: 400, Secondary: 300 },
+  { name: '12', Nursery: 500, Primary: 500, Secondary: 800 },
 ];
 
 const SuperAdminLineChart = () => {
@@ -25,9 +25,9 @@ const SuperAdminLineChart = () => {
       <YAxis />
       <Tooltip />
       <Legend layout="horizontal" verticalAlign="top" align="center" />
-      <Line type="monotone" dataKey="Legend1" stroke="#8884d8" dot={{ r: 3 }} />
-      <Line type="monotone" dataKey="Legend2" stroke="#82ca9d" dot={{ r: 3 }} />
-      <Line type="monotone" dataKey="Legend3" stroke="#ffc658" dot={{ r: 3 }} />
+      <Line type="monotone" dataKey="Nursery" stroke="#8884d8"  strokeWidth={2} dot={false} />
+      <Line type="monotone" dataKey="Primary" stroke="#82ca9d" strokeWidth={2} dot={false} />
+      <Line type="monotone" dataKey="Secondary" stroke="#ffc658" strokeWidth={2} dot={false} />
     </LineChart>
   </ResponsiveContainer>
   );
