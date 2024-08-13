@@ -200,7 +200,7 @@ const Navbar = () => {
                 >
                   {link.name}
                 </a>
-                <span className="block w-2 h-2  bg-[#FFFFFF] rounded-full"></span>
+                <span className="block w-2 h-2 mt-2 bg-[#FFFFFF] rounded-full"></span>
               </li>
             ))}
           </ul>
