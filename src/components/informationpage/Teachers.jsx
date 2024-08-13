@@ -30,17 +30,18 @@ const Teachers = () => {
      //random data here...
    ];
 
+
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  // Update the filtered data whenever the current page or data changes
-  useEffect(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    setFilteredData(data.slice(start, end));
-  }, [currentPage, data]);
+     setCurrentPage(page);
+   };
+ 
+   // Update the filtered data whenever the current page or data changes
+   useEffect(() => {
+     const start = (currentPage - 1) * itemsPerPage;
+     const end = start + itemsPerPage;
+     setFilteredData(data.slice(start, end));
+   }, [currentPage, data]);
 
   const dropdownData = [
     { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
@@ -74,15 +75,15 @@ const Teachers = () => {
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
     <div className="grid grid-cols-4 gap-2"> {/* Reduced grid gap */}
-      <a href="/students" className="flex flex-col sm:flex-row items-center justify-center">
+      <a href="/InformationSystem" className="flex flex-col sm:flex-row items-center justify-center">
         <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
         <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           12
         </div>
       </a>
       <a href="/Teachers" className="flex flex-col sm:flex-row items-center justify-center">
-        <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+        <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
+        <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           8
         </div>
       </a>
