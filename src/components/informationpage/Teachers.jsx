@@ -213,42 +213,44 @@ const Teachers = () => {
 
 
 
-    {/* Section Form */}
-    <div className="w-full px-4 py-8">
-      <div className="w-full max-w-screen-xl bg-white shadow-lg rounded-lg border border-gray-300 overflow-hidden mx-auto">
-        <div className="bg-gray-300 p-4">
-          <div className="flex justify-between text-[#8E959C] text-sm md:text-base">
-            <span className="px-2">Name</span>
-            <span className="px-2">Section</span>
-            <span className="px-2">Class</span>
-            <span className="px-2">ID</span>
-            <span className="px-2">Email</span>
-            <span className="px-2">Contacts</span>
-            <span className="px-2">Icons</span>
-          </div>
-        </div>
-        <div className="p-4 space-y-2 overflow-x-auto">
-          {data.map((item, index) => (
-            <div key={index} className="flex items-center justify-between bg-white p-2   text-[#8E959C] text-xs md:text-base md:border">
-              <input type="checkbox" className="mr-4" />
-              <span className="px-2 whitespace-nowrap ">{item.name}</span>
-              <span className="px-2">{item.section}</span>
-              <span className="px-2">{item.class}</span>
-              <span className="px-2">{item.id}</span>
-              <span className="px-2">{item.email}</span>
-              <span className="px-2">{item.employee}</span>
-              <span className="px-2">{item.contacts}</span>
-              <div className="flex space-x-2">
-                <FaExclamation className="text-[#8E959C] cursor-pointer" />
-                <FaTrashAlt className="text-[#8E959C] cursor-pointer" />
-                <FaLock className="text-[#8E959C] cursor-pointer" />
-                <FaSave className="text-[#8E959C] cursor-pointer" />
-              </div>
-            </div>
-          ))}
-        </div>
+{/* Section Form */}
+<div className="w-full px-4 py-8">
+  <div className="w-full max-w-screen-xl bg-white shadow-lg rounded-lg border border-gray-300 overflow-hidden mx-auto">
+    <div className="bg-[#FAFBFC] p-4">
+      <div className="grid grid-cols-8 gap-2 text-[#8E959C] text-sm md:text-base">
+        <span className="text-center">Tick</span>
+        <span className="text-center">Name</span>
+        <span className="text-center">ID</span>
+        <span className="text-center">Class</span>
+        <span className="text-center">ID</span>
+        <span className="text-center">Email</span>
+        <span className="text-center">Contacts</span>
+        <span className="text-center">Icons</span>
       </div>
     </div>
+    <div className="p-4 space-y-2 overflow-x-auto">
+      <div className="min-w-[800px]"> {/* Adjust min-width as needed */}
+        {data.map((item, index) => (
+          <div key={index} className="grid grid-cols-8 gap-2 items-center bg-white p-2 text-[#8E959C] text-xs md:text-base md:border">
+            <input type="checkbox" className="mx-auto" />
+            <span className="px-2 text-center whitespace-nowrap">{item.name}</span>
+            <span className="px-2 text-center">{item.section}</span>
+            <span className="px-2 text-center">{item.class}</span>
+            <span className="px-2 text-center">{item.id}</span>
+            <span className="px-2 text-center">{item.email}</span>
+            <span className="px-2 text-center">{item.employee}</span>
+            <span className="flex justify-center space-x-2">
+              <FaExclamation className="text-[#8E959C] cursor-pointer" />
+              <FaTrashAlt className="text-[#8E959C] cursor-pointer" />
+              <FaLock className="text-[#8E959C] cursor-pointer" />
+              <FaSave className="text-[#8E959C] cursor-pointer" />
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
 
     <div className="rounded border text-[#8E959C]">
       <Pagination
