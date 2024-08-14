@@ -17,20 +17,18 @@ const InfomationSystem = () => {
   const [isOpen, setIsOpen] = useState(false);
 
 
-
-  const teachersData = [
-     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'teaching', contacts: '123-456-7890' },
-     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'non-teaching', contacts: '098-765-4321' },
-     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'teaching', contacts: '321-654-9870' },
-     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'teaching', contacts: '654-987-1234' },
-     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'non-teaching', contacts: '987-321-6540' },
-     { name: 'Sarah Wilson', id: '99001', gender: 'Female', email: 'sarah@example.com', employeeType: 'teaching', contacts: '456-789-0123' },
-     { name: 'David Clark', id: '22334', gender: 'Male', email: 'david@example.com', employeeType: 'teaching', contacts: '789-012-3456' },
-     { name: 'Laura Allen', id: '55667', gender: 'Female', email: 'laura@example.com', employeeType: 'non-teaching', contacts: '012-345-6789' },
-     { name: 'Daniel King', id: '88900', gender: 'Male', email: 'daniel@example.com', employeeType: 'teaching', contacts: '543-210-6789' },
-     { name: 'Jessica Lee', id: '11234', gender: 'Female', email: 'jessica@example.com', employeeType: 'teaching', contacts: '678-901-2345' },
-   ];
-
+   const teachersData = [
+    { name: 'John Doe', section: 'Section A', class: 'Class 2', email: 'john@example.com', id: 245753, contacts: '123-456-7890' },
+    { name: 'Jane Smith', section: 'Section A', class: 'Class 2', email: 'jane@example.com', id: 245753, contacts: '098-765-4321' },
+    { name: 'Robert Brown', section: 'Section A', class: 'Class 2', email: 'robert@example.com', id: 245753, contacts: '321-654-9870' },
+    { name: 'Emily Johnson', section: 'Section A', class: 'Class 2', email: 'emily@example.com', id: 245753, contacts: '654-987-1234' },
+    { name: 'Michael Davis', section: 'Section A', class: 'Class 2', email: 'michael@example.com', id: 245753, contacts: '987-321-6540' },
+    { name: 'Sarah Wilson', section: 'Section A', class: 'Class 2', email: 'sarah@example.com', id: 245753, contacts: '456-789-0123' },
+    { name: 'David Clark', section: 'Section A', class: 'Class 2', email: 'david@example.com', id: 245753, contacts: '789-012-3456' },
+    { name: 'Laura Allen', section: 'Section A', class: 'Class 2', email: 'laura@example.com', id: 245753, contacts: '012-345-6789' },
+    { name: 'Daniel King', section: 'Section A', class: 'Class 2', email: 'daniel@example.com', id: 245753, contacts: '543-210-6789' },
+    { name: 'Jessica Lee', section: 'Section A', class: 'Class 2', email: 'jessica@example.com', id: 245753, contacts: '678-901-2345' },
+  ];
 
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
@@ -223,11 +221,11 @@ const InfomationSystem = () => {
               <th className="py-2 px-4 border-b">
                 <input type="checkbox" />
               </th>
-              <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
+              <th className="py-2 px-4 text-[#8E959C] border-b">Students</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Section</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Class</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b whitespace-nowrap">Employee Type</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
             </tr>
@@ -239,12 +237,10 @@ const InfomationSystem = () => {
                   <input type="checkbox" />
                 </td>
                 <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
+                <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.section}</td>
+                <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.class}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
-                <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
-                <td className={`py-2 px-4 whitespace-nowrap ${teacher.employeeType === 'teaching' ? 'text-green-600' : 'text-orange-600'}`}>
-                  {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
-                </td>
                 <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                 <td className="py-2 px-4 flex space-x-2">
                   <FaExclamation className="text-[#8E959C]" />
