@@ -86,7 +86,7 @@ const InfomationSystem = () => {
           8
         </div>
       </a>
-      <a href="/admin" className="flex flex-col sm:flex-row items-center justify-center">
+      <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
         <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
         <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           3

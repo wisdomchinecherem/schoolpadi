@@ -5,6 +5,7 @@ import Footer from '../components/molecule/Footer';
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
 import InfomationSystem from '../components/informationpage/InfomationSystem';  
 import teachers from '../components/informationpage/Teachers';  
+import adminpage from '../components/informationpage/AdminPage'; 
 import Schedules from '../components/adminDashboard/Schedules'; 
 import Graduation from '../components/adminDashboard/Graduation';
  import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
@@ -20,7 +21,8 @@ function PageRoutes() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/admindashboard" element={<AdminDashboard />} /> 
         <Route path="/infomationsystem" element={<InfomationSystem />} />
-        <Route path="/teachers" element={<Teachers />} />
+        <Route path="/teachers" element={<Teachers />} />  
+        <Route path="/adminpage" element={<AdminPage />} />  
         <Route path="/Schedules" element={<Schedules/>} />
         <Route path="/Graduation" element={<Graduation/>} />
            </Routes>
