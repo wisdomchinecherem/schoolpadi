@@ -217,17 +217,17 @@ const Teachers = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-[#FAFBFC]">
               <th className="py-2 px-4 border-b">
                 <input type="checkbox" />
               </th>
-              <th className="py-2 px-4 border-b">Name</th>
-              <th className="py-2 px-4 border-b">ID</th>
-              <th className="py-2 px-4 border-b">Gender</th>
-              <th className="py-2 px-4 border-b">Email</th>
-              <th className="py-2 px-4 border-b">Employee Type</th>
-              <th className="py-2 px-4 border-b">Contacts</th>
-              <th className="py-2 px-4 border-b">Icons</th>
+              <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Employee Type</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
             </tr>
           </thead>
           <tbody>
@@ -236,20 +236,20 @@ const Teachers = () => {
                 <td className="py-2 px-4">
                   <input type="checkbox" />
                 </td>
-                <td className="py-2 px-4">{teacher.name}</td>
-                <td className="py-2 px-4">{teacher.id}</td>
-                <td className="py-2 px-4">{teacher.gender}</td>
-                <td className="py-2 px-4">{teacher.email}</td>
+                <td className="py-2 text-[#8E959C] px-4">{teacher.name}</td>
+                <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
+                <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
+                <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
                 <td className={`py-2 px-4 ${teacher.employeeType === 'teaching' ? 'text-green-600' : 'text-orange-600'}`}>
                   {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
                 </td>
-                <td className="py-2 px-4">{teacher.contacts}</td>
+                <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                 <td className="py-2 px-4 flex space-x-2">
-                  <FaExclamation className="text-gray-600" />
-                  <FaTrashAlt className="text-gray-600" />
-                  <FaLock className="text-gray-600" />
-                  <FaSave className="text-gray-600" />
-                  <FaTrash className="text-gray-600" /> 
+                  <FaExclamation className="text-[#8E959C]" />
+                  <FaTrashAlt className="text-[#8E959C]" />
+                  <FaLock className="text-[#8E959C]" />
+                  <FaSave className="text-[#8E959C]" />
+                  <FaTrash className="text-[#8E959C]" /> 
                 </td>
               </tr>
             ))}
