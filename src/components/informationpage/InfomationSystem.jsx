@@ -72,7 +72,7 @@ const InfomationSystem = () => {
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
     <div className="grid grid-cols-4 gap-2"> {/* Reduced grid gap */}
-      <a href="/students" className="flex flex-col sm:flex-row items-center justify-center">
+      <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
         <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
         <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           12

@@ -17,17 +17,17 @@ const Teachers = () => {
 
 
 
-  const data = [
-     { name: 'John Doe', section: 'A', class: '10', id: '12345', email: 'john@example.com', employee:  'Teaching', contacts: '123-456-7890' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Non-Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Non-Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Teaching',contacts: '987-654-3210' },
-     { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', employee: 'Non-Teaching',contacts: '987-654-3210' },
-     //random data here...
+  const teachersData = [
+     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'teaching', contacts: '123-456-7890' },
+     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'non-teaching', contacts: '098-765-4321' },
+     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'teaching', contacts: '321-654-9870' },
+     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'teaching', contacts: '654-987-1234' },
+     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'non-teaching', contacts: '987-321-6540' },
+     { name: 'Sarah Wilson', id: '99001', gender: 'Female', email: 'sarah@example.com', employeeType: 'teaching', contacts: '456-789-0123' },
+     { name: 'David Clark', id: '22334', gender: 'Male', email: 'david@example.com', employeeType: 'teaching', contacts: '789-012-3456' },
+     { name: 'Laura Allen', id: '55667', gender: 'Female', email: 'laura@example.com', employeeType: 'non-teaching', contacts: '012-345-6789' },
+     { name: 'Daniel King', id: '88900', gender: 'Male', email: 'daniel@example.com', employeeType: 'teaching', contacts: '543-210-6789' },
+     { name: 'Jessica Lee', id: '11234', gender: 'Female', email: 'jessica@example.com', employeeType: 'teaching', contacts: '678-901-2345' },
    ];
 
 
@@ -75,7 +75,7 @@ const Teachers = () => {
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
     <div className="grid grid-cols-4 gap-2"> {/* Reduced grid gap */}
-      <a href="/InformationSystem" className="flex flex-col sm:flex-row items-center justify-center">
+      <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
         <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
         <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           12
@@ -211,46 +211,6 @@ const Teachers = () => {
 </div>
 
 
-
-
-{/* Section Form */}
-<div className="w-full px-4 py-8">
-  <div className="w-full max-w-screen-xl bg-white shadow-lg rounded-lg border border-gray-300 overflow-hidden mx-auto">
-    <div className="bg-[#FAFBFC] p-4">
-      <div className="grid grid-cols-8 gap-2 text-[#8E959C] text-sm md:text-base">
-        <span className="text-center">Tick</span>
-        <span className="text-center">Name</span>
-        <span className="text-center">ID</span>
-        <span className="text-center">Class</span>
-        <span className="text-center">ID</span>
-        <span className="text-center">Email</span>
-        <span className="text-center">Contacts</span>
-        <span className="text-center">Icons</span>
-      </div>
-    </div>
-    <div className="p-4 space-y-2 overflow-x-auto">
-      <div className="min-w-[800px]"> {/* Adjust min-width as needed */}
-        {data.map((item, index) => (
-          <div key={index} className="grid grid-cols-8 gap-2 items-center bg-white p-2 text-[#8E959C] text-xs md:text-base md:border">
-            <input type="checkbox" className="mx-auto" />
-            <span className="px-2 text-center whitespace-nowrap">{item.name}</span>
-            <span className="px-2 text-center">{item.section}</span>
-            <span className="px-2 text-center">{item.class}</span>
-            <span className="px-2 text-center">{item.id}</span>
-            <span className="px-2 text-center">{item.email}</span>
-            <span className="px-2 text-center">{item.employee}</span>
-            <span className="flex justify-center space-x-2">
-              <FaExclamation className="text-[#8E959C] cursor-pointer" />
-              <FaTrashAlt className="text-[#8E959C] cursor-pointer" />
-              <FaLock className="text-[#8E959C] cursor-pointer" />
-              <FaSave className="text-[#8E959C] cursor-pointer" />
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
 
     <div className="rounded border text-[#8E959C]">
       <Pagination
