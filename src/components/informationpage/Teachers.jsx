@@ -213,7 +213,6 @@ const Teachers = () => {
 </div>
 
 <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-4">Teachers</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
           <thead>
