@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
@@ -40,8 +41,9 @@ const Teachers = () => {
    useEffect(() => {
      const start = (currentPage - 1) * itemsPerPage;
      const end = start + itemsPerPage;
-     setFilteredData(data.slice(start, end));
-   }, [currentPage, data]);
+     setFilteredData(teachersData.slice(start, end));
+   }, [currentPage, teachersData]);
+   
 
   const dropdownData = [
     { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
@@ -210,16 +212,62 @@ const Teachers = () => {
 
 </div>
 
+<div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-4">Teachers</h1>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">
+                <input type="checkbox" />
+              </th>
+              <th className="py-2 px-4 border-b">Name</th>
+              <th className="py-2 px-4 border-b">ID</th>
+              <th className="py-2 px-4 border-b">Gender</th>
+              <th className="py-2 px-4 border-b">Email</th>
+              <th className="py-2 px-4 border-b">Employee Type</th>
+              <th className="py-2 px-4 border-b">Contacts</th>
+              <th className="py-2 px-4 border-b">Icons</th>
+            </tr>
+          </thead>
+          <tbody>
+            {teachersData.map((teacher, index) => (
+              <tr key={index} className="border-b">
+                <td className="py-2 px-4">
+                  <input type="checkbox" />
+                </td>
+                <td className="py-2 px-4">{teacher.name}</td>
+                <td className="py-2 px-4">{teacher.id}</td>
+                <td className="py-2 px-4">{teacher.gender}</td>
+                <td className="py-2 px-4">{teacher.email}</td>
+                <td className={`py-2 px-4 ${teacher.employeeType === 'teaching' ? 'text-green-600' : 'text-orange-600'}`}>
+                  {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
+                </td>
+                <td className="py-2 px-4">{teacher.contacts}</td>
+                <td className="py-2 px-4 flex space-x-2">
+                  <FaExclamation className="text-gray-600" />
+                  <FaTrashAlt className="text-gray-600" />
+                  <FaLock className="text-gray-600" />
+                  <FaSave className="text-gray-600" />
+                  <FaTrash className="text-gray-600" /> 
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
 
 
     <div className="rounded border text-[#8E959C]">
-      <Pagination
-        currentPage={currentPage}
-        totalItems={data.length}
-        itemsPerPage={itemsPerPage}
-        onPageChange={handlePageChange}
-      />    
-    </div>
+  <Pagination
+    currentPage={currentPage}
+    totalItems={teachersData.length} // Changed from data.length to teachersData.length
+    itemsPerPage={itemsPerPage}
+    onPageChange={handlePageChange}
+  />    
+</div>
+
 
     </>
     
