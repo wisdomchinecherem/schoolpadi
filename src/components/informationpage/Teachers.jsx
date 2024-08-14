@@ -225,7 +225,7 @@ const Teachers = () => {
               <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Employee Type</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b whitespace-nowrap">Employee Type</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
             </tr>
@@ -236,11 +236,11 @@ const Teachers = () => {
                 <td className="py-2 px-4">
                   <input type="checkbox" />
                 </td>
-                <td className="py-2 text-[#8E959C] px-4">{teacher.name}</td>
+                <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
-                <td className={`py-2 px-4 ${teacher.employeeType === 'teaching' ? 'text-green-600' : 'text-orange-600'}`}>
+                <td className={`py-2 px-4 whitespace-nowrap ${teacher.employeeType === 'teaching' ? 'text-green-600' : 'text-orange-600'}`}>
                   {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
                 </td>
                 <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
