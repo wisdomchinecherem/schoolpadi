@@ -20,7 +20,7 @@ const SearchComponent = ({ value, onChange, placeholder = "Search" }) => {
 
 SearchComponent.propTypes = {
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   placeholder: PropTypes.string,
 };
 

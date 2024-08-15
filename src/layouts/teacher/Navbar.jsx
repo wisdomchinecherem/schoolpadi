@@ -2,10 +2,11 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types"
 function Navbar({ isMobile, toggleMenu }) {
   const navItems = [
-    { name: "Dashboard", path: "/superadmin" },
-    { name: "Information System", path: "/superadmin/user-management" },
-    { name: "Finance", path: "/superadmin/finance" },
-    { name: "Reports", path: "/superadmin/report" },
+    { name: "Dashboard", path: "/teacher" },
+    { name: "Information System", path: "/teacher/information-system" },
+    { name: "Learning Module", path: "/teacher/learning-module" },
+    { name: "Schedule/Comms", path: "/teacher/schedule-comms" },
+    { name: "Administrations", path: "/teacher/administrations" },
   ];
 
   return (

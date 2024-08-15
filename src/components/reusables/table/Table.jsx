@@ -72,7 +72,7 @@ Table.propTypes = {
   ).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   onRowClick: PropTypes.func,
-  isLoading: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool,
   isCoin: PropTypes.bool,
 };
 

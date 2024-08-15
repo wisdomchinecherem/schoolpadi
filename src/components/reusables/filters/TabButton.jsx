@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const TabButton = ({ tabs, counts, activeTab, onTabClick, isBorder }) => {
   return (
-    <div className="flex space-x-4 justify-between px-8 mb-4 w-full">
+    <div className={`flex space-x-4  justify-between px-8 mb-4 w-full`}>
       {tabs.map((tab) => (
         <button
           key={tab}

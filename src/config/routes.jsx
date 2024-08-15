@@ -4,12 +4,12 @@ import Landingpage from '../pages/landingpage';
 import Footer from '../components/molecule/Footer';
 import AdminDashboard from '../components/adminDashboard/AdminDashboard';
 import InfomationSystem from '../components/informationpage/InfomationSystem';  
-import teachers from '../components/informationpage/Teachers';  
+// import teachers from '../components/informationpage/Teachers';  
 import Schedules from '../components/adminDashboard/Schedules'; 
 import Graduation from '../components/adminDashboard/Graduation';
- import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
- import Home from '../pages/superadmin/Home';
-import Footer from '../components/Landingpage/Footer';  
+//  import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
+//  import Home from '../pages/superadmin/Home';
+// import Footer from '../components/Landingpage/Footer';  
 
 function PageRoutes() {
      return (
@@ -20,7 +20,7 @@ function PageRoutes() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/admindashboard" element={<AdminDashboard />} /> 
         <Route path="/infomationsystem" element={<InfomationSystem />} />
-        <Route path="/teachers" element={<Teachers />} />
+        {/* <Route path="/teachers" element={<Teachers />} /> */}
         <Route path="/Schedules" element={<Schedules/>} />
         <Route path="/Graduation" element={<Graduation/>} />
            </Routes>

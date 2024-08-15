@@ -21,6 +21,10 @@ import Schedules from './components/adminDashboard/Schedules';
 import Graduation from './components/adminDashboard/Graduation';
 import Finance from './pages/superadmin/Finance';
 
+import TeacherLayout from './layouts/teacher/TeacherLayout';
+import TeacherDashboard from './pages/teacher/TeacherDashboard';
+import InformationSystem from './pages/teacher/InformationSystem';
+
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/';
@@ -58,10 +62,11 @@ const App = () => {
           <Route path="superadmin/finance" element={<Finance />} />
           <Route path="superadmin/report" element={<Report />} />
         </Route>
-        {/* <Route element={<FinanceLayout />}>
-          <Route path="superadmin/finance/dashboard" element={<FinanceDashboard />} />
-          <Route path="superadmin/finance/information-system" element={<InformationSystem />} />
-        </Route> */}
+        <Route element={<TeacherLayout />}>
+          <Route path="teacher" element={<TeacherDashboard />} />
+          <Route path="teacher/information-system" element={<InformationSystem />} />
+        </Route>
+      
       </Routes>
     </Router>
   );
