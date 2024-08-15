@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
@@ -15,30 +16,32 @@ const InfomationSystem = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const data = [
-    { name: 'John Doe', section: 'A', class: '10', id: '12345', email: 'john@example.com', contacts: '123-456-7890' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    { name: 'Jane Smith', section: 'B', class: '9', id: '67890', email: 'jane@example.com', contacts: '987-654-3210' },
-    //random data here...
+
+   const teachersData = [
+    { name: 'John Doe', section: 'Section A', class: 'Class 2', email: 'john@example.com', id: 245753, contacts: '123-456-7890' },
+    { name: 'Jane Smith', section: 'Section A', class: 'Class 2', email: 'jane@example.com', id: 245753, contacts: '098-765-4321' },
+    { name: 'Robert Brown', section: 'Section A', class: 'Class 2', email: 'robert@example.com', id: 245753, contacts: '321-654-9870' },
+    { name: 'Emily Johnson', section: 'Section A', class: 'Class 2', email: 'emily@example.com', id: 245753, contacts: '654-987-1234' },
+    { name: 'Michael Davis', section: 'Section A', class: 'Class 2', email: 'michael@example.com', id: 245753, contacts: '987-321-6540' },
+    { name: 'Sarah Wilson', section: 'Section A', class: 'Class 2', email: 'sarah@example.com', id: 245753, contacts: '456-789-0123' },
+    { name: 'David Clark', section: 'Section A', class: 'Class 2', email: 'david@example.com', id: 245753, contacts: '789-012-3456' },
+    { name: 'Laura Allen', section: 'Section A', class: 'Class 2', email: 'laura@example.com', id: 245753, contacts: '012-345-6789' },
+    { name: 'Daniel King', section: 'Section A', class: 'Class 2', email: 'daniel@example.com', id: 245753, contacts: '543-210-6789' },
+    { name: 'Jessica Lee', section: 'Section A', class: 'Class 2', email: 'jessica@example.com', id: 245753, contacts: '678-901-2345' },
   ];
 
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  // Update the filtered data whenever the current page or data changes
-  useEffect(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    setFilteredData(data.slice(start, end));
-  }, [currentPage, data]);
+     setCurrentPage(page);
+   };
+ 
+   // Update the filtered data whenever the current page or data changes
+   useEffect(() => {
+     const start = (currentPage - 1) * itemsPerPage;
+     const end = start + itemsPerPage;
+     setFilteredData(teachersData.slice(start, end));
+   }, [currentPage, teachersData]);
+   
 
   const dropdownData = [
     { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
@@ -50,7 +53,6 @@ const InfomationSystem = () => {
   const toggleDropdown = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
 
   return (
     <>
@@ -72,9 +74,9 @@ const InfomationSystem = () => {
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
     <div className="grid grid-cols-4 gap-2"> {/* Reduced grid gap */}
-      <a href="/students" className="flex flex-col sm:flex-row items-center justify-center">
-        <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
-        <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+      <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
+        <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
+        <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           12
         </div>
       </a>
@@ -84,7 +86,7 @@ const InfomationSystem = () => {
           8
         </div>
       </a>
-      <a href="/admin" className="flex flex-col sm:flex-row items-center justify-center">
+      <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
         <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
         <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
           3
@@ -211,49 +213,59 @@ const InfomationSystem = () => {
 
 
     {/* Section Form */}
-    <div className="w-full px-4 py-8">
-      <div className="w-full max-w-screen-xl bg-white shadow-lg rounded-lg border border-gray-300 overflow-hidden mx-auto">
-        <div className="bg-gray-300 p-4">
-          <div className="flex justify-between text-[#8E959C] text-sm md:text-base">
-            <span className="px-2">Name</span>
-            <span className="px-2">Section</span>
-            <span className="px-2">Class</span>
-            <span className="px-2">ID</span>
-            <span className="px-2">Email</span>
-            <span className="px-2">Contacts</span>
-            <span className="px-2">Icons</span>
-          </div>
-        </div>
-        <div className="p-4 space-y-2 overflow-x-auto">
-          {data.map((item, index) => (
-            <div key={index} className="flex items-center justify-between bg-white p-2   text-[#8E959C] text-xs md:text-base md:border">
-              <input type="checkbox" className="mr-4" />
-              <span className="px-2 whitespace-nowrap ">{item.name}</span>
-              <span className="px-2">{item.section}</span>
-              <span className="px-2">{item.class}</span>
-              <span className="px-2">{item.id}</span>
-              <span className="px-2">{item.email}</span>
-              <span className="px-2 whitespace-nowrap">{item.contacts}</span>
-              <div className="flex space-x-2">
-                <FaExclamation className="text-[#8E959C] cursor-pointer" />
-                <FaTrashAlt className="text-[#8E959C] cursor-pointer" />
-                <FaLock className="text-[#8E959C] cursor-pointer" />
-                <FaSave className="text-[#8E959C] cursor-pointer" />
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="container mx-auto px-4 py-8">
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
+          <thead>
+            <tr className="bg-[#FAFBFC]">
+              <th className="py-2 px-4 border-b">
+                <input type="checkbox" />
+              </th>
+              <th className="py-2 px-4 text-[#8E959C] border-b">Students</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Section</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Class</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
+              <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
+            </tr>
+          </thead>
+          <tbody>
+            {teachersData.map((teacher, index) => (
+              <tr key={index} className="border-b">
+                <td className="py-2 px-4">
+                  <input type="checkbox" />
+                </td>
+                <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
+                <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.section}</td>
+                <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.class}</td>
+                <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
+                <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
+                <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
+                <td className="py-2 px-4 flex space-x-2">
+                  <FaExclamation className="text-[#8E959C]" />
+                  <FaTrashAlt className="text-[#8E959C]" />
+                  <FaLock className="text-[#8E959C]" />
+                  <FaSave className="text-[#8E959C]" />
+                  <FaTrash className="text-[#8E959C]" /> 
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
 
+
     <div className="rounded border text-[#8E959C]">
-      <Pagination
-        currentPage={currentPage}
-        totalItems={data.length}
-        itemsPerPage={itemsPerPage}
-        onPageChange={handlePageChange}
-      />    
-    </div>
+  <Pagination
+    currentPage={currentPage}
+    totalItems={teachersData.length} // Changed from data.length to teachersData.length
+    itemsPerPage={itemsPerPage}
+    onPageChange={handlePageChange}
+  />    
+</div>
+
 
     </>
     

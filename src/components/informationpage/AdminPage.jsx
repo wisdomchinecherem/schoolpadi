@@ -7,7 +7,7 @@ import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
-const Teachers = () => {
+const AdminPage = () => {
   const navigate = useNavigate();
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
@@ -24,10 +24,6 @@ const Teachers = () => {
      { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'In-progress', contacts: '321-654-9870' },
      { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'teaching', contacts: '654-987-1234' },
      { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'In-proress', contacts: '987-321-6540' },
-     { name: 'Sarah Wilson', id: '99001', gender: 'Female', email: 'sarah@example.com', employeeType: 'teaching', contacts: '456-789-0123' },
-     { name: 'David Clark', id: '22334', gender: 'Male', email: 'david@example.com', employeeType: 'teaching', contacts: '789-012-3456' },
-     { name: 'Laura Allen', id: '55667', gender: 'Female', email: 'laura@example.com', employeeType: 'non-teaching', contacts: '012-345-6789' },
-     { name: 'Daniel King', id: '88900', gender: 'Male', email: 'daniel@example.com', employeeType: 'teaching', contacts: '543-210-6789' },
      { name: 'Jessica Lee', id: '11234', gender: 'Female', email: 'jessica@example.com', employeeType: 'teaching', contacts: '678-901-2345' },
    ];
 
@@ -273,4 +269,4 @@ const Teachers = () => {
   );
 };
 
-export default Teachers;
+export default AdminPage;
