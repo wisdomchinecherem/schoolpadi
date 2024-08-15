@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
@@ -101,31 +101,6 @@ const AdminPage = () => {
 </div>
 
 
-
-{/* Four Small Rectangles */}
-<div className="flex flex-wrap justify-center gap-6 mt-6 w-full px-4 md:px-20">
-  {dropdownData.map((data, index) => (
-    <div key={index} className="w-full md:w-[300px] px-2">
-      <h2 className="text-[#101828] mb-2">{data.heading}</h2>
-      <div
-        className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
-        onClick={() => toggleDropdown(index)}
-      >
-        <span className="text-[#D3DBE3]">{data.label}</span>
-        <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
-        {openIndex === index && (
-          <ul className="absolute top-full left-0 right-0 bg-gray-100 border shadow-lg z-10">
-            {data.options.map((option, i) => (
-              <li key={i} className="px-4 py-2 hover:bg-[#8E959C]">
-                {option}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </div>
-  ))}
-</div>
 
 
 <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
