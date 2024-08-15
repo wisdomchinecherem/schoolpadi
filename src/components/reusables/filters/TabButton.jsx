@@ -16,7 +16,7 @@ const TabButton = ({ tabs, counts, activeTab, onTabClick, isBorder }) => {
           onClick={() => onTabClick(tab)}
         >
           {tab}{" "}
-          {counts && (
+          {counts !== 0 ? (
             <span
               className={` ${
                 activeTab === tab
@@ -27,7 +27,7 @@ const TabButton = ({ tabs, counts, activeTab, onTabClick, isBorder }) => {
               {" "}
               {counts[tab?.toLowerCase()]}{" "}
             </span>
-          )}{" "}
+          ) : null}{" "}
         </button>
       ))}
     </div>

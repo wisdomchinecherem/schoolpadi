@@ -5,7 +5,7 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
-  Legend,
+  // Legend,
   ResponsiveContainer,
 } from 'recharts';
 
@@ -18,7 +18,7 @@ export default function RadarChartComponent({ data }) {
         <PolarRadiusAxis />
         <Radar name="Male" dataKey="male" stroke="#0274E8" fill="#0274E8" fillOpacity={0.6} />
         <Radar name="Female" dataKey="female" stroke="#3599FF" fill="#3599FF" fillOpacity={0.6} />
-        <Legend />
+        {/* <Legend /> */}
       </RadarChart>
     </ResponsiveContainer>
   );

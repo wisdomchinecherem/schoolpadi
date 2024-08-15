@@ -105,7 +105,7 @@ export default function LatestSubmissions() {
 
   return (
     <div className="p-4 bg-white shadow-lg rounded-lg">
-      <h2 className="text-sm font-bold text-[#C8D2DC] mb-4">Latest Submissions</h2>
+      <h2 className="text-sm font-[500] text-[#C8D2DC] mb-4">Latest Submissions</h2>
       <div className="flex gap-4 mb-4">
       <TabButton
         tabs={tabs}

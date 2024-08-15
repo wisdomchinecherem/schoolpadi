@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import { useLocation } from "react-router-dom";
 import { getTitle } from "../../utils/titleUtils";
 import { useState } from "react";
+import UserProfileMenu from "./ProfileMenu";
 
 export default function TopNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +16,15 @@ export default function TopNav() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleProfileMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const closeProfileMenu = () => {
+    setMenuOpen(false);
+  };
   const location = useLocation();
 
   return (
@@ -39,10 +49,12 @@ export default function TopNav() {
             <div className="flex items-center p-2 bg-white rounded-full">
               <GrAnnounce />
             </div>
-            <div className="flex items-center p-2 bg-white rounded-full">
+            <button onClick={toggleProfileMenu}  className="flex focus:outline-none items-center p-2 bg-white rounded-full">
               <MdPerson />
-            </div>
+            </button>
           </div>
+          <UserProfileMenu isOpen={menuOpen} onClose={closeProfileMenu} />
+
           {/* Hamburger icon for mobile view */}
           <div className="md:hidden">
             <FaBars className="text-white" onClick={toggleMenu} />

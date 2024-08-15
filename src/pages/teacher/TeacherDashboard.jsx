@@ -20,6 +20,8 @@ import {
   import { FaRegCalendarMinus } from "react-icons/fa";
   import ChatComponent from "../../components/teacher/dashboard/ChatComponent";
   import { NoticeBoard } from "../../components/teacher/dashboard/NoticeBoard";
+import Timetable from "../../components/teacher/dashboard/Timetable";
+import { GoDotFill } from "react-icons/go";
   
   const noticesData = [
     {
@@ -135,7 +137,7 @@ import {
             <div className="bg-white shadow-lg rounded-lg p-4 flex-grow flex flex-col">
               <div className="flex justify-between items-center mb-4">
                 <div>
-                  <h2 className="text-sm font-bold text-[#C8D2DC]">Events</h2>
+                  <h2 className="text-sm font-[500] text-[#C8D2DC]">Events</h2>
                   <h2 className="text-2xl font-bold text-[#6E7479]">Today</h2>
                 </div>
                 <div className="bg-[#E6F2FF] h-10 w-10 p-2 rounded-xl">
@@ -167,15 +169,41 @@ import {
             <UpcomingClasses />
           </div>
         </div>
-        <div className="p-4 grid grid-cols-2 gap-8 flex-grow">
-          <div className="bg-white shadow-lg border rounded-lg flex-grow">
+        <div className=" my-6 grid grid-cols-2 gap-8 flex-grow">
+          <div className="bg-white shadow-lg border rounded-lg flex-grow p-4">
+          <h2 className="text-sm font-[500] text-[#C8D2DC]">Class Distribution</h2>
+<div className=" ml-auto w-36">
+    
+    <div className=" flex items-center gap-3">
+        <GoDotFill className="text-[#0274E8]" />
+    <p>Female</p>
+    </div>
+    <div className=" flex items-center gap-3">
+        <GoDotFill className="text-[#3599FF]" />
+    <p>Male</p>
+    </div>
+</div>
             <RadarChartComponent data={radarData} />
           </div>
-          <div className="flex flex-col gap-8 bg-white border shadow-lg rounded-lg flex-grow">
+          <div className="flex flex-col p-4 gap-8 bg-white border shadow-lg rounded-lg flex-grow">
+            <div className="">
+            <h2 className="text-sm mb-4 font-[500] text-[#C8D2DC]">Student Attendance (Total)</h2>
+
             <AttendanceBarChart data={attendanceData} />
+            </div>
+            <div className="">
+            <h2 className="text-sm mb-4 font-[500] text-[#C8D2DC]">Student Attendance (Classes)</h2>
+
             <ClassAttendanceBarChart data={classAttendanceData} />
+            </div>
           </div>
         </div>
+        <div className="p-4 bg-white border shadow-lg rounded-lg">
+        <h2 className="text-sm mb-4 font-[500] text-[#C8D2DC]">Class Distribution</h2>
+
+<Timetable />
+        </div>
+
         <div className="grid grid-cols-3 gap-8 mt-8">
           <div className="col-span-2 flex flex-col h-full">
             <div className="flex justify-between border w-full p-4">
