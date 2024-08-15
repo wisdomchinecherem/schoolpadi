@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
@@ -19,21 +19,19 @@ const Parents = () => {
     { name: 'Michael Davis', email: 'michaeldavis@example.com', contact: '987-321-6540', status: 'Active', invited: 'Yes' },
   ];
 
-  // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // Update the filtered data whenever the current page or data changes
   useEffect(() => {
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     setFilteredData(parentsData.slice(start, end));
-  }, [currentPage, parentsData]);
+  }, [currentPage]);
 
   return (
     <>
-      {/* New Section: Parent List Header */}
+      {/* Header Section */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
         <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Parents List</span>
         <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
@@ -46,6 +44,24 @@ const Parents = () => {
       <div className="relative -top-6 px-6">
         <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4">
           <div className="grid grid-cols-4 gap-2">
+            <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                12
+              </div>
+            </a>
+            <a href="/Teachers" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                8
+              </div>
+            </a>
+            <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                3
+              </div>
+            </a>
             <a href="/Parents" className="flex flex-col sm:flex-row items-center justify-center">
               <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Parents</span>
               <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
@@ -55,13 +71,13 @@ const Parents = () => {
           </div>
         </div>
       </div>
-
+  
+      {/* Table Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
             <thead>
               <tr className="bg-[#FAFBFC]">
-                <th className="py-2 px-4 border-b"></th> {/* Empty header for checkbox column */}
                 <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Parent's Name</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Parent's Email</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Contact</th>
@@ -74,9 +90,6 @@ const Parents = () => {
             <tbody>
               {filteredData.map((parent, index) => (
                 <tr key={index} className="border-b">
-                  <td className="py-2 px-4">
-                    <input type="checkbox" />
-                  </td>
                   <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{parent.name}</td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.email}</td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.contact}</td>
@@ -108,12 +121,12 @@ const Parents = () => {
         </div>
       </div>
 
-      {/* Add Pagination component */}
+      {/* Pagination */}
       <Pagination
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
-        totalItems={parentsData.length} // Pass the total number of items
-        onPageChange={handlePageChange} // Handle page changes
+        totalItems={parentsData.length}
+        onPageChange={handlePageChange}
       />
     </>
   );
