@@ -19,11 +19,11 @@ const AdminPage = () => {
 
 
   const teachersData = [
-     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'Principal', contacts: '123-456-7890' },
-     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'Vice-Principal', contacts: '098-765-4321' },
-     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'Accounting', contacts: '321-654-9870' },
-     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'Secretary', contacts: '654-987-1234' },
-     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'Librarian', contacts: '987-321-6540' },
+     { name: 'John Doe', id: '001', gender: 'Male', email: 'john@example.com', employeeType: 'Principal', contacts: '123-456-7890' },
+     { name: 'Jane Smith', id: '002', gender: 'Female', email: 'jane@example.com', employeeType: 'Vice-Principal', contacts: '098-765-4321' },
+     { name: 'Robert Brown', id: '003', gender: 'Male', email: 'robert@example.com', employeeType: 'Accounting', contacts: '321-654-9870' },
+     { name: 'Emily Johnson', id: '004', gender: 'Female', email: 'emily@example.com', employeeType: 'Secretary', contacts: '654-987-1234' },
+     { name: 'Michael Davis', id: '005', gender: 'Male', email: 'michael@example.com', employeeType: 'Librarian', contacts: '987-321-6540' },
    ];
 
 
