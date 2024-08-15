@@ -1,22 +1,42 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 
 const Parents = () => {
   const navigate = useNavigate();
-  const itemsPerPage = 4; // Number of items per page
-  const [currentPage, setCurrentPage] = useState(1); // Current page
-  const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
+  const itemsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filteredData, setFilteredData] = useState([]);
 
   const parentsData = [
-    { name: 'John Doe', email: 'johndoe@example.com', contact: '123-456-7890', status: 'Active', invited: 'Yes' },
-    { name: 'Jane Smith', email: 'janesmith@example.com', contact: '098-765-4321', status: 'Inactive', invited: 'No' },
-    { name: 'Robert Brown', email: 'robertbrown@example.com', contact: '321-654-9870', status: 'Active', invited: 'Yes' },
-    { name: 'Emily Johnson', email: 'emilyjohnson@example.com', contact: '654-987-1234', status: 'Pending', invited: 'No' },
-    { name: 'Michael Davis', email: 'michaeldavis@example.com', contact: '987-321-6540', status: 'Active', invited: 'Yes' },
+    {
+      fatherName: 'Jon Tony', motherName: 'Peace Donald', username: 'jon123', 
+      date: '2024-08-15', time: '10:30 AM', email: 'jontony@example.com', 
+      contact: '123-456-7890', status: 'Active', invited: 'Yes', randomName: 'Alice Brown'
+    },
+    {
+      fatherName: 'Robert Brown', motherName: 'Emily Brown', username: 'robb123', 
+      date: '2024-08-15', time: '11:15 AM', email: 'robertbrown@example.com', 
+      contact: '321-654-9870', status: 'Inactive', invited: 'No', randomName: 'Charlie Johnson'
+    },
+    {
+      fatherName: 'Michael Davis', motherName: 'Sarah Davis', username: 'michaeld123', 
+      date: '2024-08-15', time: '12:00 PM', email: 'michaeldavis@example.com', 
+      contact: '987-321-6540', status: 'Active', invited: 'Yes', randomName: 'Sophia Lee'
+    },
+    {
+      fatherName: 'John Doe', motherName: 'Jane Doe', username: 'johnd123', 
+      date: '2024-08-15', time: '12:45 PM', email: 'johndoe@example.com', 
+      contact: '123-456-7890', status: 'Pending', invited: 'No', randomName: 'Oliver Smith'
+    },
+    {
+      fatherName: 'Peter Johnson', motherName: 'Emily Johnson', username: 'emilyj123', 
+      date: '2024-08-15', time: '01:30 PM', email: 'emilyjohnson@example.com', 
+      contact: '654-987-1234', status: 'Active', invited: 'Yes', randomName: 'Ava Williams'
+    },
   ];
 
   const handlePageChange = (page) => {
@@ -71,26 +91,32 @@ const Parents = () => {
           </div>
         </div>
       </div>
-  
+
       {/* Table Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
             <thead>
               <tr className="bg-[#FAFBFC]">
-                <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Parent's Name</th>
-                <th className="py-2 px-4 text-[#8E959C] border-b">Parent's Email</th>
-                <th className="py-2 px-4 text-[#8E959C] border-b">Contact</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b">Parent's Name</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b">Email Address</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b">Contact Number</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Status</th>
-                <th className="py-2 px-4 text-[#8E959C] border-b">Invited</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b">Invitation Status</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Parents</th>
-                <th className="py-2 px-4 text-[#8E959C] border-b">Icons</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b">Actions</th>
               </tr>
             </thead>
             <tbody>
               {filteredData.map((parent, index) => (
-                <tr key={index} className="border-b">
-                  <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{parent.name}</td>
+                <tr key={index} className="border-b h-12"> {/* Adjusted height */}
+                  <td className="py-2 text-[#8E959C] px-4 whitespace-pre-line">
+                    Father: {parent.fatherName} {"\n"}
+                    Mother: {parent.motherName} {"\n"}
+                    Username: {parent.username} {"\n"}
+                    Date: {parent.date} {"\n"}
+                    Time: {parent.time}
+                  </td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.email}</td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.contact}</td>
                   <td className={`py-2 px-4 ${parent.status === 'Active' ? 'text-green-600' : parent.status === 'Inactive' ? 'text-orange-600' : 'text-gray-600'}`}>
@@ -103,12 +129,11 @@ const Parents = () => {
                       {parent.invited}
                     </span>
                   </td>
-                  <td className="py-2 px-4 text-[#8E959C]">
-                    <span className="bg-sky-200 text-sky-800 rounded-full px-2 py-1 text-xs whitespace-nowrap">
-                      {parent.name}
-                    </span>
+                  {/* New Parents Column */}
+                  <td className="py-2 px-4 text-xs bg-sky-100 text-sky-600">
+                    {parent.randomName}
                   </td>
-                  <td className="py-2 px-4 flex space-x-2">
+                  <td className="py-2 px-4 flex space-x-2 text-[#8E959C]">
                     <FaExclamation className="text-[#8E959C]" />
                     <FaTrashAlt className="text-[#8E959C]" />
                     <FaLock className="text-[#8E959C]" />
