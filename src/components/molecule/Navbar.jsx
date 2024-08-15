@@ -173,17 +173,18 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Links in dropdown, centralized */}
-          <ul className="space-y-4 text-left justify-center">
-            {links.map((link) => (
-              <li
-                key={link.href}
-                className={`font-semibold cursor-pointer ${location.pathname === link.href ? 'text-[#014F9E] bg-white px-2 py-1 rounded' : 'hover:text-black'}`}
-              >
-                <a href={link.href}>{link.name}</a>
-              </li>
-            ))}
-          </ul>
+{/* Links in dropdown, centralized */}
+<ul className="space-y-4 text-left justify-center">
+  {links.map((link) => (
+    <li
+      key={link.href}
+      className={`font-semibold cursor-pointer ${location.pathname === link.href ? 'text-[#FFFFFF]  py-1 rounded' : 'hover:text-black'}`}
+    >
+      <a href={link.href}>{link.name}</a>
+    </li>
+  ))}
+</ul>
+
         </div>
 
         {/* New section: Text links */}
