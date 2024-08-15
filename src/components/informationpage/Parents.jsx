@@ -130,7 +130,7 @@ const Parents = () => {
                     </span>
                   </td>
                   {/* New Parents Column */}
-                  <td className="py-2 px-4 text-xs bg-sky-100 text-sky-600">
+                  <td className="py-2 px-4 text-xs  text-sky-600">
                     {parent.randomName}
                   </td>
                   <td className="py-2 px-4 flex space-x-2 text-[#8E959C]">
