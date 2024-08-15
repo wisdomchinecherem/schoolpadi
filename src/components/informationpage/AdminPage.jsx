@@ -172,33 +172,16 @@ const AdminPage = () => {
   {isOpen && (
     <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
       <div className="py-1">
-        <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Subjects</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Students Enrollments</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Elective or Core Subjects Enrollments</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Update Students Enrollment Status</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Update Subjects Enrollment Status</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Assign Degree to Students</div>
-
         <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Communication</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">This is a subheading for the title</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Send Email</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Send SMS</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (Email)</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (SMS)</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (WhatsApp)</div>
 
-        <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Academics</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">This is a subheading for the title</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Print ID Card</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Print Report Cards</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Enable Report Cards</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Disable Report Cards</div>
-
         <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Other Actions</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">This is a subheading for the title</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Block</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Unblock</div>
-        <div className="px-4 py-2 text-[#54585C] text-sm">Move to Alumni</div>
         <div className="px-4 py-2 text-[#54585C] text-sm">Delete</div>
       </div>
     </div>
