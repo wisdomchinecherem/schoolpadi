@@ -19,11 +19,11 @@ const AdminPage = () => {
 
 
   const teachersData = [
-     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'teaching', contacts: '123-456-7890' },
-     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'non-teaching', contacts: '098-765-4321' },
-     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'In-progress', contacts: '321-654-9870' },
-     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'teaching', contacts: '654-987-1234' },
-     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'In-proress', contacts: '987-321-6540' },
+     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'Principal', contacts: '123-456-7890' },
+     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'Vice-Principal', contacts: '098-765-4321' },
+     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'Accounting', contacts: '321-654-9870' },
+     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'Secretary', contacts: '654-987-1234' },
+     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'Librarian', contacts: '987-321-6540' },
    ];
 
 
@@ -207,7 +207,6 @@ const AdminPage = () => {
 
 </div>
 
-
 <div className="container mx-auto px-4 py-8">
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
@@ -235,7 +234,7 @@ const AdminPage = () => {
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
-                <td className={`py-2 px-4 whitespace-nowrap ${teacher.employeeType === 'teaching' ? 'text-green-600' : 'text-orange-600'}`}>
+                <td className={`py-2 px-4 whitespace-nowrap ${teacher.employeeType === 'Principal' ? 'text-blue-600' : 'text-orange-500'}`}>
                   {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
                 </td>
                 <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
