@@ -18,10 +18,12 @@ import AdminDashboard from './components/adminDashboard/AdminDashboard';
 import InfomationSystem from './components/informationpage/InfomationSystem'; 
 import Teachers from './components/informationpage/Teachers';   
 import AdminPage from './components/informationpage/AdminPage'; 
+import Parents from './components/informationpage/Parents'; 
 import Schedules from './components/adminDashboard/Schedules';    
 import Graduation from './components/adminDashboard/Graduation';
-import Finance from './pages/superadmin/Finance';
 
+
+import Finance from './pages/superadmin/Finance';
 import TeacherLayout from './layouts/teacher/TeacherLayout';
 import TeacherDashboard from './pages/teacher/TeacherDashboard';
 import InformationSystem from './pages/teacher/InformationSystem';
@@ -54,6 +56,7 @@ const App = () => {
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
         <Route path="/teachers" element={<Layout><Teachers/></Layout>} /> 
+        <Route path="/parents" element={<Layout><Parents/></Layout>} /> 
         <Route path="/Schedules" element={<Layout><Schedules/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
