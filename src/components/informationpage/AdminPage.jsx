@@ -215,8 +215,8 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b">
                 <input type="checkbox" />
               </th>
-              <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
+              <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
               <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
               <th className="py-2 px-4  text-[#8E959C] border-b whitespace-nowrap">Employee Type</th>
@@ -230,8 +230,8 @@ const AdminPage = () => {
                 <td className="py-2 px-4">
                   <input type="checkbox" />
                 </td>
-                <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
+                <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
                 <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
                 <td className={`py-2 px-4 whitespace-nowrap ${teacher.employeeType === 'Principal' ? 'text-blue-600' : 'text-orange-500'}`}>
