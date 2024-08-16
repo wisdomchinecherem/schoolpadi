@@ -167,11 +167,22 @@ const Parents = () => {
               {filteredData.map((parent, index) => (
                 <tr key={index} className="border-b h-12"> {/* Adjusted height */}
                   <td className="py-2 text-[#8E959C] px-4 whitespace-pre-line">
-                    Father: {parent.fatherName} {"\n"}
-                    Mother: {parent.motherName} {"\n"}
-                    Username: {parent.username} {"\n"}
-                    Date: {parent.date} {"\n"}
-                    Time: {parent.time}
+                  <div className="whitespace-nowrap">
+    Father: {parent.fatherName} {"\n"}
+</div>
+<div className="whitespace-nowrap">
+    Mother: {parent.motherName} {"\n"}
+</div>
+<div className="whitespace-nowrap">
+    Username: {parent.username} {"\n"}
+</div>
+<div className="whitespace-nowrap">
+    Date: {parent.date} {"\n"}
+</div>
+<div className="whitespace-nowrap">
+    Time: {parent.time}
+</div>
+
                   </td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.email}</td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.contact}</td>
