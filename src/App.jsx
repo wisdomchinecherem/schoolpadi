@@ -19,7 +19,7 @@ import InfomationSystem from './components/informationpage/InfomationSystem';
 import Teachers from './components/informationpage/Teachers';   
 import AdminPage from './components/informationpage/AdminPage'; 
 import Parents from './components/informationpage/Parents'; 
-import Schedules from './components/adminDashboard/Schedules';    
+import Schedules from './components/schedulespage/Schedules';    
 import Graduation from './components/adminDashboard/Graduation';
 
 

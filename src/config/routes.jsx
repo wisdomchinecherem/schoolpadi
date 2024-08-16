@@ -6,7 +6,7 @@ import AdminDashboard from '../components/adminDashboard/AdminDashboard';
 import InfomationSystem from '../components/informationpage/InfomationSystem';  
 // import teachers from '../components/informationpage/Teachers';  
 // import adminpage from '../components/informationpage/AdminPage'; 
-import Schedules from '../components/adminDashboard/Schedules'; 
+import Schedules from '../components/schedulespage/Schedules'; 
 import Graduation from '../components/adminDashboard/Graduation';
 //  import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
 //  import Home from '../pages/superadmin/Home';
