@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
+import { MdFilterList } from "react-icons/md";
 
 const Parents = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const Parents = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredData, setFilteredData] = useState([]);
 
+  const [isOpen, setIsOpen] = useState(false);
   const parentsData = [
     {
       fatherName: 'Jon Tony', motherName: 'Peace Donald', username: 'jon123', 
@@ -92,17 +94,71 @@ const Parents = () => {
         </div>
       </div>
 
+      <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
+  {/* Cards Container */}
+  <div className="hidden sm:flex space-x-4">
+    <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">
+      PlaceHolder
+    </span>
+
+    <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
+      <span className="text-[#D3DBE3]">Filter</span>
+      <MdFilterList />
+    </div>
+  </div>
+
+  {/* Buttons for Small Screens */}
+  <div className="flex sm:hidden space-x-2">
+    <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">
+      placeholder
+    </button>
+    <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">
+      Filter
+    </button>
+  </div>
+  {/* Selected Button on the Right */}
+  <div className="relative inline-block text-left">
+  <button
+    onClick={() => setIsOpen(!isOpen)}
+    className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
+  >
+    <FontAwesomeIcon
+      icon={faPlus}
+      className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base"
+    />
+    <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
+      Selected
+    </span>
+    <FontAwesomeIcon
+      icon={faChevronDown}
+      className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
+    />
+  </button>
+
+  {isOpen && (
+    <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
+      <div className="py-1">
+        <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Communication</div>
+        <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (Email)</div>
+        <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (SMS)</div>
+        <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (WhatsApp)</div>
+      </div>
+    </div>
+  )}
+</div>
+</div>
+
       {/* Table Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
+          <table className="min-w-full bg-white border rounded-3xl border-gray-200 text-xs sm:text-sm">
             <thead>
               <tr className="bg-[#FAFBFC]">
-                <th className="py-2 px-4 text-[#8E959C] border-b">Parent's Name</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Parent's Name</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Email Address</th>
-                <th className="py-2 px-4 text-[#8E959C] border-b">Contact Number</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Contact Number</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Status</th>
-                <th className="py-2 px-4 text-[#8E959C] border-b">Invitation Status</th>
+                <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Invitation Status</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Parents</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Actions</th>
               </tr>
@@ -130,7 +186,7 @@ const Parents = () => {
                     </span>
                   </td>
                   {/* New Parents Column */}
-                  <td className="py-2 px-4 text-xs  text-sky-600">
+                  <td className="py-2 px-4 text-xs whitespace-nowrap text-sky-600">
                     {parent.randomName}
                   </td>
                   <td className="py-2 px-4 flex space-x-2 text-[#8E959C]">
