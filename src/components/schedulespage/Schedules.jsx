@@ -14,12 +14,8 @@ const Schedules = () => {
   const [isOpen, setIsOpen] = useState(false); // Added isOpen state
 
   // Mock data for teachersData
-  const [teachersData, setTeachersData] = useState([
-    { name: "John Doe" },
-    { name: "Jane Smith" },
-    { name: "Emily Johnson" },
-    { name: "Michael Brown" },
-    // Add more teacher data as needed
+  const [teachersData] = useState([
+
   ]);
 
   // Function to update the displayed data based on the current page
@@ -34,15 +30,13 @@ const Schedules = () => {
     setFilteredData(teachersData.slice(start, end));
   }, [currentPage, teachersData]);
 
-  const toggleDropdown = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+
 
   return (
     <>
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Admins List</span>
+        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Notices</span>
         <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
           Add Student
@@ -54,8 +48,8 @@ const Schedules = () => {
         <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
           <div className="grid grid-cols-6 gap-2"> {/* Reduced grid gap */}
             <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
+              <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 12
               </div>
             </a>
@@ -66,8 +60,8 @@ const Schedules = () => {
               </div>
             </a>
             <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
-              <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-[#8E959C]  text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
+              <div className="bg-gray-300 text-[#8E959C]  rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 3
               </div>
             </a>
