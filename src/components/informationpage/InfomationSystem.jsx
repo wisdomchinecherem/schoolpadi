@@ -67,9 +67,6 @@ const InfomationSystem = () => {
 </div>
 
 
-
-
-
 {/* Overlapping White Box */}
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
