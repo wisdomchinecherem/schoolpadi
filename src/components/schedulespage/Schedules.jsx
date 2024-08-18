@@ -246,19 +246,19 @@ const Schedules = () => {
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
         <thead className="bg-gray-100">
           <tr>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Title</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Description</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Date</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Sent To</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600"></th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
           </tr>
         </thead>
         <tbody>
           {filteredData.map((item, index) => (
             <tr key={index} className="bg-white border-b">
-              <td className="px-6 py-8 text-xs sm:text-sm whitespace-nowrap text-gray-600">{item.title}</td>
-              <td className="px-6 py-8 text-xs sm:text-sm text-gray-600 whitespace-nowrap">{item.description}</td>
-              <td className="px-6 py-8 text-xs sm:text-sm text-gray-600">{item.date}</td>
+              <td className="px-6 py-8 text-xs sm:text-sm whitespace-nowrap text-[#8E959C]">{item.title}</td>
+              <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
+              <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
               <td className="px-6 py-8 text-xs sm:text-xs ">
                 {item.sentTo.split(', ').map((word, index) => {
                   const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
