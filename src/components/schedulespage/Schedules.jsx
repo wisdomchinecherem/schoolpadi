@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { MdFilterList } from "react-icons/md";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +9,6 @@ const Schedules = () => {
   const itemsPerPage = 10; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
-  const [isOpen, setIsOpen] = useState(false);
 
   // Mock data for table
   const [tableData] = useState([
@@ -21,90 +19,7 @@ const Schedules = () => {
       sentTo: "Admins, Teachers, Students, Parents(Active)",
       payment: "$2,000.00",
     },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
-    },
+    // Add more data here as needed
   ]);
 
   // Function to update the displayed data based on the current page
@@ -140,64 +55,39 @@ const Schedules = () => {
                 12
               </div>
             </a>
-            <a href="/Emails" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                8
-              </div>
-            </a>
-            <a href="/SMS" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                3
-              </div>
-            </a>
-            <a href="/WhatsApp" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">WhatsApp</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                25
-              </div>
-            </a>
-            <a href="/LMS" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">LMS</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                25
-              </div>
-            </a>
-            <a href="/Events" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Events</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                25
-              </div>
-            </a>
+            {/* Other links */}
           </div>
         </div>
       </div>
 
       {/* Table */}
       <div className="px-4 py-4">
-        <table className="min-w-full table-auto">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Title</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Description</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Date</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Sent To</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Payment</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredData.map((item, index) => (
-              <tr key={index} className="bg-white border-b">
-                <td className="px-4 py-2 text-sm text-gray-600">{item.title}</td>
-                <td className="px-4 py-2 text-sm text-gray-600">{item.description}</td>
-                <td className="px-4 py-2 text-sm text-gray-600">{item.date}</td>
-                <td className="px-4 py-2 text-sm text-gray-600">{item.sentTo}</td>
-                <td className="px-4 py-2 text-sm text-gray-600">{item.payment}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="overflow-x-auto px-4 py-4">
+          <div className="border-2 border-gray-300 rounded-lg p-2">
+            <table className="min-w-full table-auto border border-gray-200 rounded-lg">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Title</th>
+                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Description</th>
+                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Date</th>
+                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Sent To</th>
+                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Payment</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredData.map((item, index) => (
+                  <tr key={index} className="bg-white border-b">
+                    <td className="px-6 py-2 text-sm text-gray-600">{item.title}</td>
+                    <td className="px-6 py-2 text-sm text-gray-600">{item.description}</td>
+                    <td className="px-6 py-2 text-sm text-gray-600">{item.date}</td>
+                    <td className="px-6 py-2 text-sm text-gray-600">{item.sentTo}</td>
+                    <td className="px-6 py-2 text-sm text-gray-600">{item.payment}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       {/* Pagination */}
