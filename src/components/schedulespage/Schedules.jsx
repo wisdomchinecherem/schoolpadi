@@ -1,22 +1,79 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
+import { MdFilterList } from "react-icons/md";
 
 const Schedules = () => {
   const navigate = useNavigate();
-  const itemsPerPage = 10; // Number of items per page
+  const itemsPerPage = 8; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
+  const [isOpen, setIsOpen] = useState(false);
+
 
   // Mock data for table
   const [tableData] = useState([
     {
       title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
+      date: "02-07-2024",
+      sentTo: "Admins, Teachers, Students, Parents(Active)",
+    },
+    {
+      title: "Introduction to Class",
+      description: "Dear All, We dearly welcome you all to SchoolPadi.",
       date: "02-07-2024",
       sentTo: "Admins, Teachers, Students, Parents(Active)",
     },
@@ -36,6 +93,7 @@ const Schedules = () => {
 
   return (
     <>
+
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
         <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Notices</span>
@@ -88,6 +146,97 @@ const Schedules = () => {
           </div>
         </div>
       </div>
+
+      <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
+        {/* Cards Container */}
+        <div className="hidden sm:flex space-x-4">
+          <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">PlaceHolder</span>
+          <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
+            <span className="text-[#D3DBE3]">Filter</span>
+            <MdFilterList />
+          </div>
+        </div>
+
+        {/* Buttons for Small Screens */}
+        <div className="flex sm:hidden space-x-2">
+          <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
+          <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
+        </div>
+
+        {/* Selected Button on the Right */}
+        <div className="relative inline-block text-left">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
+          >
+            <FontAwesomeIcon
+              icon={faPlus}
+              className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base"
+            />
+            <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
+              Selected
+            </span>
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
+            />
+          </button>
+
+          {isOpen && (
+            <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
+              <div className="py-1">
+                <div className="py-1">
+                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
+                    Subjects
+                  </div>
+                  <div className="py-1">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Students Enrollments</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Elective or Core Subjects Enrollments</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Update Students Enrollment Status</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Update Subjects Enrollment Status</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Assign Degree to Students</a>
+                  </div>
+                </div>
+                <div className="py-1">
+                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
+                    Communication
+                  </div>
+                  <div className="py-1">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Send Email</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Send SMS</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Invite to Login (Email)</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Invite to Login (SMS)</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Invite to Login (WhatsApp)</a>
+                  </div>
+                </div>
+                <div className="py-1">
+                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
+                    Academics
+                  </div>
+                  <div className="py-1">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Print ID Card</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Print Report Cards</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Enable Report Cards</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Disable Report Cards</a>
+                  </div>
+                </div>
+                <div className="py-1">
+                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
+                    Other Actions
+                  </div>
+                  <div className="py-1">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Block</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Unblock</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Move to Alumni</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
 
      {/* Table */}
 <div className="px-4 py-4">
