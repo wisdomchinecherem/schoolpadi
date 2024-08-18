@@ -19,7 +19,6 @@ const Schedules = () => {
       sentTo: "Admins, Teachers, Students, Parents(Active)",
       payment: "$2,000.00",
     },
-    // Add more data here as needed
   ]);
 
   // Function to update the displayed data based on the current page
@@ -110,7 +109,19 @@ const Schedules = () => {
                     <td className="px-6 py-2 text-sm text-gray-600">{item.title}</td>
                     <td className="px-6 py-2 text-sm text-gray-600">{item.description}</td>
                     <td className="px-6 py-2 text-sm text-gray-600">{item.date}</td>
-                    <td className="px-6 py-2 text-sm text-gray-600">{item.sentTo}</td>
+                    <td className="px-6 py-2 text-sm text-gray-600">
+  {item.sentTo.split(', ').map((word, index) => {
+    const colors = ['bg-blue-500', 'bg-blue-400', 'bg-blue-300', 'bg-blue-200', 'bg-blue-100']; 
+    const colorClass = colors[index % colors.length]; // Cycle through colors
+
+    return (
+      <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
+        {word}
+      </span>
+    );
+  })}
+</td>
+
                     <td className="px-6 py-2 text-sm text-gray-600">{item.payment}</td>
                   </tr>
                 ))}
