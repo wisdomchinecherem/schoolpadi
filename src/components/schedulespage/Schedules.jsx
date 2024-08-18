@@ -238,7 +238,7 @@ const Schedules = () => {
       </div>
 
 
-     {/* Table */}
+    {/* Table */}
 <div className="px-4 py-4">
   <div className="overflow-x-auto px-4 py-4">
     <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
@@ -246,20 +246,20 @@ const Schedules = () => {
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
         <thead className="bg-gray-100">
           <tr>
-            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Title</th>
-            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Description</th>
-            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Date</th>
-            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Sent To</th>
-            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600"></th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Title</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Description</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Date</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600">Sent To</th>
+            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-gray-600"></th>
           </tr>
         </thead>
         <tbody>
           {filteredData.map((item, index) => (
             <tr key={index} className="bg-white border-b">
-              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600">{item.title}</td>
-              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600 whitespace-nowrap">{item.description}</td>
-              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600">{item.date}</td>
-              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600">
+              <td className="px-6 py-8 text-xs sm:text-sm whitespace-nowrap text-gray-600">{item.title}</td>
+              <td className="px-6 py-8 text-xs sm:text-sm text-gray-600 whitespace-nowrap">{item.description}</td>
+              <td className="px-6 py-8 text-xs sm:text-sm text-gray-600">{item.date}</td>
+              <td className="px-6 py-8 text-xs sm:text-xs ">
                 {item.sentTo.split(', ').map((word, index) => {
                   const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
                   const colorClass = colors[index % colors.length]; // Cycle through colors
@@ -271,7 +271,7 @@ const Schedules = () => {
                   );
                 })}
               </td>
-              <td className="py-2 px-4 flex space-x-2 text-xs">
+              <td className="py-8 px-4 flex space-x-2 text-sm">
                   <FaExclamation className="text-[#8E959C]" />
                   <FaTrashAlt className="text-[#8E959C]" />
                   <FaLock className="text-[#8E959C]" />
@@ -285,6 +285,7 @@ const Schedules = () => {
     </div>
   </div>
 </div>
+
 
       {/* Pagination */}
       <div className="rounded border text-[#8E959C]">
