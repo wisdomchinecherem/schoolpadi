@@ -55,7 +55,36 @@ const Schedules = () => {
                 12
               </div>
             </a>
-            {/* Other links */}
+            <a href="/Emails" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                8
+              </div>
+            </a>
+            <a href="/SMS" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                3
+              </div>
+            </a>
+            <a href="/WhatsApp" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">WhatsApp</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                25
+              </div>
+            </a>
+            <a href="/LMS" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">LMS</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                25
+              </div>
+            </a>
+            <a href="/Events" className="flex flex-col sm:flex-row items-center justify-center">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Events</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+                25
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -63,7 +92,8 @@ const Schedules = () => {
       {/* Table */}
       <div className="px-4 py-4">
         <div className="overflow-x-auto px-4 py-4">
-          <div className="border-2 border-gray-300 rounded-lg p-2">
+        <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
+
             <table className="min-w-full table-auto border border-gray-200 rounded-lg">
               <thead className="bg-gray-100">
                 <tr>
