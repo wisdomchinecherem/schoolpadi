@@ -14,6 +14,19 @@ const Schedules = () => {
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
   const [isOpen, setIsOpen] = useState(false);
 
+  const [selectedItem, setSelectedItem] = useState(null); // Selected row data
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+
+  const handleRowClick = (item) => {
+    setSelectedItem(item); // Set the selected row data
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+    setSelectedItem(null); // Clear the selected data
+  };
+
 
   // Mock data for table
   const [tableData] = useState([
@@ -99,7 +112,7 @@ const Schedules = () => {
         <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Notices</span>
         <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-          Add Student
+          Compose
         </button>
       </div>
 
@@ -187,48 +200,7 @@ const Schedules = () => {
               <div className="py-1">
                 <div className="py-1">
                   <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                    Subjects
-                  </div>
-                  <div className="py-1">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Students Enrollments</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Elective or Core Subjects Enrollments</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Update Students Enrollment Status</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Update Subjects Enrollment Status</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Assign Degree to Students</a>
-                  </div>
-                </div>
-                <div className="py-1">
-                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                    Communication
-                  </div>
-                  <div className="py-1">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Send Email</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Send SMS</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Invite to Login (Email)</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Invite to Login (SMS)</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Invite to Login (WhatsApp)</a>
-                  </div>
-                </div>
-                <div className="py-1">
-                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                    Academics
-                  </div>
-                  <div className="py-1">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Print ID Card</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Print Report Cards</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Enable Report Cards</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Disable Report Cards</a>
-                  </div>
-                </div>
-                <div className="py-1">
-                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                    Other Actions
-                  </div>
-                  <div className="py-1">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Block</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Unblock</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Move to Alumni</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Delete</a>
+                    Delete
                   </div>
                 </div>
               </div>
@@ -246,22 +218,26 @@ const Schedules = () => {
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
         <thead className="bg-gray-100">
           <tr>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
-            <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
           </tr>
         </thead>
         <tbody>
           {filteredData.map((item, index) => (
-            <tr key={index} className="bg-white border-b">
-              <td className="px-6 py-8 text-xs sm:text-sm whitespace-nowrap text-[#8E959C]">{item.title}</td>
+              <tr key={index} className="bg-white border-b cursor-pointer" onClick={() => handleRowClick(item)}>
+              <td className="py-2 px-4">
+               <input type="checkbox" />
+              </td>
+              <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
               <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
               <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
               <td className="px-6 py-8 text-xs sm:text-xs ">
                 {item.sentTo.split(', ').map((word, index) => {
-                  const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+                  const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
                   const colorClass = colors[index % colors.length]; // Cycle through colors
 
                   return (
@@ -296,6 +272,22 @@ const Schedules = () => {
           onPageChange={handlePageChange}
         />
       </div>
+
+            {/* Modal */}
+            {isModalOpen && selectedItem && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="bg-white p-8 rounded shadow-lg max-w-md mx-auto">
+            <h2 className="text-2xl font-semibold mb-4">{selectedItem.title}</h2>
+            <p className="text-gray-700">{selectedItem.description}</p>
+            <div className="mt-4">
+              <button onClick={closeModal} className="bg-blue-500 text-white px-4 py-2 rounded">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
     </>
   );
 };

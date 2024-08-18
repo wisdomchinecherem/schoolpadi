@@ -151,10 +151,12 @@ const Parents = () => {
       {/* Table Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="overflow-x-auto">
+        <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
           <table className="min-w-full bg-white border rounded-3xl border-gray-200 text-xs sm:text-sm">
             <thead>
               <tr className="bg-[#FAFBFC]">
-                <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Parent's Name</th>
+              <th className="px-6 py-8 text-left text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
+                <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Parents Name</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Email Address</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b whitespace-nowrap">Contact Number</th>
                 <th className="py-2 px-4 text-[#8E959C] border-b">Status</th>
@@ -165,9 +167,12 @@ const Parents = () => {
             </thead>
             <tbody>
               {filteredData.map((parent, index) => (
-                <tr key={index} className="border-b h-12"> {/* Adjusted height */}
-                  <td className="py-2 text-[#8E959C] px-4 whitespace-pre-line">
-                  <div className="whitespace-nowrap">
+               <tr key={index} className="border-b h-12"> 
+               <td className="py-2 px-4">
+               <input type="checkbox" />
+              </td>
+              <td className="py-2 text-[#8E959C] px-4 whitespace-pre-line">
+              <div className="whitespace-nowrap">
     Father: {parent.fatherName} {"\n"}
 </div>
 <div className="whitespace-nowrap">
@@ -210,7 +215,7 @@ const Parents = () => {
               ))}
             </tbody>
           </table>
-        </div>
+        </div></div>
       </div>
 
       {/* Pagination */}
