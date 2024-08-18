@@ -262,34 +262,44 @@ const Schedules = () => {
   </div>
 </div>
 
-            {/* Modal */}
-            {isModalOpen && selectedItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="bg-white p-8 rounded shadow-lg max-w-md mx-auto">
-            <h3 className="text-2xl  mb-4">{selectedItem.title}</h3>
-            <p className="text-[#8E959C] text-xs">{selectedItem.description}</p>
-            <td className="px-6 py-8 text-xs sm:text-xs ">
-            <p className="text-[#8E959C]">Publish To</p>
-                {selectedItem.sentTo.split(', ').map((word, index) => {
-                  const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
-                  const colorClass = colors[index % colors.length]; // Cycle through colors
 
-                  return (
-                    <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
-                      {word}
-                    </span>
-                  );
-                })}
-              </td>
-            <div className="mt-4">
-              <button onClick={closeModal} className="bg-blue-500 text-white px-4 py-2 rounded">
-                Close
-              </button>
-            </div>
-          </div>
+
+
+       {/* Modal */}
+{isModalOpen && selectedItem && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="relative bg-white p-8 rounded shadow-lg max-w-md mx-auto">
+      {/* Close Button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-2 right-2 border text-[#8E959C] text-xs px-2 py-1 rounded">
+        X
+      </button>
+      <h3 className="text-2xl mt-4 mb-4">{selectedItem.title}</h3>
+      <p className="text-[#8E959C] text-xs">{selectedItem.description}</p>
+      {/* Content */}
+      <div className="relative mt-24">
+        {/* Faint line above the text */}
+        <div className="absolute left-0 right-0 top-[-8px]  h-[1px] bg-gray-200"></div>
+
+        {/* Add a big space above the content */}
+        <div className="flex items-center flex-wrap mt-8">
+          <p className="text-[#8E959C] text-xs mr-2">Publish To</p>
+          {selectedItem.sentTo.split(', ').map((word, index) => {
+            const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+            const colorClass = colors[index % colors.length]; // Cycle through colors
+
+            return (
+              <span key={index} className={`px-1 mx-1 text-white text-xs ${colorClass} rounded`}>
+                {word}
+              </span>
+            );
+          })}
         </div>
-      )}
-      
+      </div>
+    </div>
+  </div>
+)}
 
       
       {/* Pagination */}
