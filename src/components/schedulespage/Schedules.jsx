@@ -262,23 +262,25 @@ const Schedules = () => {
   </div>
 </div>
 
-
-      {/* Pagination */}
-      <div className="rounded border text-[#8E959C]">
-        <Pagination
-          currentPage={currentPage}
-          itemsPerPage={itemsPerPage}
-          totalItems={tableData.length}
-          onPageChange={handlePageChange}
-        />
-      </div>
-
             {/* Modal */}
             {isModalOpen && selectedItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded shadow-lg max-w-md mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">{selectedItem.title}</h2>
-            <p className="text-gray-700">{selectedItem.description}</p>
+            <h3 className="text-2xl  mb-4">{selectedItem.title}</h3>
+            <p className="text-[#8E959C] text-xs">{selectedItem.description}</p>
+            <td className="px-6 py-8 text-xs sm:text-xs ">
+            <p className="text-[#8E959C]">Publish To</p>
+                {selectedItem.sentTo.split(', ').map((word, index) => {
+                  const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+                  const colorClass = colors[index % colors.length]; // Cycle through colors
+
+                  return (
+                    <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
+                      {word}
+                    </span>
+                  );
+                })}
+              </td>
             <div className="mt-4">
               <button onClick={closeModal} className="bg-blue-500 text-white px-4 py-2 rounded">
                 Close
@@ -288,6 +290,17 @@ const Schedules = () => {
         </div>
       )}
       
+
+      
+      {/* Pagination */}
+      <div className="rounded border text-[#8E959C]">
+        <Pagination
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+          totalItems={tableData.length}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </>
   );
 };
