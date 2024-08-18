@@ -223,43 +223,48 @@ const Emails = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((item, index) => (
-              <tr key={index} className="bg-white border-b cursor-pointer" onClick={() => handleRowClick(item)}>
-              <td className="py-2 px-4">
-               <input type="checkbox" />
-              </td>
-              <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
-              <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
-              <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
-              <td className="px-6 py-8 text-xs sm:text-xs ">
-                {item.sentTo.split(', ').map((word, index) => {
-                  const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
-                  const colorClass = colors[index % colors.length]; // Cycle through colors
+  {filteredData.map((item, index) => (
+    <tr
+      key={index}
+      className="bg-white border-b cursor-pointer"
+      onClick={() => handleRowClick(item)}
+    >
+      <td className="py-2 px-4">
+        <input
+          type="checkbox"
+          onClick={(e) => e.stopPropagation()} // Prevents row click
+        />
+      </td>
+      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
+      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
+      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
+      <td className="px-6 py-8 text-xs sm:text-xs">
+        {item.sentTo.split(', ').map((word, index) => {
+          const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+          const colorClass = colors[index % colors.length]; // Cycle through colors
 
-                  return (
-                    <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
-                      {word}
-                    </span>
-                  );
-                })}
-              </td>
-              <td className="py-8 px-4 flex space-x-2 text-sm">
-                  <FaExclamation className="text-[#8E959C]" />
-                  <FaTrashAlt className="text-[#8E959C]" />
-                  <FaLock className="text-[#8E959C]" />
-                  <FaSave className="text-[#8E959C]" />
-                  <FaTrash className="text-[#8E959C]" /> 
-                </td>
-            </tr>
-          ))}
-        </tbody>
+          return (
+            <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
+              {word}
+            </span>
+          );
+        })}
+      </td>
+      <td className="py-8 px-4 flex space-x-2 text-sm">
+        <FaExclamation className="text-[#8E959C]" />
+        <FaTrashAlt className="text-[#8E959C]" />
+        <FaLock className="text-[#8E959C]" />
+        <FaSave className="text-[#8E959C]" />
+        <FaTrash className="text-[#8E959C]" /> 
+      </td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   </div>
 </div>
-
-
-
 
        {/* Modal */}
 {isModalOpen && selectedItem && (
