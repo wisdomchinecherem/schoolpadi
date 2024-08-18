@@ -182,10 +182,6 @@ const Schedules = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
           >
-            <FontAwesomeIcon
-              icon={faPlus}
-              className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base"
-            />
             <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
               Selected
             </span>
