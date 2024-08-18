@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +19,6 @@ const Schedules = () => {
       description: "Dear All, We dearly welcome you all to SchoolPadi. [...]",
       date: "02-07-2024",
       sentTo: "Admins, Teachers, Students, Parents(Active)",
-      payment: "$2,000.00",
     },
   ]);
 
@@ -88,48 +89,53 @@ const Schedules = () => {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="px-4 py-4">
-        <div className="overflow-x-auto px-4 py-4">
-        <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
+     {/* Table */}
+<div className="px-4 py-4">
+  <div className="overflow-x-auto px-4 py-4">
+    <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
 
-            <table className="min-w-full table-auto border border-gray-200 rounded-lg">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Title</th>
-                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Description</th>
-                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Date</th>
-                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Sent To</th>
-                  <th className="px-6 py-2 text-left text-sm font-semibold text-gray-600">Payment</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredData.map((item, index) => (
-                  <tr key={index} className="bg-white border-b">
-                    <td className="px-6 py-2 text-sm text-gray-600">{item.title}</td>
-                    <td className="px-6 py-2 text-sm text-gray-600">{item.description}</td>
-                    <td className="px-6 py-2 text-sm text-gray-600">{item.date}</td>
-                    <td className="px-6 py-2 text-sm text-gray-600">
-  {item.sentTo.split(', ').map((word, index) => {
-    const colors = ['bg-blue-500', 'bg-blue-400', 'bg-blue-300', 'bg-blue-200', 'bg-blue-100']; 
-    const colorClass = colors[index % colors.length]; // Cycle through colors
+      <table className="min-w-full table-auto border border-gray-200 rounded-lg">
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Title</th>
+            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Description</th>
+            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Date</th>
+            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600">Sent To</th>
+            <th className="px-6 py-2 text-left text-xs sm:text-sm font-semibold text-gray-600"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.map((item, index) => (
+            <tr key={index} className="bg-white border-b">
+              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600">{item.title}</td>
+              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600 whitespace-nowrap">{item.description}</td>
+              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600">{item.date}</td>
+              <td className="px-6 py-2 text-xs sm:text-sm text-gray-600">
+                {item.sentTo.split(', ').map((word, index) => {
+                  const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+                  const colorClass = colors[index % colors.length]; // Cycle through colors
 
-    return (
-      <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
-        {word}
-      </span>
-    );
-  })}
-</td>
-
-                    <td className="px-6 py-2 text-sm text-gray-600">{item.payment}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+                  return (
+                    <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
+                      {word}
+                    </span>
+                  );
+                })}
+              </td>
+              <td className="py-2 px-4 flex space-x-2 text-xs">
+                  <FaExclamation className="text-[#8E959C]" />
+                  <FaTrashAlt className="text-[#8E959C]" />
+                  <FaLock className="text-[#8E959C]" />
+                  <FaSave className="text-[#8E959C]" />
+                  <FaTrash className="text-[#8E959C]" /> 
+                </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
       {/* Pagination */}
       <div className="rounded border text-[#8E959C]">
