@@ -16,6 +16,7 @@ const Schedules = () => {
 
   const [selectedItem, setSelectedItem] = useState(null); // Selected row data
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [selectedCount, setSelectedCount] = useState(0); // Count of selected checkboxes
 
   const handleRowClick = (item) => {
     setSelectedItem(item); // Set the selected row data
@@ -27,6 +28,15 @@ const Schedules = () => {
     setSelectedItem(null); // Clear the selected data
   };
 
+  const handleCheckboxChange = (e) => {
+    if (e.target.checked) {
+      setSelectedCount(prevCount => prevCount + 1);
+    } else {
+      setSelectedCount(prevCount => prevCount - 1);
+    }
+  };
+
+  
 
   // Mock data for table
   const [tableData] = useState([
@@ -183,7 +193,7 @@ const Schedules = () => {
             className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
           >
             <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
-              Selected
+              Selected ({selectedCount})
             </span>
             <FontAwesomeIcon
               icon={faChevronDown}
@@ -194,17 +204,14 @@ const Schedules = () => {
           {isOpen && (
             <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
               <div className="py-1">
-                <div className="py-1">
-                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                    Delete
-                  </div>
+                <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
+                  Delete
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
-
 
     {/* Table */}
 <div className="px-4 py-4">
