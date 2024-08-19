@@ -236,12 +236,13 @@ const Schedules = () => {
       className="bg-white border-b cursor-pointer"
       onClick={() => handleRowClick(item)}
     >
-      <td className="py-2 px-4">
-        <input
-          type="checkbox"
-          onClick={(e) => e.stopPropagation()} // Prevents row click
-        />
-      </td>
+                    <td className="py-2 px-4">
+                      <input
+                        type="checkbox"
+                        onClick={(e) => e.stopPropagation()} // Prevents row click
+                        onChange={handleCheckboxChange}
+                      />
+                    </td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
