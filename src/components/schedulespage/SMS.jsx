@@ -59,31 +59,31 @@ const SMS = () => {
         </div>
       </div>
 
-      <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
-        {/* Cards Container */}
-        <div className=" sm:flex space-x-4">
-  <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-1 items-center hover:cursor-pointer">
-    <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-xl p-2 px-3">
-      <IoEye /> {/* Eye icon */}
+      <div className="p-2 flex flex-col sm:flex-row justify-center sm:justify-between items-center px-4 py-2 sm:p-4 sm:px-12 lg:px-24">
+  {/* Cards Container */}
+  <div className="flex space-x-2 sm:space-x-4 justify-center">
+    <div className="flex border rounded-lg text-[#8E959C] text-[10px] sm:text-md p-1 sm:p-2 gap-x-1 items-center hover:cursor-pointer">
+      <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3">
+        <IoEye /> {/* Eye icon */}
+      </div>
+      <span className="text-[#D3DBE3] text-[10px] sm:text-base">Usage Stats</span>
     </div>
-    <span className="text-[#D3DBE3]">Usage Stats</span>
-  </div>
-  
-  <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-1 items-center hover:cursor-pointer">
-    <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-xl p-2 px-3">
-      <IoChatbubbles /> {/* Chat bubbles icon */}
+
+    <div className="flex border rounded-lg text-[#8E959C] text-[10px] sm:text-md p-1 sm:p-2 gap-x-1 items-center hover:cursor-pointer">
+      <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3">
+        <IoChatbubbles /> {/* Chat bubbles icon */}
+      </div>
+      <span className="text-[#D3DBE3] text-[10px] sm:text-base">SMS Logs</span>
     </div>
-    <span className="text-[#D3DBE3]">SMS Logs</span>
-  </div>
-  
-  <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-1 items-center hover:cursor-pointer">
-    <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-xl p-2 px-3">
-      <IoMenu /> {/* Hamburger menu icon */}
+
+    <div className="flex border rounded-lg text-[#8E959C] text-[10px] sm:text-md p-1 sm:p-2 gap-x-1 items-center hover:cursor-pointer">
+      <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3">
+        <IoMenu /> {/* Hamburger menu icon */}
+      </div>
+      <span className="text-[#D3DBE3] text-[10px] sm:text-base">SMS Credit Logs</span>
     </div>
-    <span className="text-[#D3DBE3]">SMS Credit Logs</span>
   </div>
 </div>
-      </div>
 
     </>
   );
