@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { IoChatbubbles, IoEye, IoMenu } from "react-icons/io5"; // Importing icons
+
 
 const SMS = () => {
   return (
@@ -59,24 +61,28 @@ const SMS = () => {
 
       <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
         {/* Cards Container */}
-        <div className="hidden sm:flex space-x-4">
-        <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-4 items-center">
-            <span className="text-[#D3DBE3]">Usage Stats</span>
-          </div>
-          <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-4 items-center">
-            <span className="text-[#D3DBE3]">SMS Logs</span>
-          </div>
-          <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-4 items-center">
-            <span className="text-[#D3DBE3]">SMS Credit Logs</span>
-          </div>
-        </div>
-
-        {/* Buttons for Small Screens */}
-        <div className="flex sm:hidden space-x-2">
-          <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
-          <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
-        </div>
-
+        <div className=" sm:flex space-x-4">
+  <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-1 items-center hover:cursor-pointer">
+    <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-xl p-2 px-3">
+      <IoEye /> {/* Eye icon */}
+    </div>
+    <span className="text-[#D3DBE3]">Usage Stats</span>
+  </div>
+  
+  <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-1 items-center hover:cursor-pointer">
+    <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-xl p-2 px-3">
+      <IoChatbubbles /> {/* Chat bubbles icon */}
+    </div>
+    <span className="text-[#D3DBE3]">SMS Logs</span>
+  </div>
+  
+  <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-1 items-center hover:cursor-pointer">
+    <div className="flex items-center bg-white rounded-full text-[#D3DBE3] text-xl p-2 px-3">
+      <IoMenu /> {/* Hamburger menu icon */}
+    </div>
+    <span className="text-[#D3DBE3]">SMS Credit Logs</span>
+  </div>
+</div>
       </div>
 
     </>
