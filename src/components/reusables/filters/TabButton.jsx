@@ -6,7 +6,7 @@ const TabButton = ({ tabs, counts, activeTab, onTabClick, isBorder }) => {
       {tabs.map((tab) => (
         <button
           key={tab}
-          className={`px-4 py-6 text-[#8A92A6] text-lg w-full rounded ${
+          className={`px-4 py-6 text-[#8A92A6] text-lg w-full  ${
             activeTab === tab
               ? isBorder
                 ? "border-b-2 py-6 border-[#3599FF]  text-[#3599FF]"

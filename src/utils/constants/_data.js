@@ -37,3 +37,56 @@ export const classData = [
     },
   ];
   
+
+  export const parentData = [
+    {
+      id: '1',
+      fatherName: "David Werner",
+      motherName: "Sasha Werner",
+      username: "Werner001",
+      date: "03-07-2024 | 01:16 PM",
+      email: "thewerner@gmail.com",
+      contact: "0817 585 5868",
+      status: "Active",
+      invited: "No",
+      childName: "Alison Werner",
+    },
+    {
+      id: '2',
+      fatherName: "David Werner",
+      motherName: "Sasha Werner",
+      username: "Werner001",
+      date: "03-07-2024 | 01:16 PM",
+      email: "thewerner@gmail.com",
+      contact: "0817 585 5868",
+      status: "Alumni",
+      invited: "Yes",
+      childName: "Alison Werner",
+    },
+    {
+      id: '3',
+      fatherName: "John Doe",
+      motherName: "Jane Doe",
+      username: "theDoes",
+      date: "03-07-2024 | 01:16 PM",
+      email: "thedoes@gmail.com",
+      contact: "0824 585 5868",
+      status: "Alumni",
+      invited: "No",
+      childName: "Simpson Doe",
+    },
+    {
+      id: '4',
+      fatherName: "David Werner",
+      motherName: "Sasha Werner",
+      username: "Werner001",
+      date: "03-07-2024 | 01:16 PM",
+      email: "thewerner@gmail.com",
+      contact: "0817 585 5868",
+      status: "Alumni",
+      invited: "Yes",
+      childName: "Alison Werner",
+    },
+    // Add more data objects here...
+  ];
+  

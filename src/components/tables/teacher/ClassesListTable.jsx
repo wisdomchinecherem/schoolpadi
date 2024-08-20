@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Table from "../../reusables/table/Table";
 import Pagination from "../../reusables/filters/Pagination"; // Ensure this import is correct
-
+import TrashIcon from "../../../components/reusables/icons/TrashIcon"
+import DocumentIcon from "../../../components/reusables/icons/DocumentIcon"
 export default function ClassesListTable({ data, selectedRows, onRowSelection }) {
-  const navigate = useNavigate();
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
@@ -114,14 +114,10 @@ export default function ClassesListTable({ data, selectedRows, onRowSelection })
     {
       title: "",
       key: "actions",
-      render: (data) => (
+      render: () => (
         <div className="flex items-center gap-x-4">
-          <img
-            className="w-6 h-6 cursor-pointer"
-            src="/info-circle.svg"
-            alt="info"
-            onClick={() => navigate(`/teacher/information-system/${data.id}`)}
-          />
+          <DocumentIcon />
+          <TrashIcon />
         </div>
       ),
     },

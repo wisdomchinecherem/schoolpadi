@@ -6,6 +6,7 @@ import { MdFilterList } from "react-icons/md";
 import ClassesListTable from "../../components/tables/teacher/ClassesListTable";
 import ParentsListTable from "../../components/tables/teacher/ParentsListTable";
 import { classData } from "../../utils/constants/_data";
+import { FaEnvelope, FaSms } from "react-icons/fa";
 const tabs = ["Students", "Classes", "Parents"];
 const initialData = [
   {
@@ -104,6 +105,11 @@ export default function InformationSystem() {
     });
   };
 
+
+  const options = [
+    { label: 'Send Email', value: 'email', icon: <FaEnvelope /> },
+    { label: 'Send SMS', value: 'sms', icon: <FaSms /> },
+  ];
   return (
     <section>
       <div className="bg-white rounded-2xl shadow-lg mt-5">
@@ -167,10 +173,7 @@ export default function InformationSystem() {
           </div>
         </div>
         <DropdownFilter
-          options={[
-            { label: 'Send Email', value: 'email' },
-            { label: 'Send SMS', value: 'sms' },
-          ]}
+          options={options}
           selectedOptions={selectedFilters}
           onOptionToggle={handleFilterToggle}
         />

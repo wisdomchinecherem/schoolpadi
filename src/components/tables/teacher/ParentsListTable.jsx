@@ -1,14 +1,13 @@
-// import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Table from "../../reusables/table/Table";
-import Pagination from "../../reusables/filters/Pagination"; // Ensure this import is correct
+import Pagination from "../../reusables/filters/Pagination"; // Using your provided Pagination component
 import { IoMail } from "react-icons/io5";
 import { IoIosChatbubbles } from "react-icons/io";
+import { parentData } from "../../../utils/constants/_data";
 
-export default function ParentsListTable({ data, selectedRows, onRowSelection }) {
-//   const navigate = useNavigate();
-  const itemsPerPage = 4; // Number of items per page
+export default function ParentsListTable({ selectedRows, onRowSelection }) {
+  const itemsPerPage = 3; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
   const [allSelected, setAllSelected] = useState(false); // Track select all status
@@ -36,7 +35,7 @@ export default function ParentsListTable({ data, selectedRows, onRowSelection })
       onRowSelection([]);
       setAllSelected(false);
     } else {
-      const currentIds = filteredData.map(item => item.id);
+      const currentIds = filteredData.map((item) => item.id);
       onRowSelection(currentIds);
       setAllSelected(true);
     }
@@ -46,8 +45,9 @@ export default function ParentsListTable({ data, selectedRows, onRowSelection })
   useEffect(() => {
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    setFilteredData(data?.slice(start, end));
-  }, [currentPage, data]);
+    setFilteredData(parentData?.slice(start, end));
+    setAllSelected(false); // Reset the "select all" checkbox when the page changes
+  }, [currentPage]);
 
   const parents_column = [
     {
@@ -71,18 +71,21 @@ export default function ParentsListTable({ data, selectedRows, onRowSelection })
       title: "Parents",
       key: "parents",
       render: (data) => (
-        <p className="flex gap-x-2">
-          <span className="bg-[#E6F2FF] rounded-full">{"c-3"} </span>  {data.parents}
-        </p>
+        <div className="flex flex-col text-sm">
+          <span>Father&apos;s Name: {data.fatherName}</span>
+          <span>Mother&apos;s Name: {data.motherName}</span>
+          <span>Username: {data.username}</span>
+          <span>{data.date}</span>
+        </div>
       ),
     },
     {
-      title: "Parents Email",
+      title: "Parent's Email",
       key: "email",
       render: (data) => <span className="min-w-[5rem]">{data.email}</span>,
     },
     {
-      title: "Parents Contact",
+      title: "Parent's Contact",
       key: "contact",
       render: (data) => (
         <span className="min-w-[5rem] flex items-center gap-x-2">
@@ -90,10 +93,20 @@ export default function ParentsListTable({ data, selectedRows, onRowSelection })
         </span>
       ),
     },
-       {
+    {
       title: "Status",
       key: "status",
-      render: (data) => <span>{data.status ?? "Not Available"}</span>,
+      render: (data) => (
+        <span
+          className={`px-2 py-1 rounded-full text-xs ${
+            data.status === "Active"
+              ? "bg-green-100 text-green-700"
+              : "bg-yellow-100 text-yellow-700"
+          }`}
+        >
+          {data.status ?? "Not Available"}
+        </span>
+      ),
     },
     {
       title: "Invited",
@@ -102,45 +115,29 @@ export default function ParentsListTable({ data, selectedRows, onRowSelection })
     },
     {
       title: "Parents",
-      key: "parents",
-      render: (data) => <span>{data.parents ?? "Not Available"}</span>,
+      key: "childName",
+      render: (data) => (
+        <span className="text-blue-600 cursor-pointer">{data.childName ?? "Not Available"}</span>
+      ),
     },
     {
       title: "",
       key: "actions",
       render: () => (
         <div className="flex items-center text-xl gap-x-4">
-         {/* <IolosM */}
-         <IoMail />
-          <IoIosChatbubbles />
-
+          <IoMail className="cursor-pointer" />
+          <IoIosChatbubbles className="cursor-pointer" />
         </div>
       ),
     },
   ];
 
-  const subjectsArray = [
-    { code: "MTH", name: "Mathematics" },
-    { code: "ENG", name: "English" },
-    { code: "BIO", name: "Biology" },
-    { code: "CHM", name: "Chemistry" },
-    { code: "PHY", name: "Physics" },
-    { code: "LAB", name: "Laboratory" },
-  ];
-  
   return (
     <div className="rounded border p-4 rounded-xl text-[#8E959C]">
- <div className="flex gap-2 justify-around py-2 flex-wrap">
-      {subjectsArray.map((subject, index) => (
-        <span key={index} className="bg-gray-200 rounded-full px-4 py-2 text-xs font-[400]">
-          {subject.code} - {subject.name}
-        </span>
-      ))}
-    </div>
       <Table columns={parents_column ?? []} data={filteredData ?? []} case={"sentence"} />
       <Pagination
-        currentPage={currentPage}
-        totalPages={Math.ceil(data?.length / itemsPerPage)}
+        totalItems={parentData.length}
+        itemsPerPage={itemsPerPage}
         onPageChange={handlePageChange}
       />
     </div>
@@ -148,7 +145,6 @@ export default function ParentsListTable({ data, selectedRows, onRowSelection })
 }
 
 ParentsListTable.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   selectedRows: PropTypes.arrayOf(PropTypes.string).isRequired,
   onRowSelection: PropTypes.func.isRequired,
 };

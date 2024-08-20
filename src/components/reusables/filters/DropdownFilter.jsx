@@ -1,7 +1,6 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import { MdCheckBoxOutlineBlank, MdCheckBox, MdArrowDropDown } from 'react-icons/md';
+import { MdArrowDropDown } from 'react-icons/md';
 
 const DropdownFilter = ({ options, selectedOptions, onOptionToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +11,7 @@ const DropdownFilter = ({ options, selectedOptions, onOptionToggle }) => {
 
   const handleOptionToggle = (option) => {
     onOptionToggle(option);
+    setIsOpen(false); // Close the dropdown after selecting an option
   };
 
   const selectedCount = selectedOptions.length;
@@ -41,12 +41,8 @@ const DropdownFilter = ({ options, selectedOptions, onOptionToggle }) => {
                 role="menuitem"
                 onClick={() => handleOptionToggle(option)}
               >
-                {selectedOptions.includes(option.value) ? (
-                  <MdCheckBox className="h-5 w-5 text-green-500" />
-                ) : (
-                  <MdCheckBoxOutlineBlank className="h-5 w-5 text-gray-500" />
-                )}
-                <span className="ml-2 text-gray-700">{option.label}</span>
+                <span className="mr-2">{option.icon}</span>
+                <span className="text-gray-700">{option.label}</span>
               </div>
             ))}
           </div>
@@ -61,9 +57,11 @@ DropdownFilter.propTypes = {
     PropTypes.shape({
       value: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      icon: PropTypes.element,  // New icon prop
     })
   ).isRequired,
   selectedOptions: PropTypes.string.isRequired,
   onOptionToggle: PropTypes.func.isRequired,
 };
+
 export default DropdownFilter;

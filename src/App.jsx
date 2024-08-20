@@ -28,6 +28,7 @@ import Finance from './pages/superadmin/Finance';
 import TeacherLayout from './layouts/teacher/TeacherLayout';
 import TeacherDashboard from './pages/teacher/TeacherDashboard';
 import InformationSystem from './pages/teacher/InformationSystem';
+import StudentDetail from './pages/teacher/StudentDetail';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -72,6 +73,8 @@ const App = () => {
         <Route element={<TeacherLayout />}>
           <Route path="teacher" element={<TeacherDashboard />} />
           <Route path="teacher/information-system" element={<InformationSystem />} />
+          <Route path="teacher/information-system/student/:id" element={<StudentDetail />} />
+          
         </Route>
       
       </Routes>
