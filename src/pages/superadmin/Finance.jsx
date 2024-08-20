@@ -125,8 +125,8 @@ export default function Finance() {
     return countObj;
   }, []);
   return (
-    <section className="">
-      <div className="flex  my-10 items-center text-white p-4 justify-between ">
+    <section className="-my-16">
+      <div className="flex my-10 items-center text-white p-4 justify-between ">
         <button
           onClick={() => navigate(-1)}
           className=" cursor-pointer flex gap-x-2"

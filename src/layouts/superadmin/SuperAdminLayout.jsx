@@ -6,7 +6,7 @@ export default function SuperAdminLayout() {
   return (
     <div className="flex flex-col   w-full overflow-hidden">
       <TopNav />
-      <div className="flex flex-col flex-grow xl:px-[80px] p-4 z-999 relative -mt-[140px] md:-mt-[140px]  2xl:-mt-[140px] dark:bg-[#1A1A1A] ">
+      <div className="flex flex-col flex-grow xl:px-[80px] relative min-h-screen -mt-[14px] md:-mt-[64px] 2xl:-mt-[70px] dark:bg-[#1A1A1A] ">
         <Outlet />
       </div>
       <Footer className="flex-shrink-0" />

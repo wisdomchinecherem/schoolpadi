@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TabButton } from "../../components/reusables/filters";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Overview from "../../components/superadmin/usermanagement/Overview";
 import Nursery from "../../components/superadmin/usermanagement/Nursery";
 import Secondary from "../../components/superadmin/usermanagement/Secondary";
@@ -10,8 +10,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 const tabs = ["Overview", "Nursery", "Primary", "Secondary"]
 
 export default function UserManagementDetail() {
-  const { id } = useParams();
-  console.log(id);
+  // const { id } = useParams();
   
   const navigate = useNavigate();
   const location = useLocation();
@@ -42,11 +41,11 @@ export default function UserManagementDetail() {
       }
   };
   return (
-    <section className="">
-       <div className="flex  my-10 items-center text-white p-4 justify-between ">
+    <section className=" -mt-14">
+       <div className="flex   items-center text-white p-4 justify-between ">
         <button
           onClick={() => navigate(-1)}
-          className=" cursor-pointer flex gap-x-2"
+          className=" my-10 cursor-pointer flex gap-x-2"
         >
           <IoIosArrowRoundBack className="text-2xl" /> <span>Back</span>
         </button>

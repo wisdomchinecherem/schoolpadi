@@ -16,18 +16,24 @@ const TabButton = ({ tabs, counts, activeTab, onTabClick, isBorder }) => {
           onClick={() => onTabClick(tab)}
         >
           {tab}{" "}
-          {counts !== 0 ? (
-            <span
-              className={` ${
-                activeTab === tab
-                  ? " bg-[#3599FF] text-white"
-                  : "bg-[#EEF1F4] text-[#8E959C]"
-              } px-3 rounded-2xl`}
-            >
-              {" "}
-              {counts[tab?.toLowerCase()]}{" "}
-            </span>
-          ) : null}{" "}
+          {
+            counts &&
+            <>
+            
+            {counts !== 0 ? (
+              <span
+                className={` ${
+                  activeTab === tab
+                    ? " bg-[#3599FF] text-white"
+                    : "bg-[#EEF1F4] text-[#8E959C]"
+                } px-3 rounded-2xl`}
+              >
+                {" "}
+                {counts[tab?.toLowerCase()]}{" "}
+              </span>
+            ) : null}{" "}
+            </>
+          }
         </button>
       ))}
     </div>
