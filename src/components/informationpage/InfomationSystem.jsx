@@ -67,9 +67,6 @@ const InfomationSystem = () => {
 </div>
 
 
-
-
-
 {/* Overlapping White Box */}
 <div className="relative -top-6 px-6">
   <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4"> {/* Reduced vertical padding */}
@@ -215,19 +212,20 @@ const InfomationSystem = () => {
     {/* Section Form */}
     <div className="container mx-auto px-4 py-8">
       <div className="overflow-x-auto">
+      <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
         <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
           <thead>
             <tr className="bg-[#FAFBFC]">
               <th className="py-2 px-4 border-b">
                 <input type="checkbox" />
               </th>
-              <th className="py-2 px-4 text-[#8E959C] border-b">Students</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Section</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Class</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
-              <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Students</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Section</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Class</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">ID</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Email</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Contacts</th>
+              <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Icons</th>
             </tr>
           </thead>
           <tbody>
@@ -254,6 +252,7 @@ const InfomationSystem = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
 
 

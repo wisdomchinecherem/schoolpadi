@@ -214,6 +214,7 @@ const Teachers = () => {
 
 <div className="container mx-auto px-4 py-8">
       <div className="overflow-x-auto">
+      <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
         <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
           <thead>
             <tr className="bg-[#FAFBFC]">
@@ -255,6 +256,7 @@ const Teachers = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
 
 
