@@ -16,6 +16,7 @@ const Emails = () => {
 
   const [selectedItem, setSelectedItem] = useState(null); // Selected row data
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [selectedCount, setSelectedCount] = useState(0); // Count of selected checkboxes
 
   const handleRowClick = (item) => {
     setSelectedItem(item); // Set the selected row data
@@ -25,6 +26,15 @@ const Emails = () => {
   const closeModal = () => {
     setIsModalOpen(false); // Close the modal
     setSelectedItem(null); // Clear the selected data
+  };
+
+
+  const handleCheckboxChange = (e) => {
+    if (e.target.checked) {
+      setSelectedCount(prevCount => prevCount + 1);
+    } else {
+      setSelectedCount(prevCount => prevCount - 1);
+    }
   };
 
 
@@ -183,7 +193,7 @@ const Emails = () => {
             className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
           >
             <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
-              Selected
+               ({selectedCount}) Selected
             </span>
             <FontAwesomeIcon
               icon={faChevronDown}
@@ -193,13 +203,13 @@ const Emails = () => {
 
           {isOpen && (
             <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
-              <div className="py-1">
-                <div className="py-1">
-                  <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                    Delete
-                  </div>
-                </div>
-              </div>
+<div className="py-1">
+  <div className="px-4 py-2 text-xs text-[#8E959C] font-semibold flex items-center">
+    <FaTrashAlt className="text-[#8E959C] mr-2" />
+    Delete
+  </div>
+</div>
+
             </div>
           )}
         </div>
@@ -207,12 +217,12 @@ const Emails = () => {
 
 
     {/* Table */}
-<div className="px-4 py-4">
+<div className="px-4  py-4">
   <div className="overflow-x-auto px-4 py-4">
     <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
 
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
-        <thead className="bg-gray-100">
+        <thead className="bg-gray-100 ">
           <tr>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
@@ -229,12 +239,13 @@ const Emails = () => {
       className="bg-white border-b cursor-pointer"
       onClick={() => handleRowClick(item)}
     >
-      <td className="py-2 px-4">
-        <input
-          type="checkbox"
-          onClick={(e) => e.stopPropagation()} // Prevents row click
-        />
-      </td>
+                    <td className="py-2 px-4">
+                      <input
+                        type="checkbox"
+                        onClick={(e) => e.stopPropagation()} // Prevents row click
+                        onChange={handleCheckboxChange}
+                      />
+                    </td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>

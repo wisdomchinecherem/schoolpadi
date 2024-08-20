@@ -20,7 +20,8 @@ import Teachers from './components/informationpage/Teachers';
 import AdminPage from './components/informationpage/AdminPage'; 
 import Parents from './components/informationpage/Parents'; 
 import Schedules from './components/schedulespage/Schedules';  
-import Emails from './components/schedulespage/Emails';   
+import Emails from './components/schedulespage/Emails'; 
+import SMS from './components/schedulespage/smspage/SMS';   
 import Graduation from './components/adminDashboard/Graduation';
 
 
@@ -61,8 +62,10 @@ const App = () => {
         <Route path="/parents" element={<Layout><Parents/></Layout>} /> 
         <Route path="/Schedules" element={<Layout><Schedules/></Layout>} />
         <Route path="/Emails" element={<Layout><Emails/></Layout>} />
+        <Route path="/SMS" element={<Layout><SMS/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
+
         <Route element={<SuperAdminLayout />}>
           <Route path="superadmin" element={<Dashboard />} />
           <Route path="superadmin/user-management" element={<UserManagement />} />
