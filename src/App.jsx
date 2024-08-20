@@ -21,7 +21,7 @@ import AdminPage from './components/informationpage/AdminPage';
 import Parents from './components/informationpage/Parents'; 
 import Schedules from './components/schedulespage/Schedules';  
 import Emails from './components/schedulespage/Emails'; 
-import SMS from './components/schedulespage/SMS';   
+import SMS from './components/schedulespage/smspage/SMS';   
 import Graduation from './components/adminDashboard/Graduation';
 
 

@@ -66,7 +66,7 @@ const SMS = () => {
   <div className="flex space-x-2 sm:space-x-4 justify-center">
     {/* Usage Stats Card */}
     <div className="flex border rounded-lg p-1 bg-sky-100 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-      <Link to="/usage-stats" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+      <Link to="/SMS" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
         <div className="flex items-center  rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:bg-sky-100 group-hover:text-blue-500">
           <IoEye /> {/* Eye icon */}
         </div>
