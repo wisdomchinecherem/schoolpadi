@@ -217,12 +217,12 @@ const Emails = () => {
 
 
     {/* Table */}
-<div className="px-4 py-4">
+<div className="px-4  py-4">
   <div className="overflow-x-auto px-4 py-4">
     <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
 
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
-        <thead className="bg-gray-100">
+        <thead className="bg-gray-100 ">
           <tr>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
