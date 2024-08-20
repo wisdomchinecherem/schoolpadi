@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Add this import
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const SMS = () => {
@@ -6,7 +6,7 @@ const SMS = () => {
     <>
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Emails</span>
+        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">SMS</span>
         <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
           Compose
@@ -56,8 +56,32 @@ const SMS = () => {
           </div>
         </div>
       </div>
+
+      <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
+        {/* Cards Container */}
+        <div className="hidden sm:flex space-x-4">
+        <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-4 items-center">
+            <span className="text-[#D3DBE3]">Usage Stats</span>
+          </div>
+          <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-4 items-center">
+            <span className="text-[#D3DBE3]">SMS Logs</span>
+          </div>
+          <div className="flex border rounded-xl text-[#8E959C] text-md p-2 gap-x-4 items-center">
+            <span className="text-[#D3DBE3]">SMS Credit Logs</span>
+          </div>
+        </div>
+
+        {/* Buttons for Small Screens */}
+        <div className="flex sm:hidden space-x-2">
+          <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
+          <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
+        </div>
+
+      </div>
+
     </>
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default SMS;
