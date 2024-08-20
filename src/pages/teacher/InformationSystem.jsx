@@ -85,7 +85,7 @@ export default function InformationSystem() {
 
     setFilteredData(subjectFiltered);
   }, [academicSession, classValue, searchTerm, sectionClass, subjects]);
-  
+
   useEffect(() => {
     handleSearch();
   }, [searchTerm, academicSession, sectionClass, classValue, subjects, handleSearch]);
@@ -115,8 +115,9 @@ export default function InformationSystem() {
           onTabClick={setActiveTab}
         />
       </div>
-      <p className="my-2 text-3xl text-white">{activeTab} List</p>
-      <div className="grid grid-cols-4">
+      {/* <p className="my-2 text-3xl text-white">{activeTab} List</p> */}
+
+      <div className={` ${activeTab === "Parents" ? "hidden" : "grid grid-cols-4"} `}>
         <div className="">
           <h2 className="text-[#54585C]">Academic Session</h2>
           <SelectComponent
@@ -153,12 +154,12 @@ export default function InformationSystem() {
           />
         </div>
       </div>
-      <div className="flex justify-between my-8 items-center">
+      <div className="flex justify-between my-4 items-center">
         <div className="flex items-center gap-5">
           <SearchComponent
-            placeholder="Search..." 
-            value={searchTerm} 
-            onChange={(e) => setSearchTerm(e.target.value)} 
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
             <span className=" text-[#8E959C]">Filter</span>
@@ -182,10 +183,13 @@ export default function InformationSystem() {
           onRowSelection={handleRowSelection}
         />
       )}
-      {activeTab === "Classes" && <ClassesListTable data={classData}            selectedRows={selectedRows}
-           onRowSelection={handleRowSelection}
+      {activeTab === "Classes" && <ClassesListTable data={classData} selectedRows={selectedRows}
+        onRowSelection={handleRowSelection}
       />}
-      {activeTab === "Parents" && <ParentsListTable />}
+      {activeTab === "Parents" && <ParentsListTable
+        data={classData} selectedRows={selectedRows}
+        onRowSelection={handleRowSelection}
+      />}
     </section>
   );
 }

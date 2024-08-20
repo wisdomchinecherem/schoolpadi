@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Table from "../../reusables/table/Table";
 import Pagination from "../../reusables/filters/Pagination"; // Ensure this import is correct
+import { IoIosChatbubbles } from "react-icons/io";
+import { IoMail } from "react-icons/io5";
 
 export default function StudentsListTable({ data, selectedRows, onRowSelection }) {
   const navigate = useNavigate();
@@ -107,13 +109,15 @@ export default function StudentsListTable({ data, selectedRows, onRowSelection }
       title: "",
       key: "actions ",
       render: (data) => (
-        <div className="flex items-center gap-x-4">
+        <div className="flex text-[#8E959C] text-xl items-center gap-x-4">
           <img
             className="w-6 h-6 cursor-pointer"
             src="/info-circle.svg"
             alt="info"
             onClick={() => navigate(`/teacher/information-system/${data.id}`)}
           />
+          <IoMail />
+          <IoIosChatbubbles />
         </div>
       ),
     },
