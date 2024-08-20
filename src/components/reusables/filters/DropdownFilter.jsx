@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { MdCheckBoxOutlineBlank, MdCheckBox, MdArrowDropDown } from 'react-icons/md';
 
 const DropdownFilter = ({ options, selectedOptions, onOptionToggle }) => {
@@ -54,4 +56,14 @@ const DropdownFilter = ({ options, selectedOptions, onOptionToggle }) => {
   );
 };
 
+DropdownFilter.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  selectedOptions: PropTypes.string.isRequired,
+  onOptionToggle: PropTypes.func.isRequired,
+};
 export default DropdownFilter;
