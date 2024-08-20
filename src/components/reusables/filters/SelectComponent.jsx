@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 const SelectComponent = ({ options, value, onChange }) => {
   return (
-    <div className="relative inline-block w-full max-w-xs">
+    <div className="relative inline-block w-full h-16 border border-gray-300 border rounded-lg max-w-xs">
       <select
         value={value}
         onChange={onChange}
-        className="appearance-none w-full bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        className="appearance-none w-full h-full  text-gray-500 py-2 px-4 pr-8 rounded-xl leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
       >
         {options?.map((option, index) => (
           <option key={index} value={option.value}>

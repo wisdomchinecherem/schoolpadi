@@ -79,7 +79,7 @@ const broadcast_column = [
 ];
 export default function Dashboard() {
   return (
-    <section className="my-20 ">
+    <section className="">
       <div className=" grid xl:grid-cols-3  grid-cols-1 gap-x-8 gap-y-8 ">
         <div className="xl:col-span-2 col-span-1 flex flex-col space-y-10 rounded-2xl">
           <div className="rounded-2xl flex-grow flex bg-white w-full justify-between items-start p-3 shadow-md">

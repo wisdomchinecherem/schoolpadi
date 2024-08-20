@@ -28,7 +28,7 @@ export default function TopNav() {
   const location = useLocation();
 
   return (
-    <div className="relative w-full bg-[#014F9E] text-white md:h-[40vh] xl:h-[50vh] 2xl:h-[40vh] py-8 px-[20px] md:px-[80px]">
+    <div className="relative w-full bg-[#014F9E] text-white md:h-[40vh] xl:h-[50vh] 2xl:h-[47vh] py-8 px-[20px] md:px-[80px]">
       <div className="flex items-center justify-between">
         <img src="/schoolpadi.svg" alt="school padi image" />
 

@@ -111,16 +111,16 @@ export default function UserManagement() {
   }, []);
 
   return (
-    <section className="">
-      <div className="flex  my-10 items-center text-white p-4 justify-between ">
+    <section className="-my-10">
+      <div className="flex   items-center text-white p-4 justify-between ">
         <h2 className="text-2xl">School list</h2>
         <button className="bg-[#027FFF] px-6 py-2 flex items-center gap-x-2 rounded-2xl">
           <FiPlus /> <span>Add School </span>
         </button>
       </div>
 
-      <div className=" p-3 ">
-        <div className="bg-white rounded-2xl  shadow-lg -mt-14">
+      <div className=" ">
+        <div className="bg-white rounded-2xl  shadow-lg ">
           <TabButton
             isBorder
             tabs={tabs}

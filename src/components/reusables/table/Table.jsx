@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Table = ({ columns, data, onRowClick, isCoin, isLoading }) => {
   const colHeaders = columns?.map(({ title, key }) => (
     <th key={key} className="text-white uppercase border-b bg-[#FAFBFC] dark:border-black  border-t">
-      <p className="text-[#8E959C] dark:text-white py-4 px-2 text-sm text-left font-[700] w-full">
+      <p className="text-[#8E959C] dark:text-white py-4 px-2 text-sm text-left font-[500] w-full">
         {title}
       </p>
     </th>
