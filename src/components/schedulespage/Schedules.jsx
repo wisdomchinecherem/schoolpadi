@@ -193,7 +193,7 @@ const Schedules = () => {
             className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
           >
             <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
-              Selected ({selectedCount})
+              ({selectedCount}) Selected 
             </span>
             <FontAwesomeIcon
               icon={faChevronDown}
@@ -203,11 +203,13 @@ const Schedules = () => {
 
           {isOpen && (
             <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
-              <div className="py-1">
-                <div className="px-4 py-2 text-xs text-gray-600 font-semibold">
-                  Delete
-                </div>
-              </div>
+<div className="py-1">
+  <div className="px-4 py-2 text-xs text-[#8E959C] font-semibold flex items-center">
+    <FaTrashAlt className="text-[#8E959C] mr-2" />
+    Delete
+  </div>
+</div>
+
             </div>
           )}
         </div>
