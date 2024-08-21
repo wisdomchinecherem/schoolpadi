@@ -17,46 +17,46 @@ const ProfileTab = () => {
 
           {/* Right Section - Tab Content */}
           <div className="md:w-3/4 border rounded-xl p-4 w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-3">
           <h3 className="text-lg font-[500] text-[#54585C]">Academic Detail</h3>
           <p className="text-sm text-[#54585C]"> <span className="text-[#8E959C] text-sm">Academic Session </span> : SY 2024</p>
           <p className="text-sm text-[#54585C]"> <span className="text-[#8E959C]">Section</span> : SECTION A</p>
           <p className="text-sm text-[#54585C]"> <span className="text-[#8E959C]">Class</span>: CLASS 2</p>
         </div>
-        <div>
-          <h3 className="text-lg font-bold">General Information</h3>
-          <p>First Name: King</p>
-          <p>Last Name: David</p>
-          <p>Student ID: 123456FR</p>
+        <div className="space-y-3">
+          <h3 className="text-lg font-[500] text-[#54585C]">General Information</h3>
+          <p className="text-sm text-[#54585C]">First Name: King</p>
+          <p className="text-sm text-[#54585C]">Last Name: David</p>
+          <p className="text-sm text-[#54585C]">Student ID: 123456FR</p>
         </div>
 
-        <div>
-          <h3 className="text-lg font-bold">Personal Information</h3>
-          <p>Student Email: kingdavid34@gmail.com</p>
-          <p>Date of Birth: 04-02-2005</p>
-          <p>Student Contact: 081 4857 473</p>
-          <p>Gender: Male</p>
-          <p>Blood Group: AB-</p>
+        <div className="space-y-3">
+          <h3 className="text-lg font-[500] text-[#54585C]">Personal Information</h3>
+          <p className="text-sm text-[#54585C]">Student Email: kingdavid34@gmail.com</p>
+          <p className="text-sm text-[#54585C]"> Date of Birth: 04-02-2005</p>
+          <p className="text-sm text-[#54585C]">Student Contact: 081 4857 473</p>
+          <p className="text-sm text-[#54585C]">Gender: Male</p>
+          <p className="text-sm text-[#54585C]">Blood Group: AB-</p>
         </div>
-        <div>
-          <h3 className="text-lg font-bold">Additional Details</h3>
-          <p>Address: Lot 45, GRA</p>
-          <p>Zip Code: 283653</p>
-          <p>State: Lagos</p>
-          <p>Country: Nigeria</p>
-          <p>Father’s Name: Solomon David</p>
-          <p>Mother’s Name: Martha David</p>
-          <p>Parent Contact: 080 5868 484</p>
-          <p>Parent Email: thedavids01@gmail.com</p>
+        <div className="space-y-3">
+          <h3 className="text-lg font-[500] text-[#54585C]">Additional Details</h3>
+          <p className="text-sm text-[#54585C]">Address: Lot 45, GRA</p>
+          <p className="text-sm text-[#54585C]">Zip Code: 283653</p>
+          <p className="text-sm text-[#54585C]">State: Lagos</p>
+          <p className="text-sm text-[#54585C]">Country: Nigeria</p>
+          <p className="text-sm text-[#54585C]">Father’s Name: Solomon David</p>
+          <p className="text-sm text-[#54585C]">Mother’s Name: Martha David</p>
+          <p className="text-sm text-[#54585C]">Parent Contact: 080 5868 484</p>
+          <p className="text-sm text-[#54585C]">Parent Email: thedavids01@gmail.com</p>
         </div>
       </div>
 
       <div className="mt-6">
-        <h3 className="text-lg font-bold">Skills & Social Details</h3>
+        <h3 className="text-lg font-[500] text-[#54585C]">Skills & Social Details</h3>
         <div className="mt-2">
-          <h4 className="font-semibold">Profile Summary:</h4>
-          <p>
+          <h4 className="text-lg font-[500] text-[#54585C]">Profile Summary:</h4>
+          <p className="text-sm text-[#54585C] leading-snug">
             King David is a dedicated and ambitious student known for his strong academic performance
             and leadership qualities. He excels in subjects such as mathematics, science, and history,
             consistently achieving top grades. David is also actively involved in extracurricular activities,
@@ -67,15 +67,15 @@ const ProfileTab = () => {
           </p>
         </div>
         <div className="mt-4">
-          <h4 className="font-semibold">Skills:</h4>
-          <p>Time management, critical thinking, communication, technological proficiency</p>
+          <h4 className="text-lg font-[500] text-[#54585C]">Skills:</h4>
+          <p className="text-sm text-[#54585C] leading-snug">Time management, critical thinking, communication, technological proficiency</p>
         </div>
         <div className="mt-4">
-          <h4 className="font-semibold">Facebook Profile Link:</h4>
+          <h4 className="text-lg font-[500] text-[#54585C]">Facebook Profile Link:</h4>
           <p><a href="https://www.facebook.com/alisontwerner/profile" className="text-blue-600">https://www.facebook.com/alisontwerner/profile</a></p>
         </div>
         <div className="mt-4">
-          <h4 className="font-semibold">LinkedIn Profile Link:</h4>
+          <h4 className="text-lg font-[500] text-[#54585C]">LinkedIn Profile Link:</h4>
           <p><a href="https://www.linkedin.com/in/alisontwerner/profile" className="text-blue-600">https://www.linkedin.com/in/alisontwerner/profile</a></p>
         </div>
       </div>
