@@ -23,6 +23,7 @@ import Schedules from './components/schedulespage/Schedules';
 import Emails from './components/schedulespage/Emails'; 
 import SMS from './components/schedulespage/smspage/SMS';   
 import SMSLogs from './components/schedulespage/smspage/SMSLogs';
+import CreditLog from './components/schedulespage/smspage/CreditLog';
 import Graduation from './components/adminDashboard/Graduation';
 
 
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/Emails" element={<Layout><Emails/></Layout>} />
         <Route path="/SMS" element={<Layout><SMS/></Layout>} />
         <Route path="/SMSLogs" element={<Layout><SMSLogs/></Layout>} />
+        <Route path="/creditLog" element={<Layout><CreditLog/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
 

@@ -222,12 +222,12 @@ const Schedules = () => {
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
         <thead className="bg-gray-100">
           <tr>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]"></th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Title</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Description</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Date</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Sent To</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]"></th>
           </tr>
         </thead>
         <tbody>
@@ -249,7 +249,7 @@ const Schedules = () => {
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
       <td className="px-6 py-8 text-xs sm:text-xs">
   {item.sentTo.split(', ').map((word, index) => {
-    const colors = ['bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100'];
+    const colors = ['bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]'];
     const colorClass = colors[index % colors.length]; // Cycle through colors
 
     return (

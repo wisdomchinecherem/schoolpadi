@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 import {  faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 
-const SMS = () => {
+const CreditLog = () => {
 
      const navigate = useNavigate();
      const itemsPerPage = 8; // Number of items per page
@@ -145,22 +145,22 @@ const SMS = () => {
     </div>
 
     {/* Usage Stats Card */}
-    <div className="flex border rounded-lg p-1 bg-sky-100 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
       <Link to="/SMSLogs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
           <IoChatbubbles /> {/* Chat bubbles icon */}
         </div>
-        <span className="text-blue-500 text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
+        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
       </Link>
     </div>
 
     {/* SMS Credit Logs Card */}
-    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-      <Link to="/creditLog" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+    <div className="flex border rounded-lg p-1 sm:p-2 bg-sky-100 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-blue-500  text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
           <IoMenu /> {/* Hamburger menu icon */}
         </div>
-        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
+        <span className="text-blue-500  text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
       </Link>
     </div>
   </div>
@@ -324,5 +324,5 @@ const SMS = () => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export default SMS;
+export default CreditLog;
+
