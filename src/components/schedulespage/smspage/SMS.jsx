@@ -94,23 +94,42 @@ const SMS = () => {
         </div>
       </div>
 
-      {/* New Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center items-start mt-8 px-4 sm:px-12 lg:px-24">
-        {/* SMS Sent Card */}
-        <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '82px' }}>
-          <span className="text-gray-600 text-sm">SMS Sent</span>
-        </div>
+      {/* New Cards Section with Border */}
+      <div className="border border-gray-300 rounded-lg px-1 py-2 sm:px-2 sm:py-4 max-w-[calc(95%-1rem)] mx-auto">
+        <div className="grid grid-cols-1 gap-4 justify-center items-start mt-8 px-4 sm:px-12 lg:px-24">
+          {/* Larger New Card */}
+          <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '145px' }}>
+            <span className="text-gray-600 text-sm">New Card</span>
+          </div>
 
-        {/* SMS Delivered Card */}
-        <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '82px' }}>
-          <span className="text-gray-600 text-sm">SMS Delivered</span>
-        </div>
+          {/* Smaller Cards Section */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center items-start">
+            {/* SMS Sent Card */}
+            <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '82px' }}>
+              <span className="text-gray-600 text-sm">SMS Sent</span>
+            </div>
 
-        {/* SMS Failed Card */}
-        <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '82px' }}>
-          <span className="text-gray-600 text-sm">SMS Failed</span>
+            {/* SMS Delivered Card */}
+            <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '82px' }}>
+              <span className="text-gray-600 text-sm">SMS Delivered</span>
+            </div>
+
+            {/* SMS Failed Card */}
+            <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '82px' }}>
+              <span className="text-gray-600 text-sm">SMS Failed</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Centralize on small screens */}
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .grid-cols-1 {
+            justify-items: center;
+          }
+        }
+      `}</style>
     </>
   );
 };
