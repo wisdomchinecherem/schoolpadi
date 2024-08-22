@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const SelectComponent = ({ options, value, onChange }) => {
   return (
-    <div className="relative inline-block w-full h-16 border border-gray-300 border rounded-lg max-w-xs">
+    <div className="relative inline-block w-full h-16 border-gray-300 border rounded-lg max-w-xs">
       <select
         value={value}
         onChange={onChange}

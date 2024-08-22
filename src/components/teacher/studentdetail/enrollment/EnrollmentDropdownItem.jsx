@@ -44,7 +44,7 @@ export default function EnrollmentDropdownItem({
         </div>
       </div>
       {isOpen && (
-        <div className="p-4 border text-[#54585C] rounded-xl">
+        <div className="p-4 border mb-8 text-[#54585C] rounded-xl">
           {subjects.length > 0 && (
             <div>
               <h4 className="text-xs font-[500] my-4 text-[#54585C]">
