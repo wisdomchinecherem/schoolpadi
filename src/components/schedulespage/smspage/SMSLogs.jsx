@@ -45,20 +45,17 @@ const SMS = () => {
      // Mock data for table
      const [tableData] = useState([
        {
-         title: "Introduction to Class",
-         description: "Dear All, We dearly welcome you all to SchoolPadi.",
+         body: "Dear All, We dearly welcome you all to SchoolPadi.",
          date: "02-07-2024",
          sentTo: "Admins, Teachers, Students, Parents(Active)",
        },
        {
-         title: "Introduction to Class",
-         description: "Dear All, We dearly welcome you all to SchoolPadi.",
+         body: "Dear All, We dearly welcome you all to SchoolPadi.",
          date: "02-07-2024",
          sentTo: "Admins, Teachers, Students, Parents(Active)",
        },
        {
-         title: "Introduction to Class",
-         description: "Dear All, We dearly welcome you all to SchoolPadi.",
+         body: "Dear All, We dearly welcome you all to SchoolPadi.",
          date: "02-07-2024",
          sentTo: "Admins, Teachers, Students, Parents(Active)",
        },
@@ -134,86 +131,85 @@ const SMS = () => {
         </div>
       </div>
 
-      <div className="p-2 flex flex-col sm:flex-row justify-center sm:justify-between items-center px-4 py-2 sm:p-4 sm:px-12 lg:px-24">
-        {/* Cards Container */}
-        <div className="flex space-x-2 sm:space-x-4 justify-center">
-          {/* SMS Logs Card */}
-             <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-            <Link to="/SMS" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-              <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3  group-hover:text-blue-500">
-                <IoEye /> {/* Eye icon */}
-              </div>
-              <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">Usage Stats</span>
-            </Link>
-          </div>
-
-          {/* Usage Stats Card */}
-          <div className="flex border rounded-lg p-1 bg-sky-100 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-            <Link to="/SMSLogs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-              <div className="flex items-center rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
-              <IoChatbubbles /> {/* Chat bubbles icon */} 
-              </div>
-              <span className="text-blue-500 text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
-            </Link>
-          </div>
-
-          {/* SMS Credit Logs Card */}
-          <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-            <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-              <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3  group-hover:text-blue-500">
-                <IoMenu /> {/* Hamburger menu icon */}
-              </div>
-              <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
-            </Link>
-          </div>
+      <div className="p-2 flex flex-col sm:flex-row justify-start items-center px-2 py-2 sm:p-4 sm:px-6 lg:px-12">
+  {/* Cards Container */}
+  <div className="flex space-x-2 sm:space-x-4">
+    {/* SMS Logs Card */}
+    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/SMS" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+          <IoEye /> {/* Eye icon */}
         </div>
-      </div>
+        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">Usage Stats</span>
+      </Link>
+    </div>
 
-
-      <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
-        {/* Cards Container */}
-        <div className="hidden sm:flex space-x-4">
-          <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">PlaceHolder</span>
-          <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
-            <span className="text-[#D3DBE3]">Filter</span>
-            <MdFilterList />
-          </div>
+    {/* Usage Stats Card */}
+    <div className="flex border rounded-lg p-1 bg-sky-100 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/SMSLogs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+          <IoChatbubbles /> {/* Chat bubbles icon */}
         </div>
+        <span className="text-blue-500 text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
+      </Link>
+    </div>
 
-        {/* Buttons for Small Screens */}
-        <div className="flex sm:hidden space-x-2">
-          <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
-          <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
+    {/* SMS Credit Logs Card */}
+    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+          <IoMenu /> {/* Hamburger menu icon */}
         </div>
-
-        {/* Selected Button on the Right */}
-        <div className="relative inline-block text-left">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
-          >
-            <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
-               ({selectedCount}) Selected
-            </span>
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
-            />
-          </button>
-
-          {isOpen && (
-            <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
-<div className="py-1">
-  <div className="px-4 py-2 text-xs text-[#8E959C] font-semibold flex items-center">
-    <FaTrashAlt className="text-[#8E959C] mr-2" />
-    Delete
+        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
+      </Link>
+    </div>
   </div>
 </div>
 
-            </div>
-          )}
+<div className="p-2 flex justify-start items-center px-2 py-4 sm:p-4 sm:px-6 lg:px-12">
+  {/* Cards Container */}
+  <div className="hidden sm:flex space-x-4">
+    <span className="text-[#D3DBE3] border py-1 px-12 rounded flex items-center text-sm leading-none sm:py-2 sm:px-24 sm:text-base mt-[-4px]">PlaceHolder</span>
+    <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
+      <span className="text-[#D3DBE3]">Filter</span>
+      <MdFilterList />
+    </div>
+  </div>
+
+  {/* Buttons for Small Screens */}
+  <div className="flex sm:hidden space-x-2">
+    <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
+    <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
+  </div>
+
+  {/* Selected Button on the Right */}
+  <div className="relative inline-block text-left ml-auto">
+    <button
+      onClick={() => setIsOpen(!isOpen)}
+      className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
+    >
+      <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
+        ({selectedCount}) Selected
+      </span>
+      <FontAwesomeIcon
+        icon={faChevronDown}
+        className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
+      />
+    </button>
+
+    {isOpen && (
+      <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
+        <div className="py-1">
+          <div className="px-4 py-2 text-xs text-[#8E959C] font-semibold flex items-center">
+            <FaTrashAlt className="text-[#8E959C] mr-2" />
+            Delete
+          </div>
         </div>
       </div>
+    )}
+  </div>
+</div>
+
 
 
  {/* Table */}
@@ -225,8 +221,7 @@ const SMS = () => {
         <thead className="bg-gray-100 ">
           <tr>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Body</th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
@@ -246,21 +241,21 @@ const SMS = () => {
                         onChange={handleCheckboxChange}
                       />
                     </td>
-      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
-      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
+      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.body}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
       <td className="px-6 py-8 text-xs sm:text-xs">
-        {item.sentTo.split(', ').map((word, index) => {
-          const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
-          const colorClass = colors[index % colors.length]; // Cycle through colors
+  {item.sentTo.split(', ').map((word, index) => {
+    const colors = ['bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100'];
+    const colorClass = colors[index % colors.length]; // Cycle through colors
 
-          return (
-            <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
-              {word}
-            </span>
-          );
-        })}
-      </td>
+    return (
+      <span key={index} className={`px-1 mx-1 text-blue-500 ${colorClass} rounded`}>
+        {word}
+      </span>
+    );
+  })}
+</td>
+
       <td className="py-8 px-4 flex space-x-2 text-sm">
         <FaExclamation className="text-[#8E959C]" />
         <FaTrashAlt className="text-[#8E959C]" />
@@ -287,8 +282,7 @@ const SMS = () => {
         className="absolute top-2 right-2 border text-[#8E959C] text-xs px-2 py-1 rounded">
         X
       </button>
-      <h3 className="text-2xl mt-4 mb-4">{selectedItem.title}</h3>
-      <p className="text-[#8E959C] text-xs">{selectedItem.description}</p>
+      <p className="text-[#8E959C] text-xs">{selectedItem.body}</p>
       {/* Content */}
       <div className="relative mt-24">
         {/* Faint line above the text */}
