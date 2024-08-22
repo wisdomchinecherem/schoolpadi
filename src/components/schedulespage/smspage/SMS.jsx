@@ -74,7 +74,7 @@ const SMS = () => {
 
           {/* SMS Logs Card */}
           <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-            <Link to="/sms-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+            <Link to="/SMSLogs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
               <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3  group-hover:text-blue-500">
                 <IoChatbubbles /> {/* Chat bubbles icon */}
               </div>
@@ -96,7 +96,7 @@ const SMS = () => {
 
       {/* New Cards Section with Border */}
       <div className="border border-gray-300 rounded-lg px-1 py-2 sm:px-2 sm:py-4 max-w-[calc(95%-1rem)] mx-auto">
-        <div className="grid grid-cols-1 gap-4 justify-center items-start mt-8 px-4 sm:px-12 lg:px-24">
+        <div className="grid grid-cols-1 gap-4 justify-center items-start mt-8 ">
           {/* Larger New Card */}
           <div className="bg-white border border-gray-300 rounded-lg p-4" style={{ width: '349.33px', height: '145px' }}>
             <span className="text-gray-600 text-sm">New Card</span>
