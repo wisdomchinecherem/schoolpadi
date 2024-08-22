@@ -1,125 +1,86 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { IoChatbubbles, IoEye, IoMenu } from "react-icons/io5"; 
+import { Link } from "react-router-dom";
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
-import Pagination from "../reusables/filters/Pagination";
+import Pagination from "../../reusables/filters/Pagination";
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
+import {  faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 
-const Emails = () => {
-  const navigate = useNavigate();
-  const itemsPerPage = 8; // Number of items per page
-  const [currentPage, setCurrentPage] = useState(1); // Current page
-  const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
-  const [isOpen, setIsOpen] = useState(false);
+const SMS = () => {
 
-  const [selectedItem, setSelectedItem] = useState(null); // Selected row data
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
-  const [selectedCount, setSelectedCount] = useState(0); // Count of selected checkboxes
+     const navigate = useNavigate();
+     const itemsPerPage = 8; // Number of items per page
+     const [currentPage, setCurrentPage] = useState(1); // Current page
+     const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
+     const [isOpen, setIsOpen] = useState(false);
+   
+     const [selectedItem, setSelectedItem] = useState(null); // Selected row data
+     const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+     const [selectedCount, setSelectedCount] = useState(0); // Count of selected checkboxes
+   
+     const handleRowClick = (item) => {
+       setSelectedItem(item); // Set the selected row data
+       setIsModalOpen(true); // Open the modal
+     };
+   
+     const closeModal = () => {
+       setIsModalOpen(false); // Close the modal
+       setSelectedItem(null); // Clear the selected data
+     };
+   
+   
+     const handleCheckboxChange = (e) => {
+       if (e.target.checked) {
+         setSelectedCount(prevCount => prevCount + 1);
+       } else {
+         setSelectedCount(prevCount => prevCount - 1);
+       }
+     };
+   
+   
+     // Mock data for table
+     const [tableData] = useState([
+       {
+         body: "Dear All, We dearly welcome you all to SchoolPadi.",
+         date: "02-07-2024",
+         sentTo: "Admins, Teachers, Students, Parents(Active)",
+       },
+       {
+         body: "Dear All, We dearly welcome you all to SchoolPadi.",
+         date: "02-07-2024",
+         sentTo: "Admins, Teachers, Students, Parents(Active)",
+       },
+       {
+         body: "Dear All, We dearly welcome you all to SchoolPadi.",
+         date: "02-07-2024",
+         sentTo: "Admins, Teachers, Students, Parents(Active)",
+       },
 
-  const handleRowClick = (item) => {
-    setSelectedItem(item); // Set the selected row data
-    setIsModalOpen(true); // Open the modal
-  };
 
-  const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
-    setSelectedItem(null); // Clear the selected data
-  };
+     ]);
+   
+     // Function to update the displayed data based on the current page
+     const handlePageChange = (page) => {
+       setCurrentPage(page);
+     };
+   
+     // Update the filtered data whenever the current page or data changes
+     useEffect(() => {
+       const start = (currentPage - 1) * itemsPerPage;
+       const end = start + itemsPerPage;
+       setFilteredData(tableData.slice(start, end));
+     }, [currentPage, tableData]);
 
-
-  const handleCheckboxChange = (e) => {
-    if (e.target.checked) {
-      setSelectedCount(prevCount => prevCount + 1);
-    } else {
-      setSelectedCount(prevCount => prevCount - 1);
-    }
-  };
-
-
-  // Mock data for table
-  const [tableData] = useState([
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-    {
-      title: "Introduction to Class",
-      description: "Dear All, We dearly welcome you all to SchoolPadi.",
-      date: "02-07-2024",
-      sentTo: "Admins, Teachers, Students, Parents(Active)",
-    },
-  ]);
-
-  // Function to update the displayed data based on the current page
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  // Update the filtered data whenever the current page or data changes
-  useEffect(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    setFilteredData(tableData.slice(start, end));
-  }, [currentPage, tableData]);
-
+     
   return (
     <>
-
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Emails</span>
+        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">SMS</span>
         <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
           Compose
@@ -131,20 +92,20 @@ const Emails = () => {
         <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4">
           <div className="grid grid-cols-6 gap-2">
             <a href="/Schedules" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C]  text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
               <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 12
               </div>
             </a>
             <a href="/Emails" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
-              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 8
               </div>
             </a>
             <a href="/SMS" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
+              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 3
               </div>
             </a>
@@ -170,8 +131,42 @@ const Emails = () => {
         </div>
       </div>
 
+      <div className="p-2 flex flex-col sm:flex-row justify-start items-center px-2 py-2 sm:p-4 sm:px-6 lg:px-12">
+  {/* Cards Container */}
+  <div className="flex space-x-2 sm:space-x-4">
+    {/* SMS Logs Card */}
+    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/SMS" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+          <IoEye /> {/* Eye icon */}
+        </div>
+        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">Usage Stats</span>
+      </Link>
+    </div>
 
-      <div className="p-2 flex justify-start items-center px-2 py-4 sm:p-4 sm:px-6 lg:px-12">
+    {/* Usage Stats Card */}
+    <div className="flex border rounded-lg p-1 bg-sky-100 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/SMSLogs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+          <IoChatbubbles /> {/* Chat bubbles icon */}
+        </div>
+        <span className="text-blue-500 text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
+      </Link>
+    </div>
+
+    {/* SMS Credit Logs Card */}
+    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
+      <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
+          <IoMenu /> {/* Hamburger menu icon */}
+        </div>
+        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
+      </Link>
+    </div>
+  </div>
+</div>
+
+<div className="p-2 flex justify-start items-center px-2 py-4 sm:p-4 sm:px-6 lg:px-12">
   {/* Cards Container */}
   <div className="hidden sm:flex space-x-4">
     <span className="text-[#D3DBE3] border py-1 px-12 rounded flex items-center text-sm leading-none sm:py-2 sm:px-24 sm:text-base mt-[-4px]">PlaceHolder</span>
@@ -216,8 +211,9 @@ const Emails = () => {
 </div>
 
 
-    {/* Table */}
-<div className="px-4  py-4">
+
+ {/* Table */}
+ <div className="px-4  py-4">
   <div className="overflow-x-auto px-4 py-4">
     <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
 
@@ -225,8 +221,7 @@ const Emails = () => {
         <thead className="bg-gray-100 ">
           <tr>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Body</th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
@@ -246,8 +241,7 @@ const Emails = () => {
                         onChange={handleCheckboxChange}
                       />
                     </td>
-      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.title}</td>
-      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
+      <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.body}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
       <td className="px-6 py-8 text-xs sm:text-xs">
   {item.sentTo.split(', ').map((word, index) => {
@@ -278,8 +272,8 @@ const Emails = () => {
   </div>
 </div>
 
-       {/* Modal */}
-{isModalOpen && selectedItem && (
+ {/* Modal */}
+ {isModalOpen && selectedItem && (
   <div className="fixed inset-0 z-50 flex items-center justify-center">
     <div className="relative bg-white p-8 rounded shadow-lg max-w-md mx-auto">
       {/* Close Button */}
@@ -288,8 +282,7 @@ const Emails = () => {
         className="absolute top-2 right-2 border text-[#8E959C] text-xs px-2 py-1 rounded">
         X
       </button>
-      <h3 className="text-2xl mt-4 mb-4">{selectedItem.title}</h3>
-      <p className="text-[#8E959C] text-xs">{selectedItem.description}</p>
+      <p className="text-[#8E959C] text-xs">{selectedItem.body}</p>
       {/* Content */}
       <div className="relative mt-24">
         {/* Faint line above the text */}
@@ -324,8 +317,12 @@ const Emails = () => {
           onPageChange={handlePageChange}
         />
       </div>
+
+     
+
     </>
   );
 };
 
-export default Emails;
+// eslint-disable-next-line react-refresh/only-export-components
+export default SMS;

@@ -170,51 +170,50 @@ const Schedules = () => {
         </div>
       </div>
 
-      <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
-        {/* Cards Container */}
-        <div className="hidden sm:flex space-x-4">
-          <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">PlaceHolder</span>
-          <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
-            <span className="text-[#D3DBE3]">Filter</span>
-            <MdFilterList />
+
+      <div className="p-2 flex justify-start items-center px-2 py-4 sm:p-4 sm:px-6 lg:px-12">
+  {/* Cards Container */}
+  <div className="hidden sm:flex space-x-4">
+    <span className="text-[#D3DBE3] border py-1 px-12 rounded flex items-center text-sm leading-none sm:py-2 sm:px-24 sm:text-base mt-[-4px]">PlaceHolder</span>
+    <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
+      <span className="text-[#D3DBE3]">Filter</span>
+      <MdFilterList />
+    </div>
+  </div>
+
+  {/* Buttons for Small Screens */}
+  <div className="flex sm:hidden space-x-2">
+    <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
+    <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
+  </div>
+
+  {/* Selected Button on the Right */}
+  <div className="relative inline-block text-left ml-auto">
+    <button
+      onClick={() => setIsOpen(!isOpen)}
+      className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
+    >
+      <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
+        ({selectedCount}) Selected
+      </span>
+      <FontAwesomeIcon
+        icon={faChevronDown}
+        className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
+      />
+    </button>
+
+    {isOpen && (
+      <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
+        <div className="py-1">
+          <div className="px-4 py-2 text-xs text-[#8E959C] font-semibold flex items-center">
+            <FaTrashAlt className="text-[#8E959C] mr-2" />
+            Delete
           </div>
         </div>
-
-        {/* Buttons for Small Screens */}
-        <div className="flex sm:hidden space-x-2">
-          <button className="bg-blue-500 text-white text-xs font-bold py-2 px-2 rounded w-18 flex items-center justify-center">placeholder</button>
-          <button className="bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded w-16 flex items-center justify-center">Filter</button>
-        </div>
-
-        {/* Selected Button on the Right */}
-        <div className="relative inline-block text-left">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
-          >
-            <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">
-              ({selectedCount}) Selected 
-            </span>
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className="text-[#D3DBE3] ml-2 text-xs sm:text-xs md:text-base"
-            />
-          </button>
-
-          {isOpen && (
-            <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
-<div className="py-1">
-  <div className="px-4 py-2 text-xs text-[#8E959C] font-semibold flex items-center">
-    <FaTrashAlt className="text-[#8E959C] mr-2" />
-    Delete
+      </div>
+    )}
   </div>
 </div>
-
-            </div>
-          )}
-        </div>
-      </div>
-
     {/* Table */}
 <div className="px-4 py-4">
   <div className="overflow-x-auto px-4 py-4">
@@ -249,17 +248,18 @@ const Schedules = () => {
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C] whitespace-nowrap">{item.description}</td>
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
       <td className="px-6 py-8 text-xs sm:text-xs">
-        {item.sentTo.split(', ').map((word, index) => {
-          const colors = ['bg-[blue-400]', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
-          const colorClass = colors[index % colors.length]; // Cycle through colors
+  {item.sentTo.split(', ').map((word, index) => {
+    const colors = ['bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100'];
+    const colorClass = colors[index % colors.length]; // Cycle through colors
 
-          return (
-            <span key={index} className={`px-1 mx-1 text-white ${colorClass} rounded`}>
-              {word}
-            </span>
-          );
-        })}
-      </td>
+    return (
+      <span key={index} className={`px-1 mx-1 text-blue-500 ${colorClass} rounded`}>
+        {word}
+      </span>
+    );
+  })}
+</td>
+
       <td className="py-8 px-4 flex space-x-2 text-sm">
         <FaExclamation className="text-[#8E959C]" />
         <FaTrashAlt className="text-[#8E959C]" />
