@@ -67,7 +67,7 @@ const SMS = () => {
     {/* Usage Stats Card */}
     <div className="flex border rounded-lg p-1 bg-sky-100 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
       <Link to="/SMS" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center  rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:bg-sky-100 group-hover:text-blue-500">
+        <div className="flex items-center  rounded-full text-blue-500 text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
           <IoEye /> {/* Eye icon */}
         </div>
         <span className="text-blue-500 text-[10px] sm:text-base group-hover:text-blue-500">Usage Stats</span>
@@ -77,7 +77,7 @@ const SMS = () => {
     {/* SMS Logs Card */}
     <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
       <Link to="/sms-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:bg-sky-100 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3  group-hover:text-blue-500">
           <IoChatbubbles /> {/* Chat bubbles icon */}
         </div>
         <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
@@ -87,7 +87,7 @@ const SMS = () => {
     {/* SMS Credit Logs Card */}
     <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
       <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:bg-sky-100 group-hover:text-blue-500">
+        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3  group-hover:text-blue-500">
           <IoMenu /> {/* Hamburger menu icon */}
         </div>
         <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
