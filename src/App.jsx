@@ -21,9 +21,10 @@ import AdminPage from './components/informationpage/AdminPage';
 import Parents from './components/informationpage/Parents'; 
 import Schedules from './components/schedulespage/Schedules';  
 import Emails from './components/schedulespage/Emails'; 
+import Events from './components/schedulespage/Events';
 import SMS from './components/schedulespage/smspage/SMS';   
 import SMSLogs from './components/schedulespage/smspage/SMSLogs';
-import CreditLog from './components/schedulespage/smspage/CreditLog';
+import Credit from './components/schedulespage/smspage/Credit';
 import Graduation from './components/adminDashboard/Graduation';
 
 
@@ -66,7 +67,8 @@ const App = () => {
         <Route path="/Emails" element={<Layout><Emails/></Layout>} />
         <Route path="/SMS" element={<Layout><SMS/></Layout>} />
         <Route path="/SMSLogs" element={<Layout><SMSLogs/></Layout>} />
-        <Route path="/creditLog" element={<Layout><CreditLog/></Layout>} />
+        <Route path="/credit" element={<Layout><Credit/></Layout>} />
+        <Route path="/Events" element={<Layout><Events/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
 

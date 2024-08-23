@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 import {  faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 
-const CreditLog = () => {
+const Credit = () => {
 
      const navigate = useNavigate();
      const itemsPerPage = 8; // Number of items per page
@@ -324,5 +324,5 @@ const CreditLog = () => {
   );
 };
 
-export default CreditLog;
+export default Credit;
 
