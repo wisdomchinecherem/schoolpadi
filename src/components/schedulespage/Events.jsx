@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
-import Calendar from '../../components/reusables/calendar';  // Correct path to the Calendar component
+import Calendar from '../../components/reusables/calendar'; 
 
 const Events = () => {
-
-  const navigate = useNavigate();
-
   const handleDateClick = (date) => {
     console.log('Selected Date:', date);
     // Add your logic to handle the selected date
@@ -18,10 +14,6 @@ const Events = () => {
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
         <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">SMS</span>
-        <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
-          <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-          Compose
-        </button>
       </div>
 
       {/* Overlapping White Box */}
@@ -51,7 +43,7 @@ const Events = () => {
       </div>
 
       {/* Calendar Section */}
-      <div className="px-6 mt-4">
+      <div className="px-8 mt-4">
         <Calendar initialDate={new Date()} onDateClick={handleDateClick} />
       </div>
     </>
