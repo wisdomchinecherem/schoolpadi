@@ -32,7 +32,9 @@ import Finance from './pages/superadmin/Finance';
 import TeacherLayout from './layouts/teacher/TeacherLayout';
 import TeacherDashboard from './pages/teacher/TeacherDashboard';
 import InformationSystem from './pages/teacher/InformationSystem';
+import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
+import MainChat from './components/teacher/mainChat/MainChat';
 import AddStudent from './components/informationpage/AddStudent';
 import AddTeacher from './components/informationpage/AddTeacher';
 import AddAdmin from './components/informationpage/AddAdmin';
@@ -83,16 +85,18 @@ const App = () => {
         
         {/* super admin */}
         <Route element={<SuperAdminLayout />}>
-          <Route path="superadmin" element={<Dashboard />} />
-          <Route path="superadmin/user-management" element={<UserManagement />} />
-          <Route path="superadmin/user-management/:id" element={<UserManagementDetail />} />
-          <Route path="superadmin/finance" element={<Finance />} />
-          <Route path="superadmin/report" element={<Report />} />
+          <Route path="s" element={<Dashboard />} />
+          <Route path="s/user-management" element={<UserManagement />} />
+          <Route path="s/user-management/:id" element={<UserManagementDetail />} />
+          <Route path="s/finance" element={<Finance />} />
+          <Route path="s/report" element={<Report />} />
         </Route>
         <Route element={<TeacherLayout />}>
-          <Route path="teacher" element={<TeacherDashboard />} />
-          <Route path="teacher/information-system" element={<InformationSystem />} />
-          <Route path="teacher/information-system/student/:id" element={<StudentDetail />} />
+          <Route path="t" element={<TeacherDashboard />} />
+          <Route path="t/information-system" element={<InformationSystem />} />
+          <Route path="t/information-system/student/:id" element={<StudentDetail />} />
+          <Route path="t/aichat" element={<AiChat />} />
+          <Route path="t/chat" element={<MainChat />} />
           
         </Route>
       
