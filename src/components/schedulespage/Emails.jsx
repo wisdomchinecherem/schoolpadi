@@ -224,12 +224,12 @@ const Emails = () => {
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
         <thead className="bg-gray-100 ">
           <tr>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Title</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Description</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Date</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]">Sent To</th>
-            <th className="px-6 py-8 text-middle text-xs sm:text-sm font-semibold text-[#8E959C]"></th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]"></th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Title</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Description</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Date</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Sent To</th>
+            <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]"></th>
           </tr>
         </thead>
         <tbody>
@@ -299,7 +299,7 @@ const Emails = () => {
         <div className="flex items-center flex-wrap mt-8">
           <p className="text-[#8E959C] text-xs mr-2">Publish To</p>
           {selectedItem.sentTo.split(', ').map((word, index) => {
-            const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+    const colors = ['bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]'];
             const colorClass = colors[index % colors.length]; // Cycle through colors
 
             return (

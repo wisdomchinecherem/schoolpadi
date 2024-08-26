@@ -84,7 +84,7 @@ const SMS = () => {
 
           {/* SMS Credit Logs Card */}
           <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-            <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
+            <Link to="/Credit" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
               <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3  group-hover:text-blue-500">
                 <IoMenu /> {/* Hamburger menu icon */}
               </div>

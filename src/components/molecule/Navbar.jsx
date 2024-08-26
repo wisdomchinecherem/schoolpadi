@@ -47,7 +47,7 @@ const Navbar = () => {
 
   const location = useLocation(); // Get current location
 
-  // Define links
+
   const links = [
     { name: 'Dashboard', href: '/AdminDashboard' },
     { name: 'Information System', href: '/InfomationSystem' },
@@ -80,7 +80,7 @@ const Navbar = () => {
           </div>
 
           {/* Center section: Search bar (hidden on small screens) */}
-          <div className={`w-full md:w-auto ${isMenuOpen ? 'block' : 'hidden'} md:block`}>
+          <div className={`w-full md:w-auto ${isMenuOpen ? "block" : "hidden"} md:block`}>
             <div className="flex-grow mb-4 md:mb-0 flex justify-center">
               <input
                 type="text"
@@ -91,7 +91,11 @@ const Navbar = () => {
           </div>
 
           {/* Right section: Icons (hidden on small screens) */}
-          <div className={`flex flex-col items-end space-y-2 ${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-4`}>
+          <div
+            className={`flex flex-col items-end space-y-2 ${
+              isMenuOpen ? "block" : "hidden"
+            } md:flex md:items-center md:space-x-4`}
+          >
             <div className="flex space-x-6">
               {/* Plus Icon */}
               <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
@@ -121,14 +125,18 @@ const Navbar = () => {
 
             {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
             <div className="flex items-center space-x-2 text-white pt-4">
-              <FontAwesomeIcon icon={faCalendar} className='bg-[#FFFFFF] text-[#014F9E] rounded-full p-1.5 text-sm' title="Calendar" />
+              <FontAwesomeIcon
+                icon={faCalendar}
+                className="bg-[#FFFFFF] text-[#014F9E] rounded-full p-1.5 text-sm"
+                title="Calendar"
+              />
               <span className="hidden md:block text-sm">{currentDateTime}</span>
             </div>
           </div>
         </div>
 
         {/* Dropdown menu for small screens */}
-        <div className={`fixed inset-0 bg-[#014F9E] text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} md:hidden z-50`}>
+        <div className={`fixed inset-0 bg-[#014F9E] text-white p-4 ${isMenuOpen ? "block" : "hidden"} md:hidden z-50`}>
           <div className="flex justify-between items-center  mb-4">
             <span className="text-xl font-bold">Menu</span>
             <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -147,9 +155,8 @@ const Navbar = () => {
 
           {/* Icons in dropdown */}
           <div className="flex space-x-6  mb-4 justify-center">
-
             {/* Plus Icon */}
-            <div className="flex items-center bg-white rounded-full  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <div className="flex items-center  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
               <FaPlusCircle />
             </div>
 
@@ -158,12 +165,12 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-sm" title="Notifications" />
             </div>
 
-            <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <div className="flex items-center  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
               <IoChatbubbles />
             </div>
 
             {/* Sound Icon */}
-            <div className="flex items-center bg-white rounded-full text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
+            <div className="flex items-center  text-[#014F9E] text-sm bg-[#FFFFFF] rounded-full p-1.5 px-2.5">
               <GrAnnounce />
             </div>
 
@@ -173,31 +180,31 @@ const Navbar = () => {
             </div>
           </div>
 
-{/* Links in dropdown, centralized */}
-<ul className="space-y-4 text-left justify-center">
-  {links.map((link) => (
-    <li
-      key={link.href}
-      className={`font-semibold cursor-pointer ${location.pathname === link.href ? 'text-[#FFFFFF]  py-1 rounded' : 'hover:text-black'}`}
-    >
-      <a href={link.href}>{link.name}</a>
-    </li>
-  ))}
-</ul>
-
+          {/* Links in dropdown, centralized */}
+          <ul className="space-y-4 text-left justify-center">
+            {links.map((link) => (
+              <li
+                key={link.href}
+                className={`font-semibold cursor-pointer ${
+                  location.pathname === link.href ? "text-[#FFFFFF]  py-1 rounded" : "hover:text-black"
+                }`}
+              >
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* New section: Text links */}
         <div className="mt-6 hidden md:block overflow-x-hidden">
-          <ul className="flex flex-wrap justify-between items-center text-[#FFFFFF] md:text-sm lg:text-base md:space-x-0 space-y-2 md:space-y-0">
+          <ul className="grid md:grid-cols-4 lg:flex lg:flex-wrap justify-between items-center text-[#FFFFFF] md:text-sm lg:text-base md:space-x-0 space-y-2 md:space-y-0">
             {links.map((link) => (
-              <li
-                key={link.href}
-                className={`flex flex-col items-center w-1/2 md:w-auto px-2 cursor-pointer ${location.pathname === link.href ? 'text-[#014F9E] bg-white rounded' : 'hover:text-white'}`}
-              >
+              <li key={link.href} className={`flex flex-col items-center whitespace-nowrap w-1/2 md:w-auto px-2 cursor-pointer`}>
                 <a
                   href={link.href}
-                  className="flex items-center px-1"
+                  className={`flex items-center p-2 text-sm  ${
+                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded-xl "  : "hover:text-white"
+                  }`}
                 >
                   {link.name}
                 </a>
