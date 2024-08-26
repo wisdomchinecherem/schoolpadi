@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faUser, faPlus, faCalendar, faUsers } from '@fortawesome/free-solid-svg-icons';
+import Calendar from "../../components/reusables/calendar";
+  import { FaRegCalendarMinus } from "react-icons/fa";
 
 import {
   LineChart,
@@ -360,7 +362,7 @@ const AdminDashboard = () => {
   {/* Calendar and Chat Container */}
   <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 ">
 
-{/* Calendar Card */}
+{/* Calendar Card 
 <div className="bg-white rounded-lg shadow-md border font-grandis border-gray-300 p-4 md:w-2/3 w-full relative">
   <div className="flex justify-between items-center mb-4">
     <div>
@@ -401,8 +403,6 @@ const AdminDashboard = () => {
     </button>
   </div>
 </div>
-
-
     </div>
   </div>
   <div className="grid grid-cols-7 text-gray-100 text-center">
@@ -430,7 +430,20 @@ const AdminDashboard = () => {
     ))}
   </div>
 </div>
+*/}
 
+
+         <div className="col-span-2 flex flex-col h-full">
+            <div className="flex justify-between border w-full p-4">
+              <p className="text-[#C8D2DC]">Calendar</p>
+              <div className="bg-[#E6F2FF] rounded-2xl text-[#3599FF] p-4 ">
+                <FaRegCalendarMinus />
+              </div>
+            </div>
+            <div className="flex-grow">
+              <Calendar />
+            </div>
+          </div>
 
 
     {/* Chat Box Card */}
