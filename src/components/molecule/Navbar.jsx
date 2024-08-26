@@ -203,7 +203,7 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   className={`flex items-center p-2 text-sm  ${
-                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded "  : "hover:text-white"
+                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded-xl "  : "hover:text-white"
                   }`}
                 >
                   {link.name}
