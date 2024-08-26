@@ -114,7 +114,7 @@ export default function StudentsListTable({ data, selectedRows, onRowSelection }
             className="w-6 h-6 cursor-pointer"
             src="/info-circle.svg"
             alt="info"
-            onClick={() => navigate(`/teacher/information-system/student/${data.id}`)}
+            onClick={() => navigate(`/t/information-system/student/${data.id}`)}
           />
           <IoMail />
           <IoIosChatbubbles />

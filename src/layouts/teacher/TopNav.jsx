@@ -1,17 +1,17 @@
-import { FaCalendarAlt, FaPlusCircle, FaBars, FaTimes } from "react-icons/fa";
+import { FaCalendarAlt,  FaBars, FaTimes } from "react-icons/fa";
 import SearchComponent from "../../components/reusables/filters/SearchComponent";
 import { IoChatbubbles } from "react-icons/io5";
 import { GrAnnounce } from "react-icons/gr";
 import { MdPerson } from "react-icons/md";
 import Navbar from "./Navbar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getTitle } from "../../utils/titleUtils";
 import { useState } from "react";
 import UserProfileMenu from "./ProfileMenu";
 
 export default function TopNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const navigate = useNavigate()
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -41,10 +41,10 @@ export default function TopNav() {
           {/* Hide icons on mobile, show on larger screens */}
           <div className="hidden md:flex items-center gap-x-5">
             <div className="flex items-center p-2 bg-white rounded-full">
-              <FaPlusCircle />
+            <img src="/gpt_logo.svg" className="w-5 h-5 cursor-pointer" onClick={()=>navigate("/t/chat")}  />
             </div>
             <div className="flex items-center p-2 bg-white rounded-full">
-              <IoChatbubbles />
+              <IoChatbubbles onClick={()=>navigate("/t/aichat")} className="cursor-pointer" />
             </div>
             <div className="flex items-center p-2 bg-white rounded-full">
               <GrAnnounce />
@@ -67,7 +67,7 @@ export default function TopNav() {
 
         <div className="flex items-center gap-x-2">
           <FaCalendarAlt />
-          <p className="text-xl">12th July 2024</p>
+          <p className="text-xl">14th July 2024</p>
           <div className="w-2 h-2 rounded-full bg-white"></div>
           <p className="text-xl">09:00 AM</p>
         </div>
@@ -94,7 +94,7 @@ export default function TopNav() {
 
         <div className="flex items-center justify-center gap-x-5 mt-[60px]">
             <div className="flex items-center p-2 bg-white text-black rounded-full">
-              <FaPlusCircle />
+              <img src="/gpt_logo.svg" className="w-12 h-12" />
             </div>
             <div className="flex items-center p-2 bg-white text-black rounded-full">
               <IoChatbubbles />

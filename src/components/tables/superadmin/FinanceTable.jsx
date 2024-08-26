@@ -95,7 +95,7 @@ export default function FinanceTable({ data }) {
             className="w-6 h-6 cursor-pointer"
             src="/info-circle.svg"
             alt="info"
-            onClick={() => navigate(`/superadmin/user-management/${data.id}`)}
+            onClick={() => navigate(`/s/user-management/${data.id}`)}
           />
         </div>
       ),

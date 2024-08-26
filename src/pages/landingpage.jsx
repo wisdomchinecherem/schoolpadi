@@ -50,7 +50,7 @@ const LandingPage = () => {
             Your comprehensive solution for school management.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link to="/superadmin">
+            <Link to="/s">
               <Button
                 bgColor="#001D3B"
                 color="#FFFFFF"
@@ -96,7 +96,7 @@ const LandingPage = () => {
                 Student Dashboard
               </Button>
             </Link>
-            <Link to="/teachers">
+            <Link to="/t">
               <Button
                 bgColor="#001D3B"
                 color="#FFFFFF"
