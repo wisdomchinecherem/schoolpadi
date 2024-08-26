@@ -33,6 +33,9 @@ import TeacherLayout from './layouts/teacher/TeacherLayout';
 import TeacherDashboard from './pages/teacher/TeacherDashboard';
 import InformationSystem from './pages/teacher/InformationSystem';
 import StudentDetail from './pages/teacher/StudentDetail';
+import AddStudent from './components/informationpage/AddStudent';
+import AddTeacher from './components/informationpage/AddTeacher';
+import AddAdmin from './components/informationpage/AddAdmin';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -58,7 +61,12 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* admin */}
         <Route path="/" element={<Layout><LandingPage /></Layout>} />  
+        <Route path="/admindashboard/infomationsystem/addstudent" element={<Layout><AddStudent /></Layout>} />  
+        <Route path="/admindashboard/infomationsystem/addteacher" element={<Layout><AddTeacher /></Layout>} />  
+        <Route path="/admindashboard/infomationsystem/addadmin" element={<Layout><AddAdmin /></Layout>} />  
+
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
         <Route path="/teachers" element={<Layout><Teachers/></Layout>} /> 
@@ -72,6 +80,8 @@ const App = () => {
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
 
+        
+        {/* super admin */}
         <Route element={<SuperAdminLayout />}>
           <Route path="superadmin" element={<Dashboard />} />
           <Route path="superadmin/user-management" element={<UserManagement />} />
