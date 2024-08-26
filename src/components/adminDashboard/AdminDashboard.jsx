@@ -433,17 +433,19 @@ const AdminDashboard = () => {
 */}
 
 
-         <div className="col-span-2 flex flex-col h-full">
-            <div className="flex justify-between border w-full p-4">
-              <p className="text-[#C8D2DC]">Calendar</p>
-              <div className="bg-[#E6F2FF] rounded-2xl text-[#3599FF] p-4 ">
-                <FaRegCalendarMinus />
-              </div>
-            </div>
-            <div className="flex-grow">
-              <Calendar />
-            </div>
-          </div>
+<div className="col-span-2 flex flex-col h-full w-full lg:w-[67%]">
+  <div className="flex justify-between border w-full p-4">
+    <p className="text-[#C8D2DC]">Calendar</p>
+    <div className="bg-[#E6F2FF] rounded-2xl text-[#3599FF] p-4">
+      <FaRegCalendarMinus />
+    </div>
+  </div>
+  <div className="flex-grow">
+    <Calendar />
+  </div>
+</div>
+
+
 
 
     {/* Chat Box Card */}
