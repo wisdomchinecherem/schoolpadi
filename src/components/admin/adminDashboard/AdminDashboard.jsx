@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faUser, faPlus, faCalendar, faUsers } from '@fortawesome/free-solid-svg-icons';
-import Calendar from "../../components/reusables/calendar";
-  import { FaRegCalendarMinus } from "react-icons/fa";
+import Calendar from "../../reusables/calendar";
+import { FaRegCalendarMinus } from "react-icons/fa";
 
 import {
   LineChart,
@@ -444,8 +444,6 @@ const AdminDashboard = () => {
     <Calendar />
   </div>
 </div>
-
-
 
 
     {/* Chat Box Card */}

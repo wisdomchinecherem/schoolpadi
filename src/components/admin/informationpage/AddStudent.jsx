@@ -1,19 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import user from "../../assets/schoolpadi-img/user.svg";
-import camera from "../../assets/schoolpadi-img/camera.svg";
-import uploadIcon from "../../assets/schoolpadi-img/upload.svg";
-import bin from "../../assets/schoolpadi-img/bin.svg";
-import successIcon from "../../assets/schoolpadi-img/success.svg";
-import tick from "../../assets/schoolpadi-img/tick.svg";
+import user from "../../../assets/schoolpadi-img/user.svg"
+import camera from "../../../assets/schoolpadi-img/camera.svg";
+import uploadIcon from "../../../assets/schoolpadi-img/upload.svg";
+import bin from "../../../assets/schoolpadi-img/bin.svg";
+import successIcon from "../../../assets/schoolpadi-img/success.svg";
+import tick from "../../../assets/schoolpadi-img/tick.svg";
 import { TiTick } from "react-icons/ti";
 import { BiX } from "react-icons/bi";
-import Modal from "../atoms/modal";
+import Modal from "../../atoms/modal"
 
-export default function AddTeacher() {
+export default function AddStudent() {
   const [isuploaded, setisuploaded] = useState(false);
   const [isSubmitted, setisSubmitted] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
@@ -56,7 +56,7 @@ export default function AddTeacher() {
         </div>
         <div className="text-white  py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-          Add Teacher
+          Add Student
         </div>
       </div>
       {/* main */}
@@ -126,31 +126,52 @@ export default function AddTeacher() {
                 <div className="border-[#D3DBE3] flex-1 border-b  "></div>
               </div>
             </div>
-
-            {/* General Information */}
+            {/* academics */}
             <div className="px-4 py-5 border rounded-[.625rem]">
-              <div className="h1 text-[#D3DBE3] mb-4 ">General Information</div>
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 ">
+              <div className="h1 text-[#D3DBE3] mb-4 ">Academic</div>
+              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-7 ">
                 <div className=" flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Employee Type</div>
+                  <div className=" text-sm  ">Academic Session</div>
                   <select
-                    name="Employee Type"
+                    name="academic-session"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   >
-                    <option value="">select employee type</option>
+                    <option value="">2022/2023</option>
+                    <option value="">2021/2022</option>
+                    <option value="">2020/2021</option>
                   </select>
                 </div>
 
                 <div className=" flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Teacher ID</div>
-                  <input
-                    type="text"
-                    name="Teacher ID"
-                    placeholder="enter here"
+                  <div className=" text-sm  ">Section</div>
+                  <select
+                    name="section"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
+                  >
+                    <option value="">A</option>
+                    <option value="">B</option>
+                    <option value="">C</option>
+                  </select>
                 </div>
 
+                <div className="flex-1 text-[#54585C] ">
+                  <div className=" text-sm  ">Class</div>
+                  <select
+                    id="class"
+                    name="class"
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
+                  >
+                    <option value="">JSS1</option>
+                    <option value="">JSS2</option>
+                    <option value="">JSS3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            {/* academics details */}
+            <div className="px-4 py-5 border rounded-[.625rem]">
+              <div className="h1 text-[#D3DBE3] mb-4 ">Academic Details</div>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 ">
                 <div className=" flex-1 text-[#54585C] ">
                   <div className=" text-sm  ">First Name</div>
                   <input
@@ -160,6 +181,7 @@ export default function AddTeacher() {
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
+
                 <div className=" flex-1 text-[#54585C] ">
                   <div className=" text-sm  ">Last Name</div>
                   <input
@@ -171,54 +193,59 @@ export default function AddTeacher() {
                 </div>
 
                 <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Phone Number</div>
+                  <div className=" text-sm  ">Admission Number</div>
                   <input
                     type="text"
-                    name="Phone Number"
+                    name="Admission Number"
                     placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
-
-                <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Email</div>
+              </div>
+            </div>
+            {/* Personal information */}
+            <div className="px-4 py-5 border rounded-[.625rem]">
+              <div className="h1 text-[#D3DBE3] mb-4 ">Personal Information</div>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 ">
+                <div className=" flex-1 text-[#54585C] ">
+                  <div className=" text-sm  ">Student Email</div>
                   <input
-                    type="email"
-                    name="Email"
+                    type="text"
+                    name="Student Email"
                     placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
 
-                <div className="flex-1 text-[#54585C] ">
+                <div className=" flex-1 text-[#54585C] ">
                   <div className=" text-sm  ">Date of Birth</div>
                   <input
-                    type="date"
+                    type="text"
                     name="Date of Birth"
                     placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
 
-                <div className=" flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Gender</div>
-                  <select
-                    name="Gender"
+                <div className="flex-1 text-[#54585C] ">
+                  <div className=" text-sm  ">Student Contact</div>
+                  <input
+                    type="text"
+                    name="Student Contact"
+                    placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  >
-                    <option value="">select gender</option>
-                    <option value="male">male</option>
-                    <option value="female">female</option>
-                  </select>
+                  />
                 </div>
-              </div>
-            </div>
-
-            {/* Additional Information */}
-            <div className="px-4 py-5 border rounded-[.625rem]">
-              <div className="h1 text-[#D3DBE3] mb-4 ">Additional Information</div>
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 ">
-                <div className=" flex-1 text-[#54585C] ">
+                <div className="flex-1 text-[#54585C] ">
+                  <div className=" text-sm  ">Gender</div>
+                  <input
+                    type="text"
+                    name="Gender"
+                    placeholder="enter here"
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
+                  />
+                </div>
+                <div className="flex-1 text-[#54585C] ">
                   <div className=" text-sm  ">Blood Group</div>
                   <input
                     type="text"
@@ -227,56 +254,52 @@ export default function AddTeacher() {
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
+              </div>
+            </div>
+            {/* skill and social details */}
+            <div className="px-4 py-5 border rounded-[.625rem]">
+              <div className="h1 text-[#D3DBE3] mb-4 ">Skills & Social Details</div>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 ">
+                <div className=" flex-1 text-[#54585C] ">
+                  <div className=" text-sm  ">Profile Summary</div>
+                  <input
+                    type="text"
+                    name="Profile Summary"
+                    placeholder="enter here"
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
+                  />
+                </div>
 
                 <div className=" flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Address</div>
+                  <div className=" text-sm  ">Skills</div>
                   <input
                     type="text"
-                    name="Address"
+                    name="Skills"
                     placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
 
                 <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">State</div>
+                  <div className=" text-sm  ">Facebook Profile Link</div>
                   <input
                     type="text"
-                    name="State"
+                    name="Facebook Profile Link"
                     placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
                 <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Gender</div>
+                  <div className=" text-sm  ">Linkedin Profile Link</div>
                   <input
                     type="text"
-                    name="Gender"
-                    placeholder="enter here"
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
-                </div>
-                <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Country</div>
-                  <input
-                    type="text"
-                    name="Country"
-                    placeholder="enter here"
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
-                </div>
-                <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Marital Status</div>
-                  <input
-                    type="text"
-                    name="Marital Status"
+                    name="Linkedin Profile Link"
                     placeholder="enter here"
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
                   />
                 </div>
               </div>
             </div>
-
             {/* Additional Infomation */}
             <div className="px-4 py-5 border rounded-[.625rem]">
               <div className="h1 text-[#D3DBE3] mb-4 ">Additional Information</div>
@@ -357,92 +380,6 @@ export default function AddTeacher() {
                 </div>
               </div>
             </div>
-
-            {/* skill and social details */}
-            <div className="px-4 py-5 border rounded-[.625rem]">
-              <div className="h1 text-[#D3DBE3] mb-4 ">Skills & Social Details</div>
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 ">
-                <div className=" flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Profile Summary</div>
-                  <input
-                    type="text"
-                    name="Profile Summary"
-                    placeholder="enter here"
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
-                </div>
-
-                <div className=" flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Skills</div>
-                  <input
-                    type="text"
-                    name="Skills"
-                    placeholder="enter here"
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
-                </div>
-
-                <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Facebook Profile Link</div>
-                  <input
-                    type="text"
-                    name="Facebook Profile Link"
-                    placeholder="enter here"
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
-                </div>
-                <div className="flex-1 text-[#54585C] ">
-                  <div className=" text-sm  ">Linkedin Profile Link</div>
-                  <input
-                    type="text"
-                    name="Linkedin Profile Link"
-                    placeholder="enter here"
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border  sm:text-sm rounded-md"
-                  />
-                </div>
-              </div>
-              <div className=" mt-8 ">
-                {
-                  // upload
-
-                  isuploaded ? (
-                    <div className="flex justify-between px-4 py-5 border rounded-[.625rem]">
-                      <div className="flex text-sm items-center gap-2 ">
-                        <div className="w-[2rem] h-[2rem] bg-[#E7F6EC] flex justify-center items-center rounded-full ">
-                          <img src={tick} alt className="w" />
-                        </div>
-                        <div className="">
-                          <div className="">Upload Successful</div>
-                          <div className=" text-[.6875rem] text-[#D3DBE3] ">File Title.pdf | 313 KB . 31 Aug, 2022</div>
-                        </div>
-                      </div>
-                      <button className=" rounded-lg text-white text-sm py-2 px-2  " onClick={uploadhandler}>
-                        <img src={bin} alt className="w" />
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="flex justify-between px-4 py-5 border rounded-[.625rem]">
-                      <div className="flex text-sm items-center gap-2 ">
-                        <div className="w-[2rem] h-[2rem] bg-[#FAFBFC] flex justify-center items-center rounded-full ">
-                          <img src={uploadIcon} alt="" className="w" />
-                        </div>
-                        <div className="">
-                          <div className="">Tap to Upload</div>
-                          <div className=" text-[.6875rem] text-[#D3DBE3] ">SVG, PNG, JPG, GIF | 10MB max.</div>
-                        </div>
-                      </div>
-                      <button
-                        className=" rounded-lg bg-[#027FFF] text-white text-sm py-2 px-4  "
-                        onClick={uploadhandler}
-                      >
-                        Upload
-                      </button>
-                    </div>
-                  )
-                }
-              </div>
-            </div>
-
             {/* buttons */}
             <div className="flex gap-8 ">
               <div
@@ -480,9 +417,9 @@ export default function AddTeacher() {
                 <div className="rounded-full w-[7.5rem] h-[7.5rem] flex justify-center items-center">
                   <img src={successIcon} alt className="w" />
                 </div>
-                <div className=" text-[1.5rem]">Teacher Added Successfully 🎉</div>
+                <div className=" text-[1.5rem]">Student Added Successfully 🎉</div>
                 <div className="text-sm font-light">
-                  You have successfully initiated the process to onboard Teacher Name to your School.{" "}
+                  You have successfully initiated the process to onboard Student Name to your School.
                 </div>
               </div>
 

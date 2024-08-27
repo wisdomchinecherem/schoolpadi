@@ -1,17 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import user from "../../assets/schoolpadi-img/user.svg";
-import camera from "../../assets/schoolpadi-img/camera.svg";
-import uploadIcon from "../../assets/schoolpadi-img/upload.svg";
-import bin from "../../assets/schoolpadi-img/bin.svg";
-import successIcon from "../../assets/schoolpadi-img/success.svg";
-import tick from "../../assets/schoolpadi-img/tick.svg";
+import user from "../../../assets/schoolpadi-img/user.svg"
+import camera from "../../../assets/schoolpadi-img/camera.svg";
+import uploadIcon from "../../../assets/schoolpadi-img/upload.svg";
+import bin from "../../../assets/schoolpadi-img/bin.svg";
+import successIcon from "../../../assets/schoolpadi-img/success.svg";
+import tick from "../../../assets/schoolpadi-img/tick.svg";
 import { TiTick } from "react-icons/ti";
 import { BiX } from "react-icons/bi";
-import Modal from "../atoms/modal";
+import Modal from "../../atoms/modal";
 
 export default function AddAdmin() {
   const [isuploaded, setisuploaded] = useState(false);

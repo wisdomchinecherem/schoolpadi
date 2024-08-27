@@ -5,7 +5,7 @@ import { IoChatbubbles, IoEye, IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
-import Pagination from "../../reusables/filters/Pagination";
+import Pagination from "../../../reusables/filters/Pagination"
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 import {  faChevronDown  } from '@fortawesome/free-solid-svg-icons';

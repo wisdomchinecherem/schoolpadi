@@ -3,12 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
-import Pagination from "../reusables/filters/Pagination";
-import { useNavigate, Link } from "react-router-dom";
+import Pagination from "./../../reusables/filters/Pagination"
+import { Link, useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
-
-const InfomationSystem = () => {
+const Teachers = () => {
   const navigate = useNavigate();
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
@@ -18,18 +17,20 @@ const InfomationSystem = () => {
   const [isOpen, setIsOpen] = useState(false);
 
 
-   const teachersData = [
-    { name: 'John Doe', section: 'Section A', class: 'Class 2', email: 'john@example.com', id: 245753, contacts: '123-456-7890' },
-    { name: 'Jane Smith', section: 'Section A', class: 'Class 2', email: 'jane@example.com', id: 245753, contacts: '098-765-4321' },
-    { name: 'Robert Brown', section: 'Section A', class: 'Class 2', email: 'robert@example.com', id: 245753, contacts: '321-654-9870' },
-    { name: 'Emily Johnson', section: 'Section A', class: 'Class 2', email: 'emily@example.com', id: 245753, contacts: '654-987-1234' },
-    { name: 'Michael Davis', section: 'Section A', class: 'Class 2', email: 'michael@example.com', id: 245753, contacts: '987-321-6540' },
-    { name: 'Sarah Wilson', section: 'Section A', class: 'Class 2', email: 'sarah@example.com', id: 245753, contacts: '456-789-0123' },
-    { name: 'David Clark', section: 'Section A', class: 'Class 2', email: 'david@example.com', id: 245753, contacts: '789-012-3456' },
-    { name: 'Laura Allen', section: 'Section A', class: 'Class 2', email: 'laura@example.com', id: 245753, contacts: '012-345-6789' },
-    { name: 'Daniel King', section: 'Section A', class: 'Class 2', email: 'daniel@example.com', id: 245753, contacts: '543-210-6789' },
-    { name: 'Jessica Lee', section: 'Section A', class: 'Class 2', email: 'jessica@example.com', id: 245753, contacts: '678-901-2345' },
-  ];
+
+  const teachersData = [
+     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'teaching', contacts: '123-456-7890' },
+     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'non-teaching', contacts: '098-765-4321' },
+     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'In-progress', contacts: '321-654-9870' },
+     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'teaching', contacts: '654-987-1234' },
+     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'In-proress', contacts: '987-321-6540' },
+     { name: 'Sarah Wilson', id: '99001', gender: 'Female', email: 'sarah@example.com', employeeType: 'teaching', contacts: '456-789-0123' },
+     { name: 'David Clark', id: '22334', gender: 'Male', email: 'david@example.com', employeeType: 'teaching', contacts: '789-012-3456' },
+     { name: 'Laura Allen', id: '55667', gender: 'Female', email: 'laura@example.com', employeeType: 'non-teaching', contacts: '012-345-6789' },
+     { name: 'Daniel King', id: '88900', gender: 'Male', email: 'daniel@example.com', employeeType: 'teaching', contacts: '543-210-6789' },
+     { name: 'Jessica Lee', id: '11234', gender: 'Female', email: 'jessica@example.com', employeeType: 'teaching', contacts: '678-901-2345' },
+   ];
+
 
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
@@ -55,17 +56,18 @@ const InfomationSystem = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+
   return (
     <>
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Student List</span>
+        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Teachers List</span>
         <Link
-          to="/admindashboard/infomationsystem/addstudent"
-          className="text-white  py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0"
+          to="/admin/admindashboard/infomationsystem/addteacher"
+          className="text-white py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0"
         >
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-          Add Student
+          Add Teacher/Staff
         </Link>
       </div>
 
@@ -78,14 +80,14 @@ const InfomationSystem = () => {
             {" "}
             {/* Reduced grid gap */}
             <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
-              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 12
               </div>
             </a>
             <a href="/Teachers" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
+              <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 8
               </div>
             </a>
@@ -106,7 +108,7 @@ const InfomationSystem = () => {
       </div>
 
       {/* Four Small Rectangles */}
-      <div className="flex flex-wrap justify-center gap-8 mt-6 w-full px-4 md:px-20">
+      <div className="flex flex-wrap justify-center gap-6 mt-6 w-full px-4 md:px-20">
         {dropdownData.map((data, index) => (
           <div key={index} className="w-full md:w-[300px] px-2">
             <h2 className="text-[#101828] mb-2">{data.heading}</h2>
@@ -200,7 +202,6 @@ const InfomationSystem = () => {
         </div>
       </div>
 
-      {/* Section Form */}
       <div className="container mx-auto px-4 py-8">
         <div className="overflow-x-auto">
           <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
@@ -210,13 +211,13 @@ const InfomationSystem = () => {
                   <th className="py-2 px-4 border-b">
                     <input type="checkbox" />
                   </th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Students</th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Section</th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Class</th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">ID</th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Email</th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Contacts</th>
-                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Icons</th>
+                  <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
+                  <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
+                  <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
+                  <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
+                  <th className="py-2 px-4  text-[#8E959C] border-b whitespace-nowrap">Employee Type</th>
+                  <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
+                  <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
                 </tr>
               </thead>
               <tbody>
@@ -226,10 +227,16 @@ const InfomationSystem = () => {
                       <input type="checkbox" />
                     </td>
                     <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
-                    <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.section}</td>
-                    <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.class}</td>
                     <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
+                    <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
                     <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
+                    <td
+                      className={`py-2 px-4 whitespace-nowrap ${
+                        teacher.employeeType === "teaching" ? "text-green-600" : "text-orange-500"
+                      }`}
+                    >
+                      {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
+                    </td>
                     <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                     <td className="py-2 px-4 flex space-x-2">
                       <FaExclamation className="text-[#8E959C]" />
@@ -258,4 +265,4 @@ const InfomationSystem = () => {
   );
 };
 
-export default InfomationSystem;
+export default Teachers;
