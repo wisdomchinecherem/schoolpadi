@@ -41,7 +41,6 @@ import AddAdmin from './components/admin/informationpage/AddAdmin';
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  console.log(location)
   const hideHeaderFooter = location.pathname === '/';
 
   return (
