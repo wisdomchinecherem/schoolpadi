@@ -39,6 +39,7 @@ import AddStudent from './components/informationpage/AddStudent';
 import AddTeacher from './components/informationpage/AddTeacher';
 import AddAdmin from './components/informationpage/AddAdmin';
 import Administration from './pages/teacher/administrations/Administrations';
+import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -99,6 +100,8 @@ const App = () => {
           <Route path="t/aichat" element={<AiChat />} />
           <Route path="t/chat" element={<MainChat />} />
           <Route path="t/administrations" element={<Administration />} />
+          {/* <Route path="t/learning-module" element={<LearningModule />} /> */}
+          <Route path="t/schedule-comms" element={<ScheduleComms />} />
           
         </Route>
       

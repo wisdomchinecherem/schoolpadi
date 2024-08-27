@@ -4,11 +4,11 @@ import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 import Pagination from "../reusables/filters/Pagination";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
 const Emails = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const itemsPerPage = 8; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
