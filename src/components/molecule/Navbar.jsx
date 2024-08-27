@@ -47,6 +47,8 @@ const Navbar = () => {
 
   const location = useLocation(); // Get current location
 
+  console.log(location);
+
 
   const links = [
     { name: 'Dashboard', href: '/AdminDashboard' },

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
-import Pagination from "../reusables/filters/Pagination";
+import Pagination from "./../../reusables/filters/Pagination"
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 

@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
-import Pagination from "../reusables/filters/Pagination";
-import { Link, useNavigate } from "react-router-dom";
+import Pagination from "./../../reusables/filters/Pagination"
+import { useNavigate, Link } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
-const AdminPage = () => {
+
+const InfomationSystem = () => {
   const navigate = useNavigate();
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
@@ -17,15 +18,18 @@ const AdminPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
 
-
-  const teachersData = [
-     { name: 'John Doe', id: '001', gender: 'Male', email: 'john@example.com', employeeType: 'Principal', contacts: '123-456-7890' },
-     { name: 'Jane Smith', id: '002', gender: 'Female', email: 'jane@example.com', employeeType: 'Vice-Principal', contacts: '098-765-4321' },
-     { name: 'Robert Brown', id: '003', gender: 'Male', email: 'robert@example.com', employeeType: 'Accounting', contacts: '321-654-9870' },
-     { name: 'Emily Johnson', id: '004', gender: 'Female', email: 'emily@example.com', employeeType: 'Secretary', contacts: '654-987-1234' },
-     { name: 'Michael Davis', id: '005', gender: 'Male', email: 'michael@example.com', employeeType: 'Librarian', contacts: '987-321-6540' },
-   ];
-
+   const teachersData = [
+    { name: 'John Doe', section: 'Section A', class: 'Class 2', email: 'john@example.com', id: 245753, contacts: '123-456-7890' },
+    { name: 'Jane Smith', section: 'Section A', class: 'Class 2', email: 'jane@example.com', id: 245753, contacts: '098-765-4321' },
+    { name: 'Robert Brown', section: 'Section A', class: 'Class 2', email: 'robert@example.com', id: 245753, contacts: '321-654-9870' },
+    { name: 'Emily Johnson', section: 'Section A', class: 'Class 2', email: 'emily@example.com', id: 245753, contacts: '654-987-1234' },
+    { name: 'Michael Davis', section: 'Section A', class: 'Class 2', email: 'michael@example.com', id: 245753, contacts: '987-321-6540' },
+    { name: 'Sarah Wilson', section: 'Section A', class: 'Class 2', email: 'sarah@example.com', id: 245753, contacts: '456-789-0123' },
+    { name: 'David Clark', section: 'Section A', class: 'Class 2', email: 'david@example.com', id: 245753, contacts: '789-012-3456' },
+    { name: 'Laura Allen', section: 'Section A', class: 'Class 2', email: 'laura@example.com', id: 245753, contacts: '012-345-6789' },
+    { name: 'Daniel King', section: 'Section A', class: 'Class 2', email: 'daniel@example.com', id: 245753, contacts: '543-210-6789' },
+    { name: 'Jessica Lee', section: 'Section A', class: 'Class 2', email: 'jessica@example.com', id: 245753, contacts: '678-901-2345' },
+  ];
 
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
@@ -51,18 +55,17 @@ const AdminPage = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-
   return (
     <>
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Admins List</span>
+        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Student List</span>
         <Link
-          to="/admindashboard/infomationsystem/addadmin"
-          className="text-white py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0"
+          to="/admin/admindashboard/infomationsystem/addstudent"
+          className="text-white  py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0"
         >
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-          Add Admin
+          Add Student
         </Link>
       </div>
 
@@ -75,20 +78,20 @@ const AdminPage = () => {
             {" "}
             {/* Reduced grid gap */}
             <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
+              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 12
               </div>
             </a>
             <a href="/Teachers" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C]  text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
-              <div className="bg-gray-300  text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 8
               </div>
             </a>
             <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
-              <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 3
               </div>
             </a>
@@ -100,6 +103,31 @@ const AdminPage = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Four Small Rectangles */}
+      <div className="flex flex-wrap justify-center gap-8 mt-6 w-full px-4 md:px-20">
+        {dropdownData.map((data, index) => (
+          <div key={index} className="w-full md:w-[300px] px-2">
+            <h2 className="text-[#101828] mb-2">{data.heading}</h2>
+            <div
+              className="relative bg-white border w-full h-20 rounded-md flex items-center justify-between px-4 cursor-pointer"
+              onClick={() => toggleDropdown(index)}
+            >
+              <span className="text-[#D3DBE3]">{data.label}</span>
+              <FontAwesomeIcon icon={faChevronDown} className="text-[#D3DBE3]" />
+              {openIndex === index && (
+                <ul className="absolute top-full left-0 right-0 bg-gray-100 border shadow-lg z-10">
+                  {data.options.map((option, i) => (
+                    <li key={i} className="px-4 py-2 hover:bg-[#8E959C]">
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
@@ -138,16 +166,33 @@ const AdminPage = () => {
           {isOpen && (
             <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
               <div className="py-1">
+                <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Subjects</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Students Enrollments</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Elective or Core Subjects Enrollments</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Update Students Enrollment Status</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Update Subjects Enrollment Status</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Assign Degree to Students</div>
+
                 <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Communication</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">This is a subheading for the title</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Send Email</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Send SMS</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (Email)</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (SMS)</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (WhatsApp)</div>
 
+                <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Academics</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">This is a subheading for the title</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Print ID Card</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Print Report Cards</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Enable Report Cards</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Disable Report Cards</div>
+
                 <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Other Actions</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">This is a subheading for the title</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Block</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Unblock</div>
+                <div className="px-4 py-2 text-[#54585C] text-sm">Move to Alumni</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Delete</div>
               </div>
             </div>
@@ -155,6 +200,7 @@ const AdminPage = () => {
         </div>
       </div>
 
+      {/* Section Form */}
       <div className="container mx-auto px-4 py-8">
         <div className="overflow-x-auto">
           <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
@@ -164,13 +210,13 @@ const AdminPage = () => {
                   <th className="py-2 px-4 border-b">
                     <input type="checkbox" />
                   </th>
-                  <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
-                  <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
-                  <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
-                  <th className="py-2 px-4  text-[#8E959C] border-b">Email</th>
-                  <th className="py-2 px-4  text-[#8E959C] border-b whitespace-nowrap">Employee Type</th>
-                  <th className="py-2 px-4  text-[#8E959C] border-b">Contacts</th>
-                  <th className="py-2 px-4  text-[#8E959C] border-b">Icons</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Students</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Section</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Class</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">ID</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Email</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Contacts</th>
+                  <th className="py-2 px-4 text-middle text-[#8E959C] border-b">Icons</th>
                 </tr>
               </thead>
               <tbody>
@@ -179,17 +225,11 @@ const AdminPage = () => {
                     <td className="py-2 px-4">
                       <input type="checkbox" />
                     </td>
-                    <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
                     <td className="py-2 text-[#8E959C] whitespace-nowrap px-4">{teacher.name}</td>
-                    <td className="py-2 px-4 text-[#8E959C]">{teacher.gender}</td>
+                    <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.section}</td>
+                    <td className="py-2 px-4 text-[#8E959C] whitespace-nowrap">{teacher.class}</td>
+                    <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
                     <td className="py-2 px-4 text-[#8E959C]">{teacher.email}</td>
-                    <td
-                      className={`py-2 px-4 whitespace-nowrap ${
-                        teacher.employeeType === "Principal" ? "text-blue-600" : "text-orange-500"
-                      }`}
-                    >
-                      {teacher.employeeType.charAt(0).toUpperCase() + teacher.employeeType.slice(1)}
-                    </td>
                     <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                     <td className="py-2 px-4 flex space-x-2">
                       <FaExclamation className="text-[#8E959C]" />
@@ -218,4 +258,4 @@ const AdminPage = () => {
   );
 };
 
-export default AdminPage;
+export default InfomationSystem;

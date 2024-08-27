@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
-import Pagination from "../reusables/filters/Pagination";
+import Pagination from "./../../reusables/filters/Pagination"
 import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
-const Schedules = () => {
-  const navigate = useNavigate();
+const Emails = () => {
+  // const navigate = useNavigate();
   const itemsPerPage = 8; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
@@ -28,6 +28,7 @@ const Schedules = () => {
     setSelectedItem(null); // Clear the selected data
   };
 
+
   const handleCheckboxChange = (e) => {
     if (e.target.checked) {
       setSelectedCount(prevCount => prevCount + 1);
@@ -36,7 +37,6 @@ const Schedules = () => {
     }
   };
 
-  
 
   // Mock data for table
   const [tableData] = useState([
@@ -119,7 +119,7 @@ const Schedules = () => {
 
       {/* New Section: Student List Header */}
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Notices</span>
+        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Emails</span>
         <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
           Compose
@@ -131,14 +131,14 @@ const Schedules = () => {
         <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4">
           <div className="grid grid-cols-6 gap-2">
             <a href="/Schedules" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
-              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-[#8E959C]  text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
+              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 12
               </div>
             </a>
             <a href="/Emails" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
+              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
+              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 8
               </div>
             </a>
@@ -214,13 +214,15 @@ const Schedules = () => {
     )}
   </div>
 </div>
+
+
     {/* Table */}
-<div className="px-4 py-4">
+<div className="px-4  py-4">
   <div className="overflow-x-auto px-4 py-4">
     <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
 
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">
-        <thead className="bg-gray-100">
+        <thead className="bg-gray-100 ">
           <tr>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]"></th>
             <th className="px-6 py-8 text-middle text-xs sm:text-sm text-[#8E959C]">Title</th>
@@ -249,7 +251,7 @@ const Schedules = () => {
       <td className="px-6 py-8 text-xs sm:text-sm text-[#8E959C]">{item.date}</td>
       <td className="px-6 py-8 text-xs sm:text-xs">
   {item.sentTo.split(', ').map((word, index) => {
-    const colors = ['bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]'];
+    const colors = ['bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100', 'bg-blue-100'];
     const colorClass = colors[index % colors.length]; // Cycle through colors
 
     return (
@@ -276,9 +278,6 @@ const Schedules = () => {
   </div>
 </div>
 
-
-
-
        {/* Modal */}
 {isModalOpen && selectedItem && (
   <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -300,7 +299,7 @@ const Schedules = () => {
         <div className="flex items-center flex-wrap mt-8">
           <p className="text-[#8E959C] text-xs mr-2">Publish To</p>
           {selectedItem.sentTo.split(', ').map((word, index) => {
-            const colors = ['bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400', 'bg-blue-400'];
+    const colors = ['bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]', 'bg-[#E6F2FF]'];
             const colorClass = colors[index % colors.length]; // Cycle through colors
 
             return (
@@ -329,4 +328,4 @@ const Schedules = () => {
   );
 };
 
-export default Schedules;
+export default Emails;
