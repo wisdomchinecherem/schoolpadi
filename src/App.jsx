@@ -26,6 +26,7 @@ import SMS from './components/admin/schedulespage/smspage/SMS';
 import SMSLogs from './components/admin/schedulespage/smspage/SMSLogs';
 import Credit from './components/admin/schedulespage/smspage/Credit';
 import Graduation from './components/admin/graduation/Graduation';
+import Administration from './components/admin/administrationpage/Administration';
 
 
 import Finance from './pages/superadmin/Finance';
@@ -81,6 +82,7 @@ const App = () => {
         <Route path="/Events" element={<Layout><Events/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
+        <Route path="/administration" element={<Layout><Administration/></Layout>} /> 
 
         
         {/* super admin */}
