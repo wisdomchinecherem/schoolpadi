@@ -42,7 +42,7 @@ export default function Dropdown({ options, label, placeholder, searchPlaceholde
 
   return (
     <div className="relative w-72 " ref={dropdownRef}>
-      <label className="block text-sm font-medium text-gray-700">
+      <label htmlFor={label} className="block text-sm font-medium text-gray-700">
         {label}
       </label>
       <div 

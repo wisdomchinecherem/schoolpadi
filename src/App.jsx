@@ -38,6 +38,7 @@ import MainChat from './components/teacher/mainChat/MainChat';
 import AddStudent from './components/informationpage/AddStudent';
 import AddTeacher from './components/informationpage/AddTeacher';
 import AddAdmin from './components/informationpage/AddAdmin';
+import Administration from './pages/teacher/administrations/Administrations';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -97,6 +98,7 @@ const App = () => {
           <Route path="t/information-system/student/:id" element={<StudentDetail />} />
           <Route path="t/aichat" element={<AiChat />} />
           <Route path="t/chat" element={<MainChat />} />
+          <Route path="t/administrations" element={<Administration />} />
           
         </Route>
       
