@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave, FaTrash } from 'react-icons/fa';
-import Pagination from "./../../reusables/filters/Pagination";
+import Pagination from "../../reusables/filters/Pagination";
 import { Link } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
-const Administration = () => {
+const Administrations = () => {
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
@@ -34,16 +34,7 @@ const Administration = () => {
     setFilteredData(teachersData.slice(start, end));
   }, [currentPage, teachersData]);
 
-  const dropdownData = [
-    { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
-    { heading: 'Section', label: 'Select Section', options: ['Session 1', 'Session 2', 'Session 3'] },
-    { heading: 'Class', label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
-    { heading: 'Subjects', label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
-  ];
 
-  const toggleDropdown = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
     <>
@@ -95,17 +86,9 @@ const Administration = () => {
           {isOpen && (
             <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-h-[600px] overflow-hidden overflow-y-auto">
               <div className="py-1">
-                <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Communication</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Send Email</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Send SMS</div>
                 <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (Email)</div>
-                <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (SMS)</div>
-                <div className="px-4 py-2 text-[#54585C] text-sm">Invite to Login (WhatsApp)</div>
-
-                <div className="px-4 py-2 text-[#54585C] text-sm font-bold">Other Actions</div>
-                <div className="px-4 py-2 text-[#54585C] text-sm">Block</div>
-                <div className="px-4 py-2 text-[#54585C] text-sm">Unblock</div>
-                <div className="px-4 py-2 text-[#54585C] text-sm">Delete</div>
               </div>
             </div>
           )}
@@ -129,10 +112,10 @@ const Administration = () => {
               <tbody>
                 {filteredData.map((teacher, index) => (
                   <tr key={index} className="border-b">
-                    <td className="py-2 px-4">{teacher.id}</td>
-                    <td className="py-2 px-4">{teacher.title}</td>
-                    <td className="py-2 px-4">{teacher.category}</td>
-                    <td className="py-2 px-4">
+                    <td className="py-2 px-4 text-[#8E959C]">{teacher.id}</td>
+                    <td className="py-2 px-4 text-[#8E959C]">{teacher.title}</td>
+                    <td className="py-2 px-4 text-[#8E959C]">{teacher.category}</td>
+                    <td className="py-2 px-4 text-[#8E959C]">
   <span className={`px-2 py-1 rounded-full whitespace-nowrap text-xs ${
     teacher.status === "Active" ? "bg-green-100 text-green-500" : "bg-red-100 text-red-500"
   }`}>
@@ -140,12 +123,10 @@ const Administration = () => {
   </span>
 </td>
 
-                    <td className="py-2 px-4">{teacher.lastupdated}</td>
+                    <td className="py-2 px-4 text-[#8E959C]">{teacher.lastupdated}</td>
                     <td className="py-2 px-4">
                       <div className="flex space-x-1">
                         <FaExclamation className="text-[#8E959C] text-xs sm:text-sm" />
-                        <FaTrashAlt className="text-[#8E959C] text-xs sm:text-sm" />
-                        <FaLock className="text-[#8E959C] text-xs sm:text-sm" />
                         <FaSave className="text-[#8E959C] text-xs sm:text-sm" />
                         <FaTrash className="text-[#8E959C] text-xs sm:text-sm" />
                       </div>
@@ -167,4 +148,4 @@ const Administration = () => {
   );
 };
 
-export default Administration;
+export default Administrations;

@@ -26,7 +26,7 @@ import SMS from './components/admin/schedulespage/smspage/SMS';
 import SMSLogs from './components/admin/schedulespage/smspage/SMSLogs';
 import Credit from './components/admin/schedulespage/smspage/Credit';
 import Graduation from './components/admin/graduation/Graduation';
-import Administration from './components/admin/administrationpage/Administration';
+import Administrations from './components/admin/administrationpage/Administrations';
 
 
 import Finance from './pages/superadmin/Finance';
@@ -36,11 +36,6 @@ import InformationSystem from './pages/teacher/InformationSystem';
 import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
 import MainChat from './components/teacher/mainChat/MainChat';
-// import AddStudent from './components/informationpage/AddStudent';
-// import AddTeacher from './components/informationpage/AddTeacher';
-// import AddAdmin from './components/informationpage/AddAdmin';
-import Administration from './pages/teacher/administrations/Administrations';
-import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
 import AddStudent from './components/admin/informationpage/AddStudent';
 import AddTeacher from './components/admin/informationpage/AddTeacher';
 import AddAdmin from './components/admin/informationpage/AddAdmin';
@@ -87,7 +82,7 @@ const App = () => {
         <Route path="/Events" element={<Layout><Events/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
-        <Route path="/administration" element={<Layout><Administration/></Layout>} /> 
+        <Route path="/administrations" element={<Layout><Administrations/></Layout>} /> 
 
         
         {/* super admin */}
@@ -104,9 +99,6 @@ const App = () => {
           <Route path="t/information-system/student/:id" element={<StudentDetail />} />
           <Route path="t/aichat" element={<AiChat />} />
           <Route path="t/chat" element={<MainChat />} />
-          <Route path="t/administrations" element={<Administration />} />
-          {/* <Route path="t/learning-module" element={<LearningModule />} /> */}
-          <Route path="t/schedule-comms" element={<ScheduleComms />} />
           
         </Route>
       
