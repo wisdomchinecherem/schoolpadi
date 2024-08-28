@@ -9,7 +9,7 @@ import InfomationSystem from '../components/informationpage/InfomationSystem';
 import Schedules from '../components/schedulespage/Schedules'; 
 import SMS from '../components/schedulespage/SMS'; 
 import Graduation from '../components/adminDashboard/Graduation';
-import Administrations from '../components/admin/administrationpage/Administrations';
+import TeachersProfile from './components/admin/informationpage/TeachersProfile';
 //  import SuperAdminLayout from '../layouts/superadmin/SuperAdminLayout';
 //  import Home from '../pages/superadmin/Home';
 // import Footer from '../components/Landingpage/Footer';  
@@ -24,6 +24,7 @@ function PageRoutes() {
         <Route path="/admindashboard" element={<AdminDashboard />} /> 
         <Route path="/infomationsystem" element={<InfomationSystem />} />
         <Route path="/administrations" element={<Administrations />} />
+        <Route path="/teachersprofile" element={<TeachersProfile />} />
         {/* <Route path="/teachers" element={<Teachers />} />   */}
         {/* <Route path="/adminpage" element={<AdminPage />} />   */}
         <Route path="/SMS" element={<SMS />} />

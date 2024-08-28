@@ -237,7 +237,7 @@ const Teachers = () => {
                     </td>
                     <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                     <td className="py-2 px-4 flex space-x-2">
-                    <Link to="/components/admin/informationpage/TeachersProfile">
+                    <Link to="/TeachersProfile">
                     <FaExclamation className="text-[#8E959C]" />
                     </Link>
                       <FaTrashAlt className="text-[#8E959C]" />
