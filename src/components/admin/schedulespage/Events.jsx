@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from "react-router-dom";
 import Calendar from './../../reusables/calendar'; 
 
 const Events = () => {

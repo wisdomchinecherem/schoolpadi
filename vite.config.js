@@ -7,14 +7,14 @@ export default defineConfig({
   plugins: [react(),
     VitePWA({ 
       devOptions: {
-        enabled: true,
+        enabled: false,
         navigateFallbackAllowlist: [/^index.html$/]
         /* other options */
       },
       manifest: {
-        name: 'Global Plug Service',
-        short_name: 'GPS',
-        description: 'Global Plug Service Web App!',
+        name: 'Schoolpadi',
+        short_name: 'Schoolpadi',
+        description: 'Schoolpadi Web App!',
         theme_color: '#ffffff',
         background_color: '#F3F4F8',
         display: 'standalone',
@@ -45,7 +45,7 @@ export default defineConfig({
         ],
         protocol_handlers: [
           {
-            protocol: 'web+gps',
+            protocol: 'web+schoolpadi',
             url: '/?url=%s'
           }
         ],
@@ -53,6 +53,7 @@ export default defineConfig({
       workbox: {
         cleanupOutdatedCaches: true,
       },
+
       registerType: 'autoUpdate' })
 
 
