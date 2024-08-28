@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),
     VitePWA({ 
       devOptions: {
-        enabled: true,
+        enabled: false,
         navigateFallbackAllowlist: [/^index.html$/]
         /* other options */
       },

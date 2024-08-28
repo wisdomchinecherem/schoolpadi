@@ -35,14 +35,14 @@ import InformationSystem from './pages/teacher/InformationSystem';
 import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
 import MainChat from './components/teacher/mainChat/MainChat';
-import AddStudent from './components/informationpage/AddStudent';
-import AddTeacher from './components/informationpage/AddTeacher';
-import AddAdmin from './components/informationpage/AddAdmin';
+// import AddStudent from './components/informationpage/AddStudent';
+// import AddTeacher from './components/informationpage/AddTeacher';
+// import AddAdmin from './components/informationpage/AddAdmin';
 import Administration from './pages/teacher/administrations/Administrations';
 import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
-// import AddStudent from './components/admin/informationpage/AddStudent';
-// import AddTeacher from './components/admin/informationpage/AddTeacher';
-// import AddAdmin from './components/admin/informationpage/AddAdmin';
+import AddStudent from './components/admin/informationpage/AddStudent';
+import AddTeacher from './components/admin/informationpage/AddTeacher';
+import AddAdmin from './components/admin/informationpage/AddAdmin';
 
 const Layout = ({ children }) => {
   const location = useLocation();

@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IoChatbubbles, IoEye, IoMenu } from "react-icons/io5"; 
 import { Link } from "react-router-dom";
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 import Pagination from "../../reusables/filters/Pagination";
-import { useNavigate } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 import {  faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 
 const Credit = () => {
 
-     const navigate = useNavigate();
      const itemsPerPage = 8; // Number of items per page
      const [currentPage, setCurrentPage] = useState(1); // Current page
      const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
@@ -78,14 +75,7 @@ const Credit = () => {
      
   return (
     <>
-      {/* New Section: Student List Header */}
-      <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">SMS</span>
-        <button className="bg-white text-[#014F9E] py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0 mb-2">
-          <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
-          Compose
-        </button>
-      </div>
+    
 
       {/* Overlapping White Box */}
       <div className="relative -top-6 px-6">

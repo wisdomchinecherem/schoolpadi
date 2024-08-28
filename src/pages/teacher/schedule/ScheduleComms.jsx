@@ -1,8 +1,7 @@
 import { useState} from "react";
 import {  TabButton } from "../../../components/reusables/filters";
-import ClassesListTable from "../../../components/tables/teacher/ClassesListTable";
-import { classData } from "../../../utils/constants/_data";
 import Emails from "../../../components/teacher/schedule/Emails";
+import TeacherSmsDashboard from "../../../components/teacher/schedule/TeacherSmsDashboard";
 const tabs = ["Notices", "Emails", "SMS", "Whatsapp", "Events"];
 // const initialData = [
 //   {
@@ -64,10 +63,9 @@ export default function ScheduleComms() {
    
 
     
-      {activeTab === "Classes" && <ClassesListTable data={classData} selectedRows={selectedRows}
-        onRowSelection={handleRowSelection}
-      />}
       {activeTab === "Emails" && <Emails
+      />}
+      {activeTab === "SMS" && <TeacherSmsDashboard
       />}
     </section>
   );

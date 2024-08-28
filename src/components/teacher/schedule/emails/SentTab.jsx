@@ -1,14 +1,13 @@
 import { Pagination } from "../../../reusables/filters";
 import {
   FaTrash,
-  FaExclamation,
-  FaTrashAlt,
-  FaLock,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import EditIcon from "../../../reusables/icons/EditIcon";
 import NoticeModal from "../../../modals/NoticeModal";
 import useModal from "../../../../hooks/useModal";
+import {  MdPushPin } from "react-icons/md";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 export default function SentTab() {
   const itemsPerPage = 8; // Number of items per page
@@ -182,10 +181,9 @@ export default function SentTab() {
                       })}
                     </td>
 
-                    <td className="py-8 px-4 flex items-center gap-3 text-sm">
-                      <FaExclamation className="text-[#8E959C]" />
-                      <FaTrashAlt className="text-[#8E959C]" />
-                      <FaLock className="text-[#8E959C]" />
+                    <td className="py-8 px-4 flex items-center text-[#8E959C] gap-3 text-sm">
+                      <MdPushPin  />
+                      <BsFillQuestionCircleFill  />
                       <EditIcon />
                       <FaTrash className="text-[#8E959C]" />
                     </td>
