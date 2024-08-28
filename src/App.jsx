@@ -14,18 +14,18 @@ import Report from './pages/superadmin/Report';
 // import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
 import Navbar from './components/molecule/Navbar';
-import AdminDashboard from './components/adminDashboard/AdminDashboard';  
-import InfomationSystem from './components/informationpage/InfomationSystem'; 
-import Teachers from './components/informationpage/Teachers';   
-import AdminPage from './components/informationpage/AdminPage'; 
-import Parents from './components/informationpage/Parents'; 
-import Schedules from './components/schedulespage/Schedules';  
-import Emails from './components/schedulespage/Emails'; 
-import Events from './components/schedulespage/Events';
-import SMS from './components/schedulespage/smspage/SMS';   
-import SMSLogs from './components/schedulespage/smspage/SMSLogs';
-import Credit from './components/schedulespage/smspage/Credit';
-import Graduation from './components/adminDashboard/Graduation';
+import AdminDashboard from './components/admin/adminDashboard/AdminDashboard';  
+import InfomationSystem from './components/admin/informationpage/InfomationSystem'; 
+import Teachers from './components/admin/informationpage/Teachers';   
+import AdminPage from './components/admin/informationpage/AdminPage'; 
+import Parents from './components/admin/informationpage/Parents'; 
+import Schedules from './components/admin/schedulespage/Schedules';
+import Emails from './components/admin/schedulespage/Emails'; 
+import Events from './components/admin/schedulespage/Events';
+import SMS from './components/admin/schedulespage/smspage/SMS';   
+import SMSLogs from './components/admin/schedulespage/smspage/SMSLogs';
+import Credit from './components/admin/schedulespage/smspage/Credit';
+import Graduation from './components/admin/graduation/Graduation';
 
 
 import Finance from './pages/superadmin/Finance';
@@ -35,10 +35,10 @@ import InformationSystem from './pages/teacher/InformationSystem';
 import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
 import MainChat from './components/teacher/mainChat/MainChat';
-import AddStudent from './components/informationpage/AddStudent';
-import AddTeacher from './components/informationpage/AddTeacher';
-import AddAdmin from './components/informationpage/AddAdmin';
 import Administration from './pages/teacher/administrations/Administrations';
+import AddStudent from './components/admin/informationpage/AddStudent';
+import AddTeacher from './components/admin/informationpage/AddTeacher';
+import AddAdmin from './components/admin/informationpage/AddAdmin';
 
 const Layout = ({ children }) => {
   const location = useLocation();
