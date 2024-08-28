@@ -31,7 +31,7 @@ const TeachersProfile = () => {
             <a href="/TeachersProfile" className="flex flex-col sm:flex-row items-center justify-center relative">
            <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0"> Profile
            </span>
-           <div className="absolute left-0 right-0 mx-auto w-10/12 border-b-2 border-blue-600 mt-[5.3rem] sm:mt-[4.3rem]"></div>
+           <div className="absolute left-0 right-0 mx-auto w-10/12 border-b-2 border-blue-600 mt-[4rem] sm:mt-[4.3rem]"></div>
             </a>
 
             <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
@@ -39,7 +39,7 @@ const TeachersProfile = () => {
             </a>
 
             <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0 ">Class Schedule</span>
+              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0 ">Schedule</span>
             </a>
 
             <a href="/parents" className="flex flex-col sm:flex-row items-center justify-center">
