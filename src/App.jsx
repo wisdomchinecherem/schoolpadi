@@ -43,6 +43,7 @@ import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
 import AddStudent from './components/admin/informationpage/AddStudent';
 import AddTeacher from './components/admin/informationpage/AddTeacher';
 import AddAdmin from './components/admin/informationpage/AddAdmin';
+import CreateMessage from './pages/teacher/schedule/CreateMessage';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -105,6 +106,7 @@ const App = () => {
           <Route path="t/administrations" element={<Administration />} />
           {/* <Route path="t/learning-module" element={<LearningModule />} /> */}
           <Route path="t/schedule-comms" element={<ScheduleComms />} />
+          <Route path="t/schedule-comms/create-message" element={<CreateMessage />} />
           
         </Route>
       
