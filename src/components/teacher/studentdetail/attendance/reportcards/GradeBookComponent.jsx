@@ -1,6 +1,7 @@
 import ExpandIcon from "../../../../reusables/icons/ExpandIcon";
 import PropTypes from "prop-types";
 import ShrinkIcon from "../../../../reusables/icons/ShrinkIcon";
+import AssessmentComponent from "./AssessmentComponent";
 
 export default function GradeBookComponent({
   data,
@@ -61,8 +62,7 @@ export default function GradeBookComponent({
           </div>
           {expandedRow && (
             <div className=" p-4 mt-2 rounded-xl shadow-inner">
-              <div className="text-xl font-[400] mb-4">Mathematics</div>
-              <p className="text-sm">{"Hello"}</p>
+              <AssessmentComponent />
             </div>
           )}
           {/* Expanded details */}

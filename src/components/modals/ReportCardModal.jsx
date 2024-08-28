@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export default function ReportCardModal({
   isOpen,
-  title,
+  // title,
   toggleStatus,
   onClose,
 }) {
