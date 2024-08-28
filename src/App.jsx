@@ -29,6 +29,7 @@ import Graduation from './components/admin/graduation/Graduation';
 import Administrations from './components/admin/administrationpage/Administrations';
 import AddStudent from './components/admin/informationpage/AddStudent';
 import AddTeacher from './components/admin/informationpage/AddTeacher';
+import TeachersProfile from './components/admin/informationpage/TeachersProfile';
 import AddAdmin from './components/admin/informationpage/AddAdmin';
 import AddPolicy from './components/admin/administrationpage/AddPolicy';
 
@@ -72,6 +73,7 @@ const App = () => {
         <Route path="/admindashboard/infomationsystem/addteacher" element={<Layout><AddTeacher /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addadmin" element={<Layout><AddAdmin /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><AddPolicy /></Layout>} /> 
+        <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><TeachersProfile /></Layout>} /> 
 
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 

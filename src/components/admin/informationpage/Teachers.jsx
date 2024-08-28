@@ -208,9 +208,7 @@ const Teachers = () => {
             <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
               <thead>
                 <tr className="bg-[#FAFBFC]">
-                  <th className="py-2 px-4 border-b">
-                    <input type="checkbox" />
-                  </th>
+                <th className="py-2 px-4 text-[#8E959C] border-b"></th>
                   <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
                   <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
                   <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
@@ -239,7 +237,9 @@ const Teachers = () => {
                     </td>
                     <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                     <td className="py-2 px-4 flex space-x-2">
-                      <FaExclamation className="text-[#8E959C]" />
+                    <Link to="/components/admin/informationpage/TeachersProfile">
+                    <FaExclamation className="text-[#8E959C]" />
+                    </Link>
                       <FaTrashAlt className="text-[#8E959C]" />
                       <FaLock className="text-[#8E959C]" />
                       <FaSave className="text-[#8E959C]" />
