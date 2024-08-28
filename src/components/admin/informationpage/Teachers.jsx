@@ -4,20 +4,20 @@ import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 import Pagination from "./../../reusables/filters/Pagination"
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
 const Teachers = () => {
-  const navigate = useNavigate();
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
-  const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
+  const [, setFilteredData] = useState([]); // Data to display on the current page
   const [openIndex, setOpenIndex] = useState(null);
 
   const [isOpen, setIsOpen] = useState(false);
 
 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const teachersData = [
      { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'teaching', contacts: '123-456-7890' },
      { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'non-teaching', contacts: '098-765-4321' },
@@ -208,9 +208,7 @@ const Teachers = () => {
             <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
               <thead>
                 <tr className="bg-[#FAFBFC]">
-                  <th className="py-2 px-4 border-b">
-                    <input type="checkbox" />
-                  </th>
+                <th className="py-2 px-4 text-[#8E959C] border-b"></th>
                   <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
                   <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
                   <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
@@ -239,7 +237,9 @@ const Teachers = () => {
                     </td>
                     <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                     <td className="py-2 px-4 flex space-x-2">
-                      <FaExclamation className="text-[#8E959C]" />
+                    <Link to="/components/admin/informationpage/TeachersProfile">
+                    <FaExclamation className="text-[#8E959C]" />
+                    </Link>
                       <FaTrashAlt className="text-[#8E959C]" />
                       <FaLock className="text-[#8E959C]" />
                       <FaSave className="text-[#8E959C]" />

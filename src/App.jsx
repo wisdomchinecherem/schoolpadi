@@ -7,11 +7,7 @@ import SuperAdminLayout from './layouts/superadmin/SuperAdminLayout';
 import UserManagement from './pages/superadmin/UserManagement';
 import UserManagementDetail from './pages/superadmin/UserManagementDetail';
 import Dashboard from './pages/superadmin/Dashboard';
-// import Finance from './pages/finance';
-// import FinanceLayout from './layouts/superadmin/FinanceLayout/FinanceLayout';
-// import FinanceDashboard from './pages/superadmin/finance/Dashboard';
 import Report from './pages/superadmin/Report';
-// import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
 import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/admin/adminDashboard/AdminDashboard';  
@@ -26,6 +22,12 @@ import SMS from './components/admin/schedulespage/smspage/SMS';
 import SMSLogs from './components/admin/schedulespage/smspage/SMSLogs';
 import Credit from './components/admin/schedulespage/smspage/Credit';
 import Graduation from './components/admin/graduation/Graduation';
+import Administrations from './components/admin/administrationpage/Administrations';
+import AddStudent from './components/admin/informationpage/AddStudent';
+import AddTeacher from './components/admin/informationpage/AddTeacher';
+// import TeachersProfile from './components/admin/informationpage/TeachersProfile';
+import AddAdmin from './components/admin/informationpage/AddAdmin';
+import AddPolicy from './components/admin/administrationpage/AddPolicy';
 
 
 import Finance from './pages/superadmin/Finance';
@@ -35,15 +37,11 @@ import InformationSystem from './pages/teacher/InformationSystem';
 import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
 import MainChat from './components/teacher/mainChat/MainChat';
-// import AddStudent from './components/informationpage/AddStudent';
-// import AddTeacher from './components/informationpage/AddTeacher';
-// import AddAdmin from './components/informationpage/AddAdmin';
 import Administration from './pages/teacher/administrations/Administrations';
 import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
-import AddStudent from './components/admin/informationpage/AddStudent';
-import AddTeacher from './components/admin/informationpage/AddTeacher';
-import AddAdmin from './components/admin/informationpage/AddAdmin';
 import CreateMessage from './pages/teacher/schedule/CreateMessage';
+import LearningModule from './pages/teacher/learningmodule/LearningModule';
+import AttendanceTable from './pages/teacher/learningmodule/attendance/ManageAttendance';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -74,6 +72,8 @@ const App = () => {
         <Route path="/admindashboard/infomationsystem/addstudent" element={<Layout><AddStudent /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addteacher" element={<Layout><AddTeacher /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addadmin" element={<Layout><AddAdmin /></Layout>} />  
+        <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><AddPolicy /></Layout>} /> 
+        {/* <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><TeachersProfile /></Layout>} />  */}
 
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
@@ -87,6 +87,7 @@ const App = () => {
         <Route path="/Events" element={<Layout><Events/></Layout>} />
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
+        <Route path="/administrations" element={<Layout><Administrations/></Layout>} /> 
 
         
         {/* super admin */}
@@ -104,7 +105,8 @@ const App = () => {
           <Route path="t/aichat" element={<AiChat />} />
           <Route path="t/chat" element={<MainChat />} />
           <Route path="t/administrations" element={<Administration />} />
-          {/* <Route path="t/learning-module" element={<LearningModule />} /> */}
+          <Route path="t/learning-module" element={<LearningModule />} />
+          <Route path="t/learning-module/attendance" element={<AttendanceTable />} />
           <Route path="t/schedule-comms" element={<ScheduleComms />} />
           <Route path="t/schedule-comms/create-message" element={<CreateMessage />} />
           

@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+//import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import user from "../../../assets/schoolpadi-img/user.svg"
 import camera from "../../../assets/schoolpadi-img/camera.svg";
@@ -54,10 +54,12 @@ export default function AddAdmin() {
         >
           <AiOutlineArrowLeft /> <p className="text-sm">Back</p>
         </div>
+        {/*
         <div className="text-white  py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0">
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
           Add Admin
         </div>
+        */}
       </div>
       {/* main */}
 

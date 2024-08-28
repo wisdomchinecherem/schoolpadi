@@ -58,7 +58,7 @@ const Navbar = () => {
     { name: 'Finance/Accounting', href: '/Finance' },
     { name: 'People/Productivity', href: '/People' },
     { name: 'Marketing/Admissions', href: '/Marketing' },
-    { name: 'Administration', href: '/Administration' },
+    { name: 'Administrations', href: '/Administrations' },
   ];
 
   return (

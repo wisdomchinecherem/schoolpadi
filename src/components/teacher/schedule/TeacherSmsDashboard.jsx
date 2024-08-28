@@ -5,6 +5,7 @@ import { IoChatbubblesOutline } from "react-icons/io5";
 import MiscIcon from "../../reusables/icons/MiscIcon";
 import SMSLogs from "./smspage/SMSLogs";
 import PropTypes from "prop-types"
+import Credit from "./smspage/Credit";
 const Tab = ({ children, isActive, onClick }) => (
   <button
     className={`px-4 flex items-center gap-3 py-2 rounded-md border ${
@@ -113,8 +114,8 @@ export default function TeacherSmsDashboard() {
       </TabContent>
 
       <TabContent isActive={activeTab === 2}>
-        <div className="p-4 bg-white rounded-md shadow-sm">
-          <p>SMS Credit Logs content goes here...</p>
+      <div className="border p-4 bg-white rounded-md shadow-sm">
+      <Credit />
         </div>
       </TabContent>
     </div>

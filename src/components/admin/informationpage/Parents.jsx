@@ -3,11 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import Pagination from "./../../reusables/filters/Pagination"
-import { useNavigate } from "react-router-dom";
+
 import { MdFilterList } from "react-icons/md";
 
 const Parents = () => {
-  const navigate = useNavigate();
   const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredData, setFilteredData] = useState([]);
@@ -192,12 +191,12 @@ const Parents = () => {
                   <td className="py-2 px-4 text-[#8E959C]">{parent.email}</td>
                   <td className="py-2 px-4 text-[#8E959C]">{parent.contact}</td>
                   <td className={`py-2 px-4 ${parent.status === 'Active' ? 'text-green-600' : parent.status === 'Inactive' ? 'text-orange-600' : 'text-gray-600'}`}>
-                    <span className={`bg-${parent.status === 'Active' ? 'green-200' : parent.status === 'Inactive' ? 'orange-200' : 'gray-200'} text-${parent.status === 'Active' ? 'green-600' : parent.status === 'Inactive' ? 'orange-600' : 'gray-600'} rounded-full px-2 py-1 text-xs`}>
+                    <span className={`bg-${parent.status === 'Active' ? 'bg-green-100 green-200' : parent.status === 'Inactive' ? 'orange-200' : 'gray-200'} text-${parent.status === 'Active' ? 'green-600' : parent.status === 'Inactive' ? 'orange-600' : 'gray-600'} rounded-full px-2 py-1 text-xs`}>
                       {parent.status}
                     </span>
                   </td>
                   <td className={`py-2 px-4 ${parent.invited === 'Yes' ? 'text-green-600' : 'text-red-600'}`}>
-                    <span className={`bg-${parent.invited === 'Yes' ? 'green-200' : 'red-200'} text-${parent.invited === 'Yes' ? 'green-600' : 'red-600'} rounded-full px-2 py-1 text-xs`}>
+                    <span className={`bg-${parent.invited === 'Yes' ? 'green-200' : 'red-200'} text-${parent.invited === 'Yes' ? 'green-600' : 'bg-red-100 red-600'} rounded-full px-2 py-1 text-xs`}>
                       {parent.invited}
                     </span>
                   </td>
