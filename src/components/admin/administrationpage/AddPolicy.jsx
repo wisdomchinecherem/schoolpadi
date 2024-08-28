@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import edit from "../../../assets/schoolpadi-img/edit.png";
+import { Link } from 'react-router-dom';
 
 
 export default function AddStudent() {
@@ -15,15 +16,20 @@ export default function AddStudent() {
      return (
      <div className=" relative  ">
           {/* header */}
-      <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
-        <div
-          className="text-white cursor-pointer text-sm leading-none sm:text-xl -mt-2 mb-8 flex gap-2"
-          onClick={handleBackClick}
-        >
-          <AiOutlineArrowLeft /> <p className="text-sm">Back</p>
-          <img src={edit} alt="" className="" />
-        </div>
-      </div>
+          <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
+  <div
+    className="text-white text-sm leading-none sm:text-xl -mt-2 mb-8 flex gap-2"
+  >
+    <div onClick={handleBackClick} className="flex items-center cursor-pointer">
+      <AiOutlineArrowLeft />
+      <p className="text-sm">Back</p>
+    </div>
+    <Link to="/policymanagement" className="flex items-center">
+      <img src={edit} alt="Edit" className="cursor-pointer" />
+    </Link>
+  </div>
+</div>
+
 
           {/* Overlapping White Box */}
    <div className="relative -top-6 px-6">
