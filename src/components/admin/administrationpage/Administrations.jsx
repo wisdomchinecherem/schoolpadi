@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { FaExclamation, FaTrashAlt, FaLock, FaSave, FaTrash } from 'react-icons/fa';
+import { FaExclamation,  FaSave, FaTrash } from 'react-icons/fa';
 import Pagination from "../../reusables/filters/Pagination";
 import { Link } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
@@ -11,7 +11,8 @@ const Administrations = () => {
   const itemsPerPage = 4; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [filteredData, setFilteredData] = useState([]); // Data to display on the current page
-  const [openIndex, setOpenIndex] = useState(null);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const teachersData = [
@@ -53,15 +54,16 @@ const Administrations = () => {
       <div className="p-2 flex justify-between items-center px-8 py-4 sm:p-4 sm:px-12 lg:px-24">
         {/* Cards Container */}
         <div className="hidden sm:flex space-x-4">
-          <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px]">
-            PlaceHolder
-          </span>
+  <span className="text-[#D3DBE3] border py-1 px-24 rounded flex items-center text-sm leading-none sm:py-2 sm:px-32 sm:text-base mt-[-4px] ml-4">
+    PlaceHolder
+  </span>
 
-          <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center">
-            <span className="text-[#D3DBE3]">Filter</span>
-            <MdFilterList />
-          </div>
-        </div>
+  <div className="flex border rounded-xl text-[#8E959C] text-md font-semibold p-2 gap-x-4 items-center ml-6">
+    <span className="text-[#D3DBE3]">Filter</span>
+    <MdFilterList />
+  </div>
+</div>
+
 
         {/* Buttons for Small Screens */}
         <div className="flex sm:hidden space-x-2">
@@ -76,7 +78,7 @@ const Administrations = () => {
         <div className="relative inline-block text-left">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm"
+            className="text-[#8E959C] border py-1 px-2 rounded flex items-center text-xs leading-none sm:py-1 sm:px-2 sm:text-xs md:py-2 md:px-4 md:text-sm mr-6"
           >
             <FontAwesomeIcon icon={faPlus} className="mr-1 border rounded-full p-1 text-xs sm:text-xs md:text-base" />
             <span className="hidden sm:inline text-xs sm:text-xs md:text-sm">Selected</span>

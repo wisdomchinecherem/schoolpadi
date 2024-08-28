@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import edit from "../../../assets/schoolpadi-img/edit.png";
@@ -102,7 +102,7 @@ export default function AddStudent() {
     <div className="mt-6">
       <h3 className="text-md" style={{ color: '#B6BFC8' }}>Attachment:</h3>
       <ul className="list-disc list-inside text-sm">
-        <li><a href="#" className="text-blue-500 underline">Sample Doctor's Note Template</a></li>
+        <li><a href="#" className="text-blue-500 underline">Sample Doctors Note Template</a></li>
         <li><a href="#" className="text-blue-500 underline">Parental Notification Form</a></li>
       </ul>
     </div>
