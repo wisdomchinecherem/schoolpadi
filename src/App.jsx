@@ -27,6 +27,10 @@ import SMSLogs from './components/admin/schedulespage/smspage/SMSLogs';
 import Credit from './components/admin/schedulespage/smspage/Credit';
 import Graduation from './components/admin/graduation/Graduation';
 import Administrations from './components/admin/administrationpage/Administrations';
+import AddStudent from './components/admin/informationpage/AddStudent';
+import AddTeacher from './components/admin/informationpage/AddTeacher';
+import AddAdmin from './components/admin/informationpage/AddAdmin';
+import AddPolicy from './components/admin/administrationpage/AddPolicy';
 
 
 import Finance from './pages/superadmin/Finance';
@@ -36,9 +40,7 @@ import InformationSystem from './pages/teacher/InformationSystem';
 import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
 import MainChat from './components/teacher/mainChat/MainChat';
-import AddStudent from './components/admin/informationpage/AddStudent';
-import AddTeacher from './components/admin/informationpage/AddTeacher';
-import AddAdmin from './components/admin/informationpage/AddAdmin';
+
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -69,6 +71,7 @@ const App = () => {
         <Route path="/admindashboard/infomationsystem/addstudent" element={<Layout><AddStudent /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addteacher" element={<Layout><AddTeacher /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addadmin" element={<Layout><AddAdmin /></Layout>} />  
+        <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><AddPolicy /></Layout>} /> 
 
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
