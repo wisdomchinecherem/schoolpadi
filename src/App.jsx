@@ -73,7 +73,7 @@ const App = () => {
         <Route path="/admindashboard/infomationsystem/addteacher" element={<Layout><AddTeacher /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addadmin" element={<Layout><AddAdmin /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><AddPolicy /></Layout>} /> 
-        <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><TeachersProfile /></Layout>} /> 
+       
 
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
         <Route path="/infomationsystem" element={<Layout><InfomationSystem/></Layout>} /> 
@@ -88,6 +88,8 @@ const App = () => {
         <Route path="/Graduation" element={<Layout>< Graduation/></Layout>} />
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
         <Route path="/administrations" element={<Layout><Administrations/></Layout>} /> 
+        <Route path="/parents" element={<Layout><Parents/></Layout>} /> 
+        <Route path="/teachersprofile" element={<Layout><TeachersProfile/></Layout>} /> 
 
         
         {/* super admin */}
