@@ -25,7 +25,8 @@ import Graduation from './components/admin/graduation/Graduation';
 import Administrations from './components/admin/administrationpage/Administrations';
 import AddStudent from './components/admin/informationpage/AddStudent';
 import AddTeacher from './components/admin/informationpage/AddTeacher';
-import TeachersProfile from './components/admin/informationpage/TeachersProfile';
+import TeachersProfile from './components/admin/informationpage/TeachersProfile'; 
+import Subjects from './components/admin/informationpage/Subjects';
 import AddAdmin from './components/admin/informationpage/AddAdmin';
 import AddPolicy from './components/admin/administrationpage/AddPolicy';
 
@@ -91,6 +92,7 @@ const App = () => {
         <Route path="/administrations" element={<Layout><Administrations/></Layout>} /> 
         <Route path="/parents" element={<Layout><Parents/></Layout>} /> 
         <Route path="/teachersprofile" element={<Layout><TeachersProfile/></Layout>} /> 
+        <Route path="/subjects" element={<Layout><Subjects/></Layout>} /> 
 
         
         {/* super admin */}
