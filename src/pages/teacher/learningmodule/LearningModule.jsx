@@ -31,7 +31,7 @@ export default function LearningModule() {
       {
         title: "Attendance",
         subtitle: "Manage Attendance",
-        onClick: () => navigate("/t/learning-module/attendance"),
+        onClick: () => navigate("/t/learning-module/class"),
       },
       {
         title: "Assessment",
@@ -46,14 +46,8 @@ export default function LearningModule() {
     ];
   return (
     <section>
-      <div className="flex -mt-6 justify-between text-white items-center w-full">
-        <Link
-          to={"/t/schedule-comms/create-message"}
-          className="bg-[#027FFF] px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-400"
-        >
-          {" "}
-          <FaPlus /> <span> Compose</span>{" "}
-        </Link>
+      <div className="flex -mt-6 justify-between text-3xl text-white items-center w-full">
+          <span> Modules</span>{" "}
       </div>
       <div className="bg-white grid grid-cols-3 gap-3 p-4 rounded-2xl shadow-lg mt-5">
         {cards.map((card, index) => (
