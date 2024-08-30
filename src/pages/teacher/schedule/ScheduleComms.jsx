@@ -12,7 +12,7 @@ export default function ScheduleComms() {
 
   return (
     <section>
-      <div className="flex -mt-6 justify-between text-white items-center w-full">
+      <div className="flex -mt-6 px-4  justify-between text-white items-center w-full">
         <h2 className="text-2xl ">{activeTab}</h2>
     <Link to={"/t/schedule-comms/create-message"} className="bg-[#027FFF] px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-400"> <FaPlus  />  <span> Compose</span> </Link>
       </div>

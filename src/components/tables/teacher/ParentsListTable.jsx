@@ -71,7 +71,7 @@ export default function ParentsListTable({ selectedRows, onRowSelection }) {
       title: "Parents",
       key: "parents",
       render: (data) => (
-        <div className="flex flex-col text-sm">
+        <div className="flex min-w-80 flex-col text-sm">
           <span>Father&apos;s Name: {data.fatherName}</span>
           <span>Mother&apos;s Name: {data.motherName}</span>
           <span>Username: {data.username}</span>
@@ -133,7 +133,7 @@ export default function ParentsListTable({ selectedRows, onRowSelection }) {
   ];
 
   return (
-    <div className="rounded border p-4 rounded-xl text-[#8E959C]">
+    <div className=" border p-4 rounded-xl text-[#8E959C]">
       <Table columns={parents_column ?? []} data={filteredData ?? []} case={"sentence"} />
       <Pagination
         totalItems={parentData.length}

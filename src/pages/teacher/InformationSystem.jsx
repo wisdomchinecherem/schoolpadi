@@ -123,7 +123,7 @@ export default function InformationSystem() {
       </div>
       {/* <p className="my-2 text-3xl text-white">{activeTab} List</p> */}
 
-      <div className={` ${activeTab === "Parents" ? "hidden" : "grid grid-cols-4"} `}>
+      <div className={` ${activeTab === "Parents" ? "hidden" : "p-4 grid xl:grid-cols-4 grid-cols-2 gap-6"} `}>
         <div className="">
           <h2 className="text-[#54585C]">Academic Session</h2>
           <SelectComponent
@@ -160,7 +160,7 @@ export default function InformationSystem() {
           />
         </div>
       </div>
-      <div className="flex justify-between my-4 items-center">
+      <div className="flex flex-wrap gap-4 p-4 justify-between my-4 items-center">
         <div className="flex items-center gap-5">
           <SearchComponent
             placeholder="Search..."

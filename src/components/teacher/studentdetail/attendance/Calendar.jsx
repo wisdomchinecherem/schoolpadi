@@ -104,7 +104,7 @@ export default function CustomCalendar() {
       months.push(
         <div
           key={month}
-          className="border border-gray-300 rounded-lg shadow-lg p-4"
+          className="border border-gray-300  rounded-lg shadow-lg p-4"
         >
           <h3 className="text-center mb-4">
             {new Date(currentYear, month).toLocaleString("default", {
@@ -130,8 +130,8 @@ export default function CustomCalendar() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex items-center justify-between w-full my-6">
+    <div className="flex flex-col items-center h-full">
+      <div className="flex flex-wrap items-center justify-between w-full my-6">
         <div className="flex text-[#8E959C] items-center gap-2 ">
           <button
             onClick={handlePrevYear}
@@ -150,7 +150,7 @@ export default function CustomCalendar() {
         </div>
 
         {/** Display legend only for the current month */}
-        <div className="flex items-center gap-4">
+        <div className="flex overflow-x-auto items-center gap-4">
           <div className="flex items-center gap-2">
             <div className="bg-[#E7F6EC]   rounded-xl flex items-center gap-2 px-2 py-1">
               <FaCheckSquare className="text-[#0F973D]" />{" "}
@@ -178,7 +178,7 @@ export default function CustomCalendar() {
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center min-w-72 my-4 gap-2">
             <div className="bg-[#FAFBFC]   rounded-xl flex items-center gap-2 px-2 py-1">
               <FaHashtag className="text-[#8E959C]" />{" "}
               <span className="text-[#8E959C]">Total Days</span>{" "}
@@ -189,7 +189,7 @@ export default function CustomCalendar() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="flex flex-wrap gap-6 overflow-x-auto   ">
         {renderMonths()}
       </div>
     </div>

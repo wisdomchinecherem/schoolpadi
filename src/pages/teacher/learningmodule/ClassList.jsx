@@ -57,7 +57,7 @@ const ClassList = () => {
 
   return (
 <section>
-<div className="flex -mt-8 mb-6 justify-between text-3xl text-white items-center w-full">
+<div className="flex -mt-8 mb-6 px-2 justify-between text-3xl text-white items-center w-full">
           <span> Classlist</span>{" "}
       </div>
 
@@ -96,8 +96,8 @@ const ClassList = () => {
           <tbody>
             {tableData[activeTab].map((row, index) => (
               <tr key={index} className="hover:bg-gray-100 text-[#8E959C]" >
-                <td className="border border-gray-200 px-4 py-2">{row.class}</td>
-                <td className="border border-gray-200 px-4 py-2">{row.students}</td>
+                <td className="border border-gray-200 px-4 min-w-40 py-2">{row.class}</td>
+                <td className="border border-gray-200 px-4 min-w-40 py-2">{row.students}</td>
                 <td className="border border-gray-200 px-4 py-2">{row.male}</td>
                 <td className="border border-gray-200 px-4 py-2">{row.female}</td>
                 <td className="border border-gray-200 px-4 py-2 text-center">

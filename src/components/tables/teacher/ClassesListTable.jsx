@@ -69,7 +69,7 @@ export default function ClassesListTable({ data, selectedRows, onRowSelection })
       title: "Class",
       key: "class",
       render: (data) => (
-        <p className="flex gap-x-2">
+        <p className="flex min-w-32 gap-x-2">
           <span className="bg-[#E6F2FF] rounded-full">{"c-3"} </span>  {data.class}
         </p>
       ),
@@ -77,7 +77,7 @@ export default function ClassesListTable({ data, selectedRows, onRowSelection })
     {
       title: "Section",
       key: "section",
-      render: (data) => <span className="min-w-[5rem]">{data.section}</span>,
+      render: (data) => <p className="min-w-[7rem]">{data.section}</p>,
     },
     {
       title: "No of Students",
@@ -92,7 +92,7 @@ export default function ClassesListTable({ data, selectedRows, onRowSelection })
       title: "Subjects",
       key: "subjects",
       render: (data) => (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex min-w-80 flex-wrap gap-2">
           {data.subjects.map((subject, index) => (
             <span key={index} className="bg-gray-200 font-[400] rounded-full px-2 py-1 text-xs">
               {subject}

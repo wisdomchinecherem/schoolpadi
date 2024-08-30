@@ -8,7 +8,7 @@ import PropTypes from "prop-types"
 import Credit from "./smspage/Credit";
 const Tab = ({ children, isActive, onClick }) => (
   <button
-    className={`px-4 flex items-center gap-3 py-2 rounded-md border ${
+    className={`xl:px-4 px-2 flex text-xs items-center xl:gap-3 gap-1   py-2 rounded-md border ${
       isActive
         ? "bg-blue-100 border-blue-300 text-blue-400"
         : " border-gray-300 text-[#8E959C]"

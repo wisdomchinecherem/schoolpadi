@@ -71,7 +71,7 @@ export default function StudentsListTable({ data, selectedRows, onRowSelection }
       title: "Student",
       key: "student",
       render: (data) => (
-        <p className="flex gap-x-4 gap-2">
+        <p className="flex min-w-32 gap-x-4 gap-2">
           <img className="" src="/person.svg" alt="student avatar" /> {data.student}
         </p>
       ),
@@ -79,15 +79,15 @@ export default function StudentsListTable({ data, selectedRows, onRowSelection }
     {
       title: "Section",
       key: "section",
-      render: (data) => <span className="min-w-[5rem]">{data.section}</span>,
+      render: (data) => <p className="min-w-[5rem]">{data.section}</p>,
     },
     {
       title: "Class ",
       key: "class",
       render: (data) => (
-        <span className="min-w-[5rem] flex items-center gap-x-2">
+        <p className="min-w-[7rem] flex items-center gap-x-2">
           {data.class ?? "Not Available"}
-        </span>
+        </p>
       ),
     },
     {
@@ -116,8 +116,8 @@ export default function StudentsListTable({ data, selectedRows, onRowSelection }
             alt="info"
             onClick={() => navigate(`/t/information-system/student/${data.id}`)}
           />
-          <IoMail />
-          <IoIosChatbubbles />
+          <IoMail size={20} />
+          <IoIosChatbubbles size={20} />
         </div>
       ),
     },

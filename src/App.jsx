@@ -42,7 +42,7 @@ import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
 import CreateMessage from './pages/teacher/schedule/CreateMessage';
 import LearningModule from './pages/teacher/learningmodule/LearningModule';
 import AttendanceTable from './pages/teacher/learningmodule/attendance/ManageAttendance';
-import ClassList from './pages/teacher/schedule/ClassList';
+import ClassList from './pages/teacher/learningmodule/ClassList';
 
 const Layout = ({ children }) => {
   const location = useLocation();

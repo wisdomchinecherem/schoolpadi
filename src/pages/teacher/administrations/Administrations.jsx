@@ -34,7 +34,7 @@ export default function Administration() {
   };
   return (
     <section>
-      <div className="flex justify-between">
+      <div className="flex justify-between -mt-5 px-2">
         <Link to="#" className="flex text-lg text-white  items-center gap-4">
           <FaArrowLeftLong className="text-2xl"/>
           <h2 >Back</h2>

@@ -14,7 +14,7 @@ export default function SMSForm() {
       <div className="mb-6">
         <h3 className="my-3 text-[#54585C]">Send To</h3>
 
-        <div className="flex gap-8">
+        <div className="flex flex-wrap xl:gap-8 gap-4">
           <label className="flex items-center">
             <input
               type="radio"

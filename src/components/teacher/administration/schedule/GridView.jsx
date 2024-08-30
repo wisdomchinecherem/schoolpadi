@@ -55,8 +55,8 @@ export default function GridView () {
             <tbody>
               {scheduleData.map((slot, index) => (
                 <tr key={index} className="border-b">
-                  <td className="py-2 px-4">{slot.time}</td>
-                  <td className="py-2 px-4 border">
+                  <td className="py-2 px-4 min-w-40">{slot.time}</td>
+                  <td className="py-2 px-4 min-w-80 border">
                     {slot.Monday ? (
                       <div className=" max-w-[100px] flex flex-col gap-6 w-full">
                         <p className="font-medium">{slot.Monday.subject}</p>
@@ -78,7 +78,7 @@ export default function GridView () {
                       ''
                     )}
                   </td>
-                  <td className="py-2 px-4 border"></td>
+                  <td className="py-2 px-4 min-w-52 border"></td>
                   <td className="py-2 px-4 border"></td>
                   <td className="py-2 px-4 border"></td>
                   <td className="py-2 px-4"></td>

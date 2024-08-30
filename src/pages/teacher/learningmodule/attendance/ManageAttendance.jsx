@@ -1,14 +1,14 @@
-import { FaAngleRight, FaCheckSquare, FaPlus } from "react-icons/fa";
+import { FaAngleRight, FaCheckSquare } from "react-icons/fa";
 import { GoHash } from "react-icons/go";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { TabButton } from "../../../../components/reusables/filters";
 import { useState } from "react";
-import { BsBack } from "react-icons/bs";
 import AttendanceModal from "../../../../components/modals/AttendanceModal";
 import { studentsData } from "../../../../utils/constants/_data";
 import Submission from "./Submission";
+import { BiArrowBack } from "react-icons/bi";
 
 // Function to generate days in a month
 const generateDaysInMonth = (month, year) => {
@@ -84,20 +84,17 @@ const AttendanceTable = () => {
   return (
     <section>
       {/* Header Section */}
-      <div className="flex -mt-6 justify-between text-white items-center w-full">
-        <h2 className="text-2xl flex items-center gap-2">
-          <BsBack /> <span> Back </span>
-        </h2>
+      <div className="flex -mt-12 -xl:mt-5 justify-between text-white items-center w-full">
         <Link
-          to={"/t/schedule-comms/create-message"}
-          className="bg-[#027FFF] px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-400"
+          to={"/t/learning-module/"}
+          className=" px-4 py-2 rounded-lg flex items-center gap-2 "
         >
-          <FaPlus /> <span> Compose</span>
+          <BiArrowBack /> <span> Back</span>
         </Link>
       </div>
 
       {/* Tab Section */}
-      <div className="bg-white rounded-2xl shadow-lg mt-5">
+      <div className="bg-white rounded-2xl overflow-x-auto shadow-lg -mt-2 xl:mt-4">
         <TabButton
           isBorder
           tabs={tabs}
@@ -110,7 +107,7 @@ const AttendanceTable = () => {
       {activeTab === "Manage" && (
         <div className="p-6 bg-white shadow-md rounded-lg ">
           {/* Select Input for Date Selection */}
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex xl:flex-row flex-col justify-between xl:items-center gap-4 mb-4">
             <div className="flex items-center gap-2">
               <FaAngleRight className="text-[#027FFF]" size={24} />
               <h3 className="text-[#027FFF]">Mathematics</h3> <span>/</span>
@@ -144,72 +141,67 @@ const AttendanceTable = () => {
 
           {/* Attendance Table */}
           <div className="overflow-x-auto">
-
-          <table className="min-w-full border-collapse border border-gray-200">
-            <thead>
-              <tr className="bg-gray-50">
-                <th className="border text-[#8E959C] border-gray-200 px-4 py-2 text-left">
-                  S/N
-                </th>
-                <th className="border text-[#8E959C] border-gray-200 px-4 py-2 text-left">
-                  Student
-                </th>
-                {days.map((day) => (
-                  <th
-                    key={day}
-                    className="border text-[#8E959C] font-normal border-gray-200 px-4 py-2 text-center"
-                  >
-                    {`Day ${day}`}
+            <table className="min-w-full border-collapse border border-gray-200">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="border text-[#8E959C] border-gray-200 px-4 py-2 text-left">
+                    S/N
                   </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {studentsData.map((student, index) => (
-                <tr key={index} className="hover:bg-gray-100">
-                  <td className="border border-gray-200 px-4 py-2">
-                    {student.id}
-                  </td>
-                  <td className="border border-gray-200 px-4 py-2 min-w-48 flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      checked={attendanceStatus[student.id] ? true : false}
-                      onChange={() =>
-                        handleAttendanceChange(
-                          student.id,
-                          attendanceStatus[student.id] ? "" : "present"
-                        )
-                      }
-                      className="form-checkbox text-blue-500"
-                    />
-                    <img
-                      src={student.avatar}
-                      alt={student.name}
-                      className="w-8 h-8 rounded-full"
-                    />
-                    <span>{student.name}</span>
-                  </td>
-                  {days.map((_, dayIndex) => (
-                    <td
-                      key={dayIndex}
-                      className="border border-gray-200 px-4 py-2 text-center"
+                  <th className="border text-[#8E959C] border-gray-200 px-4 py-2 text-left">
+                    Student
+                  </th>
+                  {days.map((day) => (
+                    <th
+                      key={day}
+                      className="border text-[#8E959C] font-normal border-gray-200 px-4 py-2 text-center"
                     >
-                      {statusIcons[student.attendance[dayIndex]] ||
-                        statusIcons["null"]}
-                    </td>
+                      {`Day ${day}`}
+                    </th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {studentsData.map((student, index) => (
+                  <tr key={index} className="hover:bg-gray-100">
+                    <td className="border border-gray-200 px-4 py-2">
+                      {student.id}
+                    </td>
+                    <td className="border border-gray-200 px-4 py-2 min-w-48 flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        checked={attendanceStatus[student.id] ? true : false}
+                        onChange={() =>
+                          handleAttendanceChange(
+                            student.id,
+                            attendanceStatus[student.id] ? "" : "present"
+                          )
+                        }
+                        className="form-checkbox text-blue-500"
+                      />
+                      <img
+                        src={student.avatar}
+                        alt={student.name}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <span>{student.name}</span>
+                    </td>
+                    {days.map((_, dayIndex) => (
+                      <td
+                        key={dayIndex}
+                        className="border border-gray-200 px-4 py-2 text-center"
+                      >
+                        {statusIcons[student.attendance[dayIndex]] ||
+                          statusIcons["null"]}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}
-      {
-        activeTab === "Attendance Submission Analytics" && (
-          <Submission />
-        )
-      }
+      {activeTab === "Attendance Submission Analytics" && <Submission />}
 
       {/* Modal for Taking Attendance */}
       {isModalOpen && (

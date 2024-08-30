@@ -1,6 +1,7 @@
-import { FaAngleRight, FaPlus } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { FaAngleRight,  } from "react-icons/fa";
+import {  useNavigate } from "react-router-dom";
 import MiscIcon from "../../../components/reusables/icons/MiscIcon";
+import PropTypes from "prop-types"
 
 const Card = ({ title, subtitle, onClick }) => {
   return (
@@ -22,7 +23,10 @@ const Card = ({ title, subtitle, onClick }) => {
 };
 
 Card.propTypes ={
-    
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  onClick: PropTypes.func,
+
 }
 export default function LearningModule() {
     
@@ -49,7 +53,7 @@ export default function LearningModule() {
       <div className="flex -mt-6 justify-between text-3xl text-white items-center w-full">
           <span> Modules</span>{" "}
       </div>
-      <div className="bg-white grid grid-cols-3 gap-3 p-4 rounded-2xl shadow-lg mt-5">
+      <div className="bg-white grid xl:grid-cols-3 gap-3 p-4 rounded-2xl shadow-lg mt-5">
         {cards.map((card, index) => (
           <Card
             key={index}

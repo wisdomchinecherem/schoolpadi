@@ -7,7 +7,7 @@ const ScheduleTab = () => {
   const [activeTab, setActiveTab] = useState("grid"); // Default to grid view
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="xl:p-6 p-2 min-h-screen">
       <div className="flex flex-col gap-10 justify-between mb-4">
         <div>
           <label

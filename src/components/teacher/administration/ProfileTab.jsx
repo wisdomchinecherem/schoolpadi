@@ -63,11 +63,11 @@ const ProfileTab = () => {
           <h4 className="text-sm col-span-1  font-[500] text-[#8E959C]">Skills:</h4>
           <p className="text-sm text-[#54585C] leading-snug">Time management, critical thinking, communication, technological proficiency</p>
         </div>
-        <div className="mt-4 grid justify-center grid-cols-3 item-center">
+        <div className="mt-4 grid justify-center xl:grid-cols-3 grid-cols-1 item-center">
           <h4 className="text-sm ml-0  m-auto col-span-1 font-[500] text-[#8E959C]">Facebook Profile Link:</h4>
           <p><a href="https://www.facebook.com/alisontwerner/profile" className="font-normal text-sm text-[#54585C]">https://www.facebook.com/alisontwerner/profile</a></p>
         </div>
-        <div className="mt-4 grid justify-center grid-cols-3 item-center">
+        <div className="mt-4 grid justify-center xl:grid-cols-3 grid-cols-1 item-center">
           <h4 className="text-sm col-span-1  font-[500] text-[#8E959C]">LinkedIn Profile Link:</h4>
           <p><a href="https://www.linkedin.com/in/alisontwerner/profile" className="font-normal text-sm text-[#54585C]">https://www.linkedin.com/in/alisontwerner/profile</a></p>
         </div>

@@ -18,7 +18,7 @@ const SubjectTab = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 min-h-screen">
       {/* Dropdown for selecting academic session */}
       <div className="mb-6">
         <Dropdown

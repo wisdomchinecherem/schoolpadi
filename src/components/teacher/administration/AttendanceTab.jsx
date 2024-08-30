@@ -30,7 +30,7 @@ export default function AttendanceTab() {
 
   return (
     <div className="h-screen border rounded-xl p-4 w-full">
-      <div className="grid grid-cols-4 items-center ">
+      <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-center gap-2 items-center ">
         <Dropdown
           options={academicSessions}
           placeholder="Select Academic Session"
