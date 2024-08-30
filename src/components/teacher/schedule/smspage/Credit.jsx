@@ -4,9 +4,9 @@ import { IoChatbubbles, IoEye, IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
-import Pagination from "../../reusables/filters/Pagination";
 import { MdFilterList } from "react-icons/md";
 import {  faChevronDown  } from '@fortawesome/free-solid-svg-icons';
+import { Pagination } from "../../../reusables/filters";
 
 const Credit = () => {
 
@@ -77,86 +77,10 @@ const Credit = () => {
     <>
     
 
-      {/* Overlapping White Box */}
-      <div className="relative -top-6 px-6">
-        <div className="bg-white rounded-lg shadow-lg mx-4 py-6 px-4">
-          <div className="grid grid-cols-6 gap-2">
-            <a href="/Schedules" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Notices</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                12
-              </div>
-            </a>
-            <a href="/Emails" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Emails</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                8
-              </div>
-            </a>
-            <a href="/SMS" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">SMS</span>
-              <div className="bg-blue-600 text-white rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                3
-              </div>
-            </a>
-            <a href="/WhatsApp" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">WhatsApp</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                25
-              </div>
-            </a>
-            <a href="/LMS" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">LMS</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                25
-              </div>
-            </a>
-            <a href="/Events" className="flex flex-col sm:flex-row items-center justify-center">
-              <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Events</span>
-              <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
-                25
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+     
 
-      <div className="p-2 flex flex-col sm:flex-row justify-start items-center px-2 py-2 sm:p-4 sm:px-6 lg:px-12">
-  {/* Cards Container */}
-  <div className="flex space-x-2 sm:space-x-4">
-    {/* SMS Logs Card */}
-    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-      <Link to="/SMS" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
-          <IoEye /> {/* Eye icon */}
-        </div>
-        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">Usage Stats</span>
-      </Link>
-    </div>
 
-    {/* Usage Stats Card */}
-    <div className="flex border rounded-lg p-1 sm:p-2 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-      <Link to="/SMSLogs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-[#D3DBE3] text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
-          <IoChatbubbles /> {/* Chat bubbles icon */}
-        </div>
-        <span className="text-[#D3DBE3] text-[10px] sm:text-base group-hover:text-blue-500">SMS Logs</span>
-      </Link>
-    </div>
-
-    {/* SMS Credit Logs Card */}
-    <div className="flex border rounded-lg p-1 sm:p-2 bg-sky-100 group hover:bg-sky-100 hover:cursor-pointer transition-all duration-300">
-      <Link to="/sms-credit-logs" className="flex items-center text-[#8E959C] text-[10px] sm:text-md gap-x-1 group-hover:text-blue-500">
-        <div className="flex items-center rounded-full text-blue-500  text-[12px] sm:text-xl p-1 sm:p-2 px-2 sm:px-3 group-hover:text-blue-500">
-          <IoMenu /> {/* Hamburger menu icon */}
-        </div>
-        <span className="text-blue-500  text-[10px] sm:text-base group-hover:text-blue-500">SMS Credit Logs</span>
-      </Link>
-    </div>
-  </div>
-</div>
-
-<div className="p-2 flex justify-start items-center px-2 py-4 sm:p-4 sm:px-6 lg:px-12">
+<div className=" flex justify-start items-center px-2 py-4 ">
   {/* Cards Container */}
   <div className="hidden sm:flex space-x-4">
     <span className="text-[#D3DBE3] border py-1 px-12 rounded flex items-center text-sm leading-none sm:py-2 sm:px-24 sm:text-base mt-[-4px]">PlaceHolder</span>
@@ -203,8 +127,8 @@ const Credit = () => {
 
 
  {/* Table */}
- <div className="px-4  py-4">
-  <div className="overflow-x-auto px-4 py-4">
+ <div className="  py-4">
+  <div className="overflow-x-auto  py-4">
     <div className="border-0 md:border-2 border-gray-300 rounded-lg p-2">
 
       <table className="min-w-full table-auto border border-gray-200 rounded-lg">

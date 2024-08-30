@@ -7,11 +7,7 @@ import SuperAdminLayout from './layouts/superadmin/SuperAdminLayout';
 import UserManagement from './pages/superadmin/UserManagement';
 import UserManagementDetail from './pages/superadmin/UserManagementDetail';
 import Dashboard from './pages/superadmin/Dashboard';
-// import Finance from './pages/finance';
-// import FinanceLayout from './layouts/superadmin/FinanceLayout/FinanceLayout';
-// import FinanceDashboard from './pages/superadmin/finance/Dashboard';
 import Report from './pages/superadmin/Report';
-// import InformationSystem from './pages/superadmin/finance/InformationSystem';
 import Footer from './components/molecule/Footer';
 import Navbar from './components/molecule/Navbar';
 import AdminDashboard from './components/admin/adminDashboard/AdminDashboard';  
@@ -41,7 +37,12 @@ import InformationSystem from './pages/teacher/InformationSystem';
 import AiChat from './pages/teacher/chat/AiChat';
 import StudentDetail from './pages/teacher/StudentDetail';
 import MainChat from './components/teacher/mainChat/MainChat';
-
+import Administration from './pages/teacher/administrations/Administrations';
+import ScheduleComms from './pages/teacher/schedule/ScheduleComms';
+import CreateMessage from './pages/teacher/schedule/CreateMessage';
+import LearningModule from './pages/teacher/learningmodule/LearningModule';
+import AttendanceTable from './pages/teacher/learningmodule/attendance/ManageAttendance';
+import ClassList from './pages/teacher/schedule/ClassList';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -106,6 +107,12 @@ const App = () => {
           <Route path="t/information-system/student/:id" element={<StudentDetail />} />
           <Route path="t/aichat" element={<AiChat />} />
           <Route path="t/chat" element={<MainChat />} />
+          <Route path="t/administrations" element={<Administration />} />
+          <Route path="t/learning-module" element={<LearningModule />} />
+          <Route path="t/learning-module/attendance" element={<AttendanceTable />} />
+          <Route path="t/learning-module/class" element={<ClassList />} />
+          <Route path="t/schedule-comms" element={<ScheduleComms />} />
+          <Route path="t/schedule-comms/create-message" element={<CreateMessage />} />
           
         </Route>
       

@@ -198,8 +198,8 @@ const SMSLogs = () => {
         </div>
       </div>
 
-{/* Modal */}
-{isModalOpen && selectedItem && (
+      {/* Modal */}
+      {isModalOpen && selectedItem && (
         <SmsModal
           selectedItem={selectedItem}
           isOpen={isModalOpen}

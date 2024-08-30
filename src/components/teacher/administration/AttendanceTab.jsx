@@ -1,7 +1,3 @@
-// import CustomCalendar from "./attendance/Calendar";
-// import Dropdown from "./attendance/DropDown";
-// import SectionDropdown from "./attendance/SectionDropdown";
-
 import CustomCalendar from "../studentdetail/attendance/Calendar";
 import Dropdown from "../studentdetail/attendance/DropDown";
 import SectionDropdown from "../studentdetail/attendance/SectionDropdown";
