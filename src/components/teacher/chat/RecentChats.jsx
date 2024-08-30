@@ -62,7 +62,7 @@ export default function RecentChats() {
         </div>
       )}
 
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid xl:grid-cols-5 gap-4">
         {chats.map((chat, index) => (
           <div
             key={index}

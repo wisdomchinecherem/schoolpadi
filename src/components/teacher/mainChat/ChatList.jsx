@@ -19,7 +19,7 @@ export default function  ChatList  ({ onSelectCategory }) {
   };
 
   return (
-    <div className="w-1/4  border-r ">
+    <div className="xl:w-1/4 w-full  border-r ">
       <ul className='mt-6'>
         {categories.map(category => (
           <li

@@ -31,7 +31,7 @@ export default function  ChatComponent  ({ chatInput,handleSendMessage, setChatI
   return (
     <div className="p-4">
       {/* Prompt Cards */}
-      <div className="flex gap-4 mb-4">
+      <div className="flex flex-wrap overflow-x-auto justify-center xl:justify-start gap-4 mb-4">
         {prompts.map((prompt, index) => (
           <div
             key={index}

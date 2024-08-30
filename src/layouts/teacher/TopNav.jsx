@@ -94,10 +94,10 @@ const navigate = useNavigate()
 
         <div className="flex items-center justify-center gap-x-5 mt-[60px]">
             <div className="flex items-center p-2 bg-white text-black rounded-full">
-              <img src="/gpt_logo.svg" className="w-12 h-12" />
+            <img src="/gpt_logo.svg" className="w-5 h-5 cursor-pointer" onClick={()=>navigate("/t/chat")}  />
             </div>
             <div className="flex items-center p-2 bg-white text-black rounded-full">
-              <IoChatbubbles />
+            <IoChatbubbles onClick={()=>navigate("/t/aichat")} className="cursor-pointer" />
             </div>
             <div className="flex items-center p-2 bg-white text-black rounded-full">
               <GrAnnounce />
