@@ -93,7 +93,7 @@ const TeachersProfile = () => {
               <a href="/Subjects" className="flex flex-col sm:flex-row items-center justify-center">
                 <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Subjects</span>
               </a>
-              <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
+              <a href="/ScheduleScreen" className="flex flex-col sm:flex-row items-center justify-center">
                 <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Schedule</span>
               </a>
               <a href="/parents" className="flex flex-col sm:flex-row items-center justify-center">

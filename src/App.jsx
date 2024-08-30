@@ -26,7 +26,9 @@ import Administrations from './components/admin/administrationpage/Administratio
 import AddStudent from './components/admin/informationpage/AddStudent';
 import AddTeacher from './components/admin/informationpage/AddTeacher';
 import TeachersProfile from './components/admin/informationpage/TeachersProfile'; 
-import Subjects from './components/admin/informationpage/Subjects';
+import Subjects from './components/admin/informationpage/Subjects';  
+import ScheduleScreen from './components/admin/informationpage/ScheduleScreen';
+import AttendanceScreen from './components/admin/informationpage/AttendanceScreen';
 import AddAdmin from './components/admin/informationpage/AddAdmin';
 import AddPolicy from './components/admin/administrationpage/AddPolicy';
 
@@ -91,8 +93,10 @@ const App = () => {
         <Route path="/adminpage" element={<Layout><AdminPage/></Layout>} /> 
         <Route path="/administrations" element={<Layout><Administrations/></Layout>} /> 
         <Route path="/parents" element={<Layout><Parents/></Layout>} /> 
-        <Route path="/teachersprofile" element={<Layout><TeachersProfile/></Layout>} /> 
+        <Route path="/teachersprofile" element={<Layout><TeachersProfile/></Layout>} />  
         <Route path="/subjects" element={<Layout><Subjects/></Layout>} /> 
+        <Route path="/schedulescreen" element={<Layout><ScheduleScreen/></Layout>} />  
+        <Route path="/attendancescreen" element={<Layout><AttendanceScreen/></Layout>} />
 
         
         {/* super admin */}
