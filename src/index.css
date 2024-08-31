@@ -27,3 +27,14 @@
 }
 
 }
+
+.flexCenter {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.flexBetween {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}

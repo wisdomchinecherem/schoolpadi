@@ -451,7 +451,7 @@ const AdminDashboard = () => {
   <div className="flex justify-between items-center mb-4">
     <div className="flex items-center space-x-2">
       <h2 className="text-blue-500 font-semibold underline">All Chats</h2>
-      <span className="text-xs text-white bg-[#027FFF] rounded-xl px-1.5 py-1 text-gray-600">12</span>
+      <span className="text-xs text-white bg-[#027FFF] rounded-xl px-1.5 py-1 ">12</span>
     </div>
     <div className="flex items-center space-x-14">
       <div className="flex items-center space-x-1">

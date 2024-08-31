@@ -46,6 +46,8 @@ import CreateMessage from './pages/teacher/schedule/CreateMessage';
 import LearningModule from './pages/teacher/learningmodule/LearningModule';
 import AttendanceTable from './pages/teacher/learningmodule/attendance/ManageAttendance';
 import ClassList from './pages/teacher/learningmodule/ClassList';
+import People from './components/admin/peoplepage/people';
+
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -77,6 +79,7 @@ const App = () => {
         <Route path="/admindashboard/infomationsystem/addteacher" element={<Layout><AddTeacher /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addadmin" element={<Layout><AddAdmin /></Layout>} />  
         <Route path="/admindashboard/infomationsystem/addpolicy" element={<Layout><AddPolicy /></Layout>} /> 
+        <Route path="/admindashboard/people" element={<Layout><People /></Layout>} /> 
        
 
         <Route path="/admindashboard" element={<Layout><AdminDashboard/></Layout>} />
