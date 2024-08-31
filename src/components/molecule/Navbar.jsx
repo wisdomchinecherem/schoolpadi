@@ -99,27 +99,27 @@ const Navbar = () => {
             {/* icons */}
             <div className="flex space-x-6">
               {/* Plus Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+              <div className="flex items-center bg-white rounded-full cursor-pointer text-[#014F9E] text-xl p-2 px-3">
                 <FaPlusCircle />
               </div>
 
               {/* Notification Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-2 px-3">
+              <div className="bg-[#FFFFFF] rounded-full cursor-pointer p-2 px-3">
                 <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-xl" title="Notifications" />
               </div>
 
               {/* Chat Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+              <div className="flex items-center bg-white rounded-full cursor-pointer text-[#014F9E] text-xl p-2 px-3">
                 <IoChatbubbles />
               </div>
 
               {/* Sound Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+              <div className="flex items-center bg-white rounded-full cursor-pointer text-[#014F9E] text-xl p-2 px-3">
                 <GrAnnounce />
               </div>
 
               {/* User Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-2 px-3 flex items-center">
+              <div className="bg-[#FFFFFF] rounded-full cursor-pointer p-2 px-3 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-xl" title="Account" />
               </div>
             </div>
