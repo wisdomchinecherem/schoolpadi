@@ -48,6 +48,7 @@ import AttendanceTable from './pages/teacher/learningmodule/attendance/ManageAtt
 import ClassList from './pages/teacher/learningmodule/ClassList';
 import People from './components/admin/peoplepage/people';
 
+
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/';
