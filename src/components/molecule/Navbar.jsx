@@ -1,33 +1,33 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SchoolLogo from '../../assets/schoolpadi-img/school-logo.png';
-import { faBell, faUser, faCalendar, faBars } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SchoolLogo from "../../assets/schoolpadi-img/school-logo.png";
+import { faBell, faUser, faCalendar, faBars } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import { IoChatbubbles } from "react-icons/io5";
 import { GrAnnounce } from "react-icons/gr";
 import { FaPlusCircle } from "react-icons/fa";
-import { useLocation } from 'react-router-dom'; // Import useLocation
+import { useLocation } from "react-router-dom"; // Import useLocation
 
 // Function to format date with ordinal suffix and time
 const formatDateTime = (date) => {
   const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'long' });
+  const month = date.toLocaleString("default", { month: "long" });
   const year = date.getFullYear();
 
   // Add ordinal suffix to day
   const dayWithSuffix =
     day +
     (day % 10 === 1 && day !== 11
-      ? 'st'
+      ? "st"
       : day % 10 === 2 && day !== 12
-      ? 'nd'
+      ? "nd"
       : day % 10 === 3 && day !== 13
-      ? 'rd'
-      : 'th');
+      ? "rd"
+      : "th");
 
   // Format hours and minutes
   let hours = date.getHours();
-  const minutes = date.getMinutes().toString().padStart(2, '0');
-  const ampm = hours >= 12 ? 'pm' : 'am';
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  const ampm = hours >= 12 ? "pm" : "am";
   hours = hours % 12 || 12; // Converts to 12-hour format
 
   return `${dayWithSuffix} ${month}, ${year} ${hours}:${minutes}${ampm}`;
@@ -47,18 +47,16 @@ const Navbar = () => {
 
   const location = useLocation(); // Get current location
 
-  console.log(location);
-
 
   const links = [
-    { name: 'Dashboard', href: '/AdminDashboard' },
-    { name: 'Information System', href: '/InfomationSystem' },
-    { name: 'Schedules/Comms', href: '/Schedules' },
-    { name: 'Graduation/Alumni', href: '/Graduation' },
-    { name: 'Finance/Accounting', href: '/Finance' },
-    { name: 'People/Productivity', href: '/People' },
-    { name: 'Marketing/Admissions', href: '/Marketing' },
-    { name: 'Administrations', href: '/Administrations' },
+    { name: "Dashboard", href: "/admindashboard" },
+    { name: "Information System", href: "/infomationsystem" },
+    { name: "Schedules/Comms", href: "/schedules" },
+    { name: "Graduation/Alumni", href: "/graduation" },
+    { name: "Finance/Accounting", href: "/finance" },
+    { name: "People/Productivity", href: "/admindashboard/people" },
+    { name: "Marketing/Admissions", href: "/marketing" },
+    { name: "Administrations", href: "/administrations" },
   ];
 
   return (
@@ -191,7 +189,7 @@ const Navbar = () => {
                   location.pathname === link.href ? "text-[#FFFFFF]  py-1 rounded" : "hover:text-black"
                 }`}
               >
-                <a href={link.href}>{link.name}</a>
+                <a href={`${link.href}`}>{link.name}</a>
               </li>
             ))}
           </ul>
@@ -201,11 +199,14 @@ const Navbar = () => {
         <div className="mt-6 hidden md:block overflow-x-hidden">
           <ul className="grid md:grid-cols-4 lg:flex lg:flex-wrap justify-between items-center text-[#FFFFFF] md:text-sm lg:text-base md:space-x-0 space-y-2 md:space-y-0">
             {links.map((link) => (
-              <li key={link.href} className={`flex flex-col items-center whitespace-nowrap w-1/2 md:w-auto px-2 cursor-pointer`}>
+              <li
+                key={link.href}
+                className={`flex flex-col items-center whitespace-nowrap w-1/2 md:w-auto px-2 cursor-pointer`}
+              >
                 <a
-                  href={link.href}
+                  href={`${link.href}`}
                   className={`flex items-center p-2 text-sm  ${
-                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded-xl "  : "hover:text-white"
+                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded-xl " : "hover:text-white"
                   }`}
                 >
                   {link.name}
