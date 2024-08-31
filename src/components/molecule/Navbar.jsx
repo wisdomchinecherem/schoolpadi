@@ -47,29 +47,25 @@ const Navbar = () => {
 
   const location = useLocation(); // Get current location
 
-
   const links = [
-    { name: "Dashboard", href: "/admindashboard" },
-    { name: "Information System", href: "/infomationsystem" },
+    { name: "Dashboard", href: "/admin/dashboard" },
+    { name: "Information System", href: "/infomation-system" },
     { name: "Schedules/Comms", href: "/schedules" },
     { name: "Graduation/Alumni", href: "/graduation" },
     { name: "Finance/Accounting", href: "/finance" },
-    { name: "People/Productivity", href: "/admindashboard/people" },
+    { name: "People/Productivity", href: "/admin/people" },
     { name: "Marketing/Admissions", href: "/marketing" },
     { name: "Administrations", href: "/administrations" },
   ];
+ 
 
   return (
     <>
       <nav className="bg-[#014F9E] p-4">
-        <div className="container mx-auto flex justify-between items-center flex-wrap">
+        <div className="container mx-auto flex justify-between items-center flex-wrap relative ">
           {/* Left section: Logo and welcome message */}
           <div className="flex flex-col items-start">
             <img src={SchoolLogo} alt="School Logo" className="h-6 mb-2" />
-            <div className="flex">
-              <span className="text-[#FFFFFF] mt-4 font-bold text-2xl">Welcome, </span>
-              <span className="text-[#FFFFFF] mt-4 font-bold text-2xl ml-1">Admin</span>
-            </div>
           </div>
 
           {/* Hamburger icon for small screens */}
@@ -80,7 +76,11 @@ const Navbar = () => {
           </div>
 
           {/* Center section: Search bar (hidden on small screens) */}
-          <div className={`w-full md:w-auto ${isMenuOpen ? "block" : "hidden"} md:block`}>
+          <div
+            className={`w-full md:w-auto absolute -translate-x-[50%] left-[50%]  ${
+              isMenuOpen ? "block" : "hidden"
+            } md:block`}
+          >
             <div className="flex-grow mb-4 md:mb-0 flex justify-center">
               <input
                 type="text"
@@ -96,42 +96,52 @@ const Navbar = () => {
               isMenuOpen ? "block" : "hidden"
             } md:flex md:items-center md:space-x-4`}
           >
+            {/* icons */}
             <div className="flex space-x-6">
               {/* Plus Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+              <div className="flex items-center bg-white rounded-full cursor-pointer text-[#014F9E] text-xl p-2 px-3">
                 <FaPlusCircle />
               </div>
 
               {/* Notification Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-2 px-3">
+              <div className="bg-[#FFFFFF] rounded-full cursor-pointer p-2 px-3">
                 <FontAwesomeIcon icon={faBell} className="text-[#014F9E] text-xl" title="Notifications" />
               </div>
 
               {/* Chat Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+              <div className="flex items-center bg-white rounded-full cursor-pointer text-[#014F9E] text-xl p-2 px-3">
                 <IoChatbubbles />
               </div>
 
               {/* Sound Icon */}
-              <div className="flex items-center bg-white rounded-full text-[#014F9E] text-xl p-2 px-3">
+              <div className="flex items-center bg-white rounded-full cursor-pointer text-[#014F9E] text-xl p-2 px-3">
                 <GrAnnounce />
               </div>
 
               {/* User Icon */}
-              <div className="bg-[#FFFFFF] rounded-full p-2 px-3 flex items-center">
+              <div className="bg-[#FFFFFF] rounded-full cursor-pointer p-2 px-3 flex items-center">
                 <FontAwesomeIcon icon={faUser} className="text-[#014F9E] text-xl" title="Account" />
               </div>
             </div>
+          </div>
+        </div>
+        <div className="flexBetween mt-9 ">
+          <div className="flex">
+            <span className="text-white  text-3xl">
+              {links.map((link) => (
+                <div key={link.href}>{location.pathname.includes(link.href) && link.name}</div>
+              ))}{" "}
+            </span>
+          </div>
 
-            {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
-            <div className="flex items-center space-x-2 text-white pt-4">
-              <FontAwesomeIcon
-                icon={faCalendar}
-                className="bg-[#FFFFFF] text-[#014F9E] rounded-full p-1.5 text-sm"
-                title="Calendar"
-              />
-              <span className="hidden md:block text-sm">{currentDateTime}</span>
-            </div>
+          {/* Calendar Icon with Date and Time (placed beneath the other icons) */}
+          <div className="flex items-center space-x-2 text-white pt-4">
+            <FontAwesomeIcon
+              icon={faCalendar}
+              className="bg-[#FFFFFF] text-[#014F9E] rounded-full p-1.5 text-sm"
+              title="Calendar"
+            />
+            <span className="hidden md:block text-sm">{currentDateTime}</span>
           </div>
         </div>
 
@@ -196,7 +206,7 @@ const Navbar = () => {
         </div>
 
         {/* New section: Text links */}
-        <div className="mt-6 hidden md:block overflow-x-hidden">
+        <div className="mt-6 mb-4 hidden md:block overflow-x-hidden">
           <ul className="grid md:grid-cols-4 lg:flex lg:flex-wrap justify-between items-center text-[#FFFFFF] md:text-sm lg:text-base md:space-x-0 space-y-2 md:space-y-0">
             {links.map((link) => (
               <li
@@ -206,7 +216,7 @@ const Navbar = () => {
                 <a
                   href={`${link.href}`}
                   className={`flex items-center p-2 text-sm  ${
-                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded-xl " : "hover:text-white"
+                    location.pathname.includes(link.href) ? "text-[#014F9E] bg-white rounded-xl " : "hover:text-white"
                   }`}
                 >
                   {link.name}

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faChevronDown  } from '@fortawesome/free-solid-svg-icons';
-import { FaExclamation, FaTrashAlt, FaLock, FaSave } from 'react-icons/fa';
-import { FaTrash } from 'react-icons/fa';
-import Pagination from "./../../reusables/filters/Pagination"
-import { Link} from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FaExclamation, FaTrashAlt, FaLock, FaSave } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
+import Pagination from "./../../reusables/filters/Pagination";
+import { Link } from "react-router-dom";
 import { MdFilterList } from "react-icons/md";
 
 const Teachers = () => {
@@ -15,47 +15,112 @@ const Teachers = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const teachersData = [
-     { name: 'John Doe', id: '12345', gender: 'Male', email: 'john@example.com', employeeType: 'teaching', contacts: '123-456-7890' },
-     { name: 'Jane Smith', id: '67890', gender: 'Female', email: 'jane@example.com', employeeType: 'non-teaching', contacts: '098-765-4321' },
-     { name: 'Robert Brown', id: '11223', gender: 'Male', email: 'robert@example.com', employeeType: 'In-progress', contacts: '321-654-9870' },
-     { name: 'Emily Johnson', id: '44556', gender: 'Female', email: 'emily@example.com', employeeType: 'teaching', contacts: '654-987-1234' },
-     { name: 'Michael Davis', id: '77889', gender: 'Male', email: 'michael@example.com', employeeType: 'In-proress', contacts: '987-321-6540' },
-     { name: 'Sarah Wilson', id: '99001', gender: 'Female', email: 'sarah@example.com', employeeType: 'teaching', contacts: '456-789-0123' },
-     { name: 'David Clark', id: '22334', gender: 'Male', email: 'david@example.com', employeeType: 'teaching', contacts: '789-012-3456' },
-     { name: 'Laura Allen', id: '55667', gender: 'Female', email: 'laura@example.com', employeeType: 'non-teaching', contacts: '012-345-6789' },
-     { name: 'Daniel King', id: '88900', gender: 'Male', email: 'daniel@example.com', employeeType: 'teaching', contacts: '543-210-6789' },
-     { name: 'Jessica Lee', id: '11234', gender: 'Female', email: 'jessica@example.com', employeeType: 'teaching', contacts: '678-901-2345' },
-   ];
-
+    {
+      name: "John Doe",
+      id: "12345",
+      gender: "Male",
+      email: "john@example.com",
+      employeeType: "teaching",
+      contacts: "123-456-7890",
+    },
+    {
+      name: "Jane Smith",
+      id: "67890",
+      gender: "Female",
+      email: "jane@example.com",
+      employeeType: "non-teaching",
+      contacts: "098-765-4321",
+    },
+    {
+      name: "Robert Brown",
+      id: "11223",
+      gender: "Male",
+      email: "robert@example.com",
+      employeeType: "In-progress",
+      contacts: "321-654-9870",
+    },
+    {
+      name: "Emily Johnson",
+      id: "44556",
+      gender: "Female",
+      email: "emily@example.com",
+      employeeType: "teaching",
+      contacts: "654-987-1234",
+    },
+    {
+      name: "Michael Davis",
+      id: "77889",
+      gender: "Male",
+      email: "michael@example.com",
+      employeeType: "In-proress",
+      contacts: "987-321-6540",
+    },
+    {
+      name: "Sarah Wilson",
+      id: "99001",
+      gender: "Female",
+      email: "sarah@example.com",
+      employeeType: "teaching",
+      contacts: "456-789-0123",
+    },
+    {
+      name: "David Clark",
+      id: "22334",
+      gender: "Male",
+      email: "david@example.com",
+      employeeType: "teaching",
+      contacts: "789-012-3456",
+    },
+    {
+      name: "Laura Allen",
+      id: "55667",
+      gender: "Female",
+      email: "laura@example.com",
+      employeeType: "non-teaching",
+      contacts: "012-345-6789",
+    },
+    {
+      name: "Daniel King",
+      id: "88900",
+      gender: "Male",
+      email: "daniel@example.com",
+      employeeType: "teaching",
+      contacts: "543-210-6789",
+    },
+    {
+      name: "Jessica Lee",
+      id: "11234",
+      gender: "Female",
+      email: "jessica@example.com",
+      employeeType: "teaching",
+      contacts: "678-901-2345",
+    },
+  ];
 
   // Function to update the displayed data based on the current page
   const handlePageChange = (page) => {
-     setCurrentPage(page);
-   };
- 
-   // Update the filtered data whenever the current page or data changes
-   useEffect(() => {
-     const start = (currentPage - 1) * itemsPerPage;
-     const end = start + itemsPerPage;
-     setFilteredData(teachersData.slice(start, end));
-   }, [currentPage, teachersData]);
-   
+    setCurrentPage(page);
+  };
+
+  // Update the filtered data whenever the current page or data changes
+  useEffect(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    setFilteredData(teachersData.slice(start, end));
+  }, [currentPage, teachersData]);
 
   const dropdownData = [
-    { heading: 'Academic Session', label: 'Select Academic Session', options: ['2023/2024', '2022/2023', '2021/2022'] },
-    { heading: 'Section', label: 'Select Section', options: ['Session 1', 'Session 2', 'Session 3'] },
-    { heading: 'Class', label: 'Select Class', options: ['Class 1', 'Class 2', 'Class 3'] },
-    { heading: 'Subjects', label: 'Select Subjects', options: ['Math', 'Science', 'English'] },
+    { heading: "Academic Session", label: "Select Academic Session", options: ["2023/2024", "2022/2023", "2021/2022"] },
+    { heading: "Section", label: "Select Section", options: ["Session 1", "Session 2", "Session 3"] },
+    { heading: "Class", label: "Select Class", options: ["Class 1", "Class 2", "Class 3"] },
+    { heading: "Subjects", label: "Select Subjects", options: ["Math", "Science", "English"] },
   ];
 
   const toggleDropdown = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
 
   return (
     <>
@@ -63,7 +128,7 @@ const Teachers = () => {
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
         <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Teachers List</span>
         <Link
-           to="/admindashboard/infomationsystem/addteacher"
+          to="/admin/infomation-system/add-teacher"
           className="text-white py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0"
         >
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />
@@ -79,25 +144,31 @@ const Teachers = () => {
           <div className="grid grid-cols-4 gap-2">
             {" "}
             {/* Reduced grid gap */}
-            <a href="/InfomationSystem" className="flex flex-col sm:flex-row items-center justify-center">
+            <a href="/infomation-system" className="flex flex-col sm:flex-row items-center justify-center">
               <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Students</span>
               <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 12
               </div>
             </a>
-            <a href="/Teachers" className="flex flex-col sm:flex-row items-center justify-center">
+            <a
+              href="/admin/infomation-system/teachers"
+              className="flex flex-col sm:flex-row items-center justify-center"
+            >
               <span className="text-blue-600 text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Teachers</span>
               <div className="bg-blue-600 text-[#FFFFFF] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 8
               </div>
             </a>
-            <a href="/AdminPage" className="flex flex-col sm:flex-row items-center justify-center">
+            <a href="/admin/infomation-system/admin" className="flex flex-col sm:flex-row items-center justify-center">
               <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Admin</span>
               <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 3
               </div>
             </a>
-            <a href="/parents" className="flex flex-col sm:flex-row items-center justify-center">
+            <a
+              href="/admin/infomation-system/parents"
+              className="flex flex-col sm:flex-row items-center justify-center"
+            >
               <span className="text-[#8E959C] text-xs sm:text-sm mb-1  mr-2 sm:mb-0">Parents</span>
               <div className="bg-gray-300 text-[#8E959C] rounded-full h-4 w-4 flex items-center justify-center text-[0.65rem] sm:h-6 sm:w-6 sm:text-xs">
                 25
@@ -208,7 +279,7 @@ const Teachers = () => {
             <table className="min-w-full bg-white border border-gray-200 text-xs sm:text-sm">
               <thead>
                 <tr className="bg-[#FAFBFC]">
-                <th className="py-2 px-4 text-[#8E959C] border-b"></th>
+                  <th className="py-2 px-4 text-[#8E959C] border-b"></th>
                   <th className="py-2 px-4 text-[#8E959C] border-b">Name</th>
                   <th className="py-2 px-4  text-[#8E959C] border-b">ID</th>
                   <th className="py-2 px-4  text-[#8E959C] border-b">Gender</th>
@@ -237,9 +308,9 @@ const Teachers = () => {
                     </td>
                     <td className="py-2 px-4 text-[#8E959C] ">{teacher.contacts}</td>
                     <td className="py-2 px-4 flex space-x-2">
-                    <Link to="/TeachersProfile">
-                    <FaExclamation className="text-[#8E959C]" />
-                    </Link>
+                      <Link to="/TeachersProfile">
+                        <FaExclamation className="text-[#8E959C]" />
+                      </Link>
                       <FaTrashAlt className="text-[#8E959C]" />
                       <FaLock className="text-[#8E959C]" />
                       <FaSave className="text-[#8E959C]" />
