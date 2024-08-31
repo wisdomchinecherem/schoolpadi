@@ -47,14 +47,13 @@ const Navbar = () => {
 
   const location = useLocation(); // Get current location
 
-
   const links = [
-    { name: "Dashboard", href: "/admindashboard" },
-    { name: "Information System", href: "/infomationsystem" },
+    { name: "Dashboard", href: "/admin/dashboard" },
+    { name: "Information System", href: "/infomation-system" },
     { name: "Schedules/Comms", href: "/schedules" },
     { name: "Graduation/Alumni", href: "/graduation" },
     { name: "Finance/Accounting", href: "/finance" },
-    { name: "People/Productivity", href: "/admindashboard/people" },
+    { name: "People/Productivity", href: "/admin/people" },
     { name: "Marketing/Admissions", href: "/marketing" },
     { name: "Administrations", href: "/administrations" },
   ];
@@ -206,7 +205,7 @@ const Navbar = () => {
                 <a
                   href={`${link.href}`}
                   className={`flex items-center p-2 text-sm  ${
-                    location.pathname === link.href ? "text-[#014F9E] bg-white rounded-xl " : "hover:text-white"
+                    location.pathname.includes(link.href) ? "text-[#014F9E] bg-white rounded-xl " : "hover:text-white"
                   }`}
                 >
                   {link.name}

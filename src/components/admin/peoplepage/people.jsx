@@ -8,241 +8,7 @@ import { FiPlus, FiSearch } from "react-icons/fi";
 import { BiFilter } from "react-icons/bi";
 import { FaPencil } from "react-icons/fa6";
 import ModalWrap from "../../reusables/modal/modal";
-
-const resourceMatrics = [
-  {
-    id: 1,
-    title: "Total Resources",
-    number: "11",
-  },
-  {
-    id: 2,
-    title: "Allocated Resources",
-    number: "6",
-  },
-  {
-    id: 3,
-    title: "Pending Requests",
-    number: "3",
-  },
-  {
-    id: 4,
-    title: "Rejected Requests",
-    number: "2",
-  },
-];
-const LogisticsMatrics = [
-  {
-    id: 1,
-    title: "Total Laptops",
-    number: "24",
-  },
-  {
-    id: 2,
-    title: "Allocated Laptops",
-    number: "12",
-  },
-  {
-    id: 3,
-    title: "Pending Requests",
-    number: "4",
-  },
-  {
-    id: 4,
-    title: "Rejected Requests",
-    number: "2",
-  },
-  {
-    id: 4,
-    title: "Remaining Laptops",
-    number: "8",
-  },
-];
-
-const resourceTableData = [
-  {
-    id: "RE1",
-    resources: "Projectors",
-    number: 10,
-    type: "Equipment",
-    status: "Available",
-    dateOfApplication: "16-07-2024",
-  },
-  {
-    id: "RE2",
-    resources: "Laptops",
-    number: 5,
-    type: "Equipment",
-    status: "Available",
-    dateOfApplication: "18-07-2024",
-  },
-  {
-    id: "RE3",
-    resources: "Printers",
-    number: 3,
-    type: "Equipment",
-    status: "Limited",
-    dateOfApplication: "20-07-2024",
-  },
-  {
-    id: "RE4",
-    resources: "Chairs",
-    number: 20,
-    type: "Furniture",
-    status: "Available",
-    dateOfApplication: "22-07-2024",
-  },
-  {
-    id: "RE5",
-    resources: "Desks",
-    number: 15,
-    type: "Furniture",
-    status: "Allocated",
-    dateOfApplication: "24-07-2024",
-  },
-  {
-    id: "RE6",
-    resources: "Whiteboards",
-    number: 8,
-    type: "Equipment",
-    status: "Available",
-    dateOfApplication: "26-07-2024",
-  },
-  {
-    id: "RE7",
-    resources: "Projectors",
-    number: 4,
-    type: "Equipment",
-    status: "Limited",
-    dateOfApplication: "28-07-2024",
-  },
-  {
-    id: "RE8",
-    resources: "Tables",
-    number: 10,
-    type: "Furniture",
-    status: "Available",
-    dateOfApplication: "30-07-2024",
-  },
-  {
-    id: "RE9",
-    resources: "Computers",
-    number: 12,
-    type: "Equipment",
-    status: "Available",
-    dateOfApplication: "01-08-2024",
-  },
-  {
-    id: "RE10",
-    resources: "Microscopes",
-    number: 6,
-    type: "Equipment",
-    status: "Available",
-    dateOfApplication: "03-08-2024",
-  },
-];
-const logisticsTableData = [
-  {
-    id: "RE1",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 10,
-    type: "Equipment",
-    status: "Allocated",
-    dateOfAllocation: "16-07-2024",
-    endOfAllocation: "16-07-2024",
-  },
-  {
-    id: "RE2",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 5,
-    type: "Equipment",
-    status: "Allocated",
-    dateOfAllocation: "18-07-2024",
-    endOfAllocation: "18-07-2024",
-  },
-  {
-    id: "RE3",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 3,
-    type: "Equipment",
-    status: "Approved",
-    dateOfAllocation: "20-07-2024",
-    endOfAllocation: "20-07-2024",
-  },
-  {
-    id: "RE4",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 20,
-    type: "Furniture",
-    status: "Allocated",
-    dateOfAllocation: "22-07-2024",
-    endOfAllocation: "22-07-2024",
-  },
-  {
-    id: "RE5",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 15,
-    type: "Furniture",
-    status: "Pending",
-    dateOfAllocation: "24-07-2024",
-    endOfAllocation: "24-07-2024",
-  },
-  {
-    id: "RE6",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 8,
-    type: "Equipment",
-    status: "Allocated",
-    dateOfAllocation: "26-07-2024",
-    endOfAllocation: "26-07-2024",
-  },
-  {
-    id: "RE7",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 4,
-    type: "Equipment",
-    status: "Rejected",
-    dateOfAllocation: "28-07-2024",
-    endOfAllocation: "28-07-2024",
-  },
-  {
-    id: "RE8",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 10,
-    type: "Furniture",
-    status: "Approved",
-    dateOfAllocation: "30-07-2024",
-    endOfAllocation: "30-07-2024",
-  },
-  {
-    id: "RE9",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 12,
-    type: "Equipment",
-    status: "Pending",
-    dateOfAllocation: "01-08-2024",
-    endOfAllocation: "01-08-2024",
-  },
-  {
-    id: "RE10",
-    requester: "Johnney Smith",
-    department: "teaching",
-    number: 6,
-    type: "Equipment",
-    status: "Approved",
-    dateOfAllocation: "03-08-2024",
-    endOfAllocation: "03-08-2024",
-  },
-];
+import { LogisticsMatrics, logisticsTableData, resourceMatrics, resourceTableData } from "../../../assets/data";
 
 export default function People() {
   const [isOpen, setIsOpen] = useState(false);
@@ -303,8 +69,8 @@ export default function People() {
       <div className="bg-[#014F9E] pb-10  flex justify-between items-center  p-2 md:px-6">
         <span className="text-white  leading-none md:text-2xl text-sm  -mt-2">Resources</span>
         <Link
-          to="/admindashboard/people/addresources"
-          className="bg-primary text-white md:px-4 px-2 md:py-3 py-2 rounded-lg  flex items-center leading-none  md:text-sm text-xs "
+          to="/admin/people/add-resources"
+          className="bg-primary hover:bg-primary/80  text-white md:px-4 px-2 md:py-3 py-2 rounded-lg  flex items-center leading-none  md:text-sm text-xs "
         >
           <FontAwesomeIcon icon={faPlus} className=" mr-2" />
           Add Resource
@@ -457,8 +223,6 @@ export default function People() {
                 })}
               </tbody>
             </table>
-
-            
           </div>
         </div>
 
@@ -472,10 +236,13 @@ export default function People() {
               <option value="pending">Pending</option>
               <option value="rejected">Rejected</option>
             </select>
-            <button className="bg-primary text-white  border  p-2 rounded-lg flexBetween space-x-2 text-xs md:text-sm">
+            <Link
+              to="/admin/people/add-resources"
+              className="bg-primary text-white  border  p-2 rounded-lg flexBetween space-x-2 text-xs md:text-sm"
+            >
               <FiPlus className="" />
               <span className="">Add Request</span>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -633,81 +400,78 @@ export default function People() {
           </div>
         </div>
       </div>
-      
-      
-      
       {/* Details modal */}
-            <div className={isModal ? " block" : "hidden"}>
-              <ModalWrap
-                isOpen={isModal}
-                onClose={() => {
-                  setIsModal(!isModal);
-                }}
-                size="2xl"
-                // title={isEnabled ? 'Disable Report Cards' : 'Enable Report Cards'}
-              >
-                {resourcesDetails && (
-                  <>
-                    <h1 className=" text-2xl mb-4 ">{resourcesDetails?.id}</h1>
-                    <div className="grid grid-cols-3 gap-2 text-xs ">
-                      <div className=" col-span-1 font-semibold ">Resource:</div>
-                      <div className=" col-span-2 font-light  ">{resourcesDetails?.resources}</div>
-                      <div className=" col-span-1 font-semibold ">Type:</div>
-                      <div className=" col-span-2 font-light  ">{resourcesDetails?.type}</div>
-                      <div className=" col-span-1 font-semibold ">Application Date:</div>
-                      <div className=" col-span-2 font-light  ">{resourcesDetails?.dateOfApplication}</div>
-                    </div>
-                    <div className="flex gap-2 text-xs mt-4 border-t pt-2 ">
-                      <div className=" ">Status:</div>
-                      <div
-                        className={
-                          resourcesDetails?.status === "Available"
-                            ? ` bg-customGreen/20 text-customGreenp -1 rounded-full px-2  `
-                            : resourcesDetails?.status === "Allocated"
-                            ? "bg-customRed/20 text-customRed p-1 rounded-full px-2  "
-                            : "bg-primary/20 text-primary p-1 rounded-full px-2 "
-                        }
-                      >
-                        {resourcesDetails?.status}
-                      </div>
-                    </div>{" "}
-                  </>
-                )}
-                {LogisticsDetails && (
-                  <>
-                    <h1 className=" text-2xl mb-4 ">{LogisticsDetails?.id}</h1>
-                    <div className="grid grid-cols-3 gap-2 text-xs ">
-                      <div className=" col-span-1 font-semibold ">Department:</div>
-                      <div className=" col-span-2 font-light  ">{LogisticsDetails?.department}</div>
-                      <div className=" col-span-1 font-semibold ">Note:</div>
-                      <div className=" col-span-2 font-light  ">-</div>
-                      <div className=" col-span-1 font-semibold ">Allocation Period:</div>
-                      <div className=" col-span-2 font-light  ">
-                        {LogisticsDetails?.dateOfAllocation} to {LogisticsDetails?.endOfAllocation}
-                      </div>
-                      <div className=" col-span-1 font-semibold ">Day & Time:</div>
-                      <div className=" col-span-2 font-light  ">-</div>
-                    </div>
-                    <div className="flex gap-2 text-xs mt-4 border-t pt-2 ">
-                      <div className=" ">Status:</div>
-                      <div
-                        className={
-                          LogisticsDetails?.status === "Allocated"
-                            ? "bg-customGreen/20 p-1 rounded-full px-2 text-customGreen"
-                            : LogisticsDetails?.status === "Rejected"
-                            ? "bg-customRed/20 p-1 rounded-full px-2 text-customRed"
-                            : LogisticsDetails?.status === "Pending"
-                            ? "bg-gray-500/20 p-1 rounded-full px-2 text-gray-500"
-                            : "bg-primary/20 p-1 rounded-full px-2 text-primary"
-                        }
-                      >
-                        {LogisticsDetails?.status}
-                      </div>
-                    </div>
-                  </>
-                )}
-              </ModalWrap>
-            </div>
+      <div className={isModal ? " block" : "hidden"}>
+        <ModalWrap
+          isOpen={isModal}
+          onClose={() => {
+            setIsModal(!isModal);
+          }}
+          size="2xl"
+          // title={isEnabled ? 'Disable Report Cards' : 'Enable Report Cards'}
+        >
+          {resourcesDetails && (
+            <>
+              <h1 className=" text-2xl mb-4 ">{resourcesDetails?.id}</h1>
+              <div className="grid grid-cols-3 gap-2 text-xs ">
+                <div className=" col-span-1 font-semibold ">Resource:</div>
+                <div className=" col-span-2 font-light  ">{resourcesDetails?.resources}</div>
+                <div className=" col-span-1 font-semibold ">Type:</div>
+                <div className=" col-span-2 font-light  ">{resourcesDetails?.type}</div>
+                <div className=" col-span-1 font-semibold ">Application Date:</div>
+                <div className=" col-span-2 font-light  ">{resourcesDetails?.dateOfApplication}</div>
+              </div>
+              <div className="flex gap-2 text-xs mt-4 border-t pt-2 ">
+                <div className=" ">Status:</div>
+                <div
+                  className={
+                    resourcesDetails?.status === "Available"
+                      ? ` bg-customGreen/20 text-customGreenp -1 rounded-full px-2  `
+                      : resourcesDetails?.status === "Allocated"
+                      ? "bg-customRed/20 text-customRed p-1 rounded-full px-2  "
+                      : "bg-primary/20 text-primary p-1 rounded-full px-2 "
+                  }
+                >
+                  {resourcesDetails?.status}
+                </div>
+              </div>{" "}
+            </>
+          )}
+          {LogisticsDetails && (
+            <>
+              <h1 className=" text-2xl mb-4 ">{LogisticsDetails?.id}</h1>
+              <div className="grid grid-cols-3 gap-2 text-xs ">
+                <div className=" col-span-1 font-semibold ">Department:</div>
+                <div className=" col-span-2 font-light  ">{LogisticsDetails?.department}</div>
+                <div className=" col-span-1 font-semibold ">Note:</div>
+                <div className=" col-span-2 font-light  ">-</div>
+                <div className=" col-span-1 font-semibold ">Allocation Period:</div>
+                <div className=" col-span-2 font-light  ">
+                  {LogisticsDetails?.dateOfAllocation} to {LogisticsDetails?.endOfAllocation}
+                </div>
+                <div className=" col-span-1 font-semibold ">Day & Time:</div>
+                <div className=" col-span-2 font-light  ">-</div>
+              </div>
+              <div className="flex gap-2 text-xs mt-4 border-t pt-2 ">
+                <div className=" ">Status:</div>
+                <div
+                  className={
+                    LogisticsDetails?.status === "Allocated"
+                      ? "bg-customGreen/20 p-1 rounded-full px-2 text-customGreen"
+                      : LogisticsDetails?.status === "Rejected"
+                      ? "bg-customRed/20 p-1 rounded-full px-2 text-customRed"
+                      : LogisticsDetails?.status === "Pending"
+                      ? "bg-gray-500/20 p-1 rounded-full px-2 text-gray-500"
+                      : "bg-primary/20 p-1 rounded-full px-2 text-primary"
+                  }
+                >
+                  {LogisticsDetails?.status}
+                </div>
+              </div>
+            </>
+          )}
+        </ModalWrap>
+      </div>
     </div>
   );
 }

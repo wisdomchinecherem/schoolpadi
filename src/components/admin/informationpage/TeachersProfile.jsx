@@ -1,10 +1,10 @@
-import  { useState } from 'react'; // Ensure useState is imported
-import { useNavigate } from 'react-router-dom';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { FiMoreHorizontal } from 'react-icons/fi';
-import { MdEdit, MdAttachFile, MdCardMembership } from 'react-icons/md';
-import { FaUserEdit, FaEnvelope, FaSms, FaWhatsapp, FaLock, FaUnlock, FaTrash } from 'react-icons/fa'; // Updated icons for Block and Unblock
-import ProfileTab from '../../teacher/administration/ProfileTab'; // Ensure correct path
+import { useState } from "react"; // Ensure useState is imported
+import { useNavigate } from "react-router-dom";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { FiMoreHorizontal } from "react-icons/fi";
+import { MdEdit, MdAttachFile, MdCardMembership } from "react-icons/md";
+import { FaUserEdit, FaEnvelope, FaSms, FaWhatsapp, FaLock, FaUnlock, FaTrash } from "react-icons/fa"; // Updated icons for Block and Unblock
+import ProfileTab from "../../teacher/administration/ProfileTab"; // Ensure correct path
 
 const TeachersProfile = () => {
   const navigate = useNavigate();
@@ -29,14 +29,13 @@ const TeachersProfile = () => {
             </div>
           </div>
           <div className="relative">
-            <div
-              className="bg-white p-2 rounded mt-[-2rem] cursor-pointer"
-              onClick={toggleDropdown}
-            >
+            <div className="bg-white p-2 rounded mt-[-2rem] cursor-pointer" onClick={toggleDropdown}>
               <FiMoreHorizontal className="text-gray-500 text-lg" />
             </div>
             {isDropdownOpen && (
-              <div className="absolute right-0 top-full mt-2 bg-white border border-gray-300 rounded shadow-lg w-64 z-50"> {/* Adjusted width here */}
+              <div className="absolute right-0 top-full mt-2 bg-white border border-gray-300 rounded shadow-lg w-64 z-50">
+                {" "}
+                {/* Adjusted width here */}
                 <div className="p-2 flex items-center text-[#8E959C] hover:bg-gray-100 cursor-pointer">
                   <MdEdit className="text-[#8E959C] mr-2" />
                   <p>Edit Profile</p>
@@ -96,7 +95,10 @@ const TeachersProfile = () => {
               <a href="/ScheduleScreen" className="flex flex-col sm:flex-row items-center justify-center">
                 <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Schedule</span>
               </a>
-              <a href="/parents" className="flex flex-col sm:flex-row items-center justify-center">
+              <a
+                href="/admin/infomation-system/parents"
+                className="flex flex-col sm:flex-row items-center justify-center"
+              >
                 <span className="text-[#8E959C] text-xs sm:text-sm mb-1 mr-2 sm:mb-0">Attendance</span>
               </a>
             </div>
