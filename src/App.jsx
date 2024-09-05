@@ -46,6 +46,8 @@ import CreateMessage from './pages/teacher/schedule/CreateMessage';
 import LearningModule from './pages/teacher/learningmodule/LearningModule';
 import AttendanceTable from './pages/teacher/learningmodule/attendance/ManageAttendance';
 import ClassList from './pages/teacher/learningmodule/ClassList';
+import LearningManagementSystem from './pages/teacher/learningmodule/lms';
+import DetailPage from './pages/teacher/learningmodule/lms/detailPage';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -117,6 +119,8 @@ const App = () => {
           <Route path="t/learning-module" element={<LearningModule />} />
           <Route path="t/learning-module/attendance" element={<AttendanceTable />} />
           <Route path="t/learning-module/class" element={<ClassList />} />
+          <Route path="t/learning-module/lms" element={<LearningManagementSystem />} />
+          <Route path="t/learning-module/lms/management" element={<DetailPage />} />
           <Route path="t/schedule-comms" element={<ScheduleComms />} />
           <Route path="t/schedule-comms/create-message" element={<CreateMessage />} />
           

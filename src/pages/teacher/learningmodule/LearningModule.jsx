@@ -45,7 +45,7 @@ export default function LearningModule() {
       {
         title: "Learning Plan",
         subtitle: "Learning Management System",
-        onClick: () => alert("Navigating to Learning Plan"),
+        onClick: () => navigate("/t/learning-module/lms"),
       },
     ];
   return (

@@ -134,7 +134,7 @@ export default function Finance() {
           <IoIosArrowRoundBack className="text-2xl" /> <span>Back</span>
         </button>
         <button className="bg-[#027FFF] px-6 py-2 flex items-center gap-x-2 rounded-2xl">
-          <FiPlus /> <span>Add School </span>
+          <FiPlus size={25} /> <span>Add School </span>
         </button>
       </div>
 

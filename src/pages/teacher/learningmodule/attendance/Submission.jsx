@@ -65,7 +65,7 @@ const Submission = () => {
           <p>Date</p>
           <SelectComponent />
         </div>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex xl:flex-nowrap flex-wrap items-center gap-4">
           {/* Section Dropdown */}
           <Dropdown
             label="Section"
