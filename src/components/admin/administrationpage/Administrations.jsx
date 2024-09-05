@@ -43,7 +43,7 @@ const Administrations = () => {
       <div className="bg-[#014F9E] p-1 flex justify-between items-center px-4 sm:p-2 sm:px-6">
         <span className="text-white text-lg leading-none sm:text-xl -mt-2 mb-8">Policies</span>
         <Link
-          to="/admindashboard/infomationsystem/addpolicy"
+          to="/admin/infomation-system/addpolicy"
           className="text-white py-1 px-2 rounded mb-8 flex items-center text-sm leading-none sm:py-2 sm:px-4 sm:text-base mt-0"
         >
           <FontAwesomeIcon icon={faPlus} className="mr-1 sm:mr-2" />

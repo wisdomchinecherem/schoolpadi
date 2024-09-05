@@ -26,14 +26,20 @@ export default function Modal ({ isOpen, onClose,  children, className, size = '
     "2xl": 'max-w-2xl'
   };
 
+  console.log(children);
+  
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={onClose}>
       <div
-        className={`bg-white rounded-xl py-8 px-4 shadow-lg overflow-hidden ${sizeClasses[size]} w-full ${className}`}
+        className={`bg-white rounded-xl py-6 md:py-8 px-4 shadow-lg overflow-hidden ${sizeClasses[size]} w-full ${className}`}
+        onClick={(e) => e.stopPropagation()} // Stop propagation here
       >
         <div className="flex justify-between items-center  w-full p-4">
           {/* {title && <h2 className="text-lg font-semibold">{title}</h2>} */}
-          <button onClick={onClose} className="text-gray-400 bg-white shadow-lg justify-start ml-auto p-2 rounded-lg hover:text-gray-600">
+          <button
+            onClick={onClose}
+            className="text-gray-400 bg-white border justify-start ml-auto p-1 rounded-lg hover:text-gray-600"
+          >
             <RxCross2 size={24} />
           </button>
         </div>

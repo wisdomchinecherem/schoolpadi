@@ -66,7 +66,7 @@ const LandingPage = () => {
             </Link>
 
             
-            <Link to="/AdminDashboard">
+            <Link to="/admin/dashboard">
               <Button
                 bgColor="#001D3B"
                 color="#FFFFFF"
