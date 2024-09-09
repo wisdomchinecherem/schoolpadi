@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import pluswhite from "../../components/StudentDashboard/images/pluswhite.svg";
 import creditCard from "../../components/StudentDashboard/images/card-payment.svg";
 import bankTransfer from "../../components/StudentDashboard/images/bankTransfer.svg";
