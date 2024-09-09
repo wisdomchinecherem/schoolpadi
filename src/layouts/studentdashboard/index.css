@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Grandis" !important;
+  src: url("./fonts/Grandis-Black.woff2") format("woff2"),
+    url("./fonts/Grandis-Bold.woff") format("woff"),
+    url("./fonts/Grandis-BlackItalic.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Grandis", sans-serif !important;
+}
