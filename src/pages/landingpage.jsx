@@ -65,7 +65,6 @@ const LandingPage = () => {
               </Button>
             </Link>
 
-            
             <Link to="/admin/dashboard">
               <Button
                 bgColor="#001D3B"
@@ -80,7 +79,6 @@ const LandingPage = () => {
                 Admin Dashboard
               </Button>
             </Link>
-
 
             <Link to="/StudentDashboard">
               <Button
@@ -108,6 +106,20 @@ const LandingPage = () => {
                 className="rounded-lg shadow-lg hover:bg-blue-800 transition-transform transform hover:-translate-y-1"
               >
                 Teachers Dashboard
+              </Button>
+            </Link>
+            <Link to={"/ParentDashboard"}>
+              <Button
+                bgColor="#001D3B"
+                color="#FFFFFF"
+                borderColor="#001D3B"
+                width="180px"
+                height="50px"
+                fontSize="16px"
+                fontWeight="600"
+                className="rounded-lg shadow-lg hover:bg-blue-800 transition-transform transform hover:-translate-y-1"
+              >
+                Parent Dashboard
               </Button>
             </Link>
           </div>

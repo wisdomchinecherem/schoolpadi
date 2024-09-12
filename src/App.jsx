@@ -57,6 +57,15 @@ import ScheduleAndCommiunication from "./pages/StudentDashboard/ScheduleAndCommi
 import StudentDashboard from "./pages/StudentDashboard/StudentDashboard";
 import PayFees from "./pages/StudentDashboard/PayFees";
 import SubjectDetailPage from "./components/StudentDashboard/learningManagement/SubjectDetailPage";
+import LearningManagementSystemStudent from "./pages/StudentDashboard/LearningManagementSystem";
+
+// parent dashboard
+
+import ParentDashboard from "./pages/Parent/ParentDashboard";
+import ParentLayout from "./layouts/parents/ParentLayout";
+import ScheduleAndCommsPage from "./pages/Parent/ScheduleAndCommsPage";
+import ParentFinancePage from "./pages/Parent/FinancePage";
+import AdministrationsPage from "./pages/Parent/AdministrationsPage";
 
 const App = () => {
   return (
@@ -336,7 +345,25 @@ const App = () => {
 
           <Route
             path="StudentDashboard/learning-management-system"
-            element={<LearningManagementSystem />}
+            element={<LearningManagementSystemStudent />}
+          />
+        </Route>
+
+        {/* parent */}
+
+        <Route element={<ParentLayout />}>
+          <Route path="/ParentDashboard" element={<ParentDashboard />} />
+          <Route
+            path="/ParentDashboard/Schedules-Comms"
+            element={<ScheduleAndCommsPage />}
+          />
+          <Route
+            path="ParentDashboard/finance"
+            element={<ParentFinancePage />}
+          />
+          <Route
+            path="/ParentDashboard/administrations"
+            element={<AdministrationsPage />}
           />
         </Route>
       </Routes>

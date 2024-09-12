@@ -2,7 +2,7 @@ import { useState } from "react";
 import DropdownFilter from "../../reusables/filters/student/DropdownFilter";
 import customIcon from "../images/arrow-down.svg";
 import customSearchIcon from "../images/search-grey.svg";
-import FullYearCalendar from "../../reusables/filters/student/Calendar";
+// import FullYearCalendar from "../../reusables/filters/student/Calendar";
 import arrow from "../images/arrow.png";
 import checkBoxSuccess from "../images/tick-square.png";
 import closeBox from "../images/close-square.svg";
@@ -159,10 +159,10 @@ const Attendance = () => {
           </div>
           {/*  */}
         </div>
-        <FullYearCalendar
+        {/* <FullYearCalendar
           year={parseInt(selectedYear.split(" ")[1])}
           attendanceData={attendanceData}
-        />
+        /> */}
       </div>
     </div>
   );

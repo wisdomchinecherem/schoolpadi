@@ -74,14 +74,6 @@ const ReportCards = () => {
             </label>
           </div>
         </div>
-        <div className="flex items-center gap-[10px]">
-          <div className="bg-[#E6F2FF] py-2 px-4 text-sm font-medium text-schoolpadi-blue-primary cursor-pointer rounded-md">
-            Enabled
-          </div>
-          <div className="border border-grayout py-2 px-4 text-sm font-medium text-schoolpadi-grey-secondary cursor-pointer rounded-md">
-            Disabled
-          </div>
-        </div>
       </div>
 
       {/* grades section */}

@@ -43,7 +43,7 @@ const DropdownFilter = ({
   );
 
   return (
-    <div className={`w-[250px] ${className}`}>
+    <div className={`relative w-[250px] ${className}`}>
       <div>
         <p className="text-[#54585C] text-sm">{name}</p>
         <div className="flex flex-col mt-2">
@@ -58,7 +58,7 @@ const DropdownFilter = ({
           </div>
           {/* dropdown */}
           <div
-            className={`w-full mt-4 flex-col border border-grayout rounded-md ${
+            className={`absolute z-10 w-full shadow-lg top-full mt-2 flex-col border border-grayout rounded-md bg-white ${
               dropdown ? "flex" : "hidden"
             }`}
           >

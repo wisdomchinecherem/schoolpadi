@@ -15,7 +15,7 @@ const SubjectSummaryCard = ({ subject }) => {
           <p className="text-sm text-gray-500 mt-1">{subject.section}</p>
         </div>
       </div>
-      <div className="flex justify-between mt-4 border-t p-4 text-gray-500">
+      <div className="flex justify-between mt-4 border-t p-4 text-gray-500"> 
         <i className="fas fa-book"></i>
         <i className="fas fa-user-graduate"></i>
         <i className="fas fa-comments"></i>

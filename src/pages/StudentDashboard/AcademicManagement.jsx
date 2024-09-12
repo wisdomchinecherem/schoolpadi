@@ -5,7 +5,7 @@ import Attendance from "../../components/StudentDashboard/academicManagement/Att
 import ReportCards from "../../components/StudentDashboard/academicManagement/ReportCards";
 import Invoices from "../../components/StudentDashboard/academicManagement/Invoices";
 import IDCards from "../../components/StudentDashboard/academicManagement/IDCards";
-import BackArrow from "../../components/StudentDashboard/images/arrow-left.svg";
+// import BackArrow from "../../components/StudentDashboard/images/arrow-left.svg";
 import More from "../../components/StudentDashboard/images/more.png";
 import { useState } from "react";
 
@@ -53,9 +53,10 @@ const AcademicManagement = () => {
       <div className="max-w-[1336px] mx-auto px-4">
         <div className="flex flex-col items-center w-full">
           <div className="mt-[4.5rem] items-start flex w-full justify-between">
-            <div className="flex items-center">
-              <img src={BackArrow} alt="back" />
-              <span className="ml-2 text-white font-medium text-sm">Back</span>
+            <div className="">
+              <span className="ml-2 text-nowrap text-white font-medium text-sm">
+                {activeTab}
+              </span>
             </div>
             {/*  */}
             <div className="flex flex-col relative w-full items-end">

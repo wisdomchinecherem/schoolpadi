@@ -39,19 +39,15 @@ const Navbar = ({ marginTop }) => {
   // nav customizations
 
   const navItems = [
-    { name: "Dashboard", path: "StudentDashboard" },
+    { name: "Dashboard", path: "ParentDashboard" },
     {
-      name: "Academic Management",
-      path: "StudentDashboard/academic-management",
+      name: "Schedules/Comms",
+      path: "ParentDashboard/Schedules-Comms",
     },
-    { name: "Finance", path: "StudentDashboard/finance" },
+    { name: "Finance", path: "ParentDashboard/finance" },
     {
-      name: "Schedule/Communication",
-      path: "StudentDashboard/schedule-communication",
-    },
-    {
-      name: "Learning Management System",
-      path: "StudentDashboard/learning-management-system",
+      name: "Administrations",
+      path: "ParentDashboard/administrations",
     },
   ];
 
@@ -62,20 +58,16 @@ const Navbar = ({ marginTop }) => {
   useEffect(() => {
     if (location.pathname === "/StudentDashboard") {
       setCurrentLink("Dashboard");
-    } else if (location.pathname === "/StudentDashboard/academic-management") {
-      setCurrentLink("Academic Management");
-    } else if (location.pathname === "/StudentDashboard/finance") {
+    } else if (location.pathname === "/ParentDashboard/Schedules-Comms") {
+      setCurrentLink("Schedules/Comms");
+    } else if (location.pathname === "/ParentDashboard/finance") {
       setCurrentLink("Finance");
     } else if (
-      location.pathname === "/StudentDashboard/schedule-communication"
+      location.pathname === "/ParentDashboard/administrations"
     ) {
-      setCurrentLink("Schedule/Communication");
-    } else if (
-      location.pathname === "/StudentDashboard/learning-management-system"
-    ) {
-      setCurrentLink("Learning Management System");
+      setCurrentLink("Administrations");
     } else {
-      setCurrentLink("Dashboard");
+      setCurrentLink("Dashboard")
     }
   }, [location.pathname]);
 

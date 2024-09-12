@@ -1,4 +1,4 @@
-import Calendar from "./Calendar";
+import SchedulingCalendar from "../../reusables/student/SchedulingCalendar";
 
 const ClassSchedule = () => {
   return (
@@ -6,7 +6,7 @@ const ClassSchedule = () => {
       <p className="text-schoolpadi-grey-primary font-medium text-sm">
         Academic Session
       </p>
-      <Calendar />
+      <SchedulingCalendar />
     </div>
   );
 };

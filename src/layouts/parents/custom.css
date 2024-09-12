@@ -1,0 +1,74 @@
+:root {
+  --scrollbar-blue: #55a9ff;
+}
+
+/* refrences: UpcomingTest.jsx
+
+unique scrollbar style
+*/
+
+.scrollblue::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track of the scrollbar */
+
+.scrollblue::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* scrollbar handle */
+
+.scrollblue::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-blue);
+  height: 154px;
+}
+
+/* refrences: TeamChat.jsx
+
+unique scrollbar style for chat messages
+*/
+
+.chat::-webkit-scrollbar {
+  width: 1px;
+}
+
+.chat::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 5px;
+  height: 2px;
+}
+
+/* * {
+  outline: 1px solid;
+} */
+
+/* 
+  refrence: pages/AcademicManagement.jsx
+*/
+
+.active-tab-indicator {
+  position: relative;
+}
+
+.active-tab-indicator::after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #3599ff;
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  /* transform: translateY(50%); */
+  transform: translate(-50%, 1126%);
+}
+
+.shadow-light {
+  box-shadow: 0 5px 13px #1019280D;
+}

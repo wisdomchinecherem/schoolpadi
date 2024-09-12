@@ -1,0 +1,82 @@
+/* 
+refrence: StudentDetails.jsx
+
+*/
+
+@media (max-width: 1358px) {
+  .responsive-card-wrapper {
+    flex-direction: column-reverse !important;
+    padding: 16px !important;
+    padding-right: 16px !important;
+  }
+  .responsive-flex-col {
+    flex-direction: column !important;
+    padding: 16px;
+  }
+  .max-full-md-screen {
+    max-width: 100% !important;
+  }
+  .fixed-space {
+    flex: 0 !important;
+  }
+  .max-screen {
+    max-width: 1336px !important;
+    overflow: hidden;
+  }
+}
+@media (max-width: 591px) {
+  .responsive-card-revert {
+    flex-direction: column !important;
+  }
+  .responsive-card-wrapper {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 1339px) {
+  .laptop-max {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 1336px !important;
+  }
+}
+
+@media (max-width: 831px) {
+  .overflow-md {
+    overflow-x: scroll !important;
+  }
+}
+
+@media (max-width: 544px) {
+  .time-search-none {
+    display: none !important;
+  }
+}
+@media (max-width: 507px) {
+  .wrap-middle-nav {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .current-link {
+    display: inline-block !important;
+  }
+  .other-link {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .active-links {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 1358px) {
+  .padding-small-screen {
+    padding: 16px !important;
+  }
+}
+

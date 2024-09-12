@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { learningManagementData } from "../../components/StudentDashboard/placeholder";
 import SubjectSummaryCard from "../../components/StudentDashboard/learningManagement/SubjectSummaryCard";
 
-const LearningManagementSystem = () => {
+const LearningManagementSystemStudent = () => {
   return (
     <>
       <div className="text-2xl font-medium mt-[3rem] text-white">
@@ -26,4 +26,4 @@ const LearningManagementSystem = () => {
   );
 };
 
-export default LearningManagementSystem;
+export default LearningManagementSystemStudent;
